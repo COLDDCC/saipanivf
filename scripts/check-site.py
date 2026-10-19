@@ -1,6 +1,7 @@
 from pathlib import Path
 from html.parser import HTMLParser
 from collections import Counter
+from urllib.parse import urlsplit, unquote
 class Page(HTMLParser):
  def __init__(self):super().__init__();self.ids=[];self.links=[];self.h1=0;self.prices=0
  def handle_starttag(self,tag,attrs):
@@ -16,8 +17,13 @@ for path in [Path('dist/index.html'),*Path('dist').rglob('*/index.html')]:
   assert href and href!='#',(path,'empty link')
   if href.startswith('#'):assert href[1:] in page.ids,(path,'missing anchor',href)
   if href.startswith('/'):
-   dest=Path('dist')/href.split('#')[0].split('?')[0].lstrip('/')
+   parts=urlsplit(href)
+   dest=Path('dist')/parts.path.lstrip('/')
    assert dest.exists(),(path,'missing internal route',href)
+   if parts.fragment:
+    target=dest/'index.html' if dest.is_dir() else dest
+    other=Page();other.feed(target.read_text(encoding='utf-8'))
+    assert unquote(parts.fragment) in other.ids,(path,'missing cross-page answer',href)
  assert 'mailto:info@saipan-ivf.com' in page.links,(path,'missing contact action')
  if path.parts[1] in ['en','ja','zh-hant']:assert 'aria-current="page"' in s,(path,'missing active language')
  assert '赴岛' not in s,(path,'outdated wording')

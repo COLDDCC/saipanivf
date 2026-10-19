@@ -51,3 +51,10 @@ assert len(slides)==4 and slides[0]['loading']=='eager' and slides[0]['fetchprio
 assert all(im['loading']=='lazy' for im in slides[1:])
 assert slides[0]['src'].startswith('/images/')
 print(f'PASS SEO: {len(expected)} indexable pages, sitemap coverage, canonical, JSON-LD, sharing, responsive sources; 3 archived translations noindex; hero priority.')
+
+not_found=Path('dist/404.html')
+assert not_found.is_file(),'Missing Cloudflare Pages 404 document'
+error=Head();error.feed(not_found.read_text())
+assert 'noindex' in error.meta.get('robots','')
+assert ORIGIN+'/404/' not in urls and ORIGIN+'/404.html' not in urls
+print('PASS custom 404: generated, noindex and excluded from sitemap')
