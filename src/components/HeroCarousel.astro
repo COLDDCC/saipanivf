@@ -3,7 +3,7 @@ const slides = [
  {tag:'SAIPAN IVF',title:'塞班试管婴儿',accent:'了解治疗与费用',subtitle:'IVF · ICSI · 生育咨询',text:'了解试管婴儿治疗流程、费用构成与到院安排。具体方案由接诊医生根据检查结果制定。',image:'saipan-lagoon-aerial.jpg',primary:'咨询试管婴儿',href:'#contact',secondary:'查看费用参考',secondaryHref:'#cost'},
  {tag:'TREATMENT CONSULTATION',title:'先了解方案',accent:'再安排治疗',subtitle:'检查资料 · 治疗选择 · 费用说明',text:'已有检查和治疗记录可以先整理好。初次咨询可了解需要补充哪些检查，以及取卵、培养和移植如何安排。',image:'couple-editorial.jpg',primary:'联系咨询',href:'#contact',secondary:'认识医疗团队',secondaryHref:'#clinical-team'},
  {tag:'BIRTH & DOCUMENTS',title:'计划在塞班生育？',accent:'先了解证件要求',subtitle:'出生登记 · 亲子关系 · 旅行证件',text:'试管婴儿治疗与分娩需要分别规划。孩子的国籍资格和证件办理取决于届时法律、个案情况及主管机关认定。',image:'american-flag.jpg',primary:'查看常见问题',href:'#faq',secondary:'了解产后安排',secondaryHref:'#postpartum'},
- {tag:'TRAVEL TO SAIPAN',title:'赴塞班就诊',accent:'先约诊，再订行程',subtitle:'医疗预约 · 航班 · 住宿',text:'根据医生确认的到院时间安排航班和住宿，预留调整空间。取卵与移植可能需要分次赴岛。',image:'flight-wing.jpg',primary:'查看就诊流程',href:'#journey',secondary:'联系咨询',secondaryHref:'#contact'}
+ {tag:'TRAVEL TO SAIPAN',title:'塞班就医服务',accent:'预约、交通与住宿',subtitle:'就诊预约 · 接送安排 · 住宿准备',text:'根据医生确认的到院时间安排航班和住宿，预留调整空间。取卵与移植可能需要分次前往塞班。',image:'flight-wing.jpg',primary:'查看就诊流程',href:'#journey',secondary:'联系咨询',secondaryHref:'#contact'}
 ];
 ---
 <div class="hero-carousel" role="region" aria-roledescription="轮播" aria-label="塞班辅助生殖服务" data-hero-carousel>
@@ -15,7 +15,7 @@ const slides = [
  </article>)}
  </div>
  <div class="hero-controls">
- <div class="hero-tabs" role="group" aria-label="切换首屏内容">{slides.map((slide,index)=><button type="button" class:list={['hero-tab',{'is-active':index===0}]} aria-label={`显示第${index+1}张：${slide.subtitle}`} aria-pressed={index===0} data-slide-to={index}><span class="hero-tab-number">0{index+1}</span><span class="hero-tab-label">{['试管婴儿','治疗咨询','生育与证件','赴岛安排'][index]}</span></button>)}</div>
+ <div class="hero-tabs" role="group" aria-label="切换首屏内容">{slides.map((slide,index)=><button type="button" class:list={['hero-tab',{'is-active':index===0}]} aria-label={`显示第${index+1}张：${slide.subtitle}`} aria-pressed={index===0} data-slide-to={index}><span class="hero-tab-number">0{index+1}</span><span class="hero-tab-label">{['试管婴儿','医疗咨询','生育证件','就诊安排'][index]}</span></button>)}</div>
  <div class="hero-playback"><button type="button" data-hero-prev aria-label="上一张">←</button><button type="button" data-hero-next aria-label="下一张">→</button><button type="button" data-hero-pause aria-label="暂停自动切换"><span aria-hidden="true">Ⅱ</span></button></div>
  </div>
 </div>
