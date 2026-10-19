@@ -1,0 +1,6 @@
+---
+import variants from '../data/image-variants.json';
+const {src,sizes='(max-width: 650px) 100vw, (max-width: 1000px) 60vw, 50vw',...attrs}=Astro.props;
+const srcset=(variants as Record<string,string>)[src];
+---
+<img {...attrs} src={src} srcset={srcset} sizes={srcset?sizes:undefined}/>

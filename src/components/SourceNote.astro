@@ -1,0 +1,5 @@
+---
+const {sources=[],checked='2026-10-19'}=Astro.props;
+---
+<aside class="source-note" aria-label="资料来源"><p>资料核对：<time datetime={checked}>{checked}</time> · <a href="/editorial-policy/">内容与来源说明</a></p><ul>{sources.map((source)=><li><a href={source.url} target="_blank" rel="noopener">{source.name}</a></li>)}</ul></aside>
+<style>.source-note{margin-top:32px;padding-top:20px;border-top:1px solid #b8cdd0;font-size:14px;line-height:1.8;color:var(--muted)}.source-note p{font-size:14px;margin:0 0 8px}.source-note ul{padding-left:20px;margin:0}.source-note a{text-decoration:underline;text-underline-offset:4px}</style>
