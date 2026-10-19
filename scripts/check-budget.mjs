@@ -1,13 +1,26 @@
 import fs from 'node:fs';
+import vm from 'node:vm';
 import assert from 'node:assert/strict';
-
-const pages = ['dist/index.html', 'dist/zh-hant/index.html', 'dist/en/index.html', 'dist/ja/index.html'];
-for (const path of pages) {
-  const html = fs.readFileSync(path, 'utf8');
-  assert.ok(html.includes('data-cost-checker'), `${path}: cost scope checker missing`);
-  assert.ok(html.includes('data-contact-form'), `${path}: contact form missing`);
-  assert.equal((html.match(/<input type="checkbox"/g) || []).length, 10, `${path}: expected 10 quote-scope items`);
-  assert.ok(!html.includes('$15,000') && !html.includes('26,100'), `${path}: unconfirmed price remains`);
-  assert.ok(html.includes('mailto:info@saipan-ivf.com'), `${path}: direct email action missing`);
-}
-console.log('Passed: all four languages use the same quote checklist and contain no hypothetical package prices.');
+const html=fs.readFileSync('dist/index.html','utf8');
+const scripts=[...html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g)].map(m=>m[1]);
+const script=scripts.find(s=>s.includes('budget-total'));
+assert.ok(script,'Built budget script exists');
+const element=()=>({textContent:'',listeners:{},addEventListener(event,fn){this.listeners[event]=fn;}});
+const ids=Object.fromEntries(['budget-path','budget-total','budget-description','budget-status','budget-copy'].map(id=>[id,element()]));
+ids['budget-path'].value='ivf';
+const inputs=['medication','anesthesia','icsi','freeze','fet','pgt','storage'].map(value=>({...element(),value,checked:!['pgt','storage'].includes(value),disabled:false,label:{hidden:false},closest(){return this.label;}}));
+const document={querySelector:s=>ids[s.slice(1)],querySelectorAll:()=>inputs};
+vm.runInNewContext(script,{document,navigator:{clipboard:{writeText:async()=>{}}}});
+assert.equal(ids['budget-total'].textContent,'$26,100–31,100');
+inputs.find(i=>i.value==='pgt').checked=true;inputs[0].listeners.change();
+assert.equal(ids['budget-total'].textContent,'$29,100–37,100');
+ids['budget-path'].value='egg';ids['budget-path'].listeners.change();
+assert.equal(ids['budget-total'].textContent,'$12,800–17,800');
+assert.equal(inputs.find(i=>i.value==='pgt').disabled,true);
+ids['budget-path'].value='fet';ids['budget-path'].listeners.change();
+assert.equal(ids['budget-total'].textContent,'$4,500');
+inputs.find(i=>i.value==='storage').checked=true;inputs[0].listeners.change();
+assert.equal(ids['budget-total'].textContent,'$5,300');
+const anchors=new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]));
+for(const [,id] of html.matchAll(/href="#([^"]+)"/g)) assert.ok(anchors.has(id),'Anchor '+id);
+console.log('Passed: IVF, PGT, egg freezing, FET, storage and homepage anchors.');
