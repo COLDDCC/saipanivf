@@ -1038,5 +1038,53 @@
     "placements": [
       "dist/ja/index.html"
     ]
+  },
+  {
+    "name": "fees-planning",
+    "id": 7580852,
+    "title": "Calculator on top of paper",
+    "src": "/images/stock/fees-planning.webp",
+    "source": "https://www.pexels.com/photo/7580852/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 22042,
+    "placements": [
+      "dist/fees/index.html"
+    ]
+  },
+  {
+    "name": "fees-laboratory",
+    "id": 9259940,
+    "title": "Laboratory pipetting close up",
+    "src": "/images/stock/fees-laboratory.webp",
+    "source": "https://www.pexels.com/photo/9259940/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 800,
+    "height": 1000,
+    "bytes": 28992,
+    "placements": [
+      "dist/fees/index.html"
+    ]
+  },
+  {
+    "name": "fees-preservation",
+    "id": 8940470,
+    "title": "Pipettes on laboratory bench",
+    "src": "/images/stock/fees-preservation.webp",
+    "source": "https://www.pexels.com/photo/8940470/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 667,
+    "height": 1000,
+    "bytes": 37688,
+    "placements": [
+      "dist/fees/index.html"
+    ]
   }
 ]
