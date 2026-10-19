@@ -1,0 +1,1042 @@
+[
+  {
+    "name": "microscope-white",
+    "id": 8442022,
+    "title": "Laboratory microscope on white table",
+    "src": "/images/stock/microscope-white.webp",
+    "source": "https://www.pexels.com/photo/8442022/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 667,
+    "height": 1000,
+    "bytes": 21984,
+    "placements": [
+      "dist/index.html"
+    ]
+  },
+  {
+    "name": "microscope-focus",
+    "id": 9574341,
+    "title": "Selective focus of microscope",
+    "src": "/images/stock/microscope-focus.webp",
+    "source": "https://www.pexels.com/photo/9574341/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 34110,
+    "placements": [
+      "dist/index.html"
+    ]
+  },
+  {
+    "name": "microscope-stage",
+    "id": 8326147,
+    "title": "Shallow focus microscope",
+    "src": "/images/stock/microscope-stage.webp",
+    "source": "https://www.pexels.com/photo/8326147/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 750,
+    "height": 1000,
+    "bytes": 32978,
+    "placements": [
+      "dist/guides/ivf-steps/index.html"
+    ]
+  },
+  {
+    "name": "microscope-flask",
+    "id": 8325750,
+    "title": "Microscope and laboratory equipment",
+    "src": "/images/stock/microscope-flask.webp",
+    "source": "https://www.pexels.com/photo/8325750/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 900,
+    "bytes": 35146,
+    "placements": [
+      "dist/treatments/index.html"
+    ]
+  },
+  {
+    "name": "lab-glass",
+    "id": 8850988,
+    "title": "Colorful laboratory glassware",
+    "src": "/images/stock/lab-glass.webp",
+    "source": "https://www.pexels.com/photo/8850988/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 667,
+    "height": 1000,
+    "bytes": 25202,
+    "placements": [
+      "dist/treatments/index.html"
+    ]
+  },
+  {
+    "name": "lab-tubes",
+    "id": 8851076,
+    "title": "Test tubes with different liquids",
+    "src": "/images/stock/lab-tubes.webp",
+    "source": "https://www.pexels.com/photo/8851076/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 667,
+    "height": 1000,
+    "bytes": 25712,
+    "placements": [
+      "dist/treatments/index.html"
+    ]
+  },
+  {
+    "name": "lab-flasks",
+    "id": 9628800,
+    "title": "Close up of flasks",
+    "src": "/images/stock/lab-flasks.webp",
+    "source": "https://www.pexels.com/photo/9628800/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 667,
+    "height": 1000,
+    "bytes": 42592,
+    "placements": [
+      "dist/treatments/index.html"
+    ]
+  },
+  {
+    "name": "ultrasound-panel",
+    "id": 7088481,
+    "title": "Close up medical equipment",
+    "src": "/images/stock/ultrasound-panel.webp",
+    "source": "https://www.pexels.com/photo/7088481/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 18442,
+    "placements": [
+      "dist/zh-hant/index.html"
+    ]
+  },
+  {
+    "name": "ultrasound-room",
+    "id": 7108402,
+    "title": "Ultrasound machine",
+    "src": "/images/stock/ultrasound-room.webp",
+    "source": "https://www.pexels.com/photo/7108402/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 801,
+    "bytes": 24624,
+    "placements": [
+      "dist/ja/index.html"
+    ]
+  },
+  {
+    "name": "ultrasound-scanner",
+    "id": 7089304,
+    "title": "Photo of ultrasound scanner",
+    "src": "/images/stock/ultrasound-scanner.webp",
+    "source": "https://www.pexels.com/photo/7089304/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 37188,
+    "placements": [
+      "dist/index.html"
+    ]
+  },
+  {
+    "name": "ultrasound-probe",
+    "id": 7089618,
+    "title": "Ultrasound equipment detail",
+    "src": "/images/stock/ultrasound-probe.webp",
+    "source": "https://www.pexels.com/photo/7089618/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 17776,
+    "placements": [
+      "dist/index.html"
+    ]
+  },
+  {
+    "name": "ultrasound-controls",
+    "id": 7088496,
+    "title": "Ultrasound scanner controls",
+    "src": "/images/stock/ultrasound-controls.webp",
+    "source": "https://www.pexels.com/photo/7088496/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 20962,
+    "placements": [
+      "dist/treatments/index.html"
+    ]
+  },
+  {
+    "name": "stethoscope-white",
+    "id": 6398959,
+    "title": "Black stethoscope on white",
+    "src": "/images/stock/stethoscope-white.webp",
+    "source": "https://www.pexels.com/photo/6398959/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 16822,
+    "placements": [
+      "dist/index.html"
+    ]
+  },
+  {
+    "name": "stethoscope-blue",
+    "id": 12585206,
+    "title": "Stethoscope on blue background",
+    "src": "/images/stock/stethoscope-blue.webp",
+    "source": "https://www.pexels.com/photo/12585206/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 19774,
+    "placements": [
+      "dist/treatments/index.html"
+    ]
+  },
+  {
+    "name": "stethoscope-silver",
+    "id": 13105351,
+    "title": "Black and silver stethoscope",
+    "src": "/images/stock/stethoscope-silver.webp",
+    "source": "https://www.pexels.com/photo/13105351/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 22086,
+    "placements": [
+      "dist/treatments/index.html"
+    ]
+  },
+  {
+    "name": "medical-hands",
+    "id": 5234465,
+    "title": "Hands holding stethoscope",
+    "src": "/images/stock/medical-hands.webp",
+    "source": "https://www.pexels.com/photo/5234465/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 667,
+    "height": 1000,
+    "bytes": 33660,
+    "placements": [
+      "dist/team/index.html"
+    ]
+  },
+  {
+    "name": "planner-light",
+    "id": 16037854,
+    "title": "Light and shadow on planner pages",
+    "src": "/images/stock/planner-light.webp",
+    "source": "https://www.pexels.com/photo/16037854/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 750,
+    "height": 1000,
+    "bytes": 49576,
+    "placements": [
+      "dist/guides/quotation/index.html"
+    ]
+  },
+  {
+    "name": "budget-documents",
+    "id": 8970674,
+    "title": "Budget planning folder on table",
+    "src": "/images/stock/budget-documents.webp",
+    "source": "https://www.pexels.com/photo/8970674/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 667,
+    "height": 1000,
+    "bytes": 38112,
+    "placements": [
+      "dist/index.html"
+    ]
+  },
+  {
+    "name": "notebook-pen",
+    "id": 7428213,
+    "title": "Person writing on paper",
+    "src": "/images/stock/notebook-pen.webp",
+    "source": "https://www.pexels.com/photo/7428213/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 667,
+    "height": 1000,
+    "bytes": 27622,
+    "placements": [
+      "dist/contact/index.html"
+    ]
+  },
+  {
+    "name": "calculator-open",
+    "id": 8250947,
+    "title": "Open notebook calculator and pen",
+    "src": "/images/stock/calculator-open.webp",
+    "source": "https://www.pexels.com/photo/8250947/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 64698,
+    "placements": [
+      "dist/index.html"
+    ]
+  },
+  {
+    "name": "calculator-glasses",
+    "id": 8276240,
+    "title": "Eyeglasses notebook calculator",
+    "src": "/images/stock/calculator-glasses.webp",
+    "source": "https://www.pexels.com/photo/8276240/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 36816,
+    "placements": [
+      "dist/fees/index.html"
+    ]
+  },
+  {
+    "name": "planner-white",
+    "id": 28353112,
+    "title": "Notebook and pen on white table",
+    "src": "/images/stock/planner-white.webp",
+    "source": "https://www.pexels.com/photo/28353112/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 900,
+    "bytes": 18154,
+    "placements": [
+      "dist/process/index.html"
+    ]
+  },
+  {
+    "name": "planner-desk",
+    "id": 5717416,
+    "title": "Planner envelopes and pen",
+    "src": "/images/stock/planner-desk.webp",
+    "source": "https://www.pexels.com/photo/5717416/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 801,
+    "bytes": 40626,
+    "placements": [
+      "dist/faq/index.html"
+    ]
+  },
+  {
+    "name": "planner-calendar",
+    "id": 28353113,
+    "title": "White notebook and pen",
+    "src": "/images/stock/planner-calendar.webp",
+    "source": "https://www.pexels.com/photo/28353113/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 750,
+    "height": 1000,
+    "bytes": 18286,
+    "placements": [
+      "dist/guides/first-visit/index.html"
+    ]
+  },
+  {
+    "name": "notebook-wood",
+    "id": 606539,
+    "title": "White notebook and pen",
+    "src": "/images/stock/notebook-wood.webp",
+    "source": "https://www.pexels.com/photo/606539/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 47076,
+    "placements": [
+      "dist/index.html"
+    ]
+  },
+  {
+    "name": "calendar-open",
+    "id": 28353121,
+    "title": "Calendar on a table",
+    "src": "/images/stock/calendar-open.webp",
+    "source": "https://www.pexels.com/photo/28353121/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 750,
+    "height": 1000,
+    "bytes": 30708,
+    "placements": [
+      "dist/index.html"
+    ]
+  },
+  {
+    "name": "weekly-planner",
+    "id": 5124877,
+    "title": "Notebooks on a desk",
+    "src": "/images/stock/weekly-planner.webp",
+    "source": "https://www.pexels.com/photo/5124877/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 41494,
+    "placements": [
+      "dist/guides/index.html"
+    ]
+  },
+  {
+    "name": "graph-notebook",
+    "id": 6192333,
+    "title": "Planner and pencil",
+    "src": "/images/stock/graph-notebook.webp",
+    "source": "https://www.pexels.com/photo/6192333/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 667,
+    "height": 1000,
+    "bytes": 19340,
+    "placements": [
+      "dist/guides/family-planning/index.html"
+    ]
+  },
+  {
+    "name": "leaves-oak",
+    "id": 4500387,
+    "title": "Green leaves in sunlight",
+    "src": "/images/stock/leaves-oak.webp",
+    "source": "https://www.pexels.com/photo/4500387/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1000,
+    "height": 1000,
+    "bytes": 105928,
+    "placements": [
+      "dist/about/index.html"
+    ]
+  },
+  {
+    "name": "leaves-soft",
+    "id": 15497753,
+    "title": "Sunlight behind leaves",
+    "src": "/images/stock/leaves-soft.webp",
+    "source": "https://www.pexels.com/photo/15497753/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 667,
+    "height": 1000,
+    "bytes": 67866,
+    "placements": [
+      "dist/index.html"
+    ]
+  },
+  {
+    "name": "leaves-green",
+    "id": 34952071,
+    "title": "Green plant leaves closeup",
+    "src": "/images/stock/leaves-green.webp",
+    "source": "https://www.pexels.com/photo/34952071/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 667,
+    "height": 1000,
+    "bytes": 40728,
+    "placements": [
+      "dist/guides/egg-freezing/index.html"
+    ]
+  },
+  {
+    "name": "fern-light",
+    "id": 37413586,
+    "title": "Green fern leaves",
+    "src": "/images/stock/fern-light.webp",
+    "source": "https://www.pexels.com/photo/37413586/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 94008,
+    "placements": [
+      "dist/index.html"
+    ]
+  },
+  {
+    "name": "luggage-packed",
+    "id": 8212224,
+    "title": "Packed suitcase with travel items",
+    "src": "/images/stock/luggage-packed.webp",
+    "source": "https://www.pexels.com/photo/8212224/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 900,
+    "bytes": 71228,
+    "placements": [
+      "dist/index.html"
+    ]
+  },
+  {
+    "name": "luggage-cabin",
+    "id": 13143742,
+    "title": "Luggage on airplane",
+    "src": "/images/stock/luggage-cabin.webp",
+    "source": "https://www.pexels.com/photo/13143742/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 801,
+    "bytes": 92538,
+    "placements": [
+      "dist/guides/travel-checklist/index.html"
+    ]
+  },
+  {
+    "name": "wing-clouds",
+    "id": 35642569,
+    "title": "Airplane wing above clouds",
+    "src": "/images/stock/wing-clouds.webp",
+    "source": "https://www.pexels.com/photo/35642569/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 33162,
+    "placements": [
+      "dist/index.html"
+    ]
+  },
+  {
+    "name": "wing-sky",
+    "id": 31714222,
+    "title": "Airplane wing with blue sky",
+    "src": "/images/stock/wing-sky.webp",
+    "source": "https://www.pexels.com/photo/31714222/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 563,
+    "height": 1000,
+    "bytes": 18668,
+    "placements": [
+      "dist/index.html"
+    ]
+  },
+  {
+    "name": "family-shoes",
+    "id": 20715961,
+    "title": "Hands holding baby shoes",
+    "src": "/images/stock/family-shoes.webp",
+    "source": "https://www.pexels.com/photo/20715961/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 678,
+    "height": 1000,
+    "bytes": 40906,
+    "placements": [
+      "dist/index.html"
+    ]
+  },
+  {
+    "name": "baby-shoes",
+    "id": 9123380,
+    "title": "Baby shoes closeup",
+    "src": "/images/stock/baby-shoes.webp",
+    "source": "https://www.pexels.com/photo/9123380/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 807,
+    "bytes": 32144,
+    "placements": [
+      "dist/index.html"
+    ]
+  },
+  {
+    "name": "parent-hands",
+    "id": 15668367,
+    "title": "Hands holding kids shoes",
+    "src": "/images/stock/parent-hands.webp",
+    "source": "https://www.pexels.com/photo/15668367/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 668,
+    "height": 1000,
+    "bytes": 32294,
+    "placements": [
+      "dist/index.html"
+    ]
+  },
+  {
+    "name": "father-hands",
+    "id": 4409000,
+    "title": "Hands holding baby shoes",
+    "src": "/images/stock/father-hands.webp",
+    "source": "https://www.pexels.com/photo/4409000/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 45156,
+    "placements": [
+      "dist/birth-planning/index.html"
+    ]
+  },
+  {
+    "name": "leaves-lush",
+    "id": 29371316,
+    "title": "Lush green plant leaves",
+    "src": "/images/stock/leaves-lush.webp",
+    "source": "https://www.pexels.com/photo/29371316/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 229262,
+    "placements": [
+      "dist/about/index.html"
+    ]
+  },
+  {
+    "name": "leaves-vibrant",
+    "id": 35821614,
+    "title": "Green leaves in natural sunlight",
+    "src": "/images/stock/leaves-vibrant.webp",
+    "source": "https://www.pexels.com/photo/35821614/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 667,
+    "height": 1000,
+    "bytes": 121876,
+    "placements": [
+      "dist/about/index.html"
+    ]
+  },
+  {
+    "name": "leaves-pattern",
+    "id": 7901382,
+    "title": "Leaves in sunlight",
+    "src": "/images/stock/leaves-pattern.webp",
+    "source": "https://www.pexels.com/photo/7901382/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 673,
+    "height": 1000,
+    "bytes": 59150,
+    "placements": [
+      "dist/about/index.html"
+    ]
+  },
+  {
+    "name": "leaves-backlit",
+    "id": 36742236,
+    "title": "Green leaves backlit",
+    "src": "/images/stock/leaves-backlit.webp",
+    "source": "https://www.pexels.com/photo/36742236/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 667,
+    "height": 1000,
+    "bytes": 41246,
+    "placements": [
+      "dist/treatments/index.html"
+    ]
+  },
+  {
+    "name": "family-sandals",
+    "id": 16362344,
+    "title": "Hands holding baby shoes",
+    "src": "/images/stock/family-sandals.webp",
+    "source": "https://www.pexels.com/photo/16362344/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 666,
+    "height": 1000,
+    "bytes": 27578,
+    "placements": [
+      "dist/birth-planning/index.html"
+    ]
+  },
+  {
+    "name": "family-sunlight",
+    "id": 18978105,
+    "title": "Hands with baby shoes in sunlight",
+    "src": "/images/stock/family-sunlight.webp",
+    "source": "https://www.pexels.com/photo/18978105/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 563,
+    "height": 1000,
+    "bytes": 27226,
+    "placements": [
+      "dist/treatments/index.html"
+    ]
+  },
+  {
+    "name": "baby-socks",
+    "id": 35846666,
+    "title": "Family shoes and baby socks",
+    "src": "/images/stock/baby-socks.webp",
+    "source": "https://www.pexels.com/photo/35846666/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 750,
+    "height": 1000,
+    "bytes": 42546,
+    "placements": [
+      "dist/treatments/index.html"
+    ]
+  },
+  {
+    "name": "wing-new",
+    "id": 12043534,
+    "title": "Airplane wing under blue sky",
+    "src": "/images/stock/wing-new.webp",
+    "source": "https://www.pexels.com/photo/12043534/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 15206,
+    "placements": [
+      "dist/process/index.html"
+    ]
+  },
+  {
+    "name": "travel-new",
+    "id": 8276904,
+    "title": "Person carrying hand luggage",
+    "src": "/images/stock/travel-new.webp",
+    "source": "https://www.pexels.com/photo/8276904/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 750,
+    "height": 1000,
+    "bytes": 32338,
+    "placements": [
+      "dist/process/index.html"
+    ]
+  },
+  {
+    "name": "legacy-stethoscope-red",
+    "id": 5149754,
+    "title": "Stethoscope on white surface",
+    "src": "/images/stock/legacy-stethoscope-red.webp",
+    "source": "https://www.pexels.com/photo/5149754/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 30020,
+    "placements": [
+      "dist/en/index.html"
+    ]
+  },
+  {
+    "name": "legacy-stethoscope-detail",
+    "id": 16204178,
+    "title": "Stethoscope close up",
+    "src": "/images/stock/legacy-stethoscope-detail.webp",
+    "source": "https://www.pexels.com/photo/16204178/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 15130,
+    "placements": [
+      "dist/zh-hant/index.html"
+    ]
+  },
+  {
+    "name": "legacy-stethoscope-mono",
+    "id": 14906846,
+    "title": "Black stethoscope detail",
+    "src": "/images/stock/legacy-stethoscope-mono.webp",
+    "source": "https://www.pexels.com/photo/14906846/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 797,
+    "bytes": 13250,
+    "placements": [
+      "dist/ja/index.html"
+    ]
+  },
+  {
+    "name": "legacy-ultrasound-scan",
+    "id": 7089012,
+    "title": "Ultrasound scan equipment",
+    "src": "/images/stock/legacy-ultrasound-scan.webp",
+    "source": "https://www.pexels.com/photo/7089012/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 23980,
+    "placements": [
+      "dist/en/index.html"
+    ]
+  },
+  {
+    "name": "legacy-ultrasound-keys",
+    "id": 7088493,
+    "title": "Ultrasound scanner control panel",
+    "src": "/images/stock/legacy-ultrasound-keys.webp",
+    "source": "https://www.pexels.com/photo/7088493/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 32038,
+    "placements": [
+      "dist/zh-hant/index.html"
+    ]
+  },
+  {
+    "name": "legacy-lab-hands",
+    "id": 8851726,
+    "title": "Gloved hands with pipette",
+    "src": "/images/stock/legacy-lab-hands.webp",
+    "source": "https://www.pexels.com/photo/8851726/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 667,
+    "height": 1000,
+    "bytes": 32884,
+    "placements": [
+      "dist/en/index.html"
+    ]
+  },
+  {
+    "name": "legacy-wing-runway",
+    "id": 36279067,
+    "title": "Airplane wing on runway",
+    "src": "/images/stock/legacy-wing-runway.webp",
+    "source": "https://www.pexels.com/photo/36279067/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 750,
+    "height": 1000,
+    "bytes": 72062,
+    "placements": [
+      "dist/en/index.html"
+    ]
+  },
+  {
+    "name": "legacy-wing-view",
+    "id": 30592333,
+    "title": "View of airplane wing",
+    "src": "/images/stock/legacy-wing-view.webp",
+    "source": "https://www.pexels.com/photo/30592333/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 563,
+    "height": 1000,
+    "bytes": 23338,
+    "placements": [
+      "dist/zh-hant/index.html"
+    ]
+  },
+  {
+    "name": "legacy-wing-flight",
+    "id": 36883208,
+    "title": "Airplane wing clear sky",
+    "src": "/images/stock/legacy-wing-flight.webp",
+    "source": "https://www.pexels.com/photo/36883208/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 750,
+    "height": 1000,
+    "bytes": 17540,
+    "placements": [
+      "dist/ja/index.html"
+    ]
+  },
+  {
+    "name": "legacy-wing-horizon",
+    "id": 13167354,
+    "title": "Airplane wing horizon",
+    "src": "/images/stock/legacy-wing-horizon.webp",
+    "source": "https://www.pexels.com/photo/13167354/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 750,
+    "height": 1000,
+    "bytes": 18834,
+    "placements": [
+      "dist/ja/index.html"
+    ]
+  },
+  {
+    "name": "legacy-planner-green",
+    "id": 5554664,
+    "title": "Spiral notebook markers calculator",
+    "src": "/images/stock/legacy-planner-green.webp",
+    "source": "https://www.pexels.com/photo/5554664/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 35390,
+    "placements": [
+      "dist/en/index.html"
+    ]
+  },
+  {
+    "name": "legacy-planner-pink",
+    "id": 5554761,
+    "title": "Calculator and pen on notebook",
+    "src": "/images/stock/legacy-planner-pink.webp",
+    "source": "https://www.pexels.com/photo/5554761/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 39312,
+    "placements": [
+      "dist/zh-hant/index.html"
+    ]
+  },
+  {
+    "name": "legacy-notebook-yellow",
+    "id": 6193756,
+    "title": "Yellow notebook and calculator",
+    "src": "/images/stock/legacy-notebook-yellow.webp",
+    "source": "https://www.pexels.com/photo/6193756/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 19782,
+    "placements": [
+      "dist/ja/index.html"
+    ]
+  },
+  {
+    "name": "hero-laboratory",
+    "id": 6074940,
+    "title": "Glass flasks and syringes in laboratory",
+    "src": "/images/stock/hero-laboratory.webp",
+    "source": "https://www.pexels.com/photo/6074940/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 667,
+    "height": 1000,
+    "bytes": 12304,
+    "placements": [
+      "dist/en/index.html"
+    ]
+  },
+  {
+    "name": "hero-care-hands",
+    "id": 5867734,
+    "title": "Hands holding stethoscope",
+    "src": "/images/stock/hero-care-hands.webp",
+    "source": "https://www.pexels.com/photo/5867734/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 667,
+    "height": 1000,
+    "bytes": 22970,
+    "placements": [
+      "dist/zh-hant/index.html"
+    ]
+  },
+  {
+    "name": "hero-consultation-record",
+    "id": 7088834,
+    "title": "Medical consultation form and hands",
+    "src": "/images/stock/hero-consultation-record.webp",
+    "source": "https://www.pexels.com/photo/7088834/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-19",
+    "width": 1200,
+    "height": 800,
+    "bytes": 27722,
+    "placements": [
+      "dist/ja/index.html"
+    ]
+  }
+]
