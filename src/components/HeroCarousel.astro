@@ -1,0 +1,58 @@
+---
+const slides = [
+ {tag:'IVF & ICSI / SAIPAN',title:'IVF & ICSI',accent:'in Saipan.',subtitle:'塞班试管婴儿与生育咨询',text:'了解治疗项目、费用与赴岛安排。从初次咨询开始，规划适合自己的就诊路径。',image:'saipan-lagoon-aerial.jpg',primary:'咨询生育计划',href:'#contact',secondary:'了解治疗费用',secondaryHref:'#cost'},
+ {tag:'FERTILITY PRESERVATION',title:'Your future,',accent:'your timing.',subtitle:'冻卵与生育力保存',text:'了解评估、取卵与冷冻保存的不同阶段，为未来的生育计划提前做好准备。',image:'laboratory-care.jpg',primary:'了解生育力保存',href:'#real-services',secondary:'联系咨询',secondaryHref:'#contact'},
+ {tag:'CARE BEYOND BORDERS',title:'Plan your care.',accent:'Before you travel.',subtitle:'赴塞班就诊，先安排好每一步',text:'从已有检查资料、医疗预约到交通住宿，围绕医生的治疗安排规划行程。具体诊疗由合作医疗机构负责。',image:'care-consultation.jpg',primary:'了解就诊流程',href:'#journey',secondary:'认识医疗团队',secondaryHref:'#clinical-team'}
+];
+---
+<div class="hero-carousel" role="region" aria-roledescription="轮播" aria-label="塞班辅助生殖服务" data-hero-carousel>
+ <div class="hero-slides">
+ {slides.map((slide,index)=><article class:list={['hero-slide',{'is-active':index===0}]} aria-roledescription="幻灯片" aria-label={`${index+1} / ${slides.length}：${slide.subtitle}`} aria-hidden={index!==0} inert={index!==0} data-slide>
+ <img class="hero-slide-image" src={`https://raw.githubusercontent.com/jiusongvip/saipan/main/public/images/${slide.image}`} alt="" loading={index===0?'eager':'lazy'} fetchpriority={index===0?'high':'auto'} decoding="async"/>
+ <div class="hero-shade"></div>
+ <div class="hero-copy"><div class="hero-kicker">{slide.tag}</div><h1>{slide.title}<br/><em>{slide.accent}</em><span>{slide.subtitle}</span></h1><p>{slide.text}</p><div class="slide-actions"><a class="button light" href={slide.href}>{slide.primary}</a><a class="slide-secondary" href={slide.secondaryHref}>{slide.secondary} ↗</a></div></div>
+ </article>)}
+ </div>
+ <div class="hero-controls">
+ <div class="hero-tabs" role="group" aria-label="切换首屏内容">{slides.map((slide,index)=><button type="button" class:list={['hero-tab',{'is-active':index===0}]} aria-label={`显示第${index+1}张：${slide.subtitle}`} aria-pressed={index===0} data-slide-to={index}><span class="hero-tab-number">0{index+1}</span><span class="hero-tab-label">{['IVF治疗','生育力保存','赴岛就诊'][index]}</span></button>)}</div>
+ <div class="hero-playback"><button type="button" data-hero-prev aria-label="上一张">←</button><button type="button" data-hero-next aria-label="下一张">→</button><button type="button" data-hero-pause aria-label="暂停自动切换">暂停轮播</button></div>
+ </div>
+</div>
+<script>
+const root=document.querySelector<HTMLElement>('[data-hero-carousel]');
+if(root){
+ const slides=Array.from(root.querySelectorAll<HTMLElement>('[data-slide]'));
+ const tabs=Array.from(root.querySelectorAll<HTMLButtonElement>('[data-slide-to]'));
+ const pause=root.querySelector<HTMLButtonElement>('[data-hero-pause]')!;
+ const motion=window.matchMedia('(prefers-reduced-motion: reduce)');
+ let current=0,manualPause=motion.matches,hovered=false,timer:ReturnType<typeof setInterval>|undefined;
+ function schedule(){
+  if(timer)clearInterval(timer);
+  timer=undefined;
+  pause.textContent=manualPause?'播放轮播':'暂停轮播';
+  pause.setAttribute('aria-label',manualPause?'播放自动切换':'暂停自动切换');
+  if(!manualPause&&!hovered&&!root!.contains(document.activeElement)&&!document.hidden)timer=setInterval(()=>show(current+1),6000);
+ }
+ function show(index:number){
+  current=(index+slides.length)%slides.length;
+  slides.forEach((slide,i)=>{const active=i===current;slide.classList.toggle('is-active',active);slide.setAttribute('aria-hidden',String(!active));slide.inert=!active;});
+  tabs.forEach((tab,i)=>{tab.classList.toggle('is-active',i===current);tab.setAttribute('aria-pressed',String(i===current));});
+ }
+ tabs.forEach((tab,i)=>tab.addEventListener('click',()=>{show(i);schedule();}));
+ root.querySelector('[data-hero-prev]')!.addEventListener('click',()=>{show(current-1);schedule();});
+ root.querySelector('[data-hero-next]')!.addEventListener('click',()=>{show(current+1);schedule();});
+ pause.addEventListener('click',()=>{manualPause=!manualPause;schedule();});
+ root.addEventListener('mouseenter',()=>{hovered=true;schedule();});
+ root.addEventListener('mouseleave',()=>{hovered=false;schedule();});
+ root.addEventListener('focusin',schedule);
+ root.addEventListener('focusout',()=>queueMicrotask(schedule));
+ root.addEventListener('keydown',event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();show(current+(event.key==='ArrowRight'?1:-1));schedule();}});
+ document.addEventListener('visibilitychange',schedule);
+ motion.addEventListener('change',()=>{manualPause=motion.matches;schedule();});
+ schedule();
+}
+</script>
+<style>
+.hero-carousel{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;min-height:0}.hero-slides{position:relative;display:grid;flex:1}.hero-slide{isolation:isolate;grid-area:1/1;position:relative;min-width:0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .8s ease,visibility .8s}.hero-slide.is-active{opacity:1;visibility:visible;pointer-events:auto}.hero-slide-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;z-index:-2}.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,39,53,.88),rgba(8,47,62,.53) 60%,rgba(8,47,62,.13));z-index:-1}.hero-copy{position:relative;padding:clamp(36px,7vh,90px) 7% 44px;max-width:1060px;color:#fff}.hero-kicker{font-size:11px;font-weight:600;letter-spacing:3px;color:#d4edf3}.hero-copy h1{font:400 clamp(45px,5.5vw,82px)/1.08 'Playfair Display',serif;letter-spacing:-1.5px;margin:24px 0 18px}.hero-copy h1 em{font-weight:400}.hero-copy h1 span{display:block;font:400 clamp(22px,2.3vw,34px)/1.5 'Noto Sans SC',sans-serif;letter-spacing:.5px;margin-top:17px}.hero-copy p{max-width:580px;color:#eaf5f6;font-size:15px;line-height:1.9;margin:16px 0 22px}.slide-actions .button{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;padding:16px 22px;background:#fff;color:#163b4b;border:1px solid #fff;font-size:13px;font-weight:600;min-height:52px;text-decoration:none}.slide-actions .button:after{content:"↗";font-size:20px}.slide-actions{display:flex;align-items:center;gap:25px;flex-wrap:wrap}.slide-secondary{font-size:13px;color:white;text-decoration:underline;text-underline-offset:6px}.hero-controls{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 7% 24px;background:#103748;color:#fff}.hero-tabs{display:flex;gap:25px}.hero-tab{display:flex;align-items:center;gap:10px;padding:10px 0;border:0;border-top:2px solid #ffffff40;background:none;color:#afc8d1;font:inherit;cursor:pointer;min-height:44px}.hero-tab.is-active{color:white;border-top-color:white}.hero-tab-number{font-size:12px;letter-spacing:1px}.hero-tab-label{font-size:12px}.hero-playback{display:flex;gap:8px}.hero-playback button{min-width:44px;min-height:44px;padding:8px 12px;background:none;border:1px solid #ffffff66;color:white;cursor:pointer;font:inherit;font-size:12px}button:focus-visible,a:focus-visible{outline:3px solid #b5e5ed;outline-offset:5px}@media(max-width:800px){.hero-copy{padding:35px 6% 28px}.hero-copy h1{font-size:clamp(40px,8vw,62px)}.hero-copy p{font-size:13px}.hero-controls{padding:15px 6%;flex-wrap:wrap}.hero-tabs{gap:20px}.hero-tab-label{font-size:11px}.hero-kicker{font-size:9px;letter-spacing:2px}}@media(max-width:420px){.hero-copy h1{font-size:42px}.hero-copy h1 span{font-size:21px}.hero-controls{gap:10px}.hero-tab{gap:6px}.hero-tabs{justify-content:space-between;width:100%}.hero-playback{margin-left:auto}.slide-actions .button{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;padding:16px 22px;background:#fff;color:#163b4b;border:1px solid #fff;font-size:13px;font-weight:600;min-height:52px;text-decoration:none}.slide-actions .button:after{content:"↗";font-size:20px}.slide-actions{gap:18px}}@media(prefers-reduced-motion:reduce){.hero-slide{transition:none}}
+</style>
+
