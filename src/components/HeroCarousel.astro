@@ -1,56 +1,95 @@
 ---
-const slides = [
- {tag:'SAIPAN IVF',title:'塞班试管婴儿',accent:'了解治疗与费用',subtitle:'IVF · ICSI · 生育咨询',text:'了解试管婴儿治疗流程、费用构成与到院安排。具体方案由接诊医生根据检查结果制定。',image:'saipan-lagoon-aerial.jpg',primary:'咨询试管婴儿',href:'#contact',secondary:'查看费用参考',secondaryHref:'#cost'},
- {tag:'TREATMENT CONSULTATION',title:'先了解方案',accent:'再安排治疗',subtitle:'检查资料 · 治疗选择 · 费用说明',text:'已有检查和治疗记录可以先整理好。初次咨询可了解需要补充哪些检查，以及取卵、培养和移植如何安排。',image:'couple-editorial.jpg',primary:'联系咨询',href:'#contact',secondary:'认识医疗团队',secondaryHref:'#clinical-team'},
- {tag:'BIRTH & DOCUMENTS',title:'计划在塞班生育？',accent:'先了解证件要求',subtitle:'出生登记 · 亲子关系 · 旅行证件',text:'试管婴儿治疗与分娩需要分别规划。孩子的国籍资格和证件办理取决于届时法律、个案情况及主管机关认定。',image:'american-flag.jpg',primary:'查看常见问题',href:'#faq',secondary:'了解产后安排',secondaryHref:'#postpartum'},
- {tag:'TRAVEL TO SAIPAN',title:'塞班就医服务',accent:'预约、交通与住宿',subtitle:'就诊预约 · 治疗日程 · 住宿准备',text:'根据医生确认的到院时间安排航班和住宿，预留调整空间。取卵与移植可能需要分次前往塞班。',image:'flight-wing.jpg',primary:'查看就诊流程',href:'#journey',secondary:'联系咨询',secondaryHref:'#contact'}
-];
+interface Slide {
+  tag: string;
+  title: string;
+  accent: string;
+  subtitle: string;
+  text: string;
+  primary: string;
+  secondary: string;
+  secondaryHref: string;
+  image: string;
+}
+interface Props {
+  slides: readonly Slide[];
+  labels: readonly string[];
+  aria: string;
+  previous: string;
+  next: string;
+  pause: string;
+  play: string;
+}
+const { slides, labels, aria, previous, next, pause, play } = Astro.props;
 ---
-<div class="hero-carousel" role="region" aria-roledescription="轮播" aria-label="塞班辅助生殖服务" data-hero-carousel>
- <div class="hero-slides">
- {slides.map((slide,index)=>{const Heading=index===0?'h1':'h2';return <article class:list={['hero-slide',{'is-active':index===0}]} aria-roledescription="幻灯片" aria-label={`${index+1} / ${slides.length}：${slide.subtitle}`} aria-hidden={index!==0} inert={index!==0} data-slide>
- <img class="hero-slide-image" src={`https://raw.githubusercontent.com/jiusongvip/saipan/main/public/images/${slide.image}`} alt="" loading="eager" fetchpriority={index===0?'high':'auto'} decoding="async"/>
- <div class="hero-shade"></div>
- <div class="hero-copy"><div class="hero-kicker">塞班试管婴儿咨询 · SAIPAN IVF</div><Heading class="hero-title">{slide.title}<br/><em>{slide.accent}</em><span>{slide.subtitle}</span></Heading><p>{slide.text}</p><div class="slide-actions"><a class="button light" href={slide.href}>{slide.primary}</a><a class="slide-secondary" href={slide.secondaryHref}>{slide.secondary} ↗</a></div></div>
- </article>})}
- </div>
- <div class="hero-controls">
- <div class="hero-tabs" role="group" aria-label="切换首屏内容">{slides.map((slide,index)=><button type="button" class:list={['hero-tab',{'is-active':index===0}]} aria-label={`显示第${index+1}张：${slide.subtitle}`} aria-pressed={index===0} data-slide-to={index}><span class="hero-tab-number">0{index+1}</span><span class="hero-tab-label">{['试管婴儿','医疗咨询','生育证件','就诊安排'][index]}</span></button>)}</div>
- <div class="hero-playback"><button type="button" data-hero-prev aria-label="上一张">←</button><button type="button" data-hero-next aria-label="下一张">→</button><button type="button" data-hero-pause aria-label="暂停自动切换"><span aria-hidden="true">Ⅱ</span></button></div>
- </div>
+<div class="hero-carousel" role="region" aria-roledescription="carousel" aria-label={aria} data-hero-carousel data-pause-label={pause} data-play-label={play}>
+  <div class="hero-slides">
+    {slides.map((slide, index) => {
+      const Heading = index === 0 ? 'h1' : 'h2';
+      return <article class:list={['hero-slide', { 'is-active': index === 0 }]} aria-roledescription="slide" aria-label={`${index + 1} / ${slides.length}: ${slide.subtitle}`} aria-hidden={index !== 0} inert={index !== 0} data-slide>
+        <img class="hero-slide-image" src={`https://raw.githubusercontent.com/jiusongvip/saipan/main/public/images/${slide.image}`} alt="" loading={index === 0 ? 'eager' : 'lazy'} fetchpriority={index === 0 ? 'high' : 'auto'} decoding="async" />
+        <div class="hero-shade"></div>
+        <div class="hero-copy">
+          <div class="hero-kicker">{slide.tag}</div>
+          <Heading class="hero-title">{slide.title}<br /><em>{slide.accent}</em><span>{slide.subtitle}</span></Heading>
+          <p>{slide.text}</p>
+          <div class="slide-actions"><a class="button light" href="#contact">{slide.primary}</a><a class="slide-secondary" href={slide.secondaryHref}>{slide.secondary} ↗</a></div>
+        </div>
+      </article>;
+    })}
+  </div>
+  <div class="hero-controls">
+    <div class="hero-tabs" role="group" aria-label={aria}>{slides.map((slide, index) => <button type="button" class:list={['hero-tab', { 'is-active': index === 0 }]} aria-label={`${index + 1}: ${slide.subtitle}`} aria-pressed={index === 0} data-slide-to={index}><span class="hero-tab-number">0{index + 1}</span><span class="hero-tab-label">{labels[index]}</span></button>)}</div>
+    <div class="hero-playback"><button type="button" data-hero-prev aria-label={previous}>←</button><button type="button" data-hero-next aria-label={next}>→</button><button type="button" data-hero-pause aria-label={pause}>Ⅱ</button></div>
+  </div>
 </div>
 <script>
-const root=document.querySelector<HTMLElement>('[data-hero-carousel]');
-if(root){
- const slides=Array.from(root.querySelectorAll<HTMLElement>('[data-slide]'));
- const tabs=Array.from(root.querySelectorAll<HTMLButtonElement>('[data-slide-to]'));
- const pause=root.querySelector<HTMLButtonElement>('[data-hero-pause]')!;
- let current=0,manualPause=false,timer:ReturnType<typeof setInterval>|undefined;
- function schedule(){
-  if(timer)clearInterval(timer);
-  timer=undefined;
-  pause.textContent=manualPause?'▶':'Ⅱ';
-  pause.setAttribute('aria-label',manualPause?'继续自动切换':'暂停自动切换');
-  if(!manualPause&&!root!.contains(document.activeElement)&&!document.hidden)timer=setInterval(()=>show(current+1),5000);
- }
- function show(index:number){
-  current=(index+slides.length)%slides.length;
-  slides.forEach((slide,i)=>{const active=i===current;slide.classList.toggle('is-active',active);slide.setAttribute('aria-hidden',String(!active));slide.inert=!active;});
-  tabs.forEach((tab,i)=>{tab.classList.toggle('is-active',i===current);tab.setAttribute('aria-pressed',String(i===current));});
- }
- tabs.forEach((tab,i)=>tab.addEventListener('click',()=>{show(i);schedule();}));
- root.querySelector('[data-hero-prev]')!.addEventListener('click',()=>{show(current-1);schedule();});
- root.querySelector('[data-hero-next]')!.addEventListener('click',()=>{show(current+1);schedule();});
- pause.addEventListener('click',()=>{manualPause=!manualPause;schedule();});
- root.addEventListener('focusin',schedule);
- root.addEventListener('focusout',()=>queueMicrotask(schedule));
- root.addEventListener('keydown',event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();show(current+(event.key==='ArrowRight'?1:-1));schedule();}});
- document.addEventListener('visibilitychange',schedule);
-
- schedule();
-}
+const roots = document.querySelectorAll<HTMLElement>('[data-hero-carousel]');
+roots.forEach(root => {
+  const slides = Array.from(root.querySelectorAll<HTMLElement>('[data-slide]'));
+  const tabs = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-slide-to]'));
+  const pauseButton = root.querySelector<HTMLButtonElement>('[data-hero-pause]')!;
+  const pauseLabel = root.dataset.pauseLabel!;
+  const playLabel = root.dataset.playLabel!;
+  let current = 0;
+  let manuallyPaused = false;
+  let timer: ReturnType<typeof setInterval> | undefined;
+  const show = (index: number) => {
+    current = (index + slides.length) % slides.length;
+    slides.forEach((slide, itemIndex) => {
+      const active = itemIndex === current;
+      slide.classList.toggle('is-active', active);
+      slide.setAttribute('aria-hidden', String(!active));
+      slide.inert = !active;
+    });
+    tabs.forEach((tab, itemIndex) => {
+      tab.classList.toggle('is-active', itemIndex === current);
+      tab.setAttribute('aria-pressed', String(itemIndex === current));
+    });
+  };
+  const schedule = () => {
+    if (timer) clearInterval(timer);
+    timer = undefined;
+    pauseButton.textContent = manuallyPaused ? '▶' : 'Ⅱ';
+    pauseButton.setAttribute('aria-label', manuallyPaused ? playLabel : pauseLabel);
+    if (!manuallyPaused && !root.contains(document.activeElement) && !document.hidden) timer = setInterval(() => show(current + 1), 6000);
+  };
+  tabs.forEach((tab, index) => tab.addEventListener('click', () => { show(index); schedule(); }));
+  root.querySelector('[data-hero-prev]')!.addEventListener('click', () => { show(current - 1); schedule(); });
+  root.querySelector('[data-hero-next]')!.addEventListener('click', () => { show(current + 1); schedule(); });
+  pauseButton.addEventListener('click', () => { manuallyPaused = !manuallyPaused; schedule(); });
+  root.addEventListener('focusin', schedule);
+  root.addEventListener('focusout', () => queueMicrotask(schedule));
+  root.addEventListener('keydown', event => {
+    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+      event.preventDefault();
+      show(current + (event.key === 'ArrowRight' ? 1 : -1));
+      schedule();
+    }
+  });
+  document.addEventListener('visibilitychange', schedule);
+  schedule();
+});
 </script>
 <style>
-.hero-carousel{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;min-height:0}.hero-slides{position:relative;display:grid;flex:1}.hero-slide{isolation:isolate;grid-area:1/1;position:relative;min-width:0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .8s ease,visibility .8s}.hero-slide.is-active{opacity:1;visibility:visible;pointer-events:auto}.hero-slide-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;z-index:-2}.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,39,53,.88),rgba(8,47,62,.53) 60%,rgba(8,47,62,.13));z-index:-1}.hero-copy{position:relative;padding:clamp(36px,7vh,90px) 7% 44px;max-width:1060px;color:#fff}.hero-kicker{font-size:11px;font-weight:600;letter-spacing:3px;color:#d4edf3}.hero-copy .hero-title{font:400 clamp(45px,5.5vw,82px)/1.08 'Noto Sans SC',sans-serif;letter-spacing:-.5px;margin:24px 0 18px}.hero-copy .hero-title em{font-style:normal;font-weight:400}.hero-copy .hero-title span{display:block;font:400 clamp(22px,2.3vw,34px)/1.5 'Noto Sans SC',sans-serif;letter-spacing:.5px;margin-top:17px}.hero-copy p{max-width:580px;color:#eaf5f6;font-size:15px;line-height:1.9;margin:16px 0 22px}.slide-actions .button{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;padding:16px 22px;background:#fff;color:#163b4b;border:1px solid #fff;font-size:13px;font-weight:600;min-height:52px;text-decoration:none}.slide-actions .button:after{content:"↗";font-size:20px}.slide-actions{display:flex;align-items:center;gap:25px;flex-wrap:wrap}.slide-secondary{font-size:13px;color:white;text-decoration:underline;text-underline-offset:6px}.hero-controls{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 7% 24px;background:#103748;color:#fff}.hero-tabs{display:flex;gap:22px;flex-wrap:wrap}.hero-tab{display:flex;align-items:center;gap:10px;padding:10px 0;border:0;border-top:2px solid #ffffff40;background:none;color:#afc8d1;font:inherit;cursor:pointer;min-height:44px}.hero-tab.is-active{color:white;border-top-color:white}.hero-tab-number{font-size:12px;letter-spacing:1px}.hero-tab-label{font-size:12px}.hero-playback{display:flex;gap:8px}.hero-playback button{min-width:44px;min-height:44px;padding:8px 12px;background:none;border:1px solid #ffffff66;color:white;cursor:pointer;font:inherit;font-size:12px}button:focus-visible,a:focus-visible{outline:3px solid #b5e5ed;outline-offset:5px}@media(max-width:800px){.hero-copy{padding:35px 6% 28px}.hero-copy .hero-title{font-size:clamp(40px,8vw,62px)}.hero-copy p{font-size:13px}.hero-controls{padding:15px 6%;flex-wrap:wrap}.hero-tabs{gap:20px}.hero-tab-label{font-size:11px}.hero-kicker{font-size:9px;letter-spacing:2px}}@media(max-width:420px){.hero-copy .hero-title{font-size:36px}.hero-copy .hero-title span{font-size:21px}.hero-controls{gap:10px}.hero-tab{gap:6px}.hero-tabs{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 18px;width:100%}.hero-playback{margin-left:auto}.slide-actions .button{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;padding:16px 22px;background:#fff;color:#163b4b;border:1px solid #fff;font-size:13px;font-weight:600;min-height:52px;text-decoration:none}.slide-actions .button:after{content:"↗";font-size:20px}.slide-actions{gap:18px}}@media(prefers-reduced-motion:reduce){.hero-slide{transition:none}}
+.hero-carousel{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;min-height:0}.hero-slides{position:relative;display:grid;flex:1}.hero-slide{isolation:isolate;grid-area:1/1;position:relative;min-width:0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .65s ease,visibility .65s}.hero-slide.is-active{opacity:1;visibility:visible;pointer-events:auto}.hero-slide-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;z-index:-2}.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,39,53,.92),rgba(8,47,62,.58) 62%,rgba(8,47,62,.18));z-index:-1}.hero-copy{position:relative;padding:clamp(40px,7vh,88px) 7% 48px;max-width:1120px;color:#fff}.hero-kicker{font-size:11px;font-weight:700;letter-spacing:2.5px;color:#bfe2e9}.hero-title{font:500 clamp(43px,5.5vw,78px)/1.12 var(--display);letter-spacing:-1px;margin:23px 0 18px}.hero-title em{font-style:normal;color:#c5eaf0}.hero-title span{display:block;font:500 clamp(18px,1.9vw,28px)/1.5 var(--sans);letter-spacing:.2px;margin-top:18px}.hero-copy p{max-width:660px;color:#e9f4f6;font-size:15px;line-height:1.85;margin:16px 0 24px}.slide-actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap}.slide-secondary{font-size:13px;color:white;text-decoration:underline;text-underline-offset:6px}.hero-controls{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:15px 7% 18px;background:#0d3444;color:#fff}.hero-tabs{display:flex;gap:22px;flex-wrap:wrap}.hero-tab{display:flex;align-items:center;gap:9px;padding:9px 0;border:0;border-top:2px solid #ffffff38;background:none;color:#a9c4cd;cursor:pointer;min-height:44px}.hero-tab.is-active{color:white;border-top-color:#bfeaf2}.hero-tab-number{font-size:11px;letter-spacing:1px}.hero-tab-label{font-size:12px}.hero-playback{display:flex;gap:8px}.hero-playback button{min-width:44px;min-height:44px;padding:8px 12px;background:none;border:1px solid #ffffff5e;color:white;cursor:pointer}.hero-tab:focus-visible,.hero-playback button:focus-visible,.slide-actions a:focus-visible{outline:3px solid #b5e5ed;outline-offset:4px}@media(max-width:800px){.hero-copy{padding:40px 6% 30px}.hero-title{font-size:clamp(38px,8vw,58px)}.hero-copy p{font-size:13px}.hero-controls{padding:13px 6%;flex-wrap:wrap}.hero-tabs{gap:16px}.hero-tab-label{font-size:11px}}@media(max-width:480px){.hero-title{font-size:36px}.hero-title span{font-size:19px}.hero-tabs{display:grid;grid-template-columns:repeat(2,1fr);gap:7px 18px;width:100%}.hero-playback{margin-left:auto}}@media(prefers-reduced-motion:reduce){.hero-slide{transition:none}}
 </style>
-
