@@ -16,7 +16,7 @@ for path in [Path('dist/index.html'),*Path('dist').rglob('*/index.html')]:
   assert href and href!='#',(path,'empty link')
   if href.startswith('#'):assert href[1:] in page.ids,(path,'missing anchor',href)
   if href.startswith('/'):
-   dest=Path('dist')/href.split('#')[0].lstrip('/')
+   dest=Path('dist')/href.split('#')[0].split('?')[0].lstrip('/')
    assert dest.exists(),(path,'missing internal route',href)
  assert 'mailto:info@saipan-ivf.com' in page.links,(path,'missing contact action')
  if path.parts[1] in ['en','ja','zh-hant']:assert 'aria-current="page"' in s,(path,'missing active language')

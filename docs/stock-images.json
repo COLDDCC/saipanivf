@@ -60,7 +60,7 @@
     "height": 900,
     "bytes": 35146,
     "placements": [
-      "dist/treatments/index.html"
+      "dist/treatments/icsi/index.html"
     ]
   },
   {
@@ -76,7 +76,7 @@
     "height": 1000,
     "bytes": 25202,
     "placements": [
-      "dist/treatments/index.html"
+      "dist/treatments/egg-freezing/index.html"
     ]
   },
   {
@@ -108,7 +108,7 @@
     "height": 1000,
     "bytes": 42592,
     "placements": [
-      "dist/treatments/index.html"
+      "dist/treatments/ivf/index.html"
     ]
   },
   {
@@ -188,7 +188,7 @@
     "height": 800,
     "bytes": 20962,
     "placements": [
-      "dist/treatments/index.html"
+      "dist/treatments/frozen-embryo-transfer/index.html"
     ]
   },
   {
