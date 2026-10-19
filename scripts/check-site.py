@@ -9,7 +9,7 @@ class Page(HTMLParser):
   if tag=='a':self.links.append(a.get('href',''))
   if tag=='h1':self.h1+=1
 for path in [Path('dist/index.html'),*Path('dist').glob('*/index.html')]:
- page=Page();s=path.read_text();page.feed(s)
+ page=Page();s=path.read_text(encoding='utf-8');page.feed(s)
  assert page.h1==1,(path,'H1 count',page.h1)
  assert all(n==1 for n in Counter(page.ids).values()),(path,'duplicate IDs')
  for href in page.links:

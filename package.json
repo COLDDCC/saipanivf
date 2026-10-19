@@ -6,7 +6,12 @@
   "scripts": {
     "dev": "astro dev --host 0.0.0.0",
     "build": "astro build",
-    "preview": "astro preview --host 0.0.0.0"
+    "preview": "astro preview --host 0.0.0.0",
+    "check:budget": "node scripts/check-budget.mjs",
+    "check:hero": "node scripts/check-hero.mjs",
+    "check:site": "python scripts/check-site.py",
+    "check": "npm run check:budget && npm run check:hero && npm run check:site",
+    "verify": "npm run build && npm run check"
   },
   "dependencies": {
     "astro": "^5.16.0"
