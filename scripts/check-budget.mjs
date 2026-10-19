@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
-const html=fs.readFileSync('dist/index.html','utf8');
+const html=fs.readFileSync('dist/fees/index.html','utf8');
 const scripts=[...html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g)].map(m=>m[1]);
 const script=scripts.find(s=>s.includes('budget-total'));
 assert.ok(script,'Built budget script exists');

@@ -1,9 +1,9 @@
 ---
 const slides = [
- {tag:'SAIPAN IVF',title:'塞班试管婴儿',accent:'先聊聊，再决定',subtitle:'IVF · ICSI · 冻卵',text:'花多少钱、去几次、待多久，聊一次就清楚。',image:'saipan-lagoon-aerial.jpg',primary:'加微信聊聊',href:'#contact',secondary:'看看费用',secondaryHref:'#cost'},
- {tag:'FIRST CONSULT',title:'第一次咨询',accent:'不用先做检查',subtitle:'发资料 · 医生评估 · 出方案',text:'把已有的检查单发来就行，没有也能先问。',image:'couple-editorial.jpg',primary:'开始咨询',href:'#contact',secondary:'认识医生',secondaryHref:'#clinical-team'},
- {tag:'BABY IN SAIPAN',title:'在塞班生宝宝',accent:'出生就是美国籍',subtitle:'出生登记 · 证件 · 月子',text:'出生、办证、坐月子，一次安排妥当。',image:'american-flag.jpg',primary:'看看常见问题',href:'#faq',secondary:'了解月子',secondaryHref:'#postpartum'},
- {tag:'TRAVEL & STAY',title:'说走就走',accent:'机票 · 住宿 · 接送',subtitle:'按时就诊 · 安心住下',text:'机票、住宿、接送都帮你订好，来就行。',image:'flight-wing.jpg',primary:'看看流程',href:'#journey',secondary:'加微信聊聊',secondaryHref:'#contact'}
+{title:'塞班试管婴儿',accent:'了解方案、费用与流程',subtitle:'IVF · ICSI · 胚胎移植',text:'从初诊评估到治疗安排，按阶段了解检查资料、预算构成与就诊时间。',image:'saipan-lagoon-aerial.jpg',primary:'提交初步咨询表单',href:'/contact/',secondary:'查看费用预算',secondaryHref:'/fees/'},
+{title:'冻卵与冻精',accent:'了解生育力保存',subtitle:'初诊评估 · 冷冻 · 保存',text:'分别确认治疗周期、冷冻操作、年度保存和未来使用的安排。',image:'couple-editorial.jpg',primary:'了解治疗项目',href:'/treatments/',secondary:'阅读冻卵指南',secondaryHref:'/guides/egg-freezing/'},
+{title:'认识医疗团队',accent:'就诊前了解接诊方',subtitle:'医生 · 胚胎实验室 · 护理',text:'查看院方公开介绍，预约前确认主诊医生、具体医疗地点与服务范围。',image:'american-flag.jpg',primary:'认识团队',href:'/team/',secondary:'了解中心',secondaryHref:'/about/'},
+{title:'IVF就诊安排',accent:'按治疗日程准备',subtitle:'资料 · 预约 · 治疗 · 随访',text:'先整理已有报告，取得个人日程后，再安排交通、住宿与陪同。',image:'flight-wing.jpg',primary:'查看IVF流程',href:'/process/',secondary:'阅读就诊指南',secondaryHref:'/guides/'}
 ];
 ---
 <div class="hero-carousel" role="region" aria-roledescription="轮播" aria-label="塞班辅助生殖服务" data-hero-carousel>
@@ -15,7 +15,7 @@ const slides = [
  </article>})}
  </div>
  <div class="hero-controls">
- <div class="hero-tabs" role="group" aria-label="切换首屏内容">{slides.map((slide,index)=><button type="button" class:list={['hero-tab',{'is-active':index===0}]} aria-label={`显示第${index+1}张：${slide.subtitle}`} aria-pressed={index===0} data-slide-to={index}><span class="hero-tab-number">0{index+1}</span><span class="hero-tab-label">{['试管婴儿','第一次咨询','在塞班生宝宝','说走就走'][index]}</span></button>)}</div>
+ <div class="hero-tabs" role="group" aria-label="切换首屏内容">{slides.map((slide,index)=><button type="button" class:list={['hero-tab',{'is-active':index===0}]} aria-label={`显示第${index+1}张：${slide.subtitle}`} aria-pressed={index===0} data-slide-to={index}><span class="hero-tab-number">0{index+1}</span><span class="hero-tab-label">{['试管婴儿','生育力保存','医疗团队','IVF流程'][index]}</span></button>)}</div>
  <div class="hero-playback"><button type="button" data-hero-prev aria-label="上一张">←</button><button type="button" data-hero-next aria-label="下一张">→</button><button type="button" data-hero-pause aria-label="暂停自动切换"><span aria-hidden="true">Ⅱ</span></button></div>
  </div>
 </div>

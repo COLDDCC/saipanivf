@@ -1,0 +1,15 @@
+---
+import '../styles/site.css';
+const {title,description,active='',home=false}=Astro.props;
+const nav=[["about", "关于中心"], ["treatments", "治疗项目"], ["team", "医疗团队"], ["process", "IVF流程"], ["fees", "费用预算"], ["guides", "就诊指南"], ["contact", "联系咨询"]];
+const canonical=new URL(Astro.url.pathname,'https://saipanivf.pages.dev');
+---
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>{title} · 塞班生殖中心</title><meta name="description" content={description}/><link rel="canonical" href={canonical}/></head><body>
+<div class="identity-bar">塞班试管婴儿与生育力保存咨询 · 医疗评估与治疗由接诊机构负责</div>
+<header class="header"><a class="brand" href="/">Saipan IVF<small>塞班生殖中心 · 中文咨询</small></a><button class="menu-button" aria-controls="main-nav" aria-expanded="false" id="menu-btn">菜单 ☰</button><nav class="nav" id="main-nav" aria-label="主要导航"><a href="/" aria-current={home?'page':undefined}>首页</a>{nav.map(([slug,label])=><a href={`/${slug}/`} aria-current={active===slug?'page':undefined}>{label}</a>)}</nav></header>
+{!home&&<div class="page-head"><div class="breadcrumbs"><a href="/">首页</a> / {title}</div><h1>{title}</h1><p>{description}</p></div>}
+<main><slot/></main>
+<footer class="footer"><nav class="footer-nav" aria-label="页脚导航">{nav.map(([slug,label])=><a href={`/${slug}/`}>{label}</a>)}</nav><div class="footer-inner"><div class="brand">Saipan IVF<small>塞班生殖中心 · 中文咨询</small></div><div><p>咨询邮箱：<a href="mailto:info@saipan-ivf.com">info@saipan-ivf.com</a><br/>院方公开地址：3rd Floor, Bank of Guam, Garapan, Saipan, MP 96950。</p><a class="inline-link" href="https://www.saipan-ivf.com/" target="_blank" rel="noopener">接诊机构官网 ↗</a></div></div><div class="footer-bottom">© 2026 Saipan IVF · 本站提供项目介绍与就诊协调信息。医疗方案由接诊医生制定；费用预算为编制假设，以院方书面报价为准。图片为情境示意。<br/>不承诺治疗结果、入境许可或公民身份。请勿通过普通邮件发送完整病历、证件号码等敏感资料。</div></footer><a class="floating" href="/contact/">联系咨询 ↗</a><script>
+const menu=document.getElementById("menu-btn"),nav=document.getElementById("main-nav");menu.addEventListener("click",()=>{let open=nav.classList.toggle("open");menu.setAttribute("aria-expanded",String(open))});nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");menu.setAttribute("aria-expanded","false")}));
+document.addEventListener("keydown",event=>{if(event.key==="Escape"&&nav.classList.contains("open")){nav.classList.remove("open");menu.setAttribute("aria-expanded","false");menu.focus()}});
+</script></body></html>
