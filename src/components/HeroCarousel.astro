@@ -6,6 +6,7 @@ interface Slide {
   subtitle: string;
   text: string;
   primary: string;
+  primaryHref: string;
   secondary: string;
   secondaryHref: string;
   image: string;
@@ -32,7 +33,7 @@ const { slides, labels, aria, previous, next, pause, play } = Astro.props;
           <div class="hero-kicker">{slide.tag}</div>
           <Heading class="hero-title">{slide.title}<br /><em>{slide.accent}</em><span>{slide.subtitle}</span></Heading>
           <p>{slide.text}</p>
-          <div class="slide-actions"><a class="button light" href="#contact">{slide.primary}</a><a class="slide-secondary" href={slide.secondaryHref}>{slide.secondary} ↗</a></div>
+          <div class="slide-actions"><a class="button light" href={slide.primaryHref}>{slide.primary}</a><a class="slide-secondary" href={slide.secondaryHref}>{slide.secondary} ↗</a></div>
         </div>
       </article>;
     })}
