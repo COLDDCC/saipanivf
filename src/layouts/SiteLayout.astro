@@ -1,7 +1,7 @@
 ---
 import '../styles/site.css';
 const {title,description,active='',home=false}=Astro.props;
-const nav=[["about", "关于中心"], ["treatments", "治疗项目"], ["team", "医疗团队"], ["process", "IVF流程"], ["fees", "费用预算"], ["guides", "就诊指南"], ["contact", "联系咨询"]];
+const nav=[["about", "关于中心"], ["treatments", "治疗项目"], ["team", "医疗团队"], ["process", "IVF流程"], ["fees", "费用预算"], ["guides", "就诊指南"], ["birth-planning", "赴美生育"], ["contact", "联系咨询"]];
 const canonical=new URL(Astro.url.pathname,'https://saipanivf.pages.dev');
 ---
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>{title} · 塞班生殖中心</title><meta name="description" content={description}/><link rel="canonical" href={canonical}/></head><body>
