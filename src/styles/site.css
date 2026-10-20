@@ -17,3 +17,7 @@
 @media(max-width:650px){.faq-index{grid-template-columns:1fr;margin-block:24px 32px}.faq-index a{font-size:15px;padding-block:12px}}
 
 .faq-directory{margin:26px 0 32px;border-bottom:1px solid #c7d8d9;padding-bottom:18px}.faq-directory>summary{cursor:pointer;font-size:16px;line-height:1.8}.faq-directory .faq-index{margin-bottom:0}
+
+/* Keep navigation and floating actions usable with touch and device safe areas. */
+@media(max-width:800px){.menu-button{min-width:52px;min-height:44px}.nav.open>a,.nav-group>div>a{display:flex;align-items:center;min-height:44px}.nav-group summary{min-height:44px}.nav{overscroll-behavior:contain}}
+@media(max-width:600px){.floating{bottom:calc(16px + env(safe-area-inset-bottom,0px));right:calc(16px + env(safe-area-inset-right,0px));min-height:44px}.footer{padding-bottom:calc(78px + env(safe-area-inset-bottom,0px))}.footer-nav{gap:4px 23px}.footer-nav a{display:inline-flex;align-items:center;min-height:44px}.success{overflow-wrap:anywhere}}
