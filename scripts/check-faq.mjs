@@ -21,7 +21,9 @@ assert.equal(questions['ivf-duration'].open,true,'Back/forward hash changes must
 questions['ivf-duration'].open=false;links[1].listeners.click();
 assert.equal(questions['ivf-duration'].open,true,'Clicking the same hash again must reopen a closed answer');
 window.location.hash='#unknown-question';assert.doesNotThrow(()=>events.hashchange());
-assert.match(html,/<details class="faq-directory">/,'The question directory must start collapsed');
+const directory=html.match(/<details\b[^>]*class="faq-directory"[^>]*>/)?.[0];
+assert.ok(directory,'The question directory must exist');
+assert.ok(!/\sopen(?:[\s=>])/.test(directory),'The question directory must start collapsed');
 const contact=fs.readFileSync('dist/contact/index.html','utf8');
 assert.match(contact,/<noscript><style>#consult-form\{display:none\}<\/style>/,'Without JS, the form must not fall back to GET submission');
 assert.ok(!contact.includes('class="floating"'),'The contact form should not have a redundant floating contact button');

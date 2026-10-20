@@ -1,8 +1,14 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 import { faqs } from "../data/faq";
+const groups = [
+ {title:'治疗选择与结果',ids:['available-treatments','icsi-results'],start:'available-treatments'},
+ {title:'费用与预算',ids:['ivf-budget','ivf-base-budget'],start:'ivf-budget'},
+ {title:'初诊与治疗时间',ids:['ivf-duration','first-consultation','separate-visits','care-provider'],start:'ivf-duration'},
+ {title:'出行与子女身份',ids:['birth-citizenship','ivf-and-citizenship','parents-residency','travel-authorization'],start:'birth-citizenship'}
+];
 ---
-<SiteLayout title="常见问题" description="关于塞班出生公民身份、IVF费用、治疗时间、ICSI和首次咨询，先看结论，再查依据。" active="faq"><section class="section wrap" id="faq"><h2>你关心的问题，逐项回答</h2><p class="lead">了解身份、费用、治疗时间与初诊准备，查看具体说明和资料来源。</p><details class="faq-directory"><summary>按问题快速查找 · {faqs.length}项</summary><nav class="faq-index" aria-label="问题目录">{faqs.map(item=><a href={`#${item.id}`}>{item.question}</a>)}</nav></details><div class="faq">{faqs.map((item,i)=><details id={item.id} open={i===0}><summary>{item.question}</summary><p class="faq-answer"><strong>{item.answer}</strong></p><p>{item.detail}</p><a class="inline-link" href={item.source} target={item.source.startsWith('https:')?'_blank':undefined} rel={item.source.startsWith('https:')?'noopener':undefined}>{item.sourceLabel}</a></details>)}</div><p class="caption">资料核对日期：2026年10月19日。历史规则、研究人群和机构预算各有适用范围；未来个案需核对届时规则与个人条件。</p></section><script>
+<SiteLayout title="常见问题" description="关于塞班出生公民身份、IVF费用、治疗时间、ICSI和首次咨询，先看结论，再查依据。" active="faq"><section class="section wrap" id="faq"><h2>你关心的问题，逐项回答</h2><p class="lead">了解身份、费用、治疗时间与初诊准备，查看具体说明和资料来源。</p><nav class="faq-topics faq-index" aria-label="按主题查看常见问题">{groups.map(group=><a href={`#${group.start}`}><strong>{group.title}</strong><span>{group.ids.length}个问题 · 查看答案</span></a>)}</nav><details class="faq-directory"><summary>按问题快速查找 · {faqs.length}项</summary><nav class="faq-index" aria-label="问题目录">{groups.map(group=><section class="faq-topic-group"><h3>{group.title}</h3>{group.ids.map(id=>faqs.find(item=>item.id===id)).filter(Boolean).map(item=><a href={`#${item.id}`}>{item.question}</a>)}</section>)}</nav></details><div class="faq">{faqs.map((item,i)=><details id={item.id} open={i===0}><summary>{item.question}</summary><p class="faq-answer"><strong>{item.answer}</strong></p><p>{item.detail}</p><a class="inline-link" href={item.source} target={item.source.startsWith('https:')?'_blank':undefined} rel={item.source.startsWith('https:')?'noopener':undefined}>{item.sourceLabel}</a></details>)}</div><p class="caption">资料核对日期：2026年10月19日。历史规则、研究人群和机构预算各有适用范围；未来个案需核对届时规则与个人条件。</p></section><script>
 function revealQuestion(id=window.location.hash.slice(1)){
  const question=document.getElementById(id);
  if(question instanceof HTMLDetailsElement){question.open=true;requestAnimationFrame(()=>question.scrollIntoView({block:'start'}));}
@@ -10,3 +16,5 @@ function revealQuestion(id=window.location.hash.slice(1)){
 revealQuestion();window.addEventListener('hashchange',()=>revealQuestion());
 document.querySelectorAll<HTMLAnchorElement>('.faq-index a').forEach(link=>link.addEventListener('click',()=>revealQuestion(link.hash.slice(1))));
 </script></SiteLayout>
+
+<style>.faq-topics.faq-index{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin:28px 0}.faq-topics a{display:flex;flex-direction:column;gap:10px;padding:22px;background:var(--light);border:0;text-decoration:none}.faq-topics strong{font-size:18px;font-weight:500}.faq-topics span{font-size:13px;color:var(--muted)}.faq-topics a:hover strong{text-decoration:underline;text-underline-offset:5px}.faq-topic-group{min-width:0}.faq-topic-group h3{font-size:19px;margin:20px 0 8px}.faq-topic-group a{display:block;min-height:44px}@media(max-width:850px){.faq-topics.faq-index{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:450px){.faq-topics.faq-index{gap:12px}.faq-topics a{padding:18px}.faq-topics strong{font-size:17px}}</style>
