@@ -8,6 +8,7 @@ function element(){return {listeners:{},attrs:{},classList:{toggle(){}},setAttri
 function setup(reduced=false){
  const slides=[element(),element(),element(),element()],tabs=[element(),element(),element(),element()];
  const pause=element(),prev=element(),next=element(),root=element(),motion={matches:reduced,addEventListener(){}};
+ root.dataset={pauseLabel:'暂停自动切换',resumeLabel:'继续自动切换'};
  root.querySelectorAll=s=>s==='[data-slide]'?slides:tabs;
  root.querySelector=s=>s==='[data-hero-pause]'?pause:s==='[data-hero-prev]'?prev:next;root.contains=()=>false;
  const document={hidden:false,activeElement:null,querySelector:()=>root,addEventListener(){}};

@@ -1,3 +1,5 @@
 import { defineConfig } from "astro/config";
 
-export default defineConfig({ site: "https://saipanivf.pages.dev", output: "static" });
+import traditional from "./src/integrations/traditional.mjs";
+
+export default defineConfig({ site: "https://saipanivf.pages.dev", output: "static", integrations: [traditional()] });

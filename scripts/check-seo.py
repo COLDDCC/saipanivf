@@ -21,10 +21,7 @@ class Head(HTMLParser):
 titles=set();expected=set()
 for path in Path('dist').rglob('index.html'):
  page=Head();page.feed(path.read_text());route='/'+str(path.parent.relative_to('dist')).strip('.')
- if route!='/':route+='/'
- if route in ['/en/','/ja/','/zh-hant/']:
-  assert 'noindex' in page.meta.get('robots',''),path
-  continue
+ if route not in ['/','/en/','/ja/','/zh-hant/']:route+='/'
  expected.add(ORIGIN+route)
  assert page.canonical==ORIGIN+route,(path,'canonical')
  for key in ['description','og:title','og:description','og:image','twitter:card']:
@@ -34,7 +31,7 @@ for path in Path('dist').rglob('index.html'):
  assert share.is_file(),(path,'share image')
  graph=page.ld[0]['@graph'];types=[node['@type'] for node in graph]
  assert 'WebSite' in types and 'WebPage' in types
- if route!='/':
+ if route not in ['/','/en/','/ja/','/zh-hant/']:
   crumbs=next(node['itemListElement'] for node in graph if node['@type']=='BreadcrumbList')
   assert crumbs[-1]['item']==page.canonical
  for image in page.images:
@@ -50,7 +47,7 @@ slides=[im for im in hero.images if 'hero-slide-image' in im.get('class','')]
 assert len(slides)==4 and slides[0]['loading']=='eager' and slides[0]['fetchpriority']=='high'
 assert all(im['loading']=='lazy' for im in slides[1:])
 assert slides[0]['src'].startswith('/images/')
-print(f'PASS SEO: {len(expected)} indexable pages, sitemap coverage, canonical, JSON-LD, sharing, responsive sources; 3 archived translations noindex; hero priority.')
+print(f'PASS SEO: {len(expected)} indexable pages, sitemap coverage, canonical, JSON-LD, sharing, responsive sources; complete multilingual pages; hero priority.')
 
 not_found=Path('dist/404.html')
 assert not_found.is_file(),'Missing Cloudflare Pages 404 document'
