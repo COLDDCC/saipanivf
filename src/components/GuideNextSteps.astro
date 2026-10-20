@@ -1,0 +1,20 @@
+---
+const { guide } = Astro.props;
+const paths = {
+  'first-visit': [['/treatments/','比较治疗项目'],['/team/','了解接诊团队'],['/process/','查看就诊流程']],
+  'ivf-steps': [['/treatments/ivf/','了解IVF项目'],['/fees/','估算治疗预算'],['/process/','查看完整就诊流程']],
+  'quotation': [['/fees/','使用费用预算工具'],['/process/','核对治疗与出行时间'],['/service-scope/','核对收费与取消规则']],
+  'egg-freezing': [['/treatments/egg-freezing/','了解冻卵项目'],['/fees/','估算冻卵预算'],['/process/','核对监测与取卵安排']],
+  'travel-checklist': [['/process/','按就诊流程安排行程'],['/guides/first-visit/','整理初诊资料'],['/service-scope/','确认协调服务范围']],
+  'family-planning': [['/treatments/','了解治疗方向'],['/fees/','核对费用组成'],['/service-scope/','确认医疗与协调职责']]
+};
+const topic = guide === 'egg-freezing' ? '冻卵与生育力保存' : guide === 'ivf-steps' ? '试管婴儿 IVF' : '';
+---
+<section class="guide-next">
+  <h2>接下来，按你的问题继续了解</h2>
+  <nav aria-label="相关就诊资料">{paths[guide].map(([href,label]) => <a class="inline-link" href={href}>{label}</a>)}</nav>
+  <p>{topic ? '咨询时可先说明关注的项目，整理已有报告与想了解的问题。' : '还没有确定治疗方向？可以先说明你的问题，了解初诊需要准备哪些资料。'}</p>
+  <a class="button" href={'/contact/' + (topic ? '?topic=' + encodeURIComponent(topic) : '')}>{topic ? '咨询' + (guide === 'egg-freezing' ? '冻卵' : 'IVF') + '初诊安排' : '了解初诊安排'}</a>
+  <a class="inline-link" href="/guides/">返回就诊指南</a>
+</section>
+<style>.guide-next{margin-top:48px;padding:28px;background:var(--light)}.guide-next h2{font-size:26px;margin:0 0 14px}.guide-next nav{display:flex;flex-wrap:wrap;gap:8px 28px}.guide-next p{font-size:16px}.guide-next>.inline-link{margin-left:22px}@media(max-width:600px){.guide-next{padding:22px}.guide-next nav{display:grid;gap:0}.guide-next>.inline-link{margin-left:0;display:block}}</style>
