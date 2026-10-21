@@ -41,3 +41,6 @@ for(const wrong of ['ESTA or EVS-TAP authorisation is limited to the Northern Ma
  for(const locale of ['en','ja','ko']) assert.ok(!fs.readFileSync(`dist/${locale}/faq/index.html`,'utf8').includes(wrong),'Do not limit ESTA to CNMI');
 }
 console.log('PASS travel FAQ: distinct programmes, stay limits, medical purpose and official references.');
+
+assert.ok(tw.includes('符合資格的台灣護照持有人，取得ESTA承認'),'Traditional Chinese must use the Taiwan VWP answer, not the PRC EVS-TAP answer');
+assert.ok(!tw.includes('EVS-TAP條件並獲旅行授權的台灣公民'),'Do not apply PRC-only eligibility to Taiwan passport holders');

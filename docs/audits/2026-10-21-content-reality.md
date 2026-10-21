@@ -4,7 +4,7 @@ Scope: treatment descriptions, FAQ, fee calculation and cross-language travel cl
 
 ## Confirmed correction
 
-English, Japanese and Korean travel FAQ incorrectly limited both ESTA and CNMI EVS-TAP to CNMI. These are separate programmes. Corrected their geographic scope and 90-day versus 14-day limits. Traditional Chinese also incorrectly implied medical visits were not permitted under ESTA/VWP; corrected eligibility wording. Added official VWP and visitor-visa references, including the distinction between medical visits and travel primarily to obtain citizenship through childbirth. Neither authorisation guarantees admission.
+English, Japanese and Korean travel FAQ incorrectly limited both ESTA and CNMI EVS-TAP to CNMI. These are separate programmes. Corrected their geographic scope and 90-day versus 14-day limits. Traditional Chinese also incorrectly implied medical visits were not permitted under ESTA/VWP; corrected eligibility wording. Live verification also exposed an OpenCC conversion mismatch (免籤 versus 免簽) that prevented the Taiwan-specific question and answer from replacing the PRC text. Corrected the exact conversion keys and added an explicit Taiwan eligibility regression check. Added official VWP and visitor-visa references, including the distinction between medical visits and travel primarily to obtain citizenship through childbirth. Neither authorisation guarantees admission.
 
 Official references:
 - https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html
