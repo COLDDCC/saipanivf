@@ -1,0 +1,44 @@
+---
+import { journeyCopy } from '../i18n/journey';
+import { pageHref } from '../i18n';
+import ResponsiveImage from './ResponsiveImage.astro';
+const {locale='zh-CN'}=Astro.props;const c=journeyCopy[locale];
+const href=(key)=>locale==='zh-CN'?'/'+key+'/':pageHref(locale,key);
+const ids=['stage-enquiry','stage-records','stage-assessment','stage-quotation','stage-treatment','follow-up'];
+---
+<section class="care-journey" id="journey" data-care-journey>
+ <div class="journey-heading"><div><h2>{c.title}</h2><p class="lead">{c.intro}</p></div><div class="journey-print-controls"><button class="button" type="button" data-print-journey hidden>{c.print}</button><p class="caption">{c.printHint}</p></div></div>
+ <nav class="stage-overview" aria-label={c.title}>{c.stages.map((stage,i)=><a href={'#'+ids[i]}><span aria-hidden="true">{String(i+1).padStart(2,'0')}</span>{stage[0]}</a>)}</nav>
+ <div class="care-stages">{c.stages.map((stage,i)=><article class="care-stage" id={ids[i]}><h3><span aria-hidden="true">{String(i+1).padStart(2,'0')}</span>{stage[0]}</h3><dl>{c.labels.map((label,j)=><div class:list={{'stage-result':j===2}}><dt>{label}</dt><dd>{stage[j+1]}</dd></div>)}</dl></article>)}</div>
+ <section class="ready-checklist" aria-labelledby="ready-title"><h2 id="ready-title">{c.checklist}</h2><p>{c.checkIntro}</p><fieldset><legend class="sr-only">{c.checklist}</legend>{c.checks.map((label,i)=><label><input type="checkbox" name="ready" value={i}/><span>{label}</span></label>)}</fieldset><div class="ready-controls"><output data-ready-status aria-live="polite" hidden>{c.progress} 0 / {c.checks.length}</output><button type="button" class="reset-checks" data-reset-journey hidden>{c.reset}</button></div><p class="caption">{c.session}</p></section>
+ <section class="journey-timing"><h2>{c.timing}</h2><p>{c.timingText}</p><a class="inline-link" href="https://www.nhs.uk/tests-and-treatments/ivf/" target="_blank" rel="noopener">NHS · IVF</a></section>
+ <nav class="journey-links" aria-label={c.title}>{['contact','fees','service-scope','guides/first-visit'].map((key,i)=><a class="inline-link" href={href(key)}>{c.links[i]}</a>)}</nav>
+ <div class="gallery journey-gallery">{['wing-new','travel-new'].map((image,i)=><figure><ResponsiveImage src={'/images/stock/'+image+'.webp'} alt={c.photo[i]} width="1000" height="650" loading="lazy"/><figcaption>{c.photo[i]}</figcaption></figure>)}</div>
+</section>
+<script>
+const journey=document.querySelector<HTMLElement>('[data-care-journey]');
+if(journey){
+ document.body.classList.add('care-journey-page');
+ const checks=[...journey.querySelectorAll<HTMLInputElement>('input[name=ready]')];
+ const status=journey.querySelector<HTMLOutputElement>('[data-ready-status]')!;
+ const prefix=status.textContent!.replace(/0\s*\/\s*\d+\s*$/,'').trim();
+ const reset=journey.querySelector<HTMLButtonElement>('[data-reset-journey]')!,print=journey.querySelector<HTMLButtonElement>('[data-print-journey]')!;
+ status.hidden=false;reset.hidden=false;print.hidden=false;
+ function update(){status.textContent=prefix+' '+checks.filter(input=>input.checked).length+' / '+checks.length}
+ checks.forEach(input=>input.addEventListener('change',update));
+ reset.addEventListener('click',()=>{checks.forEach(input=>input.checked=false);update()});
+ print.addEventListener('click',()=>window.print());update();
+}
+</script>
+<style>.journey-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.4fr);gap:40px;align-items:start}.journey-heading h2{font-size:clamp(28px,3vw,42px)}.journey-print-controls .caption{margin:14px 0 0;max-width:28em}.journey-print-controls button[hidden]{display:none}.stage-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px;margin:18px 0 45px;padding:24px;background:var(--light)}.stage-overview a{display:flex;align-items:center;gap:14px;min-height:62px;padding:12px 0;font-size:17px;line-height:1.6;border-bottom:1px solid #c4d5d7}.stage-overview span{font-size:13px;color:var(--blue);font-variant-numeric:tabular-nums}.stage-overview a:hover{text-decoration:underline;text-underline-offset:5px}.care-stages{display:grid;gap:32px}.care-stage{scroll-margin-top:28px;padding:28px 0;border-top:1px solid #bfd0d3}.care-stage h3{display:flex;gap:20px;align-items:baseline;font-size:28px;margin:0 0 24px}.care-stage h3>span{font-size:15px;color:var(--blue)}.care-stage dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin:0}.care-stage dt{font-size:14px;color:var(--muted);margin-bottom:10px}.care-stage dd{font-size:16px;line-height:1.9;margin:0}.care-stage .stage-result{background:var(--light);padding:20px}.ready-checklist{padding:clamp(24px,4vw,44px);background:var(--light);margin:36px 0}.ready-checklist h2,.journey-timing h2{font-size:clamp(25px,2.6vw,34px);margin-bottom:18px}.ready-checklist fieldset{padding:0;margin:25px 0 18px;border:0;display:grid;gap:12px}.ready-checklist label{display:flex;align-items:flex-start;gap:14px;min-height:44px;padding:10px 0;line-height:1.9;font-size:16px;cursor:pointer}.ready-checklist input{width:21px;height:21px;flex-shrink:0;accent-color:var(--deep);margin-top:5px}.ready-controls{display:flex;justify-content:space-between;gap:20px;align-items:center}.ready-controls output{font-size:15px;font-weight:600}.reset-checks{border:0;background:none;color:var(--ink);min-height:44px;padding:10px;font-size:14px;text-decoration:underline;text-underline-offset:5px}.journey-timing{max-width:65em;margin:45px 0}.journey-links{display:flex;flex-wrap:wrap;gap:14px 28px;margin:28px 0}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}@media(max-width:800px){.journey-heading{grid-template-columns:1fr;gap:12px}.stage-overview{grid-template-columns:repeat(2,minmax(0,1fr));padding:20px;gap:0 20px}.care-stage dl{grid-template-columns:1fr;gap:20px}.care-stage .stage-result{padding:20px}.care-stage h3{font-size:25px}}@media(max-width:450px){.stage-overview{grid-template-columns:1fr}.journey-links{display:grid;gap:0}.ready-checklist label{font-size:15px}.ready-controls{flex-wrap:wrap}}
+</style>
+<style is:global>
+@media print{
+ @page{size:A4;margin:16mm}
+ body.care-journey-page{background:white!important;color:#111!important;font-size:10pt}
+ .care-journey-page .header,.care-journey-page .footer,.care-journey-page .page-head,.care-journey-page .skip-link,.care-journey-page .floating,.care-journey-page .journey-print-controls,.care-journey-page .journey-links,.care-journey-page .journey-gallery,.care-journey-page .ready-controls{display:none!important}
+ .care-journey-page .section,.care-journey-page .wrap{padding:0!important;max-width:none!important;margin:0!important}
+ .care-journey{color:#111!important}.care-journey .journey-heading{display:block}.care-journey h2{font-size:18pt!important}.care-journey h3{font-size:13pt!important}.care-journey p,.care-journey dd,.care-journey label{font-size:10pt!important;line-height:1.6!important}.care-journey dt{font-size:9pt!important}
+ .care-journey .stage-overview{margin:16pt 0;padding:10pt;gap:0 12pt}.care-journey .stage-overview a{font-size:9pt;min-height:0;padding:7pt 0}.care-journey .care-stages{gap:0}.care-journey .care-stage{break-inside:avoid;padding:14pt 0}.care-journey .care-stage h3{margin-bottom:10pt}.care-journey .care-stage dl{grid-template-columns:repeat(3,minmax(0,1fr));gap:12pt}.care-journey .stage-result{padding:10pt!important}.care-journey .ready-checklist{break-before:page;padding:14pt;margin:0}.care-journey .ready-checklist label{break-inside:avoid}.care-journey .journey-timing{margin:20pt 0}.care-journey .journey-timing a{color:#111;text-decoration:none}
+}
+</style>
