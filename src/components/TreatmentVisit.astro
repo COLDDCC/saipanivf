@@ -1,0 +1,15 @@
+---
+import { treatmentVisitCopy } from '../i18n/treatment-visit';
+import { treatmentSlugs, pageHref } from '../i18n';
+const {locale='zh-CN',slug}=Astro.props;
+const c=treatmentVisitCopy[locale],rows=c.rows[treatmentSlugs.indexOf(slug)];
+const href=(key)=>locale==='zh-CN'?'/'+key+'/':pageHref(locale,key);
+---
+<section class="visit-summary" id="visit-summary" aria-labelledby="visit-summary-title">
+<h2 id="visit-summary-title">{c.title}</h2><p>{c.intro}</p>
+<dl>{rows.map((text,i)=><div><dt>{c.labels[i]}</dt><dd>{text}</dd></div>)}</dl>
+<nav aria-label={c.title}><a class="inline-link" href={href('fees')}>{c.fees}</a><a class="inline-link" href={href('process')}>{c.process}</a></nav>
+</section>
+<style>
+.visit-summary{padding:28px;background:var(--light);margin:0 0 32px;scroll-margin-top:24px}.visit-summary h2{font-size:clamp(25px,2.3vw,32px);margin:0 0 16px}.visit-summary>p{margin:0 0 22px;font-size:16px;line-height:1.85}.visit-summary dl{margin:0;display:grid;gap:18px}.visit-summary dl>div{display:grid;grid-template-columns:7em minmax(0,1fr);gap:20px;align-items:baseline}.visit-summary dt{font-size:15px;font-weight:600;line-height:1.8}.visit-summary dd{margin:0;font-size:16px;line-height:1.85}.visit-summary nav{display:flex;flex-wrap:wrap;gap:0 24px;margin-top:14px}.visit-summary a{min-height:44px}@media(max-width:650px){.visit-summary{padding:22px}.visit-summary dl{gap:20px}.visit-summary dl>div{grid-template-columns:1fr;gap:6px}.visit-summary dt{color:var(--blue)}.visit-summary nav{display:grid;gap:0}}
+</style>
