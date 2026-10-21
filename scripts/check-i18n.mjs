@@ -25,3 +25,11 @@ for(const relative of base){
 }
 for(const prefix of ['en','ja','ko']){const home=fs.readFileSync('dist/'+prefix+'/index.html','utf8');for(const cls of ['photo-cards','home-center','people-grid','home-budget','journey-panel','guide-grid','birth-benefits'])assert(home.includes(cls),prefix+' missing shared home layout '+cls);}
 console.log('PASS visual parity: image sources and order match Simplified Chinese on all 92 translated routes; shared home layouts.');
+
+for(const relative of base){
+ const all=nodes(parse(fs.readFileSync(path.join('dist','zh-hant',relative),'utf8')));
+ const switcher=all.find(n=>n.tagName==='details'&&attr(n,'class')?.split(' ').includes('language-switcher'));
+ const summary=switcher?.childNodes.find(n=>n.tagName==='summary');
+ assert.equal(summary?.childNodes.map(n=>n.value||'').join(''),'繁體中文 ▾',relative+' visible language label');
+}
+console.log('PASS Traditional Chinese visible language label on all 23 routes.');

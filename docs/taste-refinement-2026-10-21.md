@@ -20,3 +20,10 @@ Top three problems (before desktop screenshots):
 3. Heading scales, panel padding and touch feedback vary between added modules; apply shared tokens and states to both layouts.
 
 Validation: source lint on the refinement stylesheet; production build and project checks. Cloud browser used for live desktop inspection and interaction. No local Chrome binary; skill inspect.mjs and its 1440/768/390 screenshots could not run. Responsive CSS reviewed, but no claim of manual phone or tablet screenshots. Reduced-motion fallback retained. Existing commercial image credits remain unchanged.
+
+ROUND 2 — live desktop verification
+Seen in one second: Saipan lagoon and the treatment title; topic finder visible below.
+Idea and live thing: unchanged.
+Scores: not assigned without the full three-width inspection.
+Verified at 1363×936: header 107 → 97.5px; carousel including controls 564 → 524px. No horizontal overflow on checked Chinese and English pages. All five home languages viewed; English/Korean/Japanese first-screen screenshots inspected. Chinese budget changed to egg-freezing and recalculated $12,800–17,800. English fees and Chinese IVF detail routes render. Fixed component-style precedence after first deployment. Also corrected the Traditional Chinese switcher's visible label, with a regression assertion on all 23 Traditional Chinese routes.
+Remaining: manual mobile/tablet screenshots and full skill inspector unavailable; no claim of a fully passed Taste visual audit.

@@ -40,6 +40,7 @@ export default function traditional(){return {name:'complete-traditional-chinese
   if(node.nodeName==='#text')node.value=tw(convert(node.value));
   for(const a of attrs){if(a.name==='lang'&&node.tagName==='html'){a.value='zh-TW';continue}if(isAlt)continue;if((a.name==='href'||a.name==='value')&&!get('hreflang')){a.value=local(a.value);if(a.value.startsWith(origin)&&node.tagName==='link'&&get('rel')==='canonical')a.value=origin+'/zh-hant'+a.value.slice(origin.length)}if(a.name==='content'&&get('property')==='og:url')a.value=origin+'/zh-hant'+a.value.slice(origin.length);if(a.name==='content'&&get('property')==='og:locale')a.value='zh_TW';if(!['src','srcset','href','style','class','id'].includes(a.name))a.value=tw(convert(a.value))}
   for(const child of node.childNodes||[])visit(child);if(node.content)visit(node.content);
+  if(node.tagName==='details'&&get('class')?.split(' ').includes('language-switcher')){const summary=node.childNodes?.find(child=>child.tagName==='summary');if(summary)summary.childNodes=[{nodeName:'#text',value:'繁體中文 ▾',parentNode:summary}]}
  }
  visit(tree);let html=serialize(tree);
  html=html
