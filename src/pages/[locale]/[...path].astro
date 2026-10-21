@@ -1,4 +1,5 @@
 ---
+import OutcomeEvidence from "../../components/OutcomeEvidence.astro";
 import TreatmentVisit from "../../components/TreatmentVisit.astro";
 import ServiceResponsibilities from '../../components/ServiceResponsibilities.astro';
 import CareJourney from '../../components/CareJourney.astro';
@@ -30,6 +31,7 @@ const profileIds=['gary-ramsey','irena-lalic','rose-wang'];
 {['fees','treatments','process','birth-planning'].includes(key)&&<LocalizedIllustrations locale={locale} page={key}/>}
 
 {!treatment&&key!=='faq'&&<p class="source-link"><a class="inline-link" href={source} target="_blank" rel="noopener">{d.source}</a></p>}
+{key==='treatments'&&<OutcomeEvidence locale={locale}/>}
 <section class="localized-related"><h2>{d.related}</h2><div class="hub-grid">{links.map(route=><a class="hub-card" href={href(route)}><h3>{pageInfo(locale,route).title}</h3><p>{pageInfo(locale,route).description}</p></a>)}</div><a class="button" href={href('contact')+(consultationTopic?'?topic='+consultationTopic:'')}>{d.contact}</a></section><p class="caption">{d.checked}</p>
 </div>}
 <script>
