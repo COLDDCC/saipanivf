@@ -29,7 +29,11 @@ export const faqs = [
     "answer": "符合CNMI EVS-TAP条件并获旅行授权的中国公民，可以免签赴北马里亚纳群岛，通常最长14天。",
     "detail": "美国海关与边境保护局的CNMI EVS-TAP要求符合条件的旅客提前取得电子旅行授权；该安排仅限北马里亚纳群岛，不等于获得前往关岛或美国本土的许可。治疗或分娩所需停留可能超过14天，不能直接套用短期商旅安排，应按真实出行目的确认适用路径。授权也不保证获准入境。",
     "sourceLabel": "CBP官方旅行授权系统",
-    "source": "https://g-cnmi-eta.cbp.dhs.gov/"
+    "source": "https://g-cnmi-eta.cbp.dhs.gov/",
+    "additionalSources": [
+      { "label": "美国国务院：VWP、ESTA与医疗访问", "url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html" },
+      { "label": "美国国务院：访客签证与允许的旅行目的", "url": "https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visitor.html" }
+    ]
   },
   {
     "id": "care-provider",

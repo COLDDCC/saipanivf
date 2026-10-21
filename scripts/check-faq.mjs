@@ -28,3 +28,16 @@ const contact=fs.readFileSync('dist/contact/index.html','utf8');
 assert.match(contact,/<noscript><style>#consult-form\{display:none\}<\/style>/,'Without JS, the form must not fall back to GET submission');
 assert.ok(!contact.includes('class="floating"'),'The contact form should not have a redundant floating contact button');
 console.log('PASS FAQ: incoming links, hash navigation, same-link reopening, unknown fragments, compact directory; contact no-JS and overlay checks.');
+// Regression: ESTA is US-wide; CNMI EVS-TAP has a separate geographic limit.
+for(const locale of ['en','ja','ko']) {
+ const d=JSON.parse(fs.readFileSync(`src/i18n/${locale}.json`,'utf8'));
+ assert.ok(d.faq[3][1].includes('90')&&d.faq[3][1].includes('14'),`${locale}: distinguish the two stay limits`);
+ const page=fs.readFileSync(`dist/${locale}/faq/index.html`,'utf8');
+ assert.ok(page.includes('visa-waiver-program.html')&&page.includes('visitor.html'),`${locale}: link the applicable US travel rules`);
+}
+const tw=fs.readFileSync('dist/zh-hant/faq/index.html','utf8');
+assert.ok(tw.includes('VWP允許符合資格與入境條件者進行醫療訪問'),'Traditional Chinese must allow eligible VWP medical visits');
+for(const wrong of ['ESTA or EVS-TAP authorisation is limited to the Northern Mariana Islands','ESTAやEVS-TAPは北マリアナ諸島のみ','ESTA나 EVS-TAP은 북마리아나제도에만']) {
+ for(const locale of ['en','ja','ko']) assert.ok(!fs.readFileSync(`dist/${locale}/faq/index.html`,'utf8').includes(wrong),'Do not limit ESTA to CNMI');
+}
+console.log('PASS travel FAQ: distinct programmes, stay limits, medical purpose and official references.');
