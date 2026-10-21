@@ -2,7 +2,7 @@
 import { dictionaries } from '../i18n';
 const { locale = 'zh-CN', current = '' } = Astro.props;
 const d = locale === 'en' || locale === 'ja' || locale === 'ko' ? dictionaries[locale] : null;
-const labels = d?.nav ?? ['关于中心','治疗项目','医疗团队','IVF流程','费用预算','就诊指南','赴美生育','联系咨询','常见问题','预约与服务范围'];
+const labels = d?.nav ?? ['关于中心','治疗项目','医疗团队','IVF流程','费用预算','就诊指南','塞班分娩','联系咨询','常见问题','预约与服务范围'];
 const href = (path: string) => (d ? '/' + locale : '') + '/' + path + '/';
 const guides = [
   ['guides', labels[5]], ['process', labels[3]], ['fees', labels[4]],
