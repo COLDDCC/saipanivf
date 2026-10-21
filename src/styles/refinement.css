@@ -1,10 +1,10 @@
 /* Shared coastal editorial refinements; all five languages use these roles. */
 :root {
-  --cream: #fafcfb;
-  --light: #eaf2f1;
-  --ink: #123d4a;
-  --deep: #123f49;
-  --blue: #266e7c;
+  --cream: #fafcfe;
+  --light: #eaf3fb;
+  --ink: #173b60;
+  --deep: #175b91;
+  --blue: #1767a6;
   --space: clamp(52px, 6vw, 88px);
   --heading-size: clamp(28px, 3vw, 42px);
   --body-leading: 1.85;
@@ -35,7 +35,7 @@
 :root body .hero-copy { padding-left: var(--gutter); padding-right: 9%; }
 :root body .hero-title { font-size: clamp(34px,3.65vw,54px); line-height: 1.22; }
 :root body .hero-description { line-height: var(--body-leading); max-width: 28em; }
-:root body .hero-controls { padding-inline: var(--gutter); background: #dcecee; }
+:root body .hero-controls { padding-inline: var(--gutter); background: #dcecf9; }
 :root body .hero-tabs { gap: clamp(18px,2.3vw,34px); }
 :root body .hero-tab { color: var(--ink); }
 :root body .hero-playback button { background: var(--cream); transition: background-color .18s; }
@@ -59,7 +59,7 @@
 :root body .faq summary::-webkit-details-marker { display: none; }
 :root body .faq summary::after { content: '+'; font-size: 24px; line-height: 1; flex-shrink: 0; }
 :root body .faq details[open] summary::after { content: '−'; }
-:root body .faq details[open] { background: #e2eeec; }
+:root body .faq details[open] { background: #e0eefb; }
 :root body .faq :is(p,.faq-answer) { max-width: 55em; }
 :root body :is(.comparison,.responsibilities) table { font-variant-numeric: tabular-nums; }
 :root body :is(.comparison,.responsibilities) :is(th,td) { padding: 22px 20px; border-bottom-color: var(--table-rule); }
@@ -128,3 +128,12 @@ html:lang(en) body :is(.hero-title,.hero-statement) { text-wrap: balance; }
 :root body .brand-wordmark { display: block; }
 @media(max-width:1100px) { :root body .brand { gap: 9px; } :root body .brand-symbol { width: 40px; height: 40px; } }
 @media(max-width:420px) { :root body .brand { gap: 7px; } :root body .brand-symbol { width: 34px; height: 34px; } }
+
+/* Island blue: logo, navigation, actions and supporting surfaces share one palette. */
+:root body .hero-carousel { color: var(--ink); }
+:root body .slide-actions .button { background: var(--deep); color: white; }
+:root body .slide-actions .button:hover { background: var(--blue); }
+:root body .hero-tab,:root body .hero-tab.is-active,:root body .hero-playback button { color: var(--ink); }
+:root body .home-contact { background: var(--light); }
+:root body .faq details:nth-child(even),:root body :is(.comparison,.responsibilities) tbody tr:nth-child(even) td { background: #f1f6fc; }
+:root body .budget-result { background: var(--cream); }
