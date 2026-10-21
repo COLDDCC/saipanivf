@@ -44,3 +44,11 @@ console.log('PASS travel FAQ: distinct programmes, stay limits, medical purpose 
 
 assert.ok(tw.includes('符合資格的台灣護照持有人，取得ESTA承認'),'Traditional Chinese must use the Taiwan VWP answer, not the PRC EVS-TAP answer');
 assert.ok(!tw.includes('EVS-TAP條件並獲旅行授權的台灣公民'),'Do not apply PRC-only eligibility to Taiwan passport holders');
+
+const birthTw=fs.readFileSync('dist/zh-hant/birth-planning/index.html','utf8');
+assert.ok(birthTw.includes('https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0110001'),'Taiwan education source must link the actual law database');
+assert.ok(birthTw.includes('https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030001'),'Taiwan nationality statement must link the nationality law');
+assert.ok(birthTw.includes('出生時父或母為中華民國國民者'),'Nationality and household registration must be distinguished');
+assert.ok(birthTw.includes('僑生另有招生規定'),'Overseas Chinese and international-student admission are separate routes');
+for(const page of [birthTw,tw]) assert.ok(!page.includes('免籤')&&!page.includes('工籤'),'Use the visa character 簽, not 籤');
+console.log('PASS Taiwan content: nationality/admission rules, official law URLs and visa wording.');

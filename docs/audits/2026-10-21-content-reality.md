@@ -34,3 +34,17 @@ The monetary inputs in src/data/pricing.ts are planning assumptions. Arithmetic 
 ## Not certified by this audit
 
 Current individual citizenship/passport outcomes, clinic credentials, actual patient results and contracted service availability. The FAM direct page timed out during this run; its historical citizenship wording is not recorded as newly reverified. Existing historical-versus-current-rule qualifications remain. This is a scoped content audit, not medical or legal approval of the entire site.
+
+## Follow-up: Traditional Chinese source and legal-context check
+
+- Replaced the invalid `edu.law.moj.gov.tw` education URL with the actual National Laws and Regulations Database URL.
+- Linked the nationality explanation directly to the Nationality Act, rather than an agency homepage. Article 2 identifies nationality by the parent's nationality at birth; household registration is a separate step.
+- Clarified that a US passport alone does not establish international-student or overseas-Chinese admission eligibility. These are different admission routes, each with its own requirements. No blanket promise of exam exemption or university acceptance.
+- Removed the blanket country-name substitution from Traditional Chinese conversion; jurisdiction changes now use the explicit, reviewed passages. Normalised visa wording (免簽 / 工簽).
+- Rechecked treatment scheduling and the existing calculator scenarios; no additional discrepancy found within that scope. Provider prices remain unverified.
+
+Official sources retrieved:
+- https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030001
+- https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0110001
+
+Validation: full build and checks for 115 routes passed, including the earlier Taiwan VWP regression and new nationality/education link and wording checks.
