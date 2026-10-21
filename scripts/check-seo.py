@@ -21,7 +21,7 @@ class Head(HTMLParser):
 titles=set();expected=set()
 for path in Path('dist').rglob('index.html'):
  page=Head();page.feed(path.read_text());route='/'+str(path.parent.relative_to('dist')).strip('.')
- if route not in ['/','/en/','/ja/','/zh-hant/']:route+='/'
+ if route not in ['/','/en/','/ja/','/ko/','/zh-hant/']:route+='/'
  expected.add(ORIGIN+route)
  assert page.canonical==ORIGIN+route,(path,'canonical')
  for key in ['description','og:title','og:description','og:image','twitter:card']:
@@ -31,7 +31,7 @@ for path in Path('dist').rglob('index.html'):
  assert share.is_file(),(path,'share image')
  graph=page.ld[0]['@graph'];types=[node['@type'] for node in graph]
  assert 'WebSite' in types and 'WebPage' in types
- if route not in ['/','/en/','/ja/','/zh-hant/']:
+ if route not in ['/','/en/','/ja/','/ko/','/zh-hant/']:
   crumbs=next(node['itemListElement'] for node in graph if node['@type']=='BreadcrumbList')
   assert crumbs[-1]['item']==page.canonical
  for image in page.images:

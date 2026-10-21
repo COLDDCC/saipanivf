@@ -1,6 +1,6 @@
 import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';import {parse} from 'parse5';
 const nodes=n=>[n,...(n.childNodes||[]).flatMap(nodes)],attr=(n,k)=>n.attrs?.find(a=>a.name===k)?.value;
-for(const [prefix,lang] of [['','zh-CN'],['zh-hant/','zh-TW'],['en/','en'],['ja/','ja']]){
+for(const [prefix,lang] of [['','zh-CN'],['zh-hant/','zh-TW'],['en/','en'],['ja/','ja'],['ko/','ko']]){
  const all=nodes(parse(fs.readFileSync('dist/'+prefix+'contact/index.html','utf8'))),rootNode=all.find(n=>attr(n,'data-consult')!==undefined);const config=attr(rootNode,'data-config');
  assert.equal(all.filter(n=>attr(n,'required')!==undefined).length,1,'Exactly one required contact field');
  const script=all.find(n=>n.tagName==='script'&&n.childNodes?.some(x=>x.value?.includes('contactMethod')&&x.value?.includes('reportValidity'))).childNodes[0].value;

@@ -1,4 +1,15 @@
 export const consultationCopy = {
+  ko: {
+    title:'생식 계획, 첫 상담부터', intro:'연락 수단은 하나면 됩니다. 이름·관심 치료·질문은 선택입니다. 치료 방향을 정하지 않았어도 문의할 수 있습니다.',
+    channel:'연락 방법', value:'연락처', required:'필수', optional:'선택', name:'이름 또는 호칭',
+    channels:['이메일','WeChat','전화','WhatsApp','LINE','Telegram'], placeholder:'이메일 주소',
+    placeholders:['이메일 주소','WeChat ID','국가번호를 포함한 전화번호','국가번호를 포함한 전화번호','LINE ID','Telegram 사용자명'],
+    more:'상담 정보 추가 (선택)', privacy:'연락처는 이번 상담에 회신할 수 있도록 이메일 본문에 포함됩니다.',
+    direct:'직접 이메일로 문의하기', next:'상담 후 진행 과정',
+    steps:['이메일 앱에서 내용을 확인하고 전송','첫 상담 방식·필요 자료·상담료 확인','예약이 확정된 후 검사와 출국 준비'],
+    invalidEmail:'유효한 이메일 주소를 입력해 주세요.', invalidPhone:'국가번호를 포함한 유효한 전화번호를 입력해 주세요.',
+    guide:'첫 상담 준비 목록', policy:'개인정보 및 정보 이용 안내',
+  },
   'zh-CN': {
     title:'先聊聊你的生育计划', intro:'留下一种方便联系你的方式。项目和问题可以选填，还没确定方向也可以先咨询。',
     channel:'联系方式', value:'联系账号', required:'必填', optional:'选填', name:'怎么称呼你',

@@ -25,6 +25,6 @@ for path in [Path('dist/index.html'),*Path('dist').rglob('*/index.html')]:
     other=Page();other.feed(target.read_text(encoding='utf-8'))
     assert unquote(parts.fragment) in other.ids,(path,'missing cross-page answer',href)
  assert 'mailto:info@saipan-ivf.com' in page.links,(path,'missing contact action')
- if path.parts[1] in ['en','ja','zh-hant']:assert 'aria-current="page"' in s,(path,'missing active language')
+ if path.parts[1] in ['en','ja','ko','zh-hant']:assert 'aria-current="page"' in s,(path,'missing active language')
  assert '赴岛' not in s,(path,'outdated wording')
  print('PASS',path,'links',len(page.links),'one H1, unique IDs, anchors, routes, contact')

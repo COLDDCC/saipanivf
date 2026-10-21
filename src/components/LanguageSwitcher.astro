@@ -1,8 +1,8 @@
 ---
 const {route=Astro.url.pathname}=Astro.props;
-const path=route.replace(/^\/(en|ja|zh-hant)(?=\/|$)/,'')||'/';
-const current=route.startsWith('/zh-hant/')?'zh-TW':route.startsWith('/en/')?'en':route.startsWith('/ja/')?'ja':'zh-CN';
-const options=[['zh-CN','简体中文',path],['zh-TW','繁體中文','/zh-hant'+path],['en','English','/en'+path],['ja','日本語','/ja'+path]];
+const path=route.replace(/^\/(en|ja|ko|zh-hant)(?=\/|$)/,'')||'/';
+const current=route.startsWith('/zh-hant/')?'zh-TW':route.startsWith('/en/')?'en':route.startsWith('/ja/')?'ja':route.startsWith('/ko/')?'ko':'zh-CN';
+const options=[['zh-CN','简体中文',path],['zh-TW','繁體中文','/zh-hant'+path],['en','English','/en'+path],['ja','日本語','/ja'+path],['ko','한국어','/ko'+path]];
 ---
-<details class="language-switcher"><summary aria-label="Language / 語言">中文 / EN / 日本語</summary><div>{options.map(([lang,label,href])=><a href={href} lang={lang} hreflang={lang} aria-current={lang===current?"page":undefined}>{label}</a>)}</div></details>
+<details class="language-switcher"><summary aria-label="Language / 語言">{current==='en'?'English':current==='ja'?'日本語':current==='ko'?'한국어':current==='zh-TW'?'繁體中文':'简体中文'} ▾</summary><div>{options.map(([lang,label,href])=><a href={href} lang={lang} hreflang={lang} aria-current={lang===current?"page":undefined}>{label}</a>)}</div></details>
 <style>.language-switcher{position:relative;font-size:13px;flex-shrink:0}.language-switcher summary{padding:12px 8px;min-height:44px;cursor:pointer;list-style:none}.language-switcher>div{position:absolute;right:0;top:100%;min-width:160px;padding:10px;background:white;box-shadow:0 8px 28px #123d4a22;z-index:40}.language-switcher a{display:flex;align-items:center;min-height:44px;padding:8px 12px;white-space:nowrap;color:var(--ink)}.language-switcher a:hover{background:var(--light)}@media(max-width:800px){.language-switcher{margin-left:auto}.language-switcher summary{font-size:12px}.language-switcher>div{right:0}}@media(max-width:380px){.language-switcher summary{max-width:112px;line-height:1.5;padding:5px}.language-switcher{max-width:112px}}</style>
