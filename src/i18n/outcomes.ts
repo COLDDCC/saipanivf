@@ -1,6 +1,6 @@
 export const outcomeCopy = {
  'zh-CN': {
-  title:'读懂成功率，再比较治疗方案',
+  title:'读懂成功率，再比较治疗方案', link:'怎样比较成功率',
   intro:'同一个“成功率”，可能统计的是不同人群和治疗阶段。先统一口径，才能问到对自己有用的信息。',
   headers:['统计口径','纳入哪些周期','咨询时问什么'],
   rows:[
@@ -13,7 +13,7 @@ export const outcomeCopy = {
   cta:'带着这些问题咨询',sources:'核对原始说明',cdc:'CDC：成功率的统计口径',sart:'SART：年龄与治疗结果'
  },
  en:{
-  title:'Understand success rates before comparing plans',
+  title:'Understand success rates before comparing plans', link:'How to compare success rates',
   intro:'A percentage needs context. Match the patient group and treatment stage before comparing results.',
   headers:['Measure','Cycles included','What to ask'],
   rows:[
@@ -26,7 +26,7 @@ export const outcomeCopy = {
   cta:'Discuss these questions',sources:'Read the original guidance',cdc:'CDC: interpreting success rates',sart:'SART: age and outcomes'
  },
  ja:{
-  title:'成功率の見方を知り、治療計画を比較する',
+  title:'成功率の見方を知り、治療計画を比較する', link:'成功率の比較方法',
   intro:'同じ割合でも、対象者や治療段階が異なります。まず集計条件を揃えましょう。',
   headers:['集計の基準','含まれる周期','確認する質問'],
   rows:[
@@ -39,7 +39,7 @@ export const outcomeCopy = {
   cta:'これらの質問を相談する',sources:'原資料で確認する',cdc:'CDC：成功率の集計基準',sart:'SART：年齢と治療結果'
  },
  ko:{
-  title:'성공률을 이해하고 치료 계획을 비교하세요',
+  title:'성공률을 이해하고 치료 계획을 비교하세요', link:'성공률 비교 방법',
   intro:'같은 비율이라도 대상 환자와 치료 단계가 다를 수 있습니다. 먼저 집계 기준을 맞추세요.',
   headers:['집계 기준','포함하는 주기','상담에서 물어볼 질문'],
   rows:[
