@@ -121,3 +121,10 @@ html:lang(en) body :is(.hero-title,.hero-statement) { text-wrap: balance; }
   :root body .footer-nav { gap: 4px 22px; }
 }
 @media(prefers-reduced-motion:reduce) { :root body *,:root body *::before,:root body *::after { transition: none!important; } }
+
+/* A shared newborn symbol for the wordmark and browser icon. */
+:root body .brand { display: inline-flex; align-items: center; gap: 12px; }
+:root body .brand-symbol { width: 48px; height: 48px; flex-shrink: 0; }
+:root body .brand-wordmark { display: block; }
+@media(max-width:1100px) { :root body .brand { gap: 9px; } :root body .brand-symbol { width: 40px; height: 40px; } }
+@media(max-width:420px) { :root body .brand { gap: 7px; } :root body .brand-symbol { width: 34px; height: 34px; } }

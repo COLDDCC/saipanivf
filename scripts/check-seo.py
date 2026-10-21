@@ -36,6 +36,9 @@ for path in Path('dist').rglob('index.html'):
   assert crumbs[-1]['item']==page.canonical
  for image in page.images:
   if image.get('src','').startswith('/'):
+   if urlparse(image['src']).path.endswith('.svg'):
+    assert (Path('dist')/urlparse(image['src']).path.lstrip('/')).is_file(),(path,'vector image')
+    continue
    assert image.get('srcset') and image.get('sizes'),(path,'responsive image')
    for candidate in image['srcset'].split(','):
     assert (Path('dist')/candidate.strip().split()[0].lstrip('/')).is_file(),(path,candidate)

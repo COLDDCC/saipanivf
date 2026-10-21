@@ -13,7 +13,12 @@ for page in Path('dist').rglob('*.html'):
  for src in set(re.findall(r'url\([\"\']?([^\"\')]+)',html)):
   if src.startswith('/') or src.startswith('http'):uses[(locale,src)].append(str(page)+' [background]')
  for image in parser.images:
-  src=image['src'];uses[(locale,src)].append(str(page))
+  src=image['src']
+  # A shared brand mark is intentionally repeated; content photography stays unique.
+  if src=='/logo-baby.svg' and 'brand-symbol' in image.get('class','').split():
+   assert (Path('dist')/src.lstrip('/')).is_file(),(page,'missing brand mark')
+   continue
+  uses[(locale,src)].append(str(page))
   if src.startswith('/'):
    path=Path('dist')/src.lstrip('/')
    assert path.is_file(),(page,'missing image',src)
