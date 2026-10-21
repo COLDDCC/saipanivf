@@ -464,7 +464,7 @@
         ],
         [
           "What to include",
-          "Start with your area of interest, timing and main questions. Do not include identity-document numbers, complete medical records or another person’s information without consent in the initial enquiry. Confirm a designated channel before sending detailed records."
+          "Include one way to reach you. Your name, area of interest, timing and questions are optional. Contact details are included in the email; generating a draft does not upload them to a website backend or save them to browser storage. Start with your area of interest, timing and main questions. Do not include identity-document numbers, complete medical records or another person’s information without consent in the initial enquiry. Confirm a designated channel before sending detailed records."
         ],
         [
           "Hosting and external links",
@@ -478,7 +478,7 @@
     },
     "contact": {
       "title": "Contact and first consultation",
-      "description": "Generate a draft, then review and send it in your own email application. No email is sent by this website.",
+      "description": "One contact method is enough to start. Your name, treatment interests and questions are optional; you can also email directly.",
       "sections": []
     },
     "faq": {
