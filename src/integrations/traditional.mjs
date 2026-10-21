@@ -4,13 +4,30 @@ import {join,relative,dirname} from 'node:path';
 import * as OpenCC from 'opencc-js';
 import {parse,serialize} from 'parse5';
 const convert=OpenCC.Converter({from:'cn',to:'tw'});
+function tw(s){
+ if(typeof s!=='string')return s;
+ const reps=[
+  ['身份與回國','身份與返台'],
+  ['中國國籍、旅行證和戶口分別確認','台灣國籍、護照與戶籍分別確認'],
+  ['中國不承認雙重國籍。境外出生子女的中國國籍認定與父母國籍、定居情況等有關；旅行證、戶籍辦理應向主管機關核實，並不存在統一的“18歲任選中美國籍”規則。','台灣對雙重國籍的規定與實務認定，會影響境外出生子女的國籍與戶籍登記。子女的國籍、護照與戶籍該如何辦理，須向主管機關個案確認；並不存在“18歲任選台美國籍”的統一規則。'],
+  ['中國就學','返台就學'],
+  ['回中國接受義務教育需要核實當地入學條件。申請中國高校國際學生項目另有國籍、護照持有時間、境外居住經歷及學校考核要求，持外國護照不等於可免試進入清華、北大。','返台就學需要確認學籍與入學資格。持外國護照申請台灣高校國際學生或僑生招生，另有國籍、護照持有時間、境外居住經歷及學校考核要求，並不代表可免試進入頂尖大學。'],
+  ['回國證件','返台證件'],
+  ['中國護照可以免簽去塞班嗎？','台灣護照去塞班需要簽證嗎？'],
+  ['符合CNMI EVS-TAP條件並獲旅行授權的中國公民，可以免簽赴北馬里亞納群島，通常最長14天。','台灣護照持有人赴北馬里亞納群島，通常可透過美國免簽證計畫（VWP）以ESTA入境，一般最長90天；治療或分娩等目的通常需要更長停留或不同簽證類別，應按真實目的向主管機關確認。'],
+  ['美國海關與邊境保護局的CNMI EVS-TAP要求符合條件的旅客提前取得電子旅行授權；該安排僅限北馬里亞納群島，不等於獲得前往關島或美國本土的許可。治療或分娩所需停留可能超過14天，不能直接套用短期商旅安排，應按真實出行目的確認適用路徑。授權也不保證獲准入境。','ESTA授權僅適用於符合資格者的短期訪問，不等於可在北馬里亞納群島就醫或長期居留的許可。治療或分娩行程可能超過免簽停留期限，且授權不保證入境。出發前請向外交部領事事務局及美國在台協會（AIT）確認最新規定。'],
+  ['中國','台灣']
+ ];
+ for(const [f,r] of reps) s=s.replaceAll(f,r);
+ return s;
+}
 const origin='https://saipanivf.pages.dev';
 function local(value){
  if(!value.startsWith('/')||value.startsWith('//')||/^\/(images|_astro|favicon|en|ja|ko|zh-hant)(\/|\.|$)/.test(value))return value;
  const url=new URL(value,origin);for(const [key,value] of [...url.searchParams])url.searchParams.set(key,convert(value));return '/zh-hant'+url.pathname+url.search+url.hash;
 }
 function graph(value,key=''){
- if(typeof value==='string'){if(['url','item','@id'].includes(key)&&value.startsWith(origin)&&!value.startsWith(origin+'/images/'))return origin+'/zh-hant'+value.slice(origin.length);return value==='zh-CN'?'zh-TW':convert(value)}
+ if(typeof value==='string'){if(['url','item','@id'].includes(key)&&value.startsWith(origin)&&!value.startsWith(origin+'/images/'))return origin+'/zh-hant'+value.slice(origin.length);return value==='zh-CN'?'zh-TW':tw(convert(value))}
  if(Array.isArray(value))return value.map(v=>graph(v));if(value&&typeof value==='object')return Object.fromEntries(Object.entries(value).map(([k,v])=>[k,graph(v,k)]));return value;
 }
 export default function traditional(){return {name:'complete-traditional-chinese',hooks:{'astro:build:done':({dir})=>{
@@ -18,13 +35,17 @@ export default function traditional(){return {name:'complete-traditional-chinese
  function find(folder){for(const entry of readdirSync(folder,{withFileTypes:true})){if(entry.isDirectory()&&!['en','ja','ko','zh-hant','images','_astro'].includes(entry.name))find(join(folder,entry.name));if(entry.isFile()&&entry.name==='index.html')pages.push(join(folder,entry.name))}}
  find(root);
  for(const path of pages){const tree=parse(readFileSync(path,'utf8'));function visit(node){const attrs=node.attrs||[];const get=name=>attrs.find(a=>a.name===name)?.value;const isAlt=node.tagName==='link'&&get('rel')==='alternate';if(node.tagName==='a'&&get('hreflang')){node.attrs=node.attrs.filter(a=>a.name!=='aria-current');if(get('hreflang')==='zh-TW')node.attrs.push({name:'aria-current',value:'page'})}if(node.tagName==='script'){
-   for(const text of node.childNodes||[])if(text.nodeName==='#text'){text.value=get('type')==='application/ld+json'?JSON.stringify(graph(JSON.parse(text.value))):convert(text.value)}return;
+   for(const text of node.childNodes||[])if(text.nodeName==='#text'){text.value=get('type')==='application/ld+json'?JSON.stringify(graph(JSON.parse(text.value))):tw(convert(text.value))}return;
   }
-  if(node.nodeName==='#text')node.value=convert(node.value);
-  for(const a of attrs){if(a.name==='lang'&&node.tagName==='html'){a.value='zh-TW';continue}if(isAlt)continue;if((a.name==='href'||a.name==='value')&&!get('hreflang')){a.value=local(a.value);if(a.value.startsWith(origin)&&node.tagName==='link'&&get('rel')==='canonical')a.value=origin+'/zh-hant'+a.value.slice(origin.length)}if(a.name==='content'&&get('property')==='og:url')a.value=origin+'/zh-hant'+a.value.slice(origin.length);if(a.name==='content'&&get('property')==='og:locale')a.value='zh_TW';if(!['src','srcset','href','style','class','id'].includes(a.name))a.value=convert(a.value)}
+  if(node.nodeName==='#text')node.value=tw(convert(node.value));
+  for(const a of attrs){if(a.name==='lang'&&node.tagName==='html'){a.value='zh-TW';continue}if(isAlt)continue;if((a.name==='href'||a.name==='value')&&!get('hreflang')){a.value=local(a.value);if(a.value.startsWith(origin)&&node.tagName==='link'&&get('rel')==='canonical')a.value=origin+'/zh-hant'+a.value.slice(origin.length)}if(a.name==='content'&&get('property')==='og:url')a.value=origin+'/zh-hant'+a.value.slice(origin.length);if(a.name==='content'&&get('property')==='og:locale')a.value='zh_TW';if(!['src','srcset','href','style','class','id'].includes(a.name))a.value=tw(convert(a.value))}
   for(const child of node.childNodes||[])visit(child);if(node.content)visit(node.content);
  }
- visit(tree);const out=join(root,'zh-hant',relative(root,path));mkdirSync(dirname(out),{recursive:true});writeFileSync(out,serialize(tree));}
+ visit(tree);let html=serialize(tree);
+ html=html
+  .replaceAll('<a href="https://www.nia.gov.cn/n741440/n741547/c1013967/content.html" target="_blank" rel="noopener">國家移民管理局：《中華人民共和國國籍法》</a>','<a href="https://www.immigration.gov.tw/" target="_blank" rel="noopener">內政部移民署：國籍與戶籍登記規定</a>')
+  .replaceAll('<a href="https://www.moe.gov.cn/srcsite/A20/moe_850/202006/t20200609_464159.html" target="_blank" rel="noopener">教育部：規範高等學校接受國際學生有關工作的通知</a>','<a href="https://edu.law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0110001" target="_blank" rel="noopener">教育部：外國學生來台就學相關規定</a>');
+ const out=join(root,'zh-hant',relative(root,path));mkdirSync(dirname(out),{recursive:true});writeFileSync(out,html);}
  const paths=pages.map(p=>'/'+relative(root,dirname(p)).split('\\').join('/')+'/').map(p=>p==='//'?'/':p);
  const locales=[['zh-CN',''],['zh-TW','/zh-hant'],['en','/en'],['ja','/ja'],['ko','/ko']];
  const xml='<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'+paths.flatMap(path=>locales.map(([,prefix])=>'<url><loc>'+origin+prefix+path+'</loc>'+[...locales,['x-default','']].map(([lang,p])=>'<xhtml:link rel="alternate" hreflang="'+lang+'" href="'+origin+p+path+'"/>').join('')+'</url>')).join('')+'</urlset>';
