@@ -1,0 +1,17 @@
+---
+import { serviceScopeCopy } from '../i18n/service-scope';
+import { pageHref } from '../i18n';
+const { locale='zh-CN' }=Astro.props;
+const c=serviceScopeCopy[locale];
+const href=(key)=>locale==='zh-CN'?'/'+key+'/':pageHref(locale,key);
+---
+<section class="responsibilities" aria-labelledby="responsibilities-title">
+<h2 id="responsibilities-title">{c.title}</h2><p class="intro">{c.intro}</p>
+<div class="desktop-table"><table><caption class="sr-only">{c.title}</caption><thead><tr>{c.headers.map(h=><th scope="col">{h}</th>)}</tr></thead><tbody>{c.rows.map(row=><tr><th scope="row">{row[0]}</th>{row.slice(1).map(cell=><td>{cell}</td>)}</tr>)}</tbody></table></div>
+<div class="mobile-cards">{c.rows.map(row=><article><h3>{row[0]}</h3><dl>{row.slice(1).map((cell,i)=><div><dt>{c.headers[i+1]}</dt><dd>{cell}</dd></div>)}</dl></article>)}</div>
+<div class="details"><section class="documents"><h2>{c.docsTitle}</h2><ol>{c.docs.map(item=><li>{item}</li>)}</ol><a class="inline-link" href={href('fees')}>{c.fees}</a></section><div class="context"><section><h2>{c.noteTitle}</h2><p>{c.note}</p></section><section><h2>{c.sourceTitle}</h2><p>{c.source}</p><a class="inline-link" href="https://www.saipan-ivf.com/Resources/" target="_blank" rel="noopener">{c.sourceLink}</a><br/><a class="inline-link" href={href('about')}>{c.about}</a></section></div></div>
+<div class="next"><a class="button" href={href('contact')}>{c.contact}</a></div>
+</section>
+<style>
+.responsibilities{margin:12px 0 30px}.responsibilities h2{font-size:clamp(26px,2.6vw,35px);line-height:1.45;margin:0 0 18px}.intro{max-width:65em;margin-bottom:30px}.responsibilities table{border-collapse:collapse;table-layout:fixed;width:100%;font-size:15px;line-height:1.85}.responsibilities th,.responsibilities td{text-align:left;vertical-align:top;padding:22px 20px;border-bottom:1px solid #c3d2d4;overflow-wrap:anywhere}.responsibilities thead{background:var(--deep);color:#fff}.responsibilities thead th{font-weight:500}.responsibilities th:first-child{width:19%}.responsibilities tbody th{background:var(--light);font-size:17px;font-weight:500}.responsibilities tbody tr:nth-child(even) td{background:#f0f5f3}.details{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);margin-top:65px}.documents{background:var(--light);padding:32px}.documents ol{padding-left:24px;margin:20px 0}.documents li{padding:0 0 15px 7px;line-height:1.85}.documents li::marker{color:var(--deep);font-weight:600}.context section+section{margin-top:36px}.context h2,.documents h2{font-size:clamp(23px,2vw,28px)}.context p{line-height:1.9}.next{margin-top:38px}.next .button{white-space:normal}.mobile-cards{display:none}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}@media(max-width:800px){.desktop-table{display:none}.mobile-cards{display:grid;gap:20px}.mobile-cards article{background:var(--light);padding:24px;min-width:0}.mobile-cards h3{font-size:23px;margin:0 0 18px}.mobile-cards dl{margin:0}.mobile-cards dl>div{padding:14px 0;border-top:1px solid #c3d2d4}.mobile-cards dt{font-size:14px;color:var(--muted);margin-bottom:6px}.mobile-cards dd{margin:0;line-height:1.85;overflow-wrap:anywhere}.details{grid-template-columns:1fr;margin-top:40px}.documents{padding:24px}.next .button{width:100%;text-align:center}}
+</style>
