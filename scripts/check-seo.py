@@ -48,7 +48,7 @@ assert len(urls)==len(set(urls)) and set(urls)==expected,('sitemap mismatch',set
 hero=Head();hero.feed(Path('dist/index.html').read_text())
 slides=[im for im in hero.images if 'hero-slide-image' in im.get('class','')]
 assert len(slides)==4 and slides[0]['loading']=='eager' and slides[0]['fetchpriority']=='high'
-assert all(im['loading']=='lazy' for im in slides[1:])
+assert all(im['loading']=='eager' and im.get('fetchpriority')=='low' for im in slides[1:])
 assert slides[0]['src'].startswith('/images/')
 print(f'PASS SEO: {len(expected)} indexable pages, sitemap coverage, canonical, JSON-LD, sharing, responsive sources; complete multilingual pages; hero priority.')
 
