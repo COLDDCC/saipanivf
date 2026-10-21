@@ -12,7 +12,7 @@ const labels=Astro.props.labels||{region:"塞班辅助生殖服务",carousel:"�
 <div class="hero-carousel" role="region" aria-roledescription={labels.carousel} aria-label={labels.region} data-pause-label={labels.pause} data-resume-label={labels.resume} data-hero-carousel>
  <div class="hero-slides">
  {slides.map((slide,index)=>{const Heading=index===0?'h1':'h2';return <article class:list={['hero-slide',{'is-active':index===0}]} aria-roledescription={labels.slide} aria-label={`${index+1} / ${slides.length}：${slide.subtitle}`} aria-hidden={index!==0} inert={index!==0} data-slide>
- <ResponsiveImage class="hero-slide-image" src={slide.image} sizes="(max-width: 650px) 100vw, (max-width: 1000px) 45vw, 55vw" alt="" width={index===0?640:1000} height={index===0?358:650} loading={index===0?"eager":"lazy"} fetchpriority={index===0?'high':'auto'} decoding="async"/>
+ <ResponsiveImage class="hero-slide-image" src={slide.image} sizes="(max-width: 650px) 100vw, (max-width: 1000px) 45vw, 55vw" alt="" width={index===0?640:1000} height={index===0?358:650} loading="eager" fetchpriority={index===0?'high':'low'} decoding="async"/>
  <div class="hero-shade"></div>
  <div class="hero-copy"><Heading class="hero-title">{slide.title}</Heading><p class="hero-statement">{slide.accent}</p><p class="hero-description">{slide.text}</p><div class="slide-actions"><a class="button light" href={slide.href}>{slide.primary}</a><a class="slide-secondary" href={slide.secondaryHref}>{slide.secondary}</a></div></div>
  </article>})}

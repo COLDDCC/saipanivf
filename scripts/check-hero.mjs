@@ -20,3 +20,10 @@ const a=setup();assert.ok(a.tick);a.next.listeners.click();assert.equal(a.slides
 assert.ok(!html.includes('播放轮播'));
 
 console.log('Passed: next/previous, tabs, wraparound, pause/resume, default autoplay, no playback text and inactive slide focus protection.');
+
+const heroImages=[...html.matchAll(/<img\b[^>]*class="hero-slide-image[^>]*>/g)].map(m=>m[0]);
+assert.equal(heroImages.length,4);
+assert(heroImages.every(tag=>tag.includes('loading="eager"')),'all carousel images must start loading before their first transition');
+assert(heroImages[0].includes('fetchpriority="high"'));
+assert(heroImages.slice(1).every(tag=>tag.includes('fetchpriority="low"')),'later slides must not compete with the first image');
+console.log('PASS carousel imagery: four eager images, first high priority and three low priority.');

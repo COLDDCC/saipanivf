@@ -137,3 +137,13 @@ html:lang(en) body :is(.hero-title,.hero-statement) { text-wrap: balance; }
 :root body .home-contact { background: var(--light); }
 :root body .faq details:nth-child(even),:root body :is(.comparison,.responsibilities) tbody tr:nth-child(even) td { background: #f1f6fc; }
 :root body .budget-result { background: var(--cream); }
+
+/* Keep the logo, language control and menu on one row on narrow phones. */
+@media(max-width:380px) {
+ :root body .header { padding-inline: 16px; gap: 6px; }
+ :root body .brand { font-size: 20px; gap: 6px; letter-spacing: -.8px; }
+ :root body .brand-symbol { width: 30px; height: 30px; }
+ :root body .brand small { font-size: 10px; letter-spacing: 0; }
+ :root body .language-switcher summary { padding-inline: 5px; }
+ :root body .menu-button { padding-inline: 12px; min-width: 48px; }
+}
