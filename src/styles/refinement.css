@@ -108,7 +108,7 @@ html:lang(en) body :is(.hero-title,.hero-statement) { text-wrap: balance; }
   :root body .hero-tabs { gap: 0 12px; }
   :root body .hero-tab { min-height: 44px; }
   :root body .slide-actions { gap: 14px; }
-  :root body .slide-actions .button { white-space: normal; }
+  :root body .hero-carousel .slide-actions .button { white-space: normal; }
   :root body .page-head { min-height: 0; }
   :root body .page-head-copy,:root body .page-head-plain .page-head-copy { padding-block: 26px; }
   :root body .section-head { margin-bottom: 26px; }
@@ -131,8 +131,8 @@ html:lang(en) body :is(.hero-title,.hero-statement) { text-wrap: balance; }
 
 /* Island blue: logo, navigation, actions and supporting surfaces share one palette. */
 :root body .hero-carousel { color: var(--ink); }
-:root body .slide-actions .button { background: var(--deep); color: white; }
-:root body .slide-actions .button:hover { background: var(--blue); }
+:root body .hero-carousel .slide-actions .button { background: var(--deep); color: white; }
+:root body .hero-carousel .slide-actions .button:hover { background: var(--blue); }
 :root body .hero-tab,:root body .hero-tab.is-active,:root body .hero-playback button { color: var(--ink); }
 :root body .home-contact { background: var(--light); }
 :root body .faq details:nth-child(even),:root body :is(.comparison,.responsibilities) tbody tr:nth-child(even) td { background: #f1f6fc; }
