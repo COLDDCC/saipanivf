@@ -1,0 +1,6 @@
+---
+import variants from '../data/image-variants.json';
+const src='/images/saipan-lagoon-aerial.webp';
+const sizes='(max-width: 650px) 100vw, (max-width: 1000px) 45vw, 55vw';
+---
+<link rel="preload" as="image" href={src} imagesrcset={variants[src]} imagesizes={sizes} fetchpriority="high"/>

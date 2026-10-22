@@ -7,7 +7,6 @@ import { dictionaries,pageHref,treatmentSlugs,pageInfo } from '../i18n';
 import { hero } from '../i18n/hero';
 import { homeCopy } from '../i18n/home';
 import { faqs } from '../data/faq';
-import '../styles/home.css';
 const {locale}=Astro.props;const d=dictionaries[locale],c=homeCopy[locale];const href=(key='')=>pageHref(locale,key);const asset=(name)=>'/images/stock/'+name+'.webp';
 const guideSlugs=['first-visit','ivf-steps','quotation','egg-freezing','travel-checklist','family-planning'];
 const profileIds=['gary-ramsey','irena-lalic','rose-wang'],names=['Gary G. Ramsey, M.D.','Irena Lalic','Rose Wang'];

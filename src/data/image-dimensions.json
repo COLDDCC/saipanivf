@@ -1,0 +1,330 @@
+{
+  "/images/share-card.png": [
+    1200,
+    630
+  ],
+  "/images/saipan-lagoon-aerial.webp": [
+    640,
+    358
+  ],
+  "/images/scenes/flight-wing.webp": [
+    1100,
+    731
+  ],
+  "/images/scenes/quiet-botanical.webp": [
+    600,
+    900
+  ],
+  "/images/scenes/couple-editorial.webp": [
+    1100,
+    733
+  ],
+  "/images/scenes/family-moment.webp": [
+    1100,
+    733
+  ],
+  "/images/scenes/laboratory-care.webp": [
+    1000,
+    667
+  ],
+  "/images/scenes/care-consultation.webp": [
+    1000,
+    667
+  ],
+  "/images/scenes/daily-meals.webp": [
+    1000,
+    667
+  ],
+  "/images/scenes/stay-room.webp": [
+    1100,
+    733
+  ],
+  "/images/official/center.webp": [
+    870,
+    550
+  ],
+  "/images/official/irena.webp": [
+    250,
+    347
+  ],
+  "/images/official/rose.webp": [
+    250,
+    347
+  ],
+  "/images/official/gary.webp": [
+    480,
+    720
+  ],
+  "/images/stock/lab-tubes.webp": [
+    667,
+    1000
+  ],
+  "/images/stock/lab-glass.webp": [
+    667,
+    1000
+  ],
+  "/images/stock/calculator-glasses.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/planner-light.webp": [
+    750,
+    1000
+  ],
+  "/images/stock/legacy-ultrasound-scan.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/travel-new.webp": [
+    750,
+    1000
+  ],
+  "/images/stock/legacy-notebook-yellow.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/legacy-wing-view.webp": [
+    563,
+    1000
+  ],
+  "/images/stock/wing-new.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/fees-planning.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/planner-white.webp": [
+    1200,
+    900
+  ],
+  "/images/stock/family-sandals.webp": [
+    666,
+    1000
+  ],
+  "/images/stock/stethoscope-silver.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/family-sunlight.webp": [
+    563,
+    1000
+  ],
+  "/images/stock/leaves-backlit.webp": [
+    667,
+    1000
+  ],
+  "/images/stock/ultrasound-probe.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/planner-desk.webp": [
+    1200,
+    801
+  ],
+  "/images/stock/legacy-stethoscope-mono.webp": [
+    1200,
+    797
+  ],
+  "/images/stock/wing-sky.webp": [
+    563,
+    1000
+  ],
+  "/images/stock/luggage-packed.webp": [
+    1200,
+    900
+  ],
+  "/images/stock/microscope-focus.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/planner-calendar.webp": [
+    750,
+    1000
+  ],
+  "/images/stock/fern-light.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/microscope-stage.webp": [
+    750,
+    1000
+  ],
+  "/images/stock/legacy-ultrasound-keys.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/legacy-lab-hands.webp": [
+    667,
+    1000
+  ],
+  "/images/stock/ultrasound-room.webp": [
+    1200,
+    801
+  ],
+  "/images/stock/leaves-oak.webp": [
+    1000,
+    1000
+  ],
+  "/images/stock/legacy-stethoscope-detail.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/medical-hands.webp": [
+    667,
+    1000
+  ],
+  "/images/stock/ultrasound-panel.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/budget-documents.webp": [
+    667,
+    1000
+  ],
+  "/images/stock/family-shoes.webp": [
+    678,
+    1000
+  ],
+  "/images/stock/graph-notebook.webp": [
+    667,
+    1000
+  ],
+  "/images/stock/father-hands.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/stethoscope-blue.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/parent-hands.webp": [
+    668,
+    1000
+  ],
+  "/images/stock/microscope-white.webp": [
+    667,
+    1000
+  ],
+  "/images/stock/calendar-open.webp": [
+    750,
+    1000
+  ],
+  "/images/stock/wing-clouds.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/fees-laboratory.webp": [
+    800,
+    1000
+  ],
+  "/images/stock/stethoscope-white.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/microscope-flask.webp": [
+    1200,
+    900
+  ],
+  "/images/stock/legacy-wing-horizon.webp": [
+    750,
+    1000
+  ],
+  "/images/stock/legacy-stethoscope-red.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/notebook-wood.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/leaves-pattern.webp": [
+    673,
+    1000
+  ],
+  "/images/stock/hero-care-hands.webp": [
+    667,
+    1000
+  ],
+  "/images/stock/hero-consultation-record.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/hero-laboratory.webp": [
+    667,
+    1000
+  ],
+  "/images/stock/legacy-planner-pink.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/weekly-planner.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/fees-preservation.webp": [
+    667,
+    1000
+  ],
+  "/images/stock/ultrasound-scanner.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/baby-shoes.webp": [
+    1200,
+    807
+  ],
+  "/images/stock/lab-flasks.webp": [
+    667,
+    1000
+  ],
+  "/images/stock/ultrasound-controls.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/calculator-open.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/notebook-pen.webp": [
+    667,
+    1000
+  ],
+  "/images/stock/leaves-vibrant.webp": [
+    667,
+    1000
+  ],
+  "/images/stock/leaves-lush.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/legacy-wing-flight.webp": [
+    750,
+    1000
+  ],
+  "/images/stock/legacy-planner-green.webp": [
+    1200,
+    800
+  ],
+  "/images/stock/luggage-cabin.webp": [
+    1200,
+    801
+  ],
+  "/images/stock/leaves-soft.webp": [
+    667,
+    1000
+  ],
+  "/images/stock/baby-socks.webp": [
+    750,
+    1000
+  ],
+  "/images/stock/legacy-wing-runway.webp": [
+    750,
+    1000
+  ],
+  "/images/stock/leaves-green.webp": [
+    667,
+    1000
+  ]
+}

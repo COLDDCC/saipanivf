@@ -1,6 +1,10 @@
 ---
 import variants from '../data/image-variants.json';
-const {src,deferSource=false,sizes='(max-width: 650px) 100vw, (max-width: 1000px) 60vw, 50vw',...attrs}=Astro.props;
+import dimensions from '../data/image-dimensions.json';
+const {src,deferSource=false,decoding='async',width:providedWidth,height:providedHeight,sizes='(max-width: 650px) 100vw, (max-width: 1000px) 60vw, 50vw',...attrs}=Astro.props;
+const [sourceWidth,sourceHeight]=(dimensions as Record<string,number[]>)[src]||[];
+const width=providedWidth??(providedHeight&&sourceHeight?Math.round(Number(providedHeight)*sourceWidth/sourceHeight):sourceWidth);
+const height=providedHeight??(providedWidth&&sourceWidth?Math.round(Number(providedWidth)*sourceHeight/sourceWidth):sourceHeight);
 const srcset=(variants as Record<string,string>)[src];
 ---
-<img {...attrs} src={deferSource?undefined:src} srcset={deferSource?undefined:srcset} data-src={deferSource?src:undefined} data-srcset={deferSource?srcset:undefined} sizes={srcset?sizes:undefined}/>
+<img {...attrs} width={width} height={height} decoding={decoding} src={deferSource?undefined:src} srcset={deferSource?undefined:srcset} data-src={deferSource?src:undefined} data-srcset={deferSource?srcset:undefined} sizes={srcset?sizes:undefined}/>
