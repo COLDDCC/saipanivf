@@ -1,4 +1,4 @@
-/* Shared coastal editorial refinements; all five languages use these roles. */
+/* Shared coastal editorial refinements for every language. */
 :root {
   --cream: #fafcfe;
   --light: #eaf3fb;
@@ -150,3 +150,45 @@ html:lang(en) body :is(.hero-title,.hero-statement), html:lang(es) body :is(.her
 
 /* German medical terms must fit narrow screens without changing the shared layout. */
 html:lang(de) :is(h1,h2,h3,.button), html:lang(fr) :is(h1,h2,h3,.button) { hyphens: auto; overflow-wrap: anywhere; }
+
+/* Collapse navigation before long translated labels crowd the brand. */
+@media(max-width:1100px){
+ :root body .header{gap:12px}
+ :root body .brand{flex:1;min-width:0}
+ :root body .brand-wordmark{min-width:0}
+ :root body .brand small{max-width:100%;overflow:hidden;text-overflow:ellipsis}
+ :root body .menu-button{display:block;flex-shrink:0;min-width:52px;min-height:44px}
+ :root body .nav{display:none;position:absolute;top:100%;left:var(--gutter);right:var(--gutter);padding:20px;background:var(--paper);max-height:calc(100svh - 120px);overflow:auto;overscroll-behavior:contain}
+ :root body .nav.open{display:flex;flex-direction:column;align-items:stretch;gap:6px}
+ :root body .nav.open>a,:root body .nav-group>div>a{display:flex;align-items:center;min-height:44px;overflow-wrap:anywhere}
+ :root body .nav-group>div{position:static;width:100%;padding:0 0 0 15px}
+ :root body .nav-group summary{min-height:44px}
+ :root body .nav .nav-contact{justify-content:center;text-align:center}
+}
+@media(max-width:650px){
+ :root body :is(h1,h2,h3,.button,.template,.hero-tab){overflow-wrap:anywhere}
+ :root body .header{gap:8px}
+ :root body .language-switcher summary{padding-inline:6px}
+ :root body .menu-button{padding-inline:12px}
+ :root body .hero-copy{padding-block:20px;align-self:start}
+ :root body .hero-title{font-size:clamp(27px,7.6vw,32px);line-height:1.22}
+ :root body .hero-statement{font-size:18px;margin-bottom:10px}
+ :root body .hero-description{font-size:15px;line-height:1.65;margin-bottom:18px}
+ :root body .hero-controls{display:flex;flex-wrap:wrap;gap:4px 12px}
+ :root body .hero-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));flex:1 1 100%;min-width:0;gap:0 16px}
+ :root body .hero-tab{text-align:left;padding-block:10px;line-height:1.5;min-height:44px;hyphens:auto}
+ :root body .hero-playback{margin-left:auto;gap:8px}
+ :root body .hero-playback button{min-width:44px;min-height:44px}
+ :root body .slide-actions>*{max-width:100%}
+ :root body .visit-finder form{grid-template-columns:minmax(0,1fr)}
+ :root body .visit-finder .button{white-space:normal;width:100%}
+ :root body :is(.pricing-section,.localized-budget) .estimator{padding:18px;gap:20px}
+ :root body :is(.pricing-section,.localized-budget) .budget-result{padding:18px}
+ :root body :is(.pricing-section,.localized-budget) output{font-size:clamp(24px,6.6vw,34px);letter-spacing:-.02em}
+ :root body :is(.pricing-section,.localized-budget) .itemized{padding:20px}
+ :root body .form-card{padding:22px}
+ :root body .form-card h2{font-size:26px;line-height:1.35}
+ :root body .field select{min-height:52px;text-overflow:ellipsis}
+ :root body .form-card :is(.button,.template){white-space:normal;text-align:center}
+}
+@media(max-width:380px){:root body .header{padding-inline:12px;gap:6px}:root body .brand{gap:5px}:root body .language-switcher summary{font-size:12px;padding-inline:4px}:root body .menu-button{min-width:44px;padding-inline:8px}}
