@@ -28,3 +28,36 @@ for(const prefix of locales){
  assert.ok(contact.some(n=>n.tagName==='meta'&&attr(n,'name')==='viewport'&&!/maximum-scale|user-scalable=no/.test(attr(n,'content'))),prefix+' zoom allowed');
  console.log('PASS responsive content: '+(prefix||'zh-CN/')+' all 11 mobile costs match desktop; form first, guidance retained and zoom allowed');
 }
+
+// Follow the actual project/guide CTA, rather than testing only hand-written contact URLs.
+const slugs=['ivf','icsi','egg-freezing','frozen-embryo-transfer'];
+for(const prefix of locales){
+ for(const slug of slugs){
+  const all=nodes(parse(fs.readFileSync(`dist/${prefix}treatments/${slug}/index.html`,'utf8')));
+  const aside=all.find(n=>hasClass(n,'treatment-aside'));
+  const link=nodes(aside).find(n=>n.tagName==='a'&&hasClass(n,'button'));
+  const target=new URL(attr(link,'href'),'https://saipanivf.pages.dev');
+  assert.equal(target.pathname,`/${prefix}contact/`);
+  assert.equal(target.searchParams.get('topic'),slug,prefix+slug+' must pass a stable project code');
+ }
+ for(const [guide,slug] of [['egg-freezing','egg-freezing'],['ivf-steps','ivf']]){
+  const all=nodes(parse(fs.readFileSync(`dist/${prefix}guides/${guide}/index.html`,'utf8')));
+  assert.ok(all.some(n=>n.tagName==='a'&&attr(n,'href')===`/${prefix}contact/?topic=${slug}`),prefix+guide+' guide project prefill');
+ }
+}
+console.log('PASS inbound consultation: 32 treatment CTAs and 16 guide pages use stable project codes across eight languages.');
+
+const {default:vm}=await import('node:vm');
+const switchCode=nodes(parse(fs.readFileSync('dist/contact/index.html','utf8'))).find(n=>n.tagName==='script'&&text(n).includes('.language-switcher'));
+assert.ok(switchCode,'Language switch code present');
+for(const requested of ['egg-freezing','冻卵与生育力保存','凍卵與生育力保存','unrecognised']){
+ const anchors=locales.map(prefix=>{let href=`https://saipanivf.pages.dev/${prefix}contact/`;return {get href(){return href},set href(value){href=new URL(value,'https://saipanivf.pages.dev').href}}});
+ const listeners={};const switcher={querySelectorAll:()=>anchors,addEventListener(){},contains(){return false}};
+ vm.runInNewContext(text(switchCode),{URL,URLSearchParams,window:{location:{pathname:'/contact/',search:'?topic='+encodeURIComponent(requested)+'&email=private@example.com'}},document:{querySelectorAll:()=>[switcher],addEventListener(type,fn){listeners[type]=fn}}});
+ for(const link of anchors){const url=new URL(link.href);assert.equal(url.searchParams.get('topic'),requested==='unrecognised'?null:'egg-freezing');assert.ok(!url.searchParams.has('email'));}
+ listeners.change({target:{matches:()=>true,selectedOptions:[{dataset:{slug:'ivf'}}]}});
+ for(const link of anchors)assert.equal(new URL(link.href).searchParams.get('topic'),'ivf','Switch language with the current selection, not the old incoming project');
+ listeners.change({target:{matches:()=>true,selectedOptions:[{dataset:{}}]}});
+ for(const link of anchors)assert.equal(new URL(link.href).searchParams.get('topic'),null,'Clearing the project clears it from language links');
+}
+console.log('PASS language handoff: stable and legacy projects, changed/cleared selection, unknown values ignored, no personal query propagation.');

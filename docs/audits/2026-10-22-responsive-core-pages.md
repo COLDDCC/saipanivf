@@ -16,3 +16,10 @@ Scope: homepage, fees and contact across the existing eight languages. Shared bl
 
 ## Verification limit
 The current cloud-browser surface does not expose viewport resizing. A browser zoom attempt did not change its CSS viewport (1348px). No local-file workaround was attempted. Therefore these structural/CSS checks are not a 320/375/390px screenshot test or physical-device certification. Live desktop visual and functional checks are performed after deployment.
+
+## Follow-up: actual consultation entry paths
+Following the live Simplified Chinese treatment CTA exposed a real gap: it passed a translated treatment title instead of a stable slug. The form prefilled correctly, but switching language lost the project. The matching Chinese guide CTAs had the same issue.
+
+Treatment and guide CTAs now use stable slugs. Language switching also recognises previous Chinese links and follows subsequent manual project changes, including clearing the selection. It carries only an allowlisted project; personal query parameters are excluded.
+
+The responsive-content check now validates all 32 treatment CTAs and 16 relevant guide pages, plus legacy URLs, changed/cleared selections and ignored unknown/personal parameters. Full build/regression checks pass. This is a user-path/functional verification; physical mobile/browser viewport QA remains pending.

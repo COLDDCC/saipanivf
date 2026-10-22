@@ -9,10 +9,16 @@ const options=[['zh-CN','简体中文',path],['zh-TW','繁體中文','/zh-hant'+
 
 <script>
 document.querySelectorAll<HTMLDetailsElement>('.language-switcher').forEach(switcher=>{
- const topic=new URLSearchParams(window.location.search).get('topic');
- if(topic&&['ivf','icsi','egg-freezing','frozen-embryo-transfer'].includes(topic)&&/\/contact\/?$/.test(window.location.pathname)){
-  switcher.querySelectorAll<HTMLAnchorElement>('a').forEach(link=>{const target=new URL(link.href);target.searchParams.set('topic',topic);link.href=target.pathname+target.search;});
- }
+ const allowed=['ivf','icsi','egg-freezing','frozen-embryo-transfer'];
+ const requested=new URLSearchParams(window.location.search).get('topic');
+ const legacy={ '试管婴儿 IVF':'ivf','試管嬰兒 IVF':'ivf','单精子注射 ICSI':'icsi','單精子注射 ICSI':'icsi','冻卵与生育力保存':'egg-freezing','凍卵與生育力儲存':'egg-freezing','凍卵與生育力保存':'egg-freezing','冻胚移植 FET':'frozen-embryo-transfer','凍胚移植 FET':'frozen-embryo-transfer' };
+ const initial=allowed.includes(requested||'')?requested:legacy[requested||''];
+ const sync=(topic:string|undefined)=>{
+  if(!/\/contact\/?$/.test(window.location.pathname))return;
+  switcher.querySelectorAll<HTMLAnchorElement>('a').forEach(link=>{const target=new URL(link.href);if(topic&&allowed.includes(topic))target.searchParams.set('topic',topic);else target.searchParams.delete('topic');link.href=target.pathname+target.search;});
+ };
+ sync(initial);
+ document.addEventListener('change',event=>{const target=event.target as HTMLSelectElement;if(target?.matches('#consult-form [name=topic]'))sync(target.selectedOptions[0]?.dataset.slug);});
  document.addEventListener('click',event=>{if(!switcher.contains(event.target as Node))switcher.open=false;});
  switcher.addEventListener('keydown',event=>{if(event.key==='Escape'&&switcher.open){event.preventDefault();switcher.open=false;switcher.querySelector('summary')?.focus();}});
 });
