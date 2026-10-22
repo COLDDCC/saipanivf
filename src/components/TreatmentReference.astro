@@ -1,0 +1,16 @@
+---
+import { treatments } from '../data/treatments';
+const {locale='zh-CN',slug,kind='medical'}=Astro.props;
+const source=treatments.find(t=>t.slug===slug)?.source;
+const prefix=locale==='zh-CN'?'':'/'+locale;
+const c={
+ 'zh-CN':{medical:'医学资料',guide:'HFEA患者指南',risk:'HFEA：生育治疗风险',cost:'费用说明',budget:'本站预算构成',quote:'书面报价核对表',checked:'医学资料核对',scope:'医学说明参考HFEA患者资料。英国价格、资助与保存法规不作为塞班标准；个体治疗安排由接诊医生确定。',policy:'内容与来源说明'},
+ en:{medical:'Medical reference',guide:'HFEA patient guide',risk:'HFEA: Risks of fertility treatment',cost:'Budget basis',budget:'Website budget components',quote:'Written quotation checklist',checked:'Medical sources checked',scope:'Medical explanations draw on HFEA patient information. UK prices, funding and storage laws are not Saipan standards. The treating physician determines individual care.',policy:'Content and source policy'},
+ ja:{medical:'医学参考資料',guide:'HFEA患者ガイド',risk:'HFEA：生殖医療のリスク',cost:'費用の説明',budget:'当サイトの予算内訳',quote:'書面見積りの確認表',checked:'医学資料の確認',scope:'医学説明はHFEAの患者資料を参考にしています。英国の価格、助成、保存法規はサイパンの基準ではありません。個別の治療計画は担当医が判断します。',policy:'内容と出典の方針'},
+ ko:{medical:'의학 참고 자료',guide:'HFEA 환자 안내',risk:'HFEA: 생식 치료의 위험',cost:'예산 근거',budget:'사이트 예산 구성',quote:'서면 견적 확인표',checked:'의학 자료 확인',scope:'의학 설명은 HFEA 환자 자료를 참고합니다. 영국의 가격, 지원과 보관 법규는 사이판 기준이 아닙니다. 개인 치료 계획은 담당 의사가 결정합니다.',policy:'콘텐츠와 출처 안내'}
+}[locale];
+---
+{kind==='summary'?<aside class="treatment-reference reference-summary" data-reference="summary"><p>{c.checked}：<time datetime="2026-10-21">2026-10-21</time></p><p>{c.scope}</p><a href={prefix+'/editorial-policy/'}>{c.policy}</a></aside>:kind==='cost'?<p class="treatment-reference" data-reference="cost">{c.cost}：<a href={prefix+'/fees/'}>{c.budget}</a><span aria-hidden="true"> · </span><a href={prefix+'/guides/quotation/'}>{c.quote}</a></p>:<p class="treatment-reference" data-reference={kind}>{c.medical}：<a href={source} target="_blank" rel="noopener">{c.guide}</a>{kind==='risk'&&<><span aria-hidden="true"> · </span><a href="https://www.hfea.gov.uk/treatments/explore-all-treatments/risks-of-fertility-treatment/" target="_blank" rel="noopener">{c.risk}</a></>}</p>}
+<style>
+p.treatment-reference,aside.treatment-reference{font-size:14px!important;line-height:1.8!important;color:var(--muted);margin:18px 0 0}.treatment-reference a{color:var(--blue);text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}.reference-summary{border-top:1px solid #c8d9e6;padding-top:20px;margin-top:32px!important}.reference-summary p{font-size:14px!important;line-height:1.8!important;margin:0 0 8px}
+</style>
