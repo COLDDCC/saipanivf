@@ -1,14 +1,9 @@
 /* Shared coastal editorial refinements for every language. */
 :root {
-  --cream: #fafcfe;
-  --light: #eaf3fb;
-  --ink: #173b60;
-  --deep: #175b91;
-  --blue: #1767a6;
   --space: clamp(52px, 6vw, 88px);
   --heading-size: clamp(28px, 3vw, 42px);
   --body-leading: 1.85;
-  --table-rule: #c3d2d4;
+  --table-rule: var(--rule);
 }
 :root body { font-kerning: normal; }
 :root body :is(h1,h2,h3) { letter-spacing: -.025em; }
@@ -64,7 +59,7 @@
 :root body :is(.comparison,.responsibilities) table { font-variant-numeric: tabular-nums; }
 :root body :is(.comparison,.responsibilities) :is(th,td) { padding: 22px 20px; border-bottom-color: var(--table-rule); }
 :root body :is(.comparison,.responsibilities) thead { background: var(--deep); }
-:root body :is(.comparison,.responsibilities) t:root body th { background: var(--light); }
+:root body :is(.comparison,.responsibilities) tbody th { background: var(--light); }
 :root body :is(.comparison,.responsibilities) :is(.comparison-mobile,.mobile-cards) article { background: var(--light); }
 :root body .treatment-main>section { margin-bottom: 40px; }
 :root body .treatment-main>section>h2 { font-size: clamp(26px,2.4vw,34px); margin-bottom: 20px; }
