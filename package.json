@@ -10,14 +10,15 @@
     "check:budget": "node scripts/check-budget.mjs",
     "check:hero": "node scripts/check-hero.mjs",
     "check:site": "python scripts/check-site.py",
-    "check": "npm run check:budget && npm run check:hero && npm run check:site && npm run check:images && npm run check:seo && npm run check:faq && npm run check:i18n && npm run check:consultation && npm run check:journey",
+    "check": "npm run check:budget && npm run check:hero && npm run check:site && npm run check:images && npm run check:seo && npm run check:faq && npm run check:i18n && npm run check:consultation && npm run check:journey && npm run check:engagement",
     "verify": "npm run build && npm run check",
     "check:images": "python scripts/check-images.py",
     "check:seo": "python scripts/check-seo.py",
     "check:faq": "node scripts/check-faq.mjs",
     "check:i18n": "node scripts/check-i18n.mjs",
     "check:consultation": "node scripts/check-consultation.mjs",
-    "check:journey": "node scripts/check-journey.mjs"
+    "check:journey": "node scripts/check-journey.mjs",
+    "check:engagement": "node scripts/check-engagement.mjs"
   },
   "dependencies": {
     "acorn": "^8.19.0",

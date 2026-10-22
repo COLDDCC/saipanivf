@@ -1,0 +1,24 @@
+# 咨询路径统计启用
+
+代码部署不会自动创建数据库。未绑定或未建表时，接口返回 configured:false，浏览器不发送操作记录，咨询邮件功能照常使用。
+
+1. 在 Cloudflare 控制台创建 D1 数据库，建议名称 saipanivf-engagement。
+2. 在数据库 Console 执行仓库 migrations/0001_engagement.sql 中的建表语句。
+3. 在 Pages 项目 saipanivf 的 Settings → Bindings 添加 D1 数据库绑定：变量名 ENGAGEMENT_DB，选择刚创建的数据库，应用到 Production。重新部署项目。预览环境可保持不绑定，避免测试操作混入。
+4. 打开 /api/engagement，显示 {"configured":true} 即表示数据库及表可用。浏览器开启 DNT、GPC 或自动化模式时不会记录操作。
+
+## 查看数据
+
+在 D1 Console 执行：
+
+```sql
+SELECT day, event, language, count
+FROM engagement_daily
+ORDER BY day DESC, event, language;
+```
+
+日期按 UTC 汇总。treatment_view：治疗详情浏览；contact_open：点击咨询页链接；budget_use：修改预算选项；consult_start：开始填写；consult_draft：生成有效邮件草稿；email_open：点击邮件链接；consult_copy：成功复制咨询内容。
+
+这是操作次数，不能视为独立访客数。开始填写、预算使用及治疗浏览在每次页面加载中最多记录一次，其余操作每次成功触发均计数。邮件链接点击不代表客户端已打开，更不代表邮件已发送或线索已收到。未来接入飞书后，真实提交成功应使用独立事件及服务端确认。
+
+数据库仅存日期、事件、语言、次数，不存姓名、联系方式、咨询正文、完整网址、IP、访客标识或 Cookie。Cloudflare 托管服务本身的网络处理另受其政策约束。五种语言隐私页已加入相应说明。

@@ -14,6 +14,6 @@ for(const prefix of ['','zh-hant/','en/','ja/','ko/']){
  reset.listeners.click();assert(inputs.every(i=>!i.checked));assert(status.textContent.endsWith('0 / 6'));
  assert(!/localStorage|sessionStorage|fetch\(/.test(source),'Preparation ticks must remain on page');
  assert(all.some(n=>attr(n,'id')==='follow-up'));assert.equal(all.filter(n=>n.tagName==='article'&&attr(n,'class')==='care-stage').length,6);
- const css=all.filter(n=>n.tagName==='link'&&attr(n,'rel')==='stylesheet').map(n=>fs.readFileSync('dist'+attr(n,'href'),'utf8')).join('');assert(css.includes('@media print')&&css.includes('break-before:page'));
+ const css=all.filter(n=>n.tagName==='link'&&attr(n,'rel')==='stylesheet'&&attr(n,'href').startsWith('/')).map(n=>fs.readFileSync('dist'+attr(n,'href'),'utf8')).join('');assert(css.includes('@media print')&&css.includes('break-before:page'));
  console.log('PASS journey:',prefix||'zh-CN','stage links, checkbox progress, reset, print action and no storage/network');
 }
