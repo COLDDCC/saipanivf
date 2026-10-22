@@ -12,7 +12,7 @@ const labels=Astro.props.labels||{region:"塞班辅助生殖服务",carousel:"�
 <div class="hero-carousel" role="region" aria-roledescription={labels.carousel} aria-label={labels.region} data-pause-label={labels.pause} data-resume-label={labels.resume} data-hero-carousel>
  <div class="hero-slides">
  {slides.map((slide,index)=>{const Heading=index===0?'h1':'h2';return <article class:list={['hero-slide',{'is-active':index===0}]} aria-roledescription={labels.slide} aria-label={`${index+1} / ${slides.length}：${slide.subtitle}`} aria-hidden={index!==0} inert={index!==0} data-slide>
- <ResponsiveImage class="hero-slide-image" src={slide.image} sizes="(max-width: 650px) 100vw, (max-width: 1000px) 45vw, 55vw" alt="" width={index===0?640:1000} height={index===0?358:650} loading="eager" fetchpriority={index===0?'high':'low'} decoding="async"/>
+ <ResponsiveImage class="hero-slide-image" src={slide.image} deferSource={index!==0} sizes="(max-width: 650px) 100vw, (max-width: 1000px) 45vw, 55vw" alt="" width={index===0?640:1000} height={index===0?358:650} loading="eager" fetchpriority={index===0?'high':'low'} decoding="async"/>
  <div class="hero-shade"></div>
  <div class="hero-copy"><Heading class="hero-title">{slide.title}</Heading><p class="hero-statement">{slide.accent}</p><p class="hero-description">{slide.text}</p><div class="slide-actions"><a class="button light" href={slide.href}>{slide.primary}</a><a class="slide-secondary" href={slide.secondaryHref}>{slide.secondary}</a></div></div>
  </article>})}
@@ -28,6 +28,21 @@ if(root){
  const slides=Array.from(root.querySelectorAll<HTMLElement>('[data-slide]'));
  const tabs=Array.from(root.querySelectorAll<HTMLButtonElement>('[data-slide-to]'));
  const pause=root.querySelector<HTMLButtonElement>('[data-hero-pause]')!;
+ let request=0;
+ const imageLoads=new Map<number,Promise<boolean>>();
+ function loadSlide(index:number):Promise<boolean>{
+  if(imageLoads.has(index))return imageLoads.get(index)!;
+  const image=slides[index].querySelector<HTMLImageElement>('img')!;
+  const loading=new Promise<boolean>(resolve=>{
+   const ready=()=>{if(image.decode)image.decode().then(()=>resolve(true),()=>resolve(image.naturalWidth>0));else resolve(true);};
+   image.addEventListener('load',ready,{once:true});
+   image.addEventListener('error',()=>resolve(false),{once:true});
+   const source=image.dataset.src;
+   if(source){if(image.dataset.srcset)image.srcset=image.dataset.srcset;image.src=source;}
+   if(image.complete) {if(image.naturalWidth>0)ready();else if(!source)resolve(false);}
+  });
+  imageLoads.set(index,loading);return loading;
+ }
  let current=0,manualPause=false,timer:ReturnType<typeof setInterval>|undefined;
  function schedule(){
   if(timer)clearInterval(timer);
@@ -37,9 +52,14 @@ if(root){
   if(!manualPause&&!root!.contains(document.activeElement)&&!document.hidden)timer=setInterval(()=>show(current+1),5000);
  }
  function show(index:number){
-  current=(index+slides.length)%slides.length;
-  slides.forEach((slide,i)=>{const active=i===current;slide.classList.toggle('is-active',active);slide.setAttribute('aria-hidden',String(!active));slide.inert=!active;});
-  tabs.forEach((tab,i)=>{tab.classList.toggle('is-active',i===current);tab.setAttribute('aria-pressed',String(i===current));});
+  const next=(index+slides.length)%slides.length,ticket=++request;
+  loadSlide(next).then(ready=>{
+   if(!ready||ticket!==request)return;
+   current=next;
+   slides.forEach((slide,i)=>{const active=i===current;slide.classList.toggle('is-active',active);slide.setAttribute('aria-hidden',String(!active));slide.inert=!active;});
+   tabs.forEach((tab,i)=>{tab.classList.toggle('is-active',i===current);tab.setAttribute('aria-pressed',String(i===current));});
+   void loadSlide((current+1)%slides.length);
+  });
  }
  tabs.forEach((tab,i)=>tab.addEventListener('click',()=>{show(i);schedule();}));
  root.querySelector('[data-hero-prev]')!.addEventListener('click',()=>{show(current-1);schedule();});
@@ -50,6 +70,8 @@ if(root){
  root.addEventListener('keydown',event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();show(current+(event.key==='ArrowRight'?1:-1));schedule();}});
  document.addEventListener('visibilitychange',schedule);
 
+ // The first image remains discoverable in HTML; warm only the next slide after it is ready.
+ void loadSlide(0).then(()=>loadSlide(1));
  schedule();
 }
 </script>

@@ -35,12 +35,12 @@ for path in Path('dist').rglob('index.html'):
   crumbs=next(node['itemListElement'] for node in graph if node['@type']=='BreadcrumbList')
   assert crumbs[-1]['item']==page.canonical
  for image in page.images:
-  if image.get('src','').startswith('/'):
-   if urlparse(image['src']).path.endswith('.svg'):
-    assert (Path('dist')/urlparse(image['src']).path.lstrip('/')).is_file(),(path,'vector image')
+  if (image.get('data-src') or image.get('src','')).startswith('/'):
+   if urlparse(image.get('data-src') or image['src']).path.endswith('.svg'):
+    assert (Path('dist')/urlparse(image.get('data-src') or image['src']).path.lstrip('/')).is_file(),(path,'vector image')
     continue
-   assert image.get('srcset') and image.get('sizes'),(path,'responsive image')
-   for candidate in image['srcset'].split(','):
+   assert (image.get('data-srcset') or image.get('srcset')) and image.get('sizes'),(path,'responsive image')
+   for candidate in (image.get('data-srcset') or image['srcset']).split(','):
     assert (Path('dist')/candidate.strip().split()[0].lstrip('/')).is_file(),(path,candidate)
 root=ET.parse('dist/sitemap.xml').getroot();ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
 urls=[node.text for node in root.findall('s:url/s:loc',ns)]
@@ -48,7 +48,7 @@ assert len(urls)==len(set(urls)) and set(urls)==expected,('sitemap mismatch',set
 hero=Head();hero.feed(Path('dist/index.html').read_text())
 slides=[im for im in hero.images if 'hero-slide-image' in im.get('class','')]
 assert len(slides)==4 and slides[0]['loading']=='eager' and slides[0]['fetchpriority']=='high'
-assert all(im['loading']=='eager' and im.get('fetchpriority')=='low' for im in slides[1:])
+assert all(im.get('data-src','').startswith('/images/') and not im.get('src') and im.get('fetchpriority')=='low' for im in slides[1:])
 assert slides[0]['src'].startswith('/images/')
 print(f'PASS SEO: {len(expected)} indexable pages, sitemap coverage, canonical, JSON-LD, sharing, responsive sources; complete multilingual pages; hero priority.')
 
