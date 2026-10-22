@@ -1,4 +1,5 @@
 ---
+import HomeBirthLink from "../components/HomeBirthLink.astro";
 import HomeClientCount from "../components/HomeClientCount.astro";
 import { team as people } from "../data/team";
 import ResponsiveImage from "../components/ResponsiveImage.astro";
@@ -6,7 +7,6 @@ import SiteLayout from "../layouts/SiteLayout.astro";
 import HeroCarousel from "../components/HeroCarousel.astro";
 import "../styles/home.css";
 import { faqs } from "../data/faq";
-import { birthPlanning } from "../data/birthPlanning";
 const asset=(name)=>`/images/stock/${name}.webp`;
 const projects=[
  {title:'试管婴儿 IVF / ICSI',label:'辅助生殖',text:'从初诊评估、促排取卵到胚胎培养，了解治疗环节与受精方式。',href:'/treatments/ivf/',image:'microscope-white',alt:'实验室显微镜'},
@@ -32,8 +32,8 @@ const guides=[
 <section class="section wrap home-budget"><div class="budget-photo"><ResponsiveImage src={asset('calculator-open')} alt="计算器、笔记本与钢笔" width="640" height="480" loading="lazy"/></div><div><h2>IVF费用，逐项了解</h2><p>取卵与培养、药物、麻醉、ICSI、冷冻与移植可能分别计费。使用预算工具，再向院方核对包含项目和书面报价。</p><a class="button" href="/fees/">查看费用与预算工具</a><a class="inline-link budget-guide" href="/guides/quotation/">先读报价核对指南</a></div></section>
 <section class="journey-panel"><div class="section wrap"><div class="section-head"><div><h2>IVF就诊安排</h2></div><a class="inline-link" href="/process/">完整IVF流程</a></div><div class="visit-grid"><a href="/guides/first-visit/" class="visit-card"><ResponsiveImage src={asset('stethoscope-white')} alt="听诊器" width="640" height="420" loading="lazy"/><div><span>咨询与评估</span><h3>先整理报告，确认初诊</h3><p>询问初诊方式、医生需要的资料与咨询费用。</p></div></a><a href="/guides/travel-checklist/" class="visit-card"><ResponsiveImage src={asset('luggage-packed')} alt="旅行前整理好的行李箱" width="640" height="420" loading="lazy"/><div><span>行程与住宿</span><h3>按医生日程预订行程</h3><p>结合到院时间安排交通、住宿、陪同与退改。</p></div></a><a href="/process/" class="visit-card"><ResponsiveImage src={asset('calendar-open')} alt="日程本与钢笔" width="640" height="420" loading="lazy"/><div><span>治疗与随访</span><h3>确认复查与返程安排</h3><p>离院前核对用药、复查日期和联系渠道。</p></div></a></div></div></section>
 <section class="soft"><div class="section wrap home-section"><div class="section-head"><div><h2>就诊指南</h2></div><a class="inline-link" href="/guides/">全部就诊指南</a></div><div class="guide-grid">{guides.map(guide=><a class="guide-card" href={`/guides/${guide.slug}/`}><ResponsiveImage src={asset(guide.image)} alt={{'notebook-wood':'木桌上的笔记本','microscope-focus':'实验室显微镜近景','budget-documents':'费用记录与文件','fern-light':'自然光下的蕨类植物','wing-clouds':'飞机舷窗外的机翼与云层','baby-shoes':'婴儿鞋'}[guide.image]} width="640" height="400" loading="lazy"/><div class="guide-copy"><h3>{guide.title}</h3><p>{guide.text}</p><span class="read-more">阅读全文</span></div></a>)}</div></div></section>
-<section class="section wrap home-faq"><div class="section-head"><div><h2>常见问题</h2><p class="section-intro">身份、预算、时间和初诊准备，先看直接回答。</p></div><a class="inline-link" href="/faq/">全部问题与资料来源</a></div><div class="faq">{[0,6,8,10].map(index=><details><summary>{faqs[index].question}</summary><p><strong>{faqs[index].answer}</strong></p><a class="inline-link" href={`/faq/#${faqs[index].id}`}>查看依据与完整说明</a></details>)}</div></section>
-<section class="section wrap birth-benefits"><div class="section-head"><div><h2>塞班分娩与家庭规划</h2><p class="section-intro">从身份、教育、就业到家庭安排，了解可能的选择，也了解办理条件。IVF治疗与塞班分娩是两项不同安排。</p></div><a class="inline-link" href="/birth-planning/">查看详细说明与政策来源</a></div><div class="birth-banner"><ResponsiveImage src="/images/stock/family-shoes.webp" width="1100" height="440" alt="双手捧着婴儿鞋" loading="lazy"/></div><div class="birth-grid">{birthPlanning.map((item,i)=><details><summary><span>{item.category}</span><strong>{item.title}</strong></summary><p>{item.text}</p></details>)}</div><a class="button" href="/birth-planning/">了解身份、教育与家庭规划</a></section>
+<section class="section wrap home-faq"><div class="section-head"><div><h2>常见问题</h2><p class="section-intro">费用、治疗时间与初诊准备，先看你最关心的问题。</p></div><a class="inline-link" href="/faq/">全部问题与资料来源</a></div><div class="faq">{[6,8,10,11].map(index=><details><summary>{faqs[index].question}</summary><p><strong>{faqs[index].answer}</strong></p><a class="inline-link" href={`/faq/#${faqs[index].id}`}>查看依据与完整说明</a></details>)}</div></section>
+<HomeBirthLink/>
 <script>
 const finder=document.querySelector<HTMLFormElement>('#visit-finder');finder?.addEventListener('submit',event=>{event.preventDefault();const select=document.querySelector<HTMLSelectElement>('#visit-topic');if(select)window.location.assign(select.value)});
 </script></SiteLayout>

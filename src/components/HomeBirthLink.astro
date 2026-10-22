@@ -1,0 +1,15 @@
+---
+import ResponsiveImage from './ResponsiveImage.astro';
+const {locale='zh-CN'}=Astro.props;
+const copy={
+ 'zh-CN':['相关就诊信息','也在考虑塞班分娩？','IVF治疗与分娩需要分别安排。了解产科接诊、出行证件与出生登记等准备事项。','查看塞班分娩指南','双手捧着婴儿鞋'],
+ en:['Related patient information','Also considering childbirth in Saipan?','IVF treatment and childbirth require separate arrangements. Explore obstetric care, travel documents and birth registration.','Read the childbirth guide','Hands holding baby shoes'],
+ ja:['関連する受診情報','サイパンでの出産も検討していますか？','IVF治療と出産は別々に準備します。産科の受診、渡航書類、出生登録などの確認事項をご覧ください。','出産ガイドを見る','ベビーシューズを持つ手'],
+ ko:['관련 진료 정보','사이판 출산도 고려하고 계신가요?','IVF 치료와 출산은 별도로 준비해야 합니다. 산과 진료, 여행 서류와 출생 등록 등 준비 사항을 확인하세요.','출산 안내 보기','아기 신발을 들고 있는 손']
+}[locale];
+const prefix=locale==='zh-CN'?'':'/'+locale;
+---
+<section class="wrap home-birth-link" aria-labelledby="home-birth-title"><div class="birth-related-copy"><span class="category">{copy[0]}</span><h2 id="home-birth-title">{copy[1]}</h2><p>{copy[2]}</p><a class="inline-link" href={prefix+'/birth-planning/'}>{copy[3]} <span aria-hidden="true">→</span></a></div><ResponsiveImage src="/images/stock/family-shoes.webp" width="640" height="400" sizes="(max-width: 650px) 100vw, 33vw" alt={copy[4]} loading="lazy"/></section>
+<style>
+.home-birth-link{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:center;padding-block:40px;margin-bottom:48px;border-top:1px solid #d6e2eb}.birth-related-copy{min-width:0;max-width:740px}.birth-related-copy h2{font-size:clamp(25px,3vw,36px);margin:12px 0 16px}.birth-related-copy p{font-size:16px;line-height:1.8;margin-bottom:20px}.home-birth-link img{width:100%;height:220px;object-fit:cover;border-radius:4px}@media(max-width:650px){.home-birth-link{grid-template-columns:1fr;gap:24px;padding-block:30px;margin-bottom:24px}.home-birth-link img{height:160px;object-position:center 55%}}
+</style>

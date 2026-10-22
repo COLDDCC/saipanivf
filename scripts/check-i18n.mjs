@@ -23,7 +23,7 @@ for(const relative of base){
  const images=prefix=>nodes(parse(fs.readFileSync(path.join('dist',prefix,relative),'utf8'))).filter(n=>n.tagName==='img').map(n=>attr(n,'src'));
  const expected=images('');for(const prefix of ['zh-hant','en','ja','ko'])assert.deepEqual(images(prefix),expected,prefix+'/'+relative+' image parity');
 }
-for(const prefix of ['en','ja','ko']){const home=fs.readFileSync('dist/'+prefix+'/index.html','utf8');for(const cls of ['photo-cards','home-center','people-grid','home-budget','journey-panel','guide-grid','birth-benefits'])assert(home.includes(cls),prefix+' missing shared home layout '+cls);}
+for(const prefix of ['en','ja','ko']){const home=fs.readFileSync('dist/'+prefix+'/index.html','utf8');for(const cls of ['photo-cards','home-center','people-grid','home-budget','journey-panel','guide-grid','home-birth-link'])assert(home.includes(cls),prefix+' missing shared home layout '+cls);}
 console.log('PASS visual parity: image sources and order match Simplified Chinese on all 92 translated routes; shared home layouts.');
 
 for(const relative of base){
