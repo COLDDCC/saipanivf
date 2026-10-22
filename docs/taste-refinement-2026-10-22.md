@@ -44,3 +44,10 @@ Top three remaining limits:
 3. Full-page photographic/art-direction scoring is not claimed from core-page desktop checks alone.
 
 Measured after complete page load at 1348px: all eight contact fields use rgb(241,246,252), with 42px consultation titles spanning at most two lines; French improved from three to two. All eight form cards retain 635.23px desktop width. All 24 core routes have no horizontal overflow. All home carousels retain 524px height, blue rgb(23,59,96) ink and visible newborn logos. The header/hero structure, image source parity and routes remain intact. Cloudflare code deployment succeeded at 91b65cc55922bb5d153af9868c2e9ad11843ee4f.
+
+## Interior-page follow-up
+Kept the same direction, palette and assets. Reviewed process, guide index, team and IVF detail pages. Removed ornamental zero-padded labels from the six-stage shared journey and Chinese guide reading paths; stage titles, order, links, checkbox status and print styles remain. Guide cards now use their full content width. Team names precede role descriptions; questions use the shared white-on-blue surface convention instead of a mobile divider. Treatment detail and its consultation/source blocks required no additional layout change.
+
+Taste source lint now scans all 80 source files with 0 FAIL and 0 WARN. The existing floating language-menu elevation is retained under the skill's explicit menu exception, documented beside that single property; no resting-panel elevation was introduced. This is a source-scan result, not a three-viewport visual score.
+
+Full build/regression checks passed after the component changes, including six stage anchors, checkbox progress, reset, print action and no storage/network for all eight journey variants. Existing image, route, consultation and budget checks also passed. Mobile/tablet screenshot limits remain as stated above.
