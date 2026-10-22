@@ -30,3 +30,17 @@ Top three problems:
 - Whole-src lint was also reviewed; pre-existing guide/journey index numbering, team divider and the allowed floating language-menu shadow are outside this bounded consistency pass. The whole site is not claimed to have passed the Taste source gate.
 - Browser desktop measurements before change: header 98.5px, carousel 524px, all eight contact variants without horizontal overflow; French consultation heading three lines, the other seven two lines.
 - Live before/after screenshots and computed-style checks are performed through the supported browser. The standalone inspector is not run because the available browser does not expose its required 1440/768/390 viewport controls. Scores and full mobile/tablet certification are withheld.
+
+## ROUND 2 — deployed desktop review
+Seen in one second: lagoon photograph with the Saipan IVF title; the original split composition survives.
+Idea (one sentence): unchanged coastal photographic patient guide, grounded in Garapan location and named care team.
+Live thing: English egg-freezing budget recalculates to $12,800–17,800; French consultation generates a clearly marked NON ENVOYÉ draft. No email sent.
+Layout words by section: unchanged from round 1.
+Scores: withheld; phone/tablet widths unavailable.
+Caps applied: incomplete three-width inspector; no full compliance score.
+Top three remaining limits:
+1. Phone/tablet composition requires the unavailable 390/768px screenshots; CSS checks are not a substitute.
+2. Pre-existing guide/journey decorative numbering is outside this pass.
+3. Full-page photographic/art-direction scoring is not claimed from core-page desktop checks alone.
+
+Measured after complete page load at 1348px: all eight contact fields use rgb(241,246,252), with 42px consultation titles spanning at most two lines; French improved from three to two. All eight form cards retain 635.23px desktop width. All 24 core routes have no horizontal overflow. All home carousels retain 524px height, blue rgb(23,59,96) ink and visible newborn logos. The header/hero structure, image source parity and routes remain intact. Cloudflare code deployment succeeded at 91b65cc55922bb5d153af9868c2e9ad11843ee4f.
