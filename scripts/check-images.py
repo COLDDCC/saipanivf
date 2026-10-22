@@ -9,7 +9,7 @@ class Images(HTMLParser):
 uses=defaultdict(list)
 for page in Path('dist').rglob('*.html'):
  locale=next((part for part in page.parts if part in ['en','ja','ko','es','de','fr','zh-hant']),'zh-CN')
- html=page.read_text();parser=Images();parser.feed(html)
+ html=page.read_text(encoding='utf-8');parser=Images();parser.feed(html)
  for src in set(re.findall(r'url\([\"\']?([^\"\')]+)',html)):
   if src.startswith('/') or src.startswith('http'):uses[(locale,src)].append(str(page)+' [background]')
  for image in parser.images:

@@ -18,8 +18,12 @@ chars={k:set() for k in ('sc','tc','ja','ko')}
 for p in (root/'dist').rglob('index.html'):
  first=p.relative_to(root/'dist').parts[0]; k={'zh-hant':'tc','ja':'ja','ko':'ko'}.get(first,'sc' if first not in ('en','es','de','fr') else None)
  if k:
-  h=Headings();h.feed(p.read_text());chars[k].update(h.text)
+  h=Headings();h.feed(p.read_text(encoding='utf-8'));chars[k].update(h.text)
 manifest={}
+prev={}
+if (out/'manifest.json').exists():
+ prev=json.loads((out/'manifest.json').read_text(encoding='utf-8'))
+regressions=[]
 for k in ('sc','tc','ja','ko','latin','sans'):
  font=TTFont(sources/(k+'.ttf'))
  if k!='sans':font=instantiateVariableFont(font,{'wght':600},inplace=True)
@@ -38,5 +42,17 @@ for k in ('sc','tc','ja','ko','latin','sans'):
    if record.nameID in names:record.string=names[record.nameID].encode(record.getEncoding(),errors='replace')
  font.save(path)
  shutil.copy(sources/(k+'-OFL.txt'),out/(name+'-OFL.txt'))
- manifest[name]={'bytes':path.stat().st_size,'glyphs':len(font.getBestCmap()),'codepoints':list(font.getBestCmap()),'sha256':hashlib.sha256(path.read_bytes()).hexdigest()};print(name,manifest[name],flush=True)
-(out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
+ manifest[name]={'bytes':path.stat().st_size,'glyphs':len(font.getBestCmap()),'codepoints':list(font.getBestCmap()),'sha256':hashlib.sha256(path.read_bytes()).hexdigest()};print(name,manifest[name]['bytes'],'bytes,',manifest[name]['glyphs'],'glyphs',flush=True)
+ old=prev.get(name)
+ if old and manifest[name]['bytes']>old['bytes']*1.10:
+  regressions.append(name+': '+str(old['bytes'])+' -> '+str(manifest[name]['bytes']))
+(out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
+dist=root/'dist/fonts'
+if dist.exists():
+ for name in manifest:
+  shutil.copy(out/(name+'.woff2'),dist/(name+'.woff2'))
+ (dist/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
+if regressions:
+ print('REGRESSED (over 10% larger than previous subsets):',', '.join(regressions),flush=True)
+ print('Check the downloaded source font version in scripts/fetch-font-sources.py.',flush=True)
+ import sys;sys.exit(1)

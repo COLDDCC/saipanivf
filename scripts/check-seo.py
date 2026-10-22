@@ -22,7 +22,7 @@ class Head(HTMLParser):
 
 titles=set();expected=set()
 for path in Path('dist').rglob('index.html'):
- page=Head();page.feed(path.read_text());route='/'+str(path.parent.relative_to('dist')).strip('.')
+ page=Head();page.feed(path.read_text(encoding='utf-8'));route='/'+path.parent.relative_to('dist').as_posix().strip('.')
  if route not in ['/','/en/','/ja/','/ko/','/es/','/de/','/fr/','/zh-hant/']:route+='/'
  expected.add(ORIGIN+route)
  assert page.canonical==ORIGIN+route,(path,'canonical')
@@ -57,7 +57,7 @@ for path in Path('dist').rglob('index.html'):
 root=ET.parse('dist/sitemap.xml').getroot();ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
 urls=[node.text for node in root.findall('s:url/s:loc',ns)]
 assert len(urls)==len(set(urls)) and set(urls)==expected,('sitemap mismatch',set(urls)^expected)
-hero=Head();hero.feed(Path('dist/index.html').read_text())
+hero=Head();hero.feed(Path('dist/index.html').read_text(encoding='utf-8'))
 slides=[im for im in hero.images if 'hero-slide-image' in im.get('class','')]
 assert len(slides)==4 and slides[0]['loading']=='eager' and slides[0]['fetchpriority']=='high'
 assert all(im.get('data-src','').startswith('/images/') and not im.get('src') and im.get('fetchpriority')=='low' for im in slides[1:])
@@ -66,7 +66,7 @@ print(f'PASS SEO: {len(expected)} indexable pages, sitemap coverage, canonical, 
 
 not_found=Path('dist/404.html')
 assert not_found.is_file(),'Missing Cloudflare Pages 404 document'
-error=Head();error.feed(not_found.read_text())
+error=Head();error.feed(not_found.read_text(encoding='utf-8'))
 assert 'noindex' in error.meta.get('robots','')
 assert ORIGIN+'/404/' not in urls and ORIGIN+'/404.html' not in urls
 print('PASS custom 404: generated, noindex and excluded from sitemap')

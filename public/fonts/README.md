@@ -13,8 +13,10 @@ current built HTML, at weight 600; Latin heading weight is 600; body is variable
 400–700 at optical size 16. Only fonts used by the current script download.
 
 After changing headings, run `npm run verify`. Missing glyphs fail check:loading.
-To regenerate, obtain the upstream variable TTF and OFL.txt into FONT_SOURCES as
-sc/tc/ja/ko/latin/sans.ttf and corresponding *-OFL.txt. With Python fonttools and
-brotli installed, build the HTML, run `FONT_SOURCES=/path python scripts/subset-fonts.py`,
-then rebuild and verify. Do not place the full upstream TTF files on the website.
+To regenerate, run `npm run fonts:regen` (builds the HTML, downloads pinned
+upstream sources — Noto Serif CJK Serif2.002 per-region Subset TTFs plus Lora
+and DM Sans from the Google Fonts repository — into FONT_SOURCES, subsets, and
+re-checks). The script fails if any regenerated subset is over 10% larger than
+the checked-in one. Requires Python fonttools and brotli. Do not place the full
+upstream TTF files on the website.
 `manifest.json` records byte counts, cmap coverage, and SHA256 for verification.

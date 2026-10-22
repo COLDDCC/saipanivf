@@ -20,7 +20,7 @@ for(const prefix of locales)for(const route of routes){
  assert.ok(!styles.some(n=>attr(n,'href').includes('fonts.googleapis.com')),prefix+route+' fonts are self-hosted');
  const face={'':'sc','zh-hant/':'tc','ja/':'ja','ko/':'ko'}[prefix];
  const coverage=new Set([...fonts.lora.codepoints,...(face?fonts['noto-serif-'+face].codepoints:[])]);
- for(const heading of all.filter(n=>['h1','h2'].includes(n.tagName)))for(const char of text(heading))if(!/\s/u.test(char))assert.ok(coverage.has(char.codePointAt(0)),prefix+route+' missing heading glyph '+char);
+ for(const heading of all.filter(n=>['h1','h2'].includes(n.tagName)))for(const char of text(heading))if(!/\s/u.test(char))assert.ok(coverage.has(char.codePointAt(0)),prefix+route+' missing heading glyph '+char+' — regenerate subsets with: npm run fonts:regen');
  const preloads=all.filter(n=>n.tagName==='link'&&attr(n,'rel')==='preload'&&attr(n,'as')==='image');
  assert.equal(preloads.length,home?1:0,prefix+route+' image preload only for home');
  if(home){const hero=all.find(n=>n.tagName==='img'&&attr(n,'class')?.split(' ').includes('hero-slide-image'));const preload=preloads[0];
