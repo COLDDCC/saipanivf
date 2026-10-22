@@ -3,7 +3,8 @@
 Heading fonts: Lora (Latin) and Noto Serif SC / TC / JP / KR (regional CJK).
 Body: DM Sans for Latin; native language sans-serif stacks for CJK reading and UI.
 Only headings use serif fonts. All fonts are licensed under SIL OFL 1.1; individual
-license notices are retained alongside each subset. Source: Google Fonts official
+license notices are retained alongside each subset. The modified Lora subset is
+internally renamed SIVF Editorial to respect its Reserved Font Name. Source: Google Fonts official
 repository, https://github.com/google/fonts/tree/main/ofl (lora, dmsans,
 notoserifsc, notoseriftc, notoserifjp, notoserifkr), retrieved 2026-10-22.
 

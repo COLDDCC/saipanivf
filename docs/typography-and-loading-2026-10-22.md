@@ -8,7 +8,7 @@ self-hosted subsets, swap rendering and script-specific fallbacks.
 - DM Sans 400–700 for Latin body/UI and numbers; explicit native CJK sans-serif
   fallbacks for reading. h3, buttons and fields remain sans-serif.
 - Island-blue palette, photography, existing compact title sizes retained.
-- WOFF2 payloads: Lora 24,836 bytes; DM Sans 28,580; SC 113,948;
+- WOFF2 payloads: Lora 25,032 bytes; DM Sans 28,580; SC 113,948;
   TC 124,020; JP 133,520; KR 80,604. A page uses its own language fonts;
   Latin pages do not download CJK subsets. No external Google Fonts requests.
 - CJK font subsets cover current h1/h2 glyphs. check:loading checks all 184 pages
@@ -24,5 +24,7 @@ self-hosted subsets, swap rendering and script-specific fallbacks.
 Validation: full npm run verify passes, including 184-page glyph/integrity and
 loading checks, consultation, mobile content parity and all existing checks.
 Taste source lint: 5 changed source files, zero failures/warnings. Desktop live
-review pending deployment. No measured Lighthouse, LCP/CLS or emulated mobile
+review: all eight homepages plus 16 fees/contact pages use the intended heading
+font stacks, with no page-width overflow or controls extending beyond the viewport.
+The renamed Latin subset respects the upstream Reserved Font Name. No measured Lighthouse, LCP/CLS or emulated mobile
 results are claimed; source/content checks do not replace device screenshots.

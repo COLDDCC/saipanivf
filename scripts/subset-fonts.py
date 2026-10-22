@@ -30,7 +30,13 @@ for k in ('sc','tc','ja','ko','latin','sans'):
  if k in chars:codes.update(map(ord,chars[k]))
  sub.populate(unicodes=codes);sub.subset(font);font.flavor='woff2'
  name={'latin':'lora','sans':'dm-sans'}.get(k,'noto-serif-'+k)
- path=out/(name+'.woff2');font.save(path)
+ path=out/(name+'.woff2')
+ if k=='latin':
+  # The upstream Lora OFL reserves its font name: rename the modified subset.
+  names={1:'SIVF Editorial',2:'SemiBold',3:'SIVFEditorial-SemiBold-1',4:'SIVF Editorial SemiBold',6:'SIVFEditorial-SemiBold',16:'SIVF Editorial',17:'SemiBold'}
+  for record in font['name'].names:
+   if record.nameID in names:record.string=names[record.nameID].encode(record.getEncoding(),errors='replace')
+ font.save(path)
  shutil.copy(sources/(k+'-OFL.txt'),out/(name+'-OFL.txt'))
  manifest[name]={'bytes':path.stat().st_size,'glyphs':len(font.getBestCmap()),'codepoints':list(font.getBestCmap()),'sha256':hashlib.sha256(path.read_bytes()).hexdigest()};print(name,manifest[name],flush=True)
 (out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
