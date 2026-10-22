@@ -81,10 +81,10 @@
 :root body .footer h2 { font-size: clamp(30px,3.4vw,46px); line-height: 1.4; }
 :root body .footer-nav a { min-height: 44px; display: inline-flex; align-items: center; }
 :root body .footer-nav { gap: 4px 28px; margin-top: 36px; }
-html:lang(en) body { --font: Arial, sans-serif; }
+html:lang(en) body, html:lang(es) body { --font: Arial, sans-serif; }
 html:lang(ja) body { --font: Arial, 'Hiragino Kaku Gothic ProN', 'Yu Gothic', Meiryo, sans-serif; }
 html:lang(ko) body { --font: Arial, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif; word-break: keep-all; }
-html:lang(en) body :is(.hero-title,.hero-statement) { text-wrap: balance; }
+html:lang(en) body :is(.hero-title,.hero-statement), html:lang(es) body :is(.hero-title,.hero-statement) { text-wrap: balance; }
 @media(min-width:651px) and (max-width:1000px) {
   :root body .hero-copy { padding-left: var(--gutter); padding-right: 7%; }
   :root body .hero-slide { height: auto; min-height: 410px; }

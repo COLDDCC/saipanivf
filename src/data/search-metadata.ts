@@ -1,5 +1,13 @@
 // Search snippets describe existing content; page headings remain concise.
 const metadata: Record<string, Record<string, [string, string]>> = {
+ es:{
+  'guides/quotation':['Presupuesto de FIV: qué incluye, pagos y cancelaciones','Compara presupuestos de FIV por alcance y unidad de cobro. Revisa medicación, laboratorio, conservación, transferencia, extras y cancelaciones.'],
+  fees:['Precios de FIV en Saipán: medicación y transferencia','Consulta los costes orientativos en USD de punción, medicación, ICSI, congelación y transferencia. Calcula tu presupuesto y revisa los gastos adicionales.'],
+  'treatments/ivf':['FIV en Saipán: proceso, precios y primera consulta','Conoce las etapas de fecundación in vitro en Saipán, desde la valoración hasta la transferencia. Consulta riesgos, costes y preparación para tu cita.'],
+  'treatments/icsi':['ICSI en Saipán: indicaciones, proceso y precios','Compara ICSI y FIV convencional. Consulta sus indicaciones, riesgos y costes de laboratorio, y prepara las preguntas para la primera consulta.'],
+  'treatments/egg-freezing':['Congelación de óvulos en Saipán: proceso y precios','Conoce la valoración, estimulación, punción y congelación. Separa los costes del ciclo, la conservación anual y el posible uso futuro.'],
+  'treatments/frozen-embryo-transfer':['Transferencia de embriones congelados en Saipán: FET','Consulta la valoración, preparación, descongelación y transferencia de embriones congelados en Saipán. Revisa los costes y el seguimiento.']
+ },
  'zh-CN': {
   'guides/quotation':['IVF报价怎么看：计费单位、额外费用与退费核对表','比较试管婴儿报价，先核对药物、取卵培养、ICSI、冷冻保存和移植的计费单位，再确认付款节点、取消周期与额外支出。附可逐项使用的报价核对表。'],
   fees:['塞班试管婴儿费用：IVF、药物与移植预算','查看塞班IVF费用构成，区分取卵培养、促排药物、ICSI、冷冻保存与胚胎移植。使用预算工具组合项目，核对另计费用和书面报价。'],

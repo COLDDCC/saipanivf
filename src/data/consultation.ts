@@ -1,4 +1,6 @@
+import { consultation as spanish } from '../i18n/es-extra';
 export const consultationCopy = {
+ es:spanish,
   ko: {
     title:'생식 계획, 첫 상담부터', intro:'연락 수단은 하나면 됩니다. 이름·관심 치료·질문은 선택입니다. 치료 방향을 정하지 않았어도 문의할 수 있습니다.',
     channel:'연락 방법', value:'연락처', required:'필수', optional:'선택', name:'이름 또는 호칭',

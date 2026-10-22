@@ -38,7 +38,7 @@ for(const locale of ['en','ja','ko']) {
 const tw=fs.readFileSync('dist/zh-hant/faq/index.html','utf8');
 assert.ok(tw.includes('VWP允許符合資格與入境條件者進行醫療訪問'),'Traditional Chinese must allow eligible VWP medical visits');
 for(const wrong of ['ESTA or EVS-TAP authorisation is limited to the Northern Mariana Islands','ESTAやEVS-TAPは北マリアナ諸島のみ','ESTA나 EVS-TAP은 북마리아나제도에만']) {
- for(const locale of ['en','ja','ko']) assert.ok(!fs.readFileSync(`dist/${locale}/faq/index.html`,'utf8').includes(wrong),'Do not limit ESTA to CNMI');
+ for(const locale of ['en','ja','ko','es']) assert.ok(!fs.readFileSync(`dist/${locale}/faq/index.html`,'utf8').includes(wrong),'Do not limit ESTA to CNMI');
 }
 console.log('PASS travel FAQ: distinct programmes, stay limits, medical purpose and official references.');
 
@@ -52,3 +52,13 @@ assert.ok(birthTw.includes('出生時父或母為中華民國國民者'),'Nation
 assert.ok(birthTw.includes('僑生另有招生規定'),'Overseas Chinese and international-student admission are separate routes');
 for(const page of [birthTw,tw]) assert.ok(!page.includes('免籤')&&!page.includes('工籤'),'Use the visa character 簽, not 籤');
 console.log('PASS Taiwan content: nationality/admission rules, official law URLs and visa wording.');
+
+const es=JSON.parse(fs.readFileSync('src/i18n/es.json','utf8'));
+const esFaq=fs.readFileSync('dist/es/faq/index.html','utf8');
+assert.ok(es.faq[3][1].includes('español')&&es.faq[3][1].includes('90'));
+assert.ok(esFaq.includes('visa-waiver-program.html')&&!esFaq.includes('g-cnmi-eta.cbp.dhs.gov'),'Spanish travel references must match Spanish-passport eligibility');
+const esBirth=fs.readFileSync('dist/es/birth-planning/index.html','utf8');
+assert.ok(esBirth.includes('mjusticia.gob.es')&&esBirth.includes('Registro Civil'),'Spanish nationality text must point to its own competent authority');
+assert.ok(es.pages['guides/travel-checklist'].sections.some(s=>s[1].includes('la residencia española por sí sola no')),'Residence in Spain is not Spanish citizenship');
+assert.ok(es.form.templateText.includes('idioma'),'Do not imply Spanish-speaking clinical services without confirmation');
+console.log('PASS Spanish adaptation: nationality versus residence, US-status distinction, matching primary sources and consultation language.');

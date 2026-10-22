@@ -6,6 +6,6 @@ export const websiteSchema={
  url:site.origin+'/',
  name:'Saipan IVF',
  alternateName:'塞班生殖中心',
- inLanguage:['zh-CN','zh-TW','en','ja','ko']
+ inLanguage:['zh-CN','zh-TW','en','ja','ko','es']
 };
-export const shareLocales=['zh_CN','zh_TW','en_US','ja_JP','ko_KR'];
+export const shareLocales=['zh_CN','zh_TW','en_US','ja_JP','ko_KR','es_ES'];

@@ -23,7 +23,7 @@ class Head(HTMLParser):
 titles=set();expected=set()
 for path in Path('dist').rglob('index.html'):
  page=Head();page.feed(path.read_text());route='/'+str(path.parent.relative_to('dist')).strip('.')
- if route not in ['/','/en/','/ja/','/ko/','/zh-hant/']:route+='/'
+ if route not in ['/','/en/','/ja/','/ko/','/es/','/zh-hant/']:route+='/'
  expected.add(ORIGIN+route)
  assert page.canonical==ORIGIN+route,(path,'canonical')
  for key in ['description','og:title','og:description','og:image','twitter:card']:
@@ -36,14 +36,14 @@ for path in Path('dist').rglob('index.html'):
  website=next(node for node in graph if node['@type']=='WebSite');webpage=next(node for node in graph if node['@type']=='WebPage')
  assert website['@id']==ORIGIN+'/#website' and website['url']==ORIGIN+'/' and website['name']=='Saipan IVF',(path,'shared website identity')
  assert webpage['isPartOf']['@id']==website['@id'],(path,'website reference')
- assert set(website['inLanguage'])=={'zh-CN','zh-TW','en','ja','ko'},(path,'website languages')
- assert len(page.alternate_locales)==4 and set(page.alternate_locales)=={'zh_CN','zh_TW','en_US','ja_JP','ko_KR'}-{page.meta['og:locale']},(path,'sharing locales')
+ assert set(website['inLanguage'])=={'zh-CN','zh-TW','en','ja','ko','es'},(path,'website languages')
+ assert len(page.alternate_locales)==5 and set(page.alternate_locales)=={'zh_CN','zh_TW','en_US','ja_JP','ko_KR','es_ES'}-{page.meta['og:locale']},(path,'sharing locales')
  assert page.meta['og:site_name']=='Saipan IVF',(path,'sharing site name')
- if route not in ['/','/en/','/ja/','/ko/','/zh-hant/']:
+ if route not in ['/','/en/','/ja/','/ko/','/es/','/zh-hant/']:
   crumbs=next(node['itemListElement'] for node in graph if node['@type']=='BreadcrumbList')
   assert crumbs[-1]['item']==page.canonical
   parts=[part for part in route.split('/') if part]
-  if parts and parts[0] in ['zh-hant','en','ja','ko']:parts=parts[1:]
+  if parts and parts[0] in ['zh-hant','en','ja','ko','es']:parts=parts[1:]
   if len(parts)==2 and parts[0] in ['guides','treatments']:
    assert len(crumbs)==3 and crumbs[1]['item']==page.canonical.rsplit(parts[-1]+'/',1)[0],(path,'parent breadcrumb')
  for image in page.images:

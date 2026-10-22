@@ -1,6 +1,6 @@
 import fs from 'node:fs';import assert from 'node:assert/strict';import vm from 'node:vm';import {parse} from 'parse5';
 const nodes=n=>[n,...(n.childNodes||[]).flatMap(nodes)],attr=(n,k)=>n.attrs?.find(a=>a.name===k)?.value;
-for(const prefix of ['','zh-hant/','en/','ja/','ko/']){
+for(const prefix of ['','zh-hant/','en/','ja/','ko/','es/']){
  const html=fs.readFileSync('dist/'+prefix+'process/index.html','utf8'),all=nodes(parse(html));
  const source=all.find(n=>n.tagName==='script'&&n.childNodes?.some(t=>t.value?.includes('[data-care-journey]'))).childNodes[0].value;
  const el=()=>({hidden:true,listeners:{},addEventListener(k,f){this.listeners[k]=f}});

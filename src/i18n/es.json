@@ -1,0 +1,687 @@
+{
+  "name": "Saipan IVF",
+  "subtitle": "Guía de reproducción asistida",
+  "menu": "Menú",
+  "skip": "Ir al contenido",
+  "home": "Inicio",
+  "contact": "Preparar mi consulta",
+  "source": "Fuente y más información",
+  "sources": "Fuentes y créditos de imágenes",
+  "checked": "Información general de referencia. Confirma con el centro el tratamiento, la disponibilidad y los honorarios de tu caso.",
+  "nav": [
+    "Sobre el centro",
+    "Tratamientos",
+    "Equipo médico",
+    "Proceso de FIV",
+    "Precios",
+    "Guías para pacientes",
+    "Parto y familia",
+    "Contacto",
+    "Preguntas frecuentes",
+    "Servicios y responsabilidades",
+    "Criterios editoriales",
+    "Privacidad"
+  ],
+  "footerTitle": "El primer paso es conversar.",
+  "footerText": "Conoce las opciones, prepara tus preguntas y confirma tu próxima consulta.",
+  "footerNote": "Información sobre fertilidad y coordinación de consultas. El equipo médico confirma el plan individual; solicita un presupuesto por escrito.",
+  "clinic": "Web del centro asistencial",
+  "read": "Leer la guía",
+  "details": "Ver tratamiento",
+  "fees": "Ver precios y presupuesto",
+  "prepare": "Preparar la primera consulta",
+  "related": "Seguir explorando",
+  "included": "Alcance básico",
+  "excluded": "Gastos adicionales",
+  "steps": "Etapas principales",
+  "questions": "Preguntas para la consulta",
+  "risk": "Riesgos y resultados",
+  "budgetNote": "Presupuesto orientativo en dólares estadounidenses (USD). Solicita una propuesta escrita para tu caso.",
+  "pages": {
+    "": {
+      "title": "FIV y reproducción asistida en Saipán",
+      "description": "Conoce la FIV, la ICSI, la preservación de la fertilidad, el equipo médico y los pasos para organizar tu atención en Saipán.",
+      "sections": [
+        [
+          "Conoce tus opciones de tratamiento",
+          "Compara la fecundación in vitro (FIV), la ICSI, la congelación de óvulos y la transferencia de embriones congelados. Parte de tus objetivos y de los informes disponibles; el médico valorará qué opciones son adecuadas."
+        ],
+        [
+          "Conoce al equipo que te atenderá",
+          "Consulta la información publicada por el centro y confirma quién será tu médico, dónde recibirás atención y cómo se organiza la cita."
+        ],
+        [
+          "Organiza el tratamiento y el viaje por separado",
+          "Revisa el calendario clínico y el alcance del presupuesto antes de reservar vuelos o alojamiento. La punción ovárica y la transferencia pueden hacerse en etapas distintas."
+        ],
+        [
+          "Resuelve las primeras dudas",
+          "¿Qué presupuesto necesitas? ¿Cuánto dura el tratamiento? ¿Puedes consultar sin informes recientes? Encuentra respuestas y fuentes en las preguntas frecuentes."
+        ]
+      ]
+    },
+    "about": {
+      "title": "Sobre Saipan IVF y la coordinación de consultas",
+      "description": "Distingue la información y coordinación de citas de la atención prestada por el centro médico.",
+      "sections": [
+        [
+          "Información y coordinación de citas",
+          "Esta web te ayuda a conocer las opciones de fertilidad y preparar preguntas para el centro. El formulario genera un borrador dirigido al correo que publica la institución."
+        ],
+        [
+          "Responsabilidad médica",
+          "Las pruebas, el diagnóstico, las recetas, la punción ovárica, los procedimientos de laboratorio y la transferencia corresponden al equipo médico receptor. Confirma el centro, el profesional y el acuerdo de servicios antes de reservar."
+        ],
+        [
+          "Honorarios médicos y coordinación",
+          "Comprueba quién recibe cada pago, qué incluye y cómo se liquidan las cancelaciones o cambios. El alojamiento, el transporte, la atención obstétrica y los servicios de terceros requieren acuerdos propios."
+        ],
+        [
+          "Ubicación del centro",
+          "La institución se presenta como Saipan IVF Center y publica esta dirección: 3rd Floor, Bank of Guam, Garapan, Saipan, MP 96950. Confirma el punto exacto de la cita antes de viajar."
+        ]
+      ]
+    },
+    "team": {
+      "title": "Equipo médico y laboratorio de embriología",
+      "description": "Conoce los perfiles publicados por el centro y prepara tus preguntas sobre el equipo que te atenderá.",
+      "sections": [
+        [
+          "Gary G. Ramsey, M.D. — Director médico",
+          "El centro lo identifica como director médico e indica que se graduó en Medicina en la Universidad de California en Los Ángeles (UCLA). Confirma quién realizará tu consulta y explicará las opciones de tratamiento."
+        ],
+        [
+          "Irena Lalic — Especialista en embriología",
+          "Según el centro, cuenta con un máster en Biología por la Universidad de Zagreb y un máster en Embriología Clínica por la Universidad de Leeds. Pregunta cuándo recibirás los informes de fecundación, cultivo y congelación y quién los explicará."
+        ],
+        [
+          "Rose Wang — Responsable de enfermería",
+          "El centro presenta a Rose Wang como responsable de enfermería. Consulta cómo se coordinan las instrucciones de medicación, la preparación de las citas y el seguimiento."
+        ],
+        [
+          "Laboratorio e instalaciones",
+          "La página de instalaciones describe sistemas de micromanipulación, estaciones de trabajo para embriones, incubadoras MIRI® IVF y vitrificación de ovocitos. Confirma el lugar de atención, el laboratorio y los procedimientos disponibles para tu plan."
+        ],
+        [
+          "Confirma tu equipo asistencial",
+          "Un perfil público no confirma una cita ni la disponibilidad actual. Solicita el nombre y los datos de habilitación profesional de quien vaya a atenderte."
+        ]
+      ]
+    },
+    "treatments": {
+      "title": "Tratamientos de fertilidad y preservación",
+      "description": "Compara FIV, ICSI, congelación de óvulos y transferencia de embriones congelados; consulta las opciones con donación.",
+      "sections": [
+        [
+          "Elige por dónde empezar",
+          "La FIV abarca un proceso de tratamiento; la ICSI modifica la fase de fecundación en laboratorio. La congelación conserva óvulos para un posible uso futuro; la transferencia de embriones congelados utiliza embriones ya existentes."
+        ],
+        [
+          "Congelación de semen y donación",
+          "La congelación de semen, los óvulos o espermatozoides de donante y la participación de terceros requieren confirmar pruebas, disponibilidad, consentimientos y documentación. Explica tus circunstancias al centro."
+        ],
+        [
+          "Personas sin pareja y familias LGBTQ+",
+          "Empieza por explicar tu proyecto familiar. Deben valorarse individualmente los requisitos médicos, la disponibilidad de donantes, la participación de terceros y el reconocimiento de la filiación en los países implicados."
+        ]
+      ]
+    },
+    "process": {
+      "title": "De la primera consulta al seguimiento de la FIV",
+      "description": "Prepara la consulta, la valoración, el plan escrito, el tratamiento y el seguimiento paso a paso.",
+      "sections": [
+        [
+          "1. Consulta inicial",
+          "Indica qué te interesa, los tratamientos previos, tu ciudad de salida y las fechas previstas. Confirma el canal, el formato, los honorarios y la información necesaria."
+        ],
+        [
+          "2. Informes e historia clínica",
+          "Ordena los informes por fecha y resume tratamientos, operaciones, medicación y alergias. Confirma un canal de envío; el médico determinará qué pruebas siguen siendo válidas y cuáles repetir."
+        ],
+        [
+          "3. Valoración médica",
+          "Comenta las opciones, las alternativas, los riesgos y el seguimiento. Solicita un plan individual, las pruebas necesarias y una relación de asuntos pendientes."
+        ],
+        [
+          "4. Presupuesto escrito y viaje",
+          "Confirma quién presta y cobra cada servicio, qué incluye y las condiciones de cancelación. Reserva según las fechas de la clínica y revisa las condiciones de cambio."
+        ],
+        [
+          "5. Atención en el centro",
+          "Lleva los documentos solicitados. El equipo médico gestiona el diagnóstico, la medicación, los controles, la punción, el cultivo o la transferencia. Recoge los informes e instrucciones correspondientes."
+        ],
+        [
+          "6. Regreso y seguimiento",
+          "Conserva el resumen clínico, las recetas, los justificantes de pago y las autorizaciones de conservación. Confirma las revisiones, los contactos y las renovaciones de almacenamiento."
+        ],
+        [
+          "Duración del ciclo y estancia no son lo mismo",
+          "Un ciclo de FIV suele describirse como de unas 3–6 semanas, según el protocolo y las etapas incluidas. No implica permanecer todo ese tiempo en Saipán. La punción y una transferencia posterior pueden organizarse por separado."
+        ],
+        [
+          "Antes de reservar vuelos",
+          "Confirma el centro y el médico; las fechas de controles, citas y regreso; el presupuesto y las cancelaciones; y los contactos durante el tratamiento y después del viaje. Comprueba por separado la estancia migratoria permitida."
+        ]
+      ]
+    },
+    "fees": {
+      "title": "Precios de FIV y planificación del presupuesto",
+      "description": "Separa punción y cultivo, medicación, laboratorio, transferencia, conservación y viaje para comparar presupuestos.",
+      "sections": [
+        [
+          "Precio básico y presupuesto combinado",
+          "La referencia básica de 15.000 USD corresponde a punción y cultivo. La combinación inicial de la calculadora, 26.100–31.100 USD, añade medicación, anestesia, ICSI, congelación y una transferencia de embriones congelados; no cubre todos los gastos posibles."
+        ],
+        [
+          "Antes de pagar",
+          "Solicita por escrito la moneda, los procedimientos y su número, los conceptos adicionales, el destinatario del pago, los plazos y las condiciones de cancelación o aplazamiento. Si pagas desde España en euros, consulta el tipo de cambio y las comisiones de tu banco."
+        ],
+        [
+          "Gastos fuera de la calculadora",
+          "No incluye pruebas iniciales, medicación para la transferencia, transporte, alojamiento, ciclos adicionales, complicaciones ni conceptos no seleccionados. La donación y los servicios de terceros necesitan un alcance y acuerdos específicos. No presupongas que tu seguro cubrirá el tratamiento en Saipán."
+        ]
+      ]
+    },
+    "guides": {
+      "title": "Guías para pacientes",
+      "description": "Encuentra información para la primera consulta, la comparación de tratamientos, el viaje y el seguimiento.",
+      "sections": [
+        [
+          "¿Es tu primera consulta de fertilidad?",
+          "Empieza por la guía de primera consulta, conoce al equipo y prepara una lista breve de preguntas. No necesitas elegir un tratamiento por tu cuenta."
+        ],
+        [
+          "Compara tratamientos y costes",
+          "Lee las etapas de la FIV, compara los tratamientos y utiliza la calculadora y la lista de comprobación para contrastar qué incluye cada precio."
+        ],
+        [
+          "Prepara el viaje y el regreso",
+          "Confirma la cita, los documentos y las condiciones de pago antes de viajar. Conserva las instrucciones de medicación, las fechas de revisión y los contactos de almacenamiento."
+        ]
+      ]
+    },
+    "guides/first-visit": {
+      "title": "Primera consulta: qué preparar",
+      "description": "Organiza tus informes actuales y confirma el formato de consulta antes de encargar nuevas pruebas.",
+      "sections": [
+        [
+          "Empieza con cuatro datos",
+          "Indica qué te interesa, los tratamientos previos, la ciudad de salida y las fechas previstas. Si todavía no sabes qué tratamiento necesitas, puedes explicarlo sin elegir un protocolo."
+        ],
+        [
+          "Organiza los informes disponibles",
+          "Ordena análisis, ecografías, seminogramas y registros de estimulación o transferencia por fecha. Añade medicación, alergias y operaciones. Conserva nombres, fechas, unidades y valores de referencia; evita enviar resultados aislados. Pregunta si el centro necesita traducciones y en qué idioma."
+        ],
+        [
+          "Puedes consultar sin informes recientes",
+          "Pregunta si la consulta puede ser a distancia, cuánto cuesta y qué documentos necesita el médico. Espera sus indicaciones antes de repetir pruebas o realizar otras que puedan caducar."
+        ],
+        [
+          "Utiliza un canal de envío confirmado",
+          "En el primer correo basta un resumen de tus preguntas. Confirma el centro, la privacidad y el método designado antes de enviar la historia clínica completa."
+        ],
+        [
+          "Después de enviar la consulta",
+          "Confirma quién te atenderá, la fecha, el formato, el idioma disponible, los informes aceptados, las pruebas adicionales y el proceso de presupuesto. Crear un borrador no lo envía; una cita requiere respuesta expresa."
+        ]
+      ]
+    },
+    "guides/ivf-steps": {
+      "title": "Etapas principales de un ciclo de FIV",
+      "description": "Comprende la valoración, la estimulación, la punción, la fecundación, el cultivo, la transferencia y el seguimiento.",
+      "sections": [
+        [
+          "Valoración y planificación",
+          "El médico revisa la historia y los informes, comenta las opciones y explica los controles y la medicación. Confirma qué etapas puedes realizar cerca de tu domicilio y cuáles requieren acudir a Saipán."
+        ],
+        [
+          "Estimulación y controles",
+          "Sigue únicamente la medicación prescrita y acude a las ecografías o análisis indicados. Los resultados pueden modificar las fechas posteriores."
+        ],
+        [
+          "Punción, fecundación y cultivo",
+          "El equipo organiza la extracción de óvulos y la fecundación en laboratorio. La FIV convencional y la ICSI son métodos distintos: pregunta por qué se propone uno y cuándo recibirás los resultados."
+        ],
+        [
+          "Transferencia o congelación",
+          "La transferencia en fresco, la congelación o una transferencia posterior dependen del plan y de los resultados. No todos los ciclos producen embriones aptos para transferir."
+        ],
+        [
+          "Seguimiento y calendario",
+          "Solicita la pauta de medicación, las fechas de pruebas, el resumen clínico y los contactos. La estimación general de 3–6 semanas no es un calendario universal de viaje ni de embarazo."
+        ]
+      ]
+    },
+    "guides/quotation": {
+      "title": "Cómo leer un presupuesto de FIV",
+      "description": "Compara lo que incluye, los extras, los plazos de pago y las cancelaciones antes de comparar el total.",
+      "sections": [
+        [
+          "Identifica al prestador y al destinatario del pago",
+          "Comprueba el centro, el médico, la moneda, la fecha y la validez del presupuesto. Atención médica, coordinación, alojamiento, transporte y servicios de terceros pueden tener proveedores diferentes."
+        ],
+        [
+          "Compara el mismo alcance",
+          "Identifica si incluye controles, punción, fecundación convencional, ICSI, anestesia, cultivo, congelación y transferencia, y cuántas veces cubre cada servicio."
+        ],
+        [
+          "Medicación, pruebas y conservación",
+          "Pregunta cómo se cobra la cantidad de medicación, si el PGT incluye biopsia, transporte y análisis, y cuándo comienza la conservación anual. El uso futuro de óvulos congelados requiere nuevos pasos y gastos."
+        ],
+        [
+          "Cancelación o tratamiento adicional",
+          "Antes de pagar, pide las reglas de liquidación si se cancela o aplaza el ciclo, no hay óvulos utilizables ni embriones transferibles o se añaden procedimientos."
+        ],
+        [
+          "Usa la calculadora como lista de comprobación",
+          "Ajusta los conceptos y solicita después un presupuesto personal por escrito. La herramienta no decide qué procedimientos necesitas ni incluye todos los gastos clínicos o del viaje."
+        ]
+      ]
+    },
+    "guides/egg-freezing": {
+      "title": "Cómo preparar una consulta de congelación de óvulos",
+      "description": "Valora por separado la evaluación, la punción, la congelación, la conservación anual y el uso futuro.",
+      "sections": [
+        [
+          "Explica tus objetivos y disponibilidad",
+          "Indica por qué valoras preservar tu fertilidad, cuándo puedes acudir y tus antecedentes y medicación. Lleva los informes disponibles; el médico decidirá la evaluación necesaria."
+        ],
+        [
+          "Comprende el ciclo",
+          "Pregunta dónde se realizan los controles, cómo se organizan la punción y la anestesia y cuándo recibirás el número de óvulos congelados y el informe de almacenamiento."
+        ],
+        [
+          "Separa los costes actuales y futuros",
+          "La referencia básica del ciclo es de 9.000 USD. Las pruebas iniciales, la medicación, la anestesia y la conservación anual son adicionales. La futura descongelación, fecundación, cultivo y transferencia requieren otra valoración y presupuesto."
+        ],
+        [
+          "Confirma la conservación",
+          "Guarda el nombre del centro de almacenamiento, los consentimientos, las cuotas y el contacto. Pregunta qué ocurre al cambiar de dirección, trasladar muestras o interrumpir la conservación."
+        ],
+        [
+          "Conoce sus límites",
+          "Congelar óvulos conserva una posibilidad; no garantiza un embarazo ni un nacimiento. Comenta las expectativas para tu edad y situación, sin depender de una única cifra de éxito."
+        ]
+      ]
+    },
+    "guides/travel-checklist": {
+      "title": "Viajar a Saipán para un tratamiento: lista práctica",
+      "description": "Coordina citas, documentación, vuelos, alojamiento y seguimiento según tu nacionalidad y lugar de residencia.",
+      "sections": [
+        [
+          "Confirma primero las fechas médicas",
+          "Solicita el centro, el médico, la dirección, la cita, los controles y la previsión de regreso. Los cambios clínicos pueden obligarte a modificar reservas. Si viajas desde España, comprueba conexiones y tiempo de recuperación antes del trayecto de vuelta."
+        ],
+        [
+          "Pasaporte español: comprueba la vía de entrada",
+          "España participa en el Programa de Exención de Visados de EE. UU. Una persona elegible con pasaporte español puede solicitar ESTA para una visita de hasta 90 días. Confirma todos los requisitos, los antecedentes de viaje y la adecuación del propósito médico; la autorización no garantiza la entrada."
+        ],
+        [
+          "Si ya eres ciudadano o residente de EE. UU.",
+          "Utiliza los documentos correspondientes a tu ciudadanía o residencia y al itinerario. Hablar español no determina tu situación migratoria. Si tienes otra nacionalidad o solo resides en España, consulta los requisitos de tu propio pasaporte; la residencia española por sí sola no concede acceso mediante ESTA."
+        ],
+        [
+          "Reservas, seguro e informes",
+          "Revisa cambios y cancelaciones, transporte local y acompañantes. Confirma por escrito con tu aseguradora la cobertura en Saipán para reproducción asistida, complicaciones y atención posterior; una póliza de viaje no equivale a cobertura de fertilidad. Lleva la cita, recetas e informes solicitados y pregunta por traducciones."
+        ],
+        [
+          "Antes de volver a casa",
+          "Conserva el resumen clínico, las pautas de medicación, revisiones, recibos y autorizaciones de conservación. Acuerda cómo continuará el seguimiento en España o en tu lugar de residencia y dónde buscar asistencia si la necesitas."
+        ]
+      ]
+    },
+    "guides/family-planning": {
+      "title": "Donación y participación de terceros: qué preguntar",
+      "description": "Aclara los requisitos médicos, los recursos disponibles, los costes y la documentación de tu proyecto familiar.",
+      "sections": [
+        [
+          "Explica tu proyecto familiar",
+          "Las personas sin pareja y las familias LGBTQ+ pueden empezar explicando su situación y sus dudas. Las opciones disponibles requieren valoración individual; no se deducen únicamente de la nacionalidad o del idioma."
+        ],
+        [
+          "Óvulos o semen de donante",
+          "Pregunta por disponibilidad, pruebas y registros, criterios de recepción, consentimientos, espera, transporte y conservación. Que un servicio aparezca descrito no garantiza la disponibilidad de un donante."
+        ],
+        [
+          "Filiación y documentos entre países",
+          "La atención médica, los acuerdos con terceros, el asesoramiento jurídico y la filiación son cuestiones distintas. Si resides en España, confirma con la autoridad competente qué documentos se reconocerán y qué trámites corresponden. No presupongas que un acuerdo o certificado extranjero resuelve automáticamente la inscripción."
+        ],
+        [
+          "Antes de comprometer dinero",
+          "Solicita el alcance escrito, el destinatario del pago, las cancelaciones y las responsabilidades de cada parte. Organiza por separado la FIV, la atención obstétrica, el registro de nacimiento y los trámites migratorios."
+        ]
+      ]
+    },
+    "birth-planning": {
+      "title": "Parto en Saipán: nacionalidad, documentos y familia",
+      "description": "Información para familias hispanohablantes: distingue tratamiento, parto y trámites según las nacionalidades de la familia.",
+      "sections": [
+        [
+          "Ciudadanía estadounidense por nacimiento",
+          "La regla histórica recogida en 8 FAM 302.2 del Departamento de Estado contempla la ciudadanía al nacer en las Islas Marianas del Norte desde el 4 de noviembre de 1986, conforme a la sección 303 del Covenant. Verifica las normas, resoluciones judiciales y excepciones aplicables al tramitar el registro y el pasaporte."
+        ],
+        [
+          "Si uno de los progenitores es español",
+          "La normativa española contempla como españoles de origen a los nacidos de padre o madre españoles. Consulta el Registro Civil consular sobre inscripción, filiación, documentos y posibles obligaciones de conservación. No existe una regla universal que permita elegir libremente nacionalidad a los 18 años."
+        ],
+        [
+          "Si la familia ya tiene ciudadanía estadounidense",
+          "El lugar del tratamiento no añade un estatus migratorio a quien ya es ciudadano. Confirma la documentación del recién nacido y de cada progenitor según sus circunstancias, sin equiparar idioma, residencia y ciudadanía."
+        ],
+        [
+          "Pasaporte y prestaciones",
+          "Las condiciones de entrada cambian según el destino. Viajar sin visado no autoriza a trabajar ni residir. Un número de Seguridad Social no garantiza cobertura médica, prestaciones o pensión; cada programa tiene sus requisitos."
+        ],
+        [
+          "Educación en EE. UU. y en España",
+          "La escolarización pública estadounidense depende de las normas de residencia, distrito y edad. La ciudadanía no garantiza admisión universitaria ni una reducción fija de matrícula. Para escolarización o universidad en España, consulta los requisitos de residencia, estudios previos y acceso aplicables."
+        ],
+        [
+          "Trabajo y derechos de los padres",
+          "Los ciudadanos estadounidenses generalmente no necesitan visado de trabajo, aunque pueden existir requisitos profesionales. La ciudadanía del hijo no concede a los padres permiso de trabajo o residencia."
+        ],
+        [
+          "Atención obstétrica y seguro",
+          "Organiza por separado el hospital, el equipo obstétrico, las opciones de analgesia y los gastos. Confirma la cobertura con el asegurador y un presupuesto de pago particular cuando corresponda. La FIV no incluye automáticamente embarazo ni parto."
+        ],
+        [
+          "Viaje y regreso de la familia",
+          "Comprueba el propósito real de la visita, los documentos y la inscripción del nacimiento. Viajar principalmente para obtener ciudadanía mediante el parto no es un propósito permitido del visado de visitante. Reserva tiempo para trámites y confirma los requisitos con las autoridades estadounidenses y consulares correspondientes."
+        ],
+        [
+          "Peticiones de residencia para padres",
+          "Un ciudadano estadounidense de 21 años o más puede presentar una petición para sus padres. Esta categoría de familiares inmediatos no tiene cupo anual, pero exige solicitud, patrocinio económico y admisibilidad. La residencia no se concede automáticamente."
+        ]
+      ]
+    },
+    "service-scope": {
+      "title": "Citas, servicios y responsabilidades",
+      "description": "Confirma el centro médico, la coordinación, quién cobra y las condiciones escritas antes de reservar.",
+      "sections": [
+        [
+          "Consulta inicial",
+          "Confirma el canal de respuesta, el idioma, el formato presencial o remoto y los honorarios. Una consulta enviada o un borrador no constituye una cita confirmada."
+        ],
+        [
+          "Coordinación de citas y viaje",
+          "Aclara quién gestiona informes, fechas, alojamiento, transporte y cambios, y si la coordinación tiene un coste adicional."
+        ],
+        [
+          "Atención clínica y laboratorio",
+          "Confirma el centro receptor, el médico y el lugar de los procedimientos. El diagnóstico, las recetas, el tratamiento y la interpretación de resultados corresponden al equipo médico."
+        ],
+        [
+          "Documentos antes del pago",
+          "Obtén los datos del prestador y del destinatario del pago, el plan y presupuesto individual, los conceptos incluidos y excluidos, su número, la validez, los plazos, los recibos y las condiciones de cancelación."
+        ],
+        [
+          "Seguimiento y conservación",
+          "Confirma los contactos para medicación, revisiones, informes, almacenamiento de muestras, autorizaciones y renovaciones."
+        ],
+        [
+          "Servicios independientes",
+          "La FIV, el parto, el alojamiento, las comidas, el transporte, la donación, los acuerdos con terceros y los documentos legales son servicios distintos. Comprueba quién presta cada uno y si está incluido."
+        ]
+      ]
+    },
+    "editorial-policy": {
+      "title": "Fuentes, contenido y créditos de imágenes",
+      "description": "Conoce el origen de la información médica, los presupuestos de referencia y las fotografías.",
+      "sections": [
+        [
+          "Fuentes médicas y administrativas",
+          "La información para pacientes remite a HFEA, NHS y ASRM. Las cuestiones de ciudadanía y viaje enlazan con el Departamento de Estado y CBP; las cuestiones españolas requieren consultar al Ministerio de Asuntos Exteriores y al Registro Civil competente. Comprueba los requisitos de tu caso."
+        ],
+        [
+          "Información del centro",
+          "Los nombres, la ubicación, los perfiles y las instalaciones descritas proceden de la web del centro receptor. Los perfiles públicos no acreditan por sí solos la habilitación vigente, una cita o la disponibilidad actual de equipos."
+        ],
+        [
+          "Precios y resultados",
+          "Los importes son presupuestos orientativos, no un paquete personal confirmado. Solicita una propuesta escrita. Los resultados de estudios corresponden a sus poblaciones y no son tasas de éxito del centro de Saipán."
+        ],
+        [
+          "Fotografías",
+          "Las imágenes del equipo y del edificio se atribuyen a la institución. Las demás fotografías ilustran temas; no acreditan que las personas o instalaciones pertenezcan al centro o sean sus pacientes."
+        ],
+        [
+          "Idioma, actualizaciones y correcciones",
+          "Esta versión ofrece información en español; no confirma que la atención clínica esté disponible en este idioma. Pregunta por el idioma de consulta, los documentos y la interpretación antes de reservar. Para comunicar un error, escribe al correo publicado e identifica la página y el texto."
+        ]
+      ]
+    },
+    "privacy": {
+      "title": "Privacidad y uso del formulario",
+      "description": "Comprende cómo se genera el correo, quién lo recibe y cómo compartir documentación personal.",
+      "sections": [
+        [
+          "Cómo funciona el formulario",
+          "El formulario prepara el texto en tu navegador. Crear un borrador no lo envía: abre tu aplicación de correo o copia el texto, revisa el destinatario y envíalo tú. Esta web no recibe los datos mediante un formulario de envío al servidor."
+        ],
+        [
+          "Quién recibe el correo",
+          "El destinatario predeterminado es info@saipan-ivf.com, publicado por el centro. Al enviarlo, tu proveedor de correo y el centro receptor lo gestionan conforme a sus propias condiciones."
+        ],
+        [
+          "Qué información incluir",
+          "Basta una forma de contacto. El nombre, el tratamiento, las fechas y las preguntas son opcionales. Los datos se incorporan al correo; generar el borrador no los carga a un servidor ni los guarda de forma persistente en el navegador. No incluyas documentos de identidad, historias clínicas completas ni datos de terceros sin consentimiento. Confirma antes un canal adecuado."
+        ],
+        [
+          "Alojamiento y enlaces externos",
+          "Cloudflare Pages aloja estas páginas. Los proveedores de alojamiento, red y correo pueden tratar la información necesaria según sus políticas. Los sitios externos tienen sus propias condiciones."
+        ],
+        [
+          "Citas y pagos",
+          "Leer la web o generar un correo no crea una cita, un contrato clínico ni una obligación de pago. Los acuerdos de servicio rigen la atención, el precio, las cancelaciones y el tratamiento de datos."
+        ]
+      ]
+    },
+    "contact": {
+      "title": "Contacto y primera consulta",
+      "description": "Empieza con una forma de contacto. El nombre, el tratamiento y las preguntas son opcionales; también puedes escribir directamente.",
+      "sections": []
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "description": "Respuestas sobre tratamientos, precios, duración, viaje y nacionalidad, con fuentes para ampliar.",
+      "sections": []
+    }
+  },
+  "treatments": [
+    {
+      "title": "FIV — Fecundación in vitro",
+      "summary": "Los óvulos y los espermatozoides se combinan fuera del cuerpo; después puede transferirse un embrión al útero. El médico valora la causa de infertilidad, los antecedentes y las pruebas.",
+      "suitable": "Puede valorarse ante problemas tubáricos, ciertos factores ovulatorios o seminales, o infertilidad sin causa conocida tras otros tratamientos. Pregunta por las alternativas.",
+      "stages": [
+        "Valoración y planificación de pruebas",
+        "Estimulación prescrita y controles",
+        "Punción, fecundación y cultivo embrionario",
+        "Transferencia o congelación y seguimiento"
+      ],
+      "included": "Controles habituales, una punción, fecundación convencional y cultivo embrionario.",
+      "excluded": "Pruebas iniciales, medicación de estimulación, anestesia, ICSI, congelación, conservación anual, pruebas genéticas, transferencia y estancia.",
+      "risk": "Comenta la hiperestimulación ovárica, el embarazo múltiple o ectópico, la cancelación y la posibilidad de no obtener óvulos utilizables o embriones transferibles. Compara tasas de nacido vivo con el mismo denominador; una prueba de embarazo positiva no equivale a un nacimiento.",
+      "questions": [
+        "¿Por qué se propone este plan y qué alternativas existen?",
+        "¿Dónde serán los controles y cuántas visitas necesito?",
+        "¿Cómo se cobran la cancelación, el aplazamiento o un ciclo sin embriones transferibles?"
+      ]
+    },
+    {
+      "title": "ICSI — Inyección intracitoplasmática de espermatozoides",
+      "summary": "El embriólogo introduce un espermatozoide en un óvulo. La ICSI modifica la fecundación dentro de la FIV; no es un ciclo completo ni una mejora universal de la tasa de nacido vivo.",
+      "suitable": "Puede valorarse ante alteraciones seminales importantes o una fecundación previa escasa o fallida. Pregunta qué dato justifica utilizarla en lugar de la fecundación convencional.",
+      "stages": [
+        "Revisar seminograma y fecundaciones previas",
+        "Comentar indicaciones y alternativas",
+        "Coordinar preparación del semen, punción e inyección",
+        "Recibir informes de fecundación y cultivo"
+      ],
+      "included": "Procedimiento de laboratorio ICSI, presupuestado por separado.",
+      "excluded": "Ciclo completo de FIV, medicación, anestesia, punción, cultivo, conservación y transferencia.",
+      "risk": "La micromanipulación puede dañar un óvulo. La inyección no garantiza fecundación, un embrión transferible ni un nacimiento. Persisten los riesgos de estimulación, punción y transferencia.",
+      "questions": [
+        "¿Qué resultado justifica la ICSI en mi caso?",
+        "¿Se cobra por ciclo o por número de óvulos?",
+        "¿Quién explica los resultados de fecundación y cultivo?"
+      ]
+    },
+    {
+      "title": "Congelación de óvulos y preservación de la fertilidad",
+      "summary": "Se extraen y congelan óvulos para un posible uso futuro. Conserva una opción; no garantiza un embarazo ni un nacimiento.",
+      "suitable": "Explica tus objetivos, planes, antecedentes y medicación. El médico determina las pruebas y la organización del ciclo.",
+      "stages": [
+        "Valoración e informes disponibles",
+        "Estimulación, controles y punción",
+        "Informe de congelación y conservación",
+        "Renovaciones y autorización de uso futuro"
+      ],
+      "included": "Controles habituales, una punción y congelación.",
+      "excluded": "Pruebas iniciales, medicación, anestesia y conservación anual. La futura descongelación, fecundación, cultivo y transferencia se valoran y cobran por separado.",
+      "risk": "Comenta los riesgos de estimulación y punción, la posibilidad de obtener pocos o ningún óvulo apto y los límites de supervivencia, fecundación y embarazo futuros. Importan la edad y las circunstancias individuales.",
+      "questions": [
+        "¿Qué resultados y límites cabe esperar de un ciclo?",
+        "¿La congelación y la conservación anual se cobran por separado?",
+        "¿Qué sucede si cambio de contacto, traslado muestras o interrumpo la conservación?"
+      ]
+    },
+    {
+      "title": "FET — Transferencia de embriones congelados",
+      "summary": "Se descongela un embrión existente para transferirlo. Los registros, las autorizaciones y las circunstancias clínicas determinan si puede realizarse y cómo.",
+      "suitable": "Para quienes ya tienen embriones congelados o prevén una transferencia posterior. Si están en otro centro, primero deben confirmarse la aceptación y el transporte.",
+      "stages": [
+        "Revisar registros, conservación y autorizaciones",
+        "Confirmar preparación, controles, medicación y visitas",
+        "Descongelación y transferencia",
+        "Prueba de embarazo, medicación y seguimiento"
+      ],
+      "included": "Controles habituales, descongelación y una transferencia.",
+      "excluded": "Medicación de transferencia, conservación anual, transporte de muestras, pruebas adicionales y otros procedimientos.",
+      "risk": "No todos los embriones sobreviven a la descongelación ni producen un embarazo. Comenta la cancelación, el número de embriones, el embarazo múltiple y el seguimiento.",
+      "questions": [
+        "¿El centro acepta los informes de mis embriones?",
+        "¿Cuál será la preparación y el calendario de visitas?",
+        "¿Cómo se cobran la descongelación, la cancelación y el aplazamiento?"
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "¿Un bebé nacido en Saipán tiene ciudadanía estadounidense?",
+      "Según la regla histórica de ciudadanía por nacimiento, generalmente sí: ciudadanía, no una tarjeta de residencia.",
+      "8 FAM 302.2 del Departamento de Estado describe la ciudadanía al nacer en las Marianas del Norte desde el 4 de noviembre de 1986 bajo la sección 303 del Covenant. Al tramitar el registro y el pasaporte, verifica las medidas, resoluciones y excepciones aplicables a la situación de los padres."
+    ],
+    [
+      "¿Realizar una FIV en Saipán concede ciudadanía estadounidense?",
+      "No. El lugar del tratamiento y el lugar del nacimiento son asuntos distintos.",
+      "La punción, el cultivo o la transferencia en Saipán no conceden por sí mismos ciudadanía al embrión, al hijo ni a los padres. El parto, los gastos obstétricos y los documentos se organizan aparte."
+    ],
+    [
+      "¿Los padres reciben automáticamente la residencia permanente?",
+      "No. La ciudadanía del hijo no concede automáticamente residencia ni autorización de trabajo a los padres.",
+      "Un ciudadano estadounidense de 21 años o más puede presentar una petición para sus padres como familiares inmediatos, sin cupo anual de visados. Se mantienen los requisitos de solicitud, patrocinio económico y admisibilidad."
+    ],
+    [
+      "¿Necesito visado para viajar a Saipán desde España?",
+      "Si tienes pasaporte español y cumples los requisitos del Programa de Exención de Visados, puedes solicitar ESTA para una visita de hasta 90 días.",
+      "La residencia en España o hablar español no bastan: cuenta tu pasaporte y tu situación individual. El programa permite tratamiento médico si se cumplen sus requisitos; comprueba que el calendario cabe en la estancia autorizada. ESTA no garantiza la admisión. Si eres ciudadano o residente estadounidense, utiliza la documentación correspondiente a tu estatus e itinerario. Viajar principalmente para obtener ciudadanía mediante el parto no es un propósito permitido del visado de visitante."
+    ],
+    [
+      "¿Esta web es el hospital que realiza el tratamiento?",
+      "La web ofrece información y coordinación de consultas; la atención médica corresponde al centro receptor.",
+      "Confirma el centro, el médico, quién cobra y el alcance de la coordinación. El diagnóstico, las recetas, la punción, el laboratorio y la transferencia corresponden al equipo médico."
+    ],
+    [
+      "¿Sobre qué servicios puedo consultar?",
+      "FIV, ICSI, congelación de óvulos o semen, donación y proyectos familiares con participación de terceros.",
+      "También puedes preguntar por transferencia de embriones existentes o proyectos de personas sin pareja y familias LGBTQ+. Disponibilidad, requisitos, documentación y espera se confirman individualmente."
+    ],
+    [
+      "¿Qué presupuesto necesito para una FIV?",
+      "La combinación inicial de la calculadora es de 26.100–31.100 USD; solicita un presupuesto individual escrito.",
+      "Suma punción y cultivo (15.000 USD), medicación (3.000–8.000), anestesia (800), ICSI (1.800), congelación (1.000) y una FET (4.500). Excluye pruebas iniciales, medicación de transferencia, conservación anual, viaje, alojamiento y atención adicional. La ICSI no es necesaria para todo el mundo."
+    ],
+    [
+      "¿Los 15.000 USD incluyen todo el tratamiento?",
+      "No. Es la referencia básica de punción y cultivo embrionario.",
+      "La medicación, la anestesia, la ICSI, la congelación, el PGT, la transferencia y el viaje o alojamiento son adicionales. Compara el mismo alcance y número de servicios antes del total."
+    ],
+    [
+      "¿Cuánto dura un ciclo de FIV?",
+      "Un ciclo completo suele durar unas 3–6 semanas; no necesariamente es tu tiempo de estancia en Saipán.",
+      "El NHS describe esa referencia, con unas dos semanas de estimulación. La preparación, el cultivo y la transferencia modifican el calendario; la transferencia de congelados puede ser posterior. Confirma tus fechas antes de reservar."
+    ],
+    [
+      "¿La ICSI siempre tiene más éxito que la FIV convencional?",
+      "No. La evidencia no respalda la ICSI como mejora universal de los resultados.",
+      "Una opinión de comité de ASRM de 2026 cita un ensayo con 2.387 parejas sin factor masculino grave: nacido vivo del 33,8 % con ICSI y del 36,6 % con FIV convencional, sin diferencia estadísticamente significativa. Son resultados del estudio, no del centro de Saipán."
+    ],
+    [
+      "¿Puedo consultar sin informes médicos recientes?",
+      "Sí. No necesitas hacer una batería completa de pruebas antes de preguntar.",
+      "Indica tu interés, tratamientos previos, ciudad de salida y fechas. El médico confirmará los informes aceptados, su validez y las pruebas adicionales. Pregunta también por el idioma de consulta y de los informes."
+    ],
+    [
+      "¿La punción y la transferencia deben hacerse en el mismo viaje?",
+      "No. Pueden organizarse en etapas distintas.",
+      "Una transferencia en fresco puede coincidir con la etapa de punción. La transferencia de congelados o la espera de pruebas suele requerir preparación posterior. Las visitas y la estancia dependen del plan individual."
+    ]
+  ],
+  "form": {
+    "title": "Prepara tus preguntas",
+    "intro": "Genera un borrador, revísalo y envíalo desde tu aplicación de correo. Esta web no envía mensajes.",
+    "subject": "Asunto",
+    "timing": "Fechas previstas",
+    "topic": "Tema de interés",
+    "message": "Tus preguntas",
+    "choose": "Elige un tema",
+    "unknown": "Todavía no lo sé",
+    "times": [
+      "Sin decidir",
+      "En 1–3 meses",
+      "En 3–6 meses",
+      "Dentro de más de 6 meses"
+    ],
+    "template": "Usar preguntas de primera consulta",
+    "generate": "Crear borrador de correo",
+    "open": "Abrir aplicación de correo",
+    "copy": "Copiar texto de consulta",
+    "copied": "Copiado",
+    "failed": "Selecciona y copia el texto manualmente.",
+    "changed": "Has cambiado los datos. Genera un nuevo borrador.",
+    "unsent": "SIN ENVIAR — Revisa y envía el borrador desde tu aplicación de correo o copia el texto en un mensaje nuevo.",
+    "note": "No incluyas números de documentos ni historias clínicas completas. Confirma primero un canal adecuado con el centro.",
+    "templateText": "Hola, quisiera consultar:\n1. ¿Ofrecen una primera consulta a distancia, cómo se reserva y cuánto cuesta?\n2. ¿Qué informes necesitan, de qué fecha y en qué idioma?\n3. ¿En qué idioma se realiza la consulta y hay interpretación disponible?\n4. ¿Cómo se determinan las fechas y el número de visitas?\n5. ¿Pueden detallar por escrito lo incluido, los extras y las cancelaciones?"
+  },
+  "budget": {
+    "title": "Calcula un presupuesto orientativo",
+    "path": "Tipo de tratamiento",
+    "paths": [
+      "Punción y cultivo de FIV",
+      "Ciclo de congelación de óvulos",
+      "Solo transferencia de embriones congelados"
+    ],
+    "labels": [
+      "Medicación de estimulación",
+      "Anestesia para la punción",
+      "ICSI",
+      "Congelación de embriones",
+      "Transferencia de embriones congelados (FET)",
+      "Presupuesto de PGT-A",
+      "Conservación anual"
+    ],
+    "copy": "Copiar desglose",
+    "copied": "Copiado",
+    "failed": "Selecciona y copia el presupuesto manualmente.",
+    "excluded": "No incluye pruebas iniciales, medicación de transferencia, viaje, alojamiento, ciclos adicionales, complicaciones ni conceptos no seleccionados.",
+    "warning": "La ICSI y el PGT-A no son necesarios para todo el mundo. Un ciclo no garantiza embriones transferibles ni embarazo.",
+    "table": "Desglose orientativo de costes",
+    "columns": [
+      "Concepto",
+      "Presupuesto en USD",
+      "Alcance y extras"
+    ],
+    "consult": "Primera consulta médica",
+    "assessment": "Valoración inicial de fertilidad"
+  }
+}

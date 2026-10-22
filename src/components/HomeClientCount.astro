@@ -2,7 +2,7 @@
 // Client count supplied by the project owner; not independently audited.
 // This describes clients served, not completed treatments, pregnancies or births.
 const {locale='zh-CN'}=Astro.props;
-const labels={'zh-CN':'累计服务客户',en:'Total clients served',ja:'累計サービス利用者数',ko:'누적 서비스 이용 고객'};
+const labels={es:'Clientes atendidos','zh-CN':'累计服务客户',en:'Total clients served',ja:'累計サービス利用者数',ko:'누적 서비스 이용 고객'};
 ---
 <section class="client-count" aria-label={labels[locale]}><div class="wrap"><strong>1,000<span>+</span></strong><span>{labels[locale]}</span></div></section>
 <style>
