@@ -1,5 +1,13 @@
 // Search snippets describe existing content; page headings remain concise.
 const metadata: Record<string, Record<string, [string, string]>> = {
+ de:{
+  'guides/quotation':['IVF-Kostenvoranschlag prüfen: Umfang, Zahlung und Absage','Vergleichen Sie IVF-Angebote nach Leistungsumfang und Abrechnungseinheit. Prüfen Sie Medikamente, Labor, Lagerung, Transfer und Stornobedingungen.'],
+  fees:['IVF-Kosten auf Saipan: Behandlung, Medikamente und Transfer','Erkunden Sie Orientierungsbudgets in USD für IVF, Medikamente, ICSI, Einfrieren und Transfer. Nutzen Sie den Rechner und prüfen Sie Zusatzkosten.'],
+  'treatments/ivf':['IVF auf Saipan: Ablauf, Kosten und Erstgespräch','Von Beurteilung und Stimulation über Eizellentnahme und Kultur bis zum Transfer: IVF auf Saipan verstehen, Kosten prüfen und das Gespräch vorbereiten.'],
+  'treatments/icsi':['ICSI auf Saipan: Indikationen, Ablauf und Kosten','Wie unterscheidet sich ICSI von konventioneller IVF? Informieren Sie sich über Indikationen, Risiken, Laborgebühren und Fragen für die Beratung.'],
+  'treatments/egg-freezing':['Eizellen einfrieren auf Saipan: Ablauf, Kosten und Lagerung','Verstehen Sie Beurteilung, Stimulation, Entnahme und Einfrieren. Planen Sie Zykluskosten, jährliche Lagerung und eine mögliche spätere Nutzung getrennt.'],
+  'treatments/frozen-embryo-transfer':['Kryotransfer auf Saipan: Ablauf, Kosten und Vorbereitung','Bereits eingefrorene Embryonen? Informieren Sie sich über Vorbereitung, Auftauen, Transfer, Kostenpositionen und Nachsorge auf Saipan.']
+ },
  es:{
   'guides/quotation':['Presupuesto de FIV: qué incluye, pagos y cancelaciones','Compara presupuestos de FIV por alcance y unidad de cobro. Revisa medicación, laboratorio, conservación, transferencia, extras y cancelaciones.'],
   fees:['Precios de FIV en Saipán: medicación y transferencia','Consulta los costes orientativos en USD de punción, medicación, ICSI, congelación y transferencia. Calcula tu presupuesto y revisa los gastos adicionales.'],

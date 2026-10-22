@@ -1,6 +1,7 @@
+import { treatmentVisit as german } from './de-extra';
 import { treatmentVisit as spanish } from './es-extra';
 export const treatmentVisitCopy = {
- es:spanish,
+ es:spanish, de:german,
   "zh-CN": {
     "title": "就诊安排速览",
     "intro": "先通过邮件整理咨询问题，再按医生评估安排检查和治疗。已有报告可以先提供，不必自行补齐全部检查。",

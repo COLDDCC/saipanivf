@@ -1,6 +1,6 @@
 # 咨询表单与后续飞书接入
 
-当前六语共用 `LocalizedConsultation.astro`；中文入口为 `Consultation.astro`，繁体由构建生成。收件邮箱仍为 `info@saipan-ivf.com`。
+当前七语共用 `LocalizedConsultation.astro`；中文入口为 `Consultation.astro`，繁体由构建生成。收件邮箱仍为 `info@saipan-ivf.com`。
 
 当前只在浏览器生成邮件草稿，不接收线索，不调用飞书，不写入 localStorage，也不声称已提交。用户需要自行确认发送。必填项只有一种联系方式；称呼、项目、时间、问题均可留空。没有 JavaScript 时保留邮件链接，隐藏表单，避免 URL 泄露表单内容。
 
@@ -9,7 +9,7 @@
 生成草稿时构造的 `payload` 可作为后续同源 `POST /api/consultation` 的请求体：
 
 - `schemaVersion`: 1
-- `locale`: 文档语言（zh-CN / zh-TW / en / ja / ko / es）
+- `locale`: 文档语言（zh-CN / zh-TW / en / ja / ko / es / de）
 - `sourcePath`: 当前页面路径，不含查询参数或 hash
 - `contactMethod`: email / wechat / phone / whatsapp / line / telegram
 - `contactValue`: 去除首尾空白的联系方式

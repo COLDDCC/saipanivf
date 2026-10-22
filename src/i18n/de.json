@@ -1,0 +1,687 @@
+{
+  "name": "Saipan IVF",
+  "subtitle": "Kinderwunsch auf Saipan",
+  "menu": "Menü",
+  "skip": "Zum Inhalt",
+  "home": "Startseite",
+  "contact": "Erstgespräch vorbereiten",
+  "source": "Quelle und weitere Informationen",
+  "sources": "Quellen und Bildnachweise",
+  "checked": "Allgemeine Informationen zur Orientierung. Behandlung, Verfügbarkeit und Kosten bestätigt die behandelnde Einrichtung für Ihren Einzelfall.",
+  "nav": [
+    "Über das Zentrum",
+    "Behandlungen",
+    "Behandlungsteam",
+    "IVF-Ablauf",
+    "Kosten",
+    "Patientenratgeber",
+    "Geburt und Familie",
+    "Kontakt",
+    "Häufige Fragen",
+    "Leistungsumfang",
+    "Redaktion und Quellen",
+    "Datenschutz"
+  ],
+  "footerTitle": "Der erste Schritt ist ein Gespräch.",
+  "footerText": "Informieren Sie sich über Ihre Möglichkeiten, sammeln Sie Fragen und klären Sie den nächsten Termin.",
+  "footerNote": "Informationen zur Kinderwunschbehandlung und Terminkoordination. Der individuelle Behandlungsplan und ein schriftlicher Kostenvoranschlag bilden die Grundlage.",
+  "clinic": "Website der behandelnden Einrichtung",
+  "read": "Ratgeber lesen",
+  "details": "Behandlung ansehen",
+  "fees": "Kosten und Budgetplaner",
+  "prepare": "Das Erstgespräch vorbereiten",
+  "related": "Weitere Orientierung",
+  "included": "Basisumfang",
+  "excluded": "Zusätzliche Kosten",
+  "steps": "Wichtige Behandlungsschritte",
+  "questions": "Fragen für das Gespräch",
+  "risk": "Risiken und Behandlungsergebnisse",
+  "budgetNote": "Orientierungsbudget in US-Dollar (USD). Fordern Sie einen schriftlichen Kostenvoranschlag für Ihren Behandlungsplan an.",
+  "pages": {
+    "": {
+      "title": "IVF und Kinderwunschbehandlung auf Saipan",
+      "description": "Informieren Sie sich über IVF, ICSI, Fertilitätserhalt, das Behandlungsteam und die Planung einer Behandlung auf Saipan.",
+      "sections": [
+        [
+          "Behandlungsmöglichkeiten verstehen",
+          "Vergleichen Sie IVF, ICSI, das Einfrieren von Eizellen und den Transfer eingefrorener Embryonen. Ihre Ziele und vorhandenen Befunde sind der Ausgangspunkt; die ärztliche Beurteilung bestimmt die geeigneten Optionen."
+        ],
+        [
+          "Die behandelnde Einrichtung kennenlernen",
+          "Lesen Sie die veröffentlichten Teamprofile und bestätigen Sie, wer Sie behandelt, wo die Behandlung stattfindet und wie der Termin organisiert wird."
+        ],
+        [
+          "Behandlung und Reise getrennt planen",
+          "Prüfen Sie den medizinischen Zeitplan und den schriftlichen Leistungsumfang, bevor Sie Flüge oder Unterkunft buchen. Eizellentnahme und Transfer können in getrennten Etappen erfolgen."
+        ],
+        [
+          "Fragen vor dem ersten Schritt",
+          "Welches Budget ist sinnvoll? Wie lange dauert die Behandlung? Ist eine Anfrage ohne aktuelle Befunde möglich? Die häufigen Fragen bieten Antworten mit Quellen."
+        ]
+      ]
+    },
+    "about": {
+      "title": "Über Saipan IVF und die Terminkoordination",
+      "description": "Erfahren Sie, wie Information, Terminkoordination und medizinische Behandlung zusammenwirken.",
+      "sections": [
+        [
+          "Information und Terminkoordination",
+          "Diese Website hilft Ihnen, Behandlungsmöglichkeiten zu verstehen und Fragen an die aufnehmende Einrichtung vorzubereiten. Das Formular erstellt einen E-Mail-Entwurf an die öffentlich angegebene Adresse der Einrichtung."
+        ],
+        [
+          "Medizinische Verantwortung",
+          "Untersuchungen, Diagnosen, Verordnungen, Eizellentnahme, Laborverfahren und Embryotransfer liegen beim behandelnden Team. Bestätigen Sie Einrichtung, Arzt oder Ärztin und Leistungsvereinbarung vor der Buchung."
+        ],
+        [
+          "Medizinische und organisatorische Kosten",
+          "Klären Sie Zahlungsempfänger, eingeschlossene Leistungen und Abrechnung bei Änderungen oder Absagen. Unterkunft, Transport, Geburtshilfe und Leistungen Dritter erfordern eigene Absprachen."
+        ],
+        [
+          "Standort der Einrichtung",
+          "Die Einrichtung nennt sich Saipan IVF Center und veröffentlicht folgende Anschrift: 3rd Floor, Bank of Guam, Garapan, Saipan, MP 96950. Bestätigen Sie den genauen Treffpunkt vor der Reise."
+        ]
+      ]
+    },
+    "team": {
+      "title": "Behandlungsteam und Embryologielabor",
+      "description": "Lernen Sie die öffentlich vorgestellten Fachkräfte kennen und klären Sie, wer Sie tatsächlich betreuen wird.",
+      "sections": [
+        [
+          "Gary G. Ramsey, M.D. — Medizinischer Leiter",
+          "Die Einrichtung führt ihn als medizinischen Leiter und nennt einen medizinischen Abschluss der University of California, Los Angeles (UCLA). Fragen Sie, wer Ihr Gespräch führt und die Behandlung erläutert."
+        ],
+        [
+          "Irena Lalic — Spezialistin für Embryologie",
+          "Nach Angaben der Einrichtung hat sie einen MSc in Biologie der Universität Zagreb und einen MSc in klinischer Embryologie der University of Leeds. Fragen Sie nach den Befruchtungs-, Kultur- und Kryoberichten und deren Erläuterung."
+        ],
+        [
+          "Rose Wang — Pflegerische Leitung",
+          "Die Einrichtung stellt Rose Wang als Head Nurse vor. Klären Sie, wie Medikamentenanweisungen, Terminvorbereitung und Nachsorgekommunikation organisiert werden."
+        ],
+        [
+          "Labor und Ausstattung",
+          "Die Ausstattungsseite beschreibt Mikromanipulationssysteme, Embryo-Arbeitsplätze, MIRI®-IVF-Inkubatoren und die Vitrifikation von Eizellen. Bestätigen Sie Behandlungsort, Laborabläufe und für Ihren Plan verfügbare Verfahren."
+        ],
+        [
+          "Das tatsächliche Behandlungsteam bestätigen",
+          "Ein öffentliches Profil bestätigt weder einen aktuellen Termin noch die Dienstplanung. Bitten Sie um Namen und Angaben zur beruflichen Zulassung der tatsächlich behandelnden Person."
+        ]
+      ]
+    },
+    "treatments": {
+      "title": "Kinderwunschbehandlungen und Fertilitätserhalt",
+      "description": "Vergleichen Sie IVF, ICSI, Eizellkryokonservierung und Kryotransfer sowie Fragen zu Spenden und Familienplanung.",
+      "sections": [
+        [
+          "Eine erste Orientierung",
+          "IVF umfasst einen Behandlungsablauf; ICSI verändert den Befruchtungsschritt im Labor. Eizellen werden für eine mögliche spätere Verwendung eingefroren. Ein Kryotransfer nutzt bereits vorhandene eingefrorene Embryonen."
+        ],
+        [
+          "Samenkryokonservierung und Spenden",
+          "Für die Kryokonservierung von Samen sowie Ei- oder Samenspenden müssen Untersuchungen, Verfügbarkeit, Einwilligungen und Unterlagen geklärt werden. Die Regeln am Behandlungsort und in Ihrem Wohnsitzland können voneinander abweichen."
+        ],
+        [
+          "Alleinstehende und LGBTQ+-Familien",
+          "Beschreiben Sie zunächst Ihren Familienwunsch. Medizinische Voraussetzungen, Spenderverfügbarkeit, Beteiligung Dritter und die rechtliche Elternschaft benötigen eine Einzelfallprüfung. Eine ausländische Vereinbarung begründet nicht automatisch eine in Deutschland anerkannte Elternschaft."
+        ]
+      ]
+    },
+    "process": {
+      "title": "Von der ersten Anfrage bis zur IVF-Nachsorge",
+      "description": "Bereiten Sie Beratung, ärztliche Beurteilung, Behandlungsplan, Aufenthalt und Nachsorge schrittweise vor.",
+      "sections": [
+        [
+          "1. Erste Anfrage",
+          "Nennen Sie Ihr Anliegen, frühere Behandlungen, den Abreiseort und Ihren Zeitrahmen. Fragen Sie nach Kontaktweg, Gesprächsformat, Sprache, Kosten und benötigten Informationen."
+        ],
+        [
+          "2. Befunde und Vorgeschichte ordnen",
+          "Sortieren Sie Befunde nach Datum und ergänzen Sie Behandlungen, Operationen, Medikamente und Allergien. Bestätigen Sie einen geeigneten Übermittlungsweg. Das ärztliche Team entscheidet über Gültigkeit und zusätzliche Untersuchungen."
+        ],
+        [
+          "3. Ärztliche Beurteilung",
+          "Besprechen Sie Möglichkeiten, Alternativen, Risiken und Kontrollen. Lassen Sie sich den individuellen Plan, die erforderlichen Untersuchungen und offene Fragen erläutern."
+        ],
+        [
+          "4. Schriftliche Kostenklärung und Reise",
+          "Bestätigen Sie Leistungserbringer, Zahlungsempfänger, enthaltene Leistungen, Zusatzkosten und Stornobedingungen. Buchen Sie anhand der Kliniktermine und prüfen Sie Umbuchungsmöglichkeiten."
+        ],
+        [
+          "5. Behandlung vor Ort",
+          "Bringen Sie die angeforderten Unterlagen mit. Das medizinische Team verantwortet Diagnose, Medikamente, Kontrollen, Eizellentnahme, Kultur oder Transfer. Nehmen Sie die zugehörigen Berichte und Nachsorgeanweisungen mit."
+        ],
+        [
+          "6. Rückreise und Nachsorge",
+          "Bewahren Sie Behandlungsbericht, Rezepte, Zahlungsbelege und Lagerungseinwilligungen auf. Klären Sie Kontrolltermine, Kontaktwege, Verlängerung der Lagerung und Anlaufstellen bei Beschwerden."
+        ],
+        [
+          "Zyklusdauer ist nicht gleich Aufenthaltsdauer",
+          "Ein IVF-Zyklus wird häufig mit etwa 3–6 Wochen beschrieben, abhängig von Protokoll und einbezogenen Phasen. Das bedeutet keinen durchgehenden Aufenthalt auf Saipan. Eizellentnahme und späterer Kryotransfer können getrennt geplant werden."
+        ],
+        [
+          "Vor der Flugbuchung",
+          "Bestätigen Sie Einrichtung und Behandelnde, Kontroll- und Rückreisetermine, schriftliche Kosten- und Stornobedingungen sowie Kontakte während und nach der Behandlung. Prüfen Sie die erlaubte Einreisedauer separat."
+        ]
+      ]
+    },
+    "fees": {
+      "title": "IVF-Kosten und Budgetplanung",
+      "description": "Trennen Sie Eizellentnahme, Medikamente, Labor, Transfer, Lagerung und Reise, um Angebote sinnvoll zu vergleichen.",
+      "sections": [
+        [
+          "Basisbetrag und Gesamtplanung",
+          "Der Basis-Richtwert von 15.000 USD bezieht sich auf Eizellentnahme und Kultur. Die Vorauswahl des Rechners von 26.100–31.100 USD ergänzt Medikamente, Anästhesie, ICSI, Einfrieren und einen Kryotransfer; sie deckt nicht alle möglichen Ausgaben."
+        ],
+        [
+          "Vor der Zahlung",
+          "Lassen Sie Währung, Leistungen und Anzahl, Zusatzpositionen, Zahlungsempfänger, Fälligkeiten sowie Absage- und Verschiebungsbedingungen schriftlich bestätigen. Bei Zahlung aus Deutschland in Euro fallen gegebenenfalls Wechselkurs- und Bankkosten an."
+        ],
+        [
+          "Versicherung und nicht erfasste Kosten",
+          "Anfangsuntersuchungen, Transfermedikamente, Reise, Unterkunft, weitere Zyklen, Komplikationen und nicht ausgewählte Positionen sind nicht enthalten. Fragen Sie Ihre gesetzliche oder private Krankenversicherung vorab schriftlich nach Deckung für die konkrete Behandlung auf Saipan. Eine Reiseversicherung ist keine automatische Kostenzusage für geplante Kinderwunschbehandlungen."
+        ]
+      ]
+    },
+    "guides": {
+      "title": "Patientenratgeber",
+      "description": "Orientierung für Erstgespräch, Behandlungsvergleich, Reisevorbereitung und Nachsorge.",
+      "sections": [
+        [
+          "Neu in der Kinderwunschbehandlung?",
+          "Beginnen Sie mit der Vorbereitung auf das Erstgespräch, informieren Sie sich über das Team und sammeln Sie kurze Fragen. Sie müssen noch kein Verfahren selbst auswählen."
+        ],
+        [
+          "Behandlungen und Kosten vergleichen",
+          "Lesen Sie die IVF-Schritte und Behandlungsseiten. Nutzen Sie Budgetplaner und Angebotscheckliste, um denselben Leistungsumfang zu vergleichen."
+        ],
+        [
+          "Anreise und Rückkehr vorbereiten",
+          "Bestätigen Sie Termine, Unterlagen und Zahlungsbedingungen vor der Buchung. Bewahren Sie Medikamentenplan, Kontrolltermine und Lagerungskontakte nach der Behandlung auf."
+        ]
+      ]
+    },
+    "guides/first-visit": {
+      "title": "Das Erstgespräch: welche Unterlagen helfen",
+      "description": "Ordnen Sie vorhandene Befunde und klären Sie das Gesprächsformat, bevor Sie weitere Tests veranlassen.",
+      "sections": [
+        [
+          "Vier Angaben für den Einstieg",
+          "Nennen Sie Anliegen, Vorbehandlungen, Abreiseort und Zeitrahmen. Wenn Sie noch kein Verfahren kennen, können Sie dies offen angeben; ein eigenes Protokoll ist nicht erforderlich."
+        ],
+        [
+          "Vorhandene Befunde ordnen",
+          "Sortieren Sie Laborwerte, Ultraschall, Spermiogramme und frühere Stimulations- oder Transferprotokolle nach Datum. Ergänzen Sie Medikamente, Allergien und Operationen. Namen, Einheiten und Referenzbereiche sollten erhalten bleiben. Fragen Sie, welche Übersetzungen benötigt werden."
+        ],
+        [
+          "Eine Anfrage ist auch ohne aktuelle Befunde möglich",
+          "Klären Sie, ob ein Ferngespräch angeboten wird, was es kostet und welche Unterlagen gebraucht werden. Warten Sie die Anforderungen ab, bevor Sie möglicherweise doppelte oder bald ungültige Untersuchungen veranlassen."
+        ],
+        [
+          "Sicheren Übermittlungsweg bestätigen",
+          "Für die erste E-Mail genügt eine kurze Zusammenfassung Ihrer Fragen. Bestätigen Sie Einrichtung, Datenschutz und Übermittlungsweg vor dem Versand vollständiger medizinischer Unterlagen."
+        ],
+        [
+          "Nach Ihrer Anfrage",
+          "Klären Sie behandelnde Person, Format, Datum, verfügbare Sprache, akzeptierte Befunde, zusätzliche Tests und Kosten. Ein Entwurf ist noch keine gesendete Nachricht; ein Termin braucht eine ausdrückliche Bestätigung."
+        ]
+      ]
+    },
+    "guides/ivf-steps": {
+      "title": "Die wichtigsten Schritte eines IVF-Zyklus",
+      "description": "Von der Beurteilung über Stimulation, Eizellentnahme und Kultur bis zum Transfer und zur Nachsorge.",
+      "sections": [
+        [
+          "Beurteilung und Planung",
+          "Die ärztliche Beratung berücksichtigt Vorgeschichte und Befunde und erläutert Optionen, Kontrollen und Medikamente. Fragen Sie, was wohnortnah möglich ist und wofür Sie nach Saipan kommen müssen."
+        ],
+        [
+          "Stimulation und Kontrollen",
+          "Verwenden Sie Medikamente nur nach Verordnung und nehmen Sie die vorgesehenen Ultraschall- oder Blutuntersuchungen wahr. Ergebnisse können spätere Termine verändern."
+        ],
+        [
+          "Eizellentnahme, Befruchtung und Kultur",
+          "Das Team organisiert die Eizellentnahme und Befruchtung im Labor. Konventionelle IVF und ICSI sind verschiedene Methoden. Fragen Sie nach dem Grund der Auswahl und nach dem Zeitpunkt der Ergebnisse."
+        ],
+        [
+          "Transfer oder Einfrieren",
+          "Frischtransfer, Einfrieren und späterer Kryotransfer richten sich nach Plan und Ergebnissen. Nicht jeder Zyklus liefert transferierbare Embryonen."
+        ],
+        [
+          "Nachsorge und Zeitplan",
+          "Lassen Sie sich Medikamentenplan, Testtermine, Behandlungsbericht und Kontakte geben. Die allgemeine Spanne von 3–6 Wochen ist kein verbindlicher Reise- oder Schwangerschaftszeitplan."
+        ]
+      ]
+    },
+    "guides/quotation": {
+      "title": "Einen IVF-Kostenvoranschlag prüfen",
+      "description": "Vergleichen Sie Leistungsumfang, Zusatzpositionen, Zahlungsstufen und Stornobedingungen vor dem Gesamtbetrag.",
+      "sections": [
+        [
+          "Leistungserbringer und Zahlungsempfänger",
+          "Prüfen Sie Einrichtung, Behandelnde, Währung, Datum und Angebotsgültigkeit. Medizin, Koordination, Unterkunft, Transport und Leistungen Dritter können verschiedene Anbieter haben."
+        ],
+        [
+          "Gleichen Umfang vergleichen",
+          "Klären Sie, ob Kontrollen, Eizellentnahme, konventionelle Befruchtung, ICSI, Anästhesie, Kultur, Einfrieren und Transfer enthalten sind und in welcher Anzahl."
+        ],
+        [
+          "Medikamente, Tests und Lagerung",
+          "Fragen Sie nach Medikamentenmengen, Biopsie, Probentransport und Untersuchung bei PGT sowie dem Beginn jährlicher Lagerkosten. Die spätere Nutzung eingefrorener Eizellen erfordert eigene Schritte und Ausgaben."
+        ],
+        [
+          "Abbruch oder zusätzliche Behandlung",
+          "Lassen Sie vor der Zahlung erklären, wie Absage, Verschiebung, fehlende nutzbare Eizellen oder transferierbare Embryonen und Zusatzleistungen abgerechnet werden."
+        ],
+        [
+          "Den Rechner als Checkliste verwenden",
+          "Wählen Sie passende Positionen und fordern Sie einen individuellen schriftlichen Kostenvoranschlag an. Der Rechner entscheidet nicht über medizinische Notwendigkeit und erfasst nicht alle Behandlungs- und Reisekosten."
+        ]
+      ]
+    },
+    "guides/egg-freezing": {
+      "title": "Eizellen einfrieren: das Beratungsgespräch vorbereiten",
+      "description": "Planen Sie Beurteilung, Entnahme, Einfrieren, jährliche Lagerung und mögliche spätere Nutzung getrennt.",
+      "sections": [
+        [
+          "Ziele und Verfügbarkeit besprechen",
+          "Erläutern Sie Ihre Gründe für den Fertilitätserhalt, mögliche Termine, Vorgeschichte und Medikamente. Vorhandene Befunde helfen; die erforderliche Diagnostik legt das ärztliche Team fest."
+        ],
+        [
+          "Den Zyklus verstehen",
+          "Fragen Sie nach dem Ort der Kontrollen, der Organisation von Entnahme und Anästhesie sowie dem Bericht über Anzahl und Lagerung der eingefrorenen Eizellen."
+        ],
+        [
+          "Heutige und spätere Kosten trennen",
+          "Der Basis-Richtwert beträgt 9.000 USD. Anfangstests, Medikamente, Anästhesie und jährliche Lagerung kommen hinzu. Späteres Auftauen, Befruchten, Kultivieren und Transferieren benötigen eine neue Beurteilung und Kostenplanung."
+        ],
+        [
+          "Lagerung bestätigen",
+          "Bewahren Sie Anbieter, Einwilligungen, Verlängerungsgebühr und Kontakt auf. Fragen Sie nach Vorgehen bei Adressänderung, Probentransport oder Beendigung der Lagerung."
+        ],
+        [
+          "Grenzen kennen",
+          "Das Einfrieren erhält eine Möglichkeit, garantiert aber weder Schwangerschaft noch Geburt. Besprechen Sie alters- und situationsbezogene Erwartungen statt einer einzelnen Erfolgszahl."
+        ]
+      ]
+    },
+    "guides/travel-checklist": {
+      "title": "Für eine Behandlung nach Saipan reisen",
+      "description": "Stimmen Sie Kliniktermine, Einreisedokumente, Versicherung, Unterkunft und Nachsorge auf Ihre Situation ab.",
+      "sections": [
+        [
+          "Zuerst die medizinischen Termine bestätigen",
+          "Klären Sie Einrichtung, Behandelnde, Adresse, Ersttermin, Kontrollen und voraussichtliche Rückreise. Planen Sie bei Abreise aus Deutschland Flugverbindungen, Zeitverschiebung und Spielraum für medizinische Terminänderungen ein."
+        ],
+        [
+          "Mit deutschem Reisepass",
+          "Deutschland nimmt am US-Visa-Waiver-Programm teil. Wer sämtliche Voraussetzungen erfüllt, kann mit ESTA für einen Besuch von höchstens 90 Tagen reisen. Prüfen Sie Pass, frühere Reisen, Mehrstaatigkeit und den tatsächlichen medizinischen Reisezweck. Eine Genehmigung garantiert keine Einreise."
+        ],
+        [
+          "Wohnsitz ist nicht Staatsangehörigkeit",
+          "Ein deutscher Aufenthaltstitel allein berechtigt nicht zur ESTA-Nutzung. Maßgeblich sind Ihr Reisepass und Ihre persönliche Situation. Für US-Staatsangehörige oder Personen mit US-Aufenthaltsstatus gelten die jeweiligen Dokumentenanforderungen. Wer aus Österreich, der Schweiz oder einem anderen Land anreist, prüft die Regeln der eigenen Staatsangehörigkeit."
+        ],
+        [
+          "Versicherung, Buchungen und Unterlagen",
+          "Klären Sie geplante Behandlung, Komplikationen und Nachsorge schriftlich mit Kranken- und Reiseversicherung. Buchen Sie möglichst umbuchbar, prüfen Sie den Weg zur Klinik und planen Sie Begleitung ein. Nehmen Sie Terminbestätigung, verlangte Befunde und Rezepte mit und fragen Sie nach Übersetzungen."
+        ],
+        [
+          "Vor der Rückreise",
+          "Bewahren Sie Bericht, Medikamentenplan, Kontrolltermine, Belege und Lagerungsunterlagen auf. Vereinbaren Sie, wie die Nachsorge am Wohnort erfolgt und wer bei Beschwerden erreichbar ist."
+        ]
+      ]
+    },
+    "guides/family-planning": {
+      "title": "Spenden und Familienplanung mit Beteiligung Dritter",
+      "description": "Klären Sie medizinische Voraussetzungen, verfügbare Ressourcen, Kosten und rechtliche Elternschaft vor einer Entscheidung.",
+      "sections": [
+        [
+          "Den Familienwunsch erläutern",
+          "Alleinstehende und LGBTQ+-Familien können zunächst ihre Situation und Fragen schildern. Verfügbarkeit und Eignung erfordern eine individuelle Prüfung. Sprache und Staatsangehörigkeit erlauben keine pauschale Aussage."
+        ],
+        [
+          "Ei- oder Samenspende",
+          "Fragen Sie nach Verfügbarkeit, Untersuchungen, Spenderinformationen, Einwilligung, Wartezeit, Transport und Lagerung. Bestätigen Sie auch, welche Herkunftsinformationen für das spätere Kind zugänglich sind. Eine öffentliche Beschreibung bestätigt keine konkrete Verfügbarkeit."
+        ],
+        [
+          "Deutsche Rechtslage und Elternschaft",
+          "Bei Beteiligung Dritter müssen medizinische Leistungen, Vereinbarungen und die Anerkennung der Elternschaft getrennt geprüft werden. Gerade bei Leihmutterschaft begründet genetische Abstammung nach deutschem Recht nicht automatisch rechtliche Elternschaft. Klären Sie den Einzelfall mit zuständigen Stellen und unabhängiger Rechtsberatung vor einer verbindlichen Vereinbarung."
+        ],
+        [
+          "Vor finanziellen Verpflichtungen",
+          "Verlangen Sie schriftlichen Umfang, Zahlungsempfänger, Rücktrittsregeln und Zuständigkeiten. Prüfen Sie Versicherung und rechtliche Voraussetzungen separat. IVF, Geburtshilfe, Geburtsbeurkundung, Pass und Einreise des Kindes sind unterschiedliche Vorgänge."
+        ]
+      ]
+    },
+    "birth-planning": {
+      "title": "Geburt auf Saipan: Staatsangehörigkeit und Familie",
+      "description": "Unterscheiden Sie Kinderwunschbehandlung, Geburt und Dokumente nach Staatsangehörigkeit und rechtlicher Elternschaft.",
+      "sections": [
+        [
+          "US-Staatsangehörigkeit durch Geburt",
+          "Die historische Regel in 8 FAM 302.2 des US-Außenministeriums beschreibt den Erwerb bei Geburt auf den Nördlichen Marianen seit dem 4. November 1986 nach Covenant § 303. Prüfen Sie bei Geburtsregistrierung und Passantrag die dann geltenden Maßnahmen, Gerichtsentscheidungen und Ausnahmen zum Elternstatus."
+        ],
+        [
+          "Wenn ein Elternteil deutsch ist",
+          "Die deutsche Staatsangehörigkeit wird grundsätzlich durch rechtliche Abstammung von einem deutschen Elternteil erworben. Bei nach dem 31. Dezember 1999 im Ausland geborenen deutschen Eltern mit gewöhnlichem Aufenthalt im Ausland kann der Generationenschnitt greifen. Dann kann ein Antrag auf Geburtsbeurkundung innerhalb eines Jahres erforderlich sein. Klären Sie Voraussetzungen, Namensführung und Pass mit der zuständigen Auslandsvertretung."
+        ],
+        [
+          "Bereits vorhandener US-Status",
+          "Ein Behandlungsort verschafft Personen mit bestehender US-Staatsangehörigkeit keinen zusätzlichen Status. Prüfen Sie die Dokumente von Kind und Eltern anhand ihrer jeweiligen Situation. Deutschsprachigkeit und Wohnsitz bestimmen keine Staatsangehörigkeit."
+        ],
+        [
+          "Reisepass und Sozialleistungen",
+          "Visumfreie Reisen erlauben nicht automatisch Arbeit oder dauerhaften Aufenthalt. Eine Social-Security-Nummer allein begründet keine Krankenversicherung, Sozialleistung oder Rente; es gelten eigene Anspruchs- und Beitragsregeln."
+        ],
+        [
+          "Schule und Studium",
+          "Öffentliche US-Schulen haben Wohnsitz-, Schulbezirks- und Altersregeln. Staatsangehörigkeit garantiert weder einen Studienplatz noch einen festen Gebührennachlass. Für Schule, Studium und Anerkennung von Abschlüssen in Deutschland sind die dortigen Voraussetzungen maßgeblich."
+        ],
+        [
+          "Arbeit und Rechte der Eltern",
+          "US-Staatsangehörige benötigen grundsätzlich kein Arbeitsvisum; berufliche Zulassungen können trotzdem erforderlich sein. Die Staatsangehörigkeit des Kindes gibt Eltern keine automatische Arbeits- oder Aufenthaltserlaubnis."
+        ],
+        [
+          "Geburtshilfe und Versicherung",
+          "Planen Sie Krankenhaus, Geburtshilfe, Schmerzbehandlung und Kosten gesondert. Lassen Sie Deckung oder Selbstzahlerumfang schriftlich klären. Eine IVF-Vereinbarung umfasst nicht automatisch Schwangerschaft und Entbindung."
+        ],
+        [
+          "Reise und Rückkehr mit dem Kind",
+          "Klären Sie tatsächlichen Reisezweck, Geburtsunterlagen, rechtliche Elternschaft, Namensführung und Pass. Eine Reise hauptsächlich zum Erwerb der US-Staatsangehörigkeit durch Geburt ist kein zulässiger Zweck eines Besuchervisums. Verlassen Sie sich nicht auf eine automatische Anerkennung ausländischer Vereinbarungen."
+        ],
+        [
+          "Einwanderungsanträge für Eltern",
+          "US-Staatsangehörige ab 21 Jahren können für ihre Eltern einen Antrag in der Kategorie unmittelbarer Angehöriger stellen. Dafür gibt es kein jährliches Visakontingent, aber Antrag, finanzielle Unterstützung und Zulässigkeitsprüfung bleiben erforderlich. Ein Daueraufenthalt entsteht nicht automatisch."
+        ]
+      ]
+    },
+    "service-scope": {
+      "title": "Termine, Leistungen und Zuständigkeiten",
+      "description": "Bestätigen Sie medizinischen Anbieter, Koordination, Zahlungsempfänger und schriftliche Bedingungen vor der Buchung.",
+      "sections": [
+        [
+          "Erstes Gespräch",
+          "Klären Sie Antwortkanal, Gesprächssprache, Online- oder Präsenzformat und Kosten. Eine Anfrage oder ein E-Mail-Entwurf bestätigt noch keinen Termin."
+        ],
+        [
+          "Termin- und Reisekoordination",
+          "Bestätigen Sie Zuständigkeiten für Unterlagen, Termine, Unterkunft, Transport und Änderungen sowie mögliche gesonderte Koordinationskosten."
+        ],
+        [
+          "Medizin und Labor",
+          "Bestätigen Sie Einrichtung, Behandelnde und tatsächlichen Ort der Verfahren. Diagnose, Verordnung, Behandlung und Befundinterpretation liegen beim medizinischen Team."
+        ],
+        [
+          "Unterlagen vor der Zahlung",
+          "Verlangen Sie Anbieter- und Empfängerdaten, individuellen Plan, schriftliches Angebot, enthaltene und zusätzliche Leistungen, Mengen, Gültigkeit, Zahlungsstufen, Belege und Absagebedingungen."
+        ],
+        [
+          "Nachsorge und Lagerung",
+          "Klären Sie Kontakte für Medikamente, Kontrollen, Berichte, Probenlagerung, Einwilligungen und Verlängerungskosten."
+        ],
+        [
+          "Getrennte Leistungen",
+          "IVF, Entbindung, Unterkunft, Verpflegung, Transport, Spenden, Beteiligung Dritter und Rechtsdokumente sind verschiedene Leistungen. Prüfen Sie Anbieter und Einschluss jeder Position."
+        ]
+      ]
+    },
+    "editorial-policy": {
+      "title": "Redaktion, Quellen und Bildnachweise",
+      "description": "Erfahren Sie, wie medizinische Informationen, Budgetwerte und öffentlich bereitgestellte Bilder eingeordnet werden.",
+      "sections": [
+        [
+          "Medizinische und behördliche Quellen",
+          "Die medizinischen Erläuterungen verweisen auf HFEA, NHS und ASRM. US-Einreiseregeln und Staatsangehörigkeit werden mit US-Behörden verknüpft; deutsche Fragen mit dem Auswärtigen Amt und zuständigen deutschen Stellen. Maßgeblich bleiben die Regeln Ihres Einzelfalls."
+        ],
+        [
+          "Angaben zur Einrichtung",
+          "Namen, Adresse, Profile und beschriebene Ausstattung stammen von der Website der aufnehmenden Einrichtung. Öffentliche Profile ersetzen keine unabhängige Prüfung einer aktuellen Zulassung, Verfügbarkeit oder Terminbestätigung."
+        ],
+        [
+          "Kosten und Ergebnisse",
+          "Die Beträge sind Orientierungsbudgets, keine bestätigten persönlichen Behandlungspakete. Fordern Sie ein schriftliches Angebot an. Studienergebnisse gelten für die untersuchten Gruppen und sind keine Erfolgsraten der Einrichtung auf Saipan."
+        ],
+        [
+          "Bilder",
+          "Team- und Gebäudefotos werden der Einrichtung zugeordnet. Weitere redaktionelle Bilder veranschaulichen Themen; sie belegen nicht, dass Personen oder Räume zur Einrichtung gehören oder ihre Patienten darstellen."
+        ],
+        [
+          "Sprache, Änderungen und Korrekturen",
+          "Diese deutsche Informationsfassung bestätigt keine deutschsprachige medizinische Betreuung. Klären Sie Gesprächssprache, Übersetzungen und Dolmetschmöglichkeiten vor der Buchung. Bei Fehlern nennen Sie der veröffentlichten E-Mail-Adresse die betreffende Seite und Textstelle."
+        ]
+      ]
+    },
+    "privacy": {
+      "title": "Datenschutz und Nutzung des Anfrageformulars",
+      "description": "So entsteht Ihr E-Mail-Entwurf, so wählen Sie den Empfänger und so klären Sie den Versand medizinischer Unterlagen.",
+      "sections": [
+        [
+          "So funktioniert das Formular",
+          "Das Formular stellt den Text in Ihrem Browser zusammen. Ein Entwurf wird nicht versendet. Öffnen Sie Ihr E-Mail-Programm oder kopieren Sie den Text, prüfen Sie Empfänger und Inhalt und senden Sie selbst. Diese Website hat keinen Endpunkt zum Empfang der Formulardaten."
+        ],
+        [
+          "Wer die E-Mail erhält",
+          "Voreingestellt ist info@saipan-ivf.com, die veröffentlichte Adresse der Einrichtung. Nach dem Versand verarbeiten Ihr E-Mail-Anbieter und die Einrichtung die Nachricht nach ihren eigenen Regeln."
+        ],
+        [
+          "Welche Angaben sinnvoll sind",
+          "Ein Kontaktweg genügt; Name, Behandlung, Zeitrahmen und Fragen sind optional. Kontaktdaten werden in den Entwurf eingefügt, nicht an einen Website-Server übertragen oder dauerhaft im Browser gespeichert. Senden Sie zunächst keine Ausweisnummern, vollständigen Krankenakten oder fremden Daten ohne Einwilligung. Bestätigen Sie vorher einen geeigneten Übermittlungsweg."
+        ],
+        [
+          "Hosting und externe Links",
+          "Cloudflare Pages stellt diese Seiten bereit. Hosting-, Netzwerk- und E-Mail-Anbieter können notwendige Verbindungsinformationen nach ihren Regeln verarbeiten. Für externe Websites gelten deren eigene Bedingungen."
+        ],
+        [
+          "Termine und Zahlungen",
+          "Das Lesen einer Seite oder Erstellen eines Entwurfs begründet weder Termin, Behandlungsvertrag noch Zahlungspflicht. Die tatsächlichen Vereinbarungen regeln Behandlung, Preis, Stornierung und Datenverarbeitung."
+        ]
+      ]
+    },
+    "contact": {
+      "title": "Kontakt und erstes Beratungsgespräch",
+      "description": "Ein Kontaktweg genügt. Name, Behandlung und Fragen sind optional; Sie können auch direkt eine E-Mail schreiben.",
+      "sections": []
+    },
+    "faq": {
+      "title": "Häufige Fragen",
+      "description": "Antworten zu Behandlung, Kosten, Dauer, Reise und Staatsangehörigkeit mit weiterführenden Quellen.",
+      "sections": []
+    }
+  },
+  "treatments": [
+    {
+      "title": "IVF — In-vitro-Fertilisation",
+      "summary": "Eizellen und Spermien werden außerhalb des Körpers zusammengebracht. Später kann ein Embryo in die Gebärmutter übertragen werden. Die ärztliche Beurteilung berücksichtigt Ursache, Vorbehandlungen und Befunde.",
+      "suitable": "IVF kann bei Eileiterproblemen, bestimmten Ovulations- oder Samenfaktoren und ungeklärter Unfruchtbarkeit nach anderen Behandlungen besprochen werden. Fragen Sie nach Alternativen.",
+      "stages": [
+        "Beurteilung und Untersuchungsplanung",
+        "Verordnete Stimulation und Kontrollen",
+        "Eizellentnahme, Befruchtung und Embryokultur",
+        "Transfer oder Einfrieren und Nachsorge"
+      ],
+      "included": "Übliche Kontrollen, eine Eizellentnahme, konventionelle Befruchtung und Embryokultur.",
+      "excluded": "Anfangstests, Stimulationsmedikamente, Anästhesie, ICSI, Einfrieren, jährliche Lagerung, Gentests, Transfer und Aufenthalt.",
+      "risk": "Besprechen Sie Überstimulationssyndrom, Mehrlings- und Eileiterschwangerschaft, Zyklusabbruch und das mögliche Ausbleiben nutzbarer Eizellen oder transferierbarer Embryonen. Vergleichen Sie Lebendgeburtenraten mit demselben Nenner; ein positiver Schwangerschaftstest ist keine Lebendgeburt.",
+      "questions": [
+        "Warum passt dieser Plan und welche Alternativen gibt es?",
+        "Wo finden Kontrollen statt und wie viele Termine brauche ich?",
+        "Wie werden Absage, Verschiebung oder fehlende transferierbare Embryonen abgerechnet?"
+      ]
+    },
+    {
+      "title": "ICSI — Intrazytoplasmatische Spermieninjektion",
+      "summary": "Eine einzelne Samenzelle wird in eine Eizelle injiziert. ICSI verändert den Befruchtungsschritt innerhalb einer IVF; sie ist weder ein vollständiger Zyklus noch eine allgemeine Steigerung der Lebendgeburtenrate.",
+      "suitable": "ICSI kann bei ausgeprägten Samenveränderungen oder früher schwacher beziehungsweise ausgebliebener Befruchtung erwogen werden. Fragen Sie nach dem konkreten Grund gegenüber konventioneller IVF.",
+      "stages": [
+        "Spermiogramm und frühere Befruchtung prüfen",
+        "Indikation und Alternativen besprechen",
+        "Samenaufbereitung, Entnahme und Injektion koordinieren",
+        "Befruchtungs- und Kulturberichte erhalten"
+      ],
+      "included": "Der gesondert aufgeführte ICSI-Laborschritt.",
+      "excluded": "Vollständiger IVF-Zyklus, Medikamente, Anästhesie, Entnahme, Kultur, Lagerung und Transfer.",
+      "risk": "Die Mikromanipulation kann eine Eizelle schädigen. Die Injektion garantiert weder Befruchtung noch transferierbaren Embryo oder Lebendgeburt. Die Risiken von Stimulation, Entnahme und Transfer bestehen weiterhin.",
+      "questions": [
+        "Welcher Befund spricht bei mir für ICSI?",
+        "Wird pro Zyklus oder nach Eizellzahl abgerechnet?",
+        "Wer erläutert Befruchtungs- und Kulturergebnisse?"
+      ]
+    },
+    {
+      "title": "Eizellen einfrieren und Fertilität erhalten",
+      "summary": "Eizellen werden entnommen und für eine mögliche spätere Verwendung eingefroren. Das erhält eine Option, garantiert aber weder Schwangerschaft noch Geburt.",
+      "suitable": "Besprechen Sie Ziele, Zukunftsplanung, Vorgeschichte und Medikamente. Das ärztliche Team legt notwendige Untersuchungen und den Ablauf fest.",
+      "stages": [
+        "Beurteilung und vorhandene Befunde",
+        "Stimulation, Kontrollen und Entnahme",
+        "Kryobericht und Lagerungsvereinbarung",
+        "Verlängerung und spätere Verwendung"
+      ],
+      "included": "Übliche Kontrollen, eine Entnahme und Einfrieren.",
+      "excluded": "Anfangstests, Medikamente, Anästhesie und jährliche Lagerung. Späteres Auftauen, Befruchten, Kultivieren und Transferieren werden separat beurteilt und berechnet.",
+      "risk": "Besprechen Sie Stimulations- und Entnahmerisiken, wenige oder keine geeigneten Eizellen und die Grenzen von späterem Überleben, Befruchtung und Schwangerschaft. Alter und individuelle Faktoren sind entscheidend.",
+      "questions": [
+        "Welche Ergebnisse und Grenzen sind nach einem Zyklus realistisch?",
+        "Werden Einfrieren und jährliche Lagerung getrennt berechnet?",
+        "Was gilt bei Kontaktänderung, Probentransport oder Lagerungsende?"
+      ]
+    },
+    {
+      "title": "Kryotransfer — Transfer eingefrorener Embryonen",
+      "summary": "Ein vorhandener eingefrorener Embryo wird zum Transfer aufgetaut. Dokumentation, Einwilligungen und medizinische Umstände bestimmen, ob und wie der Transfer möglich ist.",
+      "suitable": "Für Personen mit eingefrorenen Embryonen oder einem geplanten späteren Transfer. Bei Lagerung in einer anderen Einrichtung sind zuerst Annahme und Transport zu klären.",
+      "stages": [
+        "Embryoberichte, Lagerstelle und Einwilligungen prüfen",
+        "Vorbereitung, Kontrollen, Medikamente und Termine klären",
+        "Auftauen und Embryotransfer",
+        "Schwangerschaftstest, Medikamente und Nachsorge"
+      ],
+      "included": "Übliche Kontrollen, Auftauen und ein Transfer.",
+      "excluded": "Transfermedikamente, jährliche Lagerung, Probentransport, weitere Tests und Verfahren.",
+      "risk": "Nicht jeder Embryo überlebt das Auftauen oder führt zu einer Schwangerschaft. Klären Sie Abbruch, Embryozahl, Mehrlingsrisiko und Nachsorge.",
+      "questions": [
+        "Akzeptiert die Einrichtung die vorhandenen Embryounterlagen?",
+        "Wie sehen Vorbereitung und Anwesenheitstermine aus?",
+        "Wie werden Auftauen, Absage und Verschiebung berechnet?"
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Ist ein auf Saipan geborenes Kind US-Staatsangehöriger?",
+      "Nach der historisch angewandten Geburtsortsregel grundsätzlich ja: US-Staatsangehörigkeit, nicht nur eine Green Card.",
+      "8 FAM 302.2 des US-Außenministeriums beschreibt den Erwerb bei Geburt auf den Nördlichen Marianen seit dem 4. November 1986 nach Covenant § 303. Prüfen Sie bei Registrierung und Passantrag aktuelle Maßnahmen, Gerichtsentscheidungen und Ausnahmen bezüglich des Elternstatus."
+    ],
+    [
+      "Verleiht eine IVF auf Saipan die US-Staatsangehörigkeit?",
+      "Nein. Behandlungsort und Geburtsort sind unterschiedliche Sachverhalte.",
+      "Eizellentnahme, Kultur oder Transfer verleihen weder Embryo, Kind noch Eltern automatisch die US-Staatsangehörigkeit. Geburt, Geburtshilfekosten und Einreisedokumente sind getrennt zu planen."
+    ],
+    [
+      "Erhalten die Eltern automatisch eine Green Card?",
+      "Nein. Die Staatsangehörigkeit des Kindes verschafft Eltern nicht automatisch Aufenthalts- oder Arbeitsrechte.",
+      "US-Staatsangehörige ab 21 Jahren können für Eltern einen Antrag als unmittelbare Angehörige stellen; dafür besteht kein jährliches Visakontingent. Antrag, finanzielle Unterstützung und Zulässigkeitsprüfung bleiben notwendig."
+    ],
+    [
+      "Brauche ich für eine Reise aus Deutschland ein Visum?",
+      "Mit deutschem Reisepass und erfüllten Voraussetzungen des Visa-Waiver-Programms ist eine Reise mit ESTA für höchstens 90 Tage möglich.",
+      "Ein deutscher Wohnsitz oder Aufenthaltstitel allein genügt nicht. Maßgeblich sind Reisepass und persönliche Voraussetzungen. Medizinische Behandlung ist im Programm grundsätzlich ein zulässiger Zweck, wenn alle Anforderungen erfüllt werden; die Dauer muss zur erlaubten Aufenthaltszeit passen. ESTA garantiert keine Einreise. Für US-Staatsangehörige und US-Aufenthaltsberechtigte gelten eigene Dokumentenregeln. Eine Reise hauptsächlich zum Staatsangehörigkeitserwerb durch Geburt ist kein zulässiger Besuchervisumzweck."
+    ],
+    [
+      "Ist diese Website die behandelnde Klinik?",
+      "Die Website bietet Informationen und Anfragekoordination; behandelt wird durch die aufnehmende Einrichtung.",
+      "Bestätigen Sie Einrichtung, Behandelnde, medizinischen Zahlungsempfänger und Koordinationsumfang. Diagnose, Verordnungen, Entnahme, Labor und Transfer liegen beim medizinischen Team."
+    ],
+    [
+      "Zu welchen Leistungen kann ich anfragen?",
+      "Zu IVF, ICSI, Eizell- oder Samenkryokonservierung, Spenden und Familienplanung mit Beteiligung Dritter.",
+      "Auch vorhandene Embryonen sowie Anliegen von Alleinstehenden oder LGBTQ+-Familien können besprochen werden. Verfügbarkeit, Voraussetzungen, Wartezeiten, Unterlagen und die rechtliche Anerkennung in Deutschland sind individuell zu klären."
+    ],
+    [
+      "Welches Budget sollte ich für IVF einplanen?",
+      "Die Vorauswahl des Rechners beträgt 26.100–31.100 USD; maßgeblich ist Ihr schriftlicher Kostenvoranschlag.",
+      "Sie umfasst Entnahme und Kultur (15.000 USD), Medikamente (3.000–8.000), Anästhesie (800), ICSI (1.800), Einfrieren (1.000) und einen Kryotransfer (4.500). Anfangstests, Transfermedikamente, Lagerung, Reise, Unterkunft und Zusatzbehandlungen fehlen. ICSI ist nicht für alle erforderlich."
+    ],
+    [
+      "Decken 15.000 USD die gesamte IVF ab?",
+      "Nein. Das ist der Basis-Richtwert für Eizellentnahme und Embryokultur.",
+      "Medikamente, Anästhesie, ICSI, Einfrieren, PGT, Transfer, Reise und Unterkunft kommen hinzu. Vergleichen Sie denselben Umfang und dieselbe Leistungsanzahl."
+    ],
+    [
+      "Wie lange dauert ein IVF-Zyklus?",
+      "Häufig etwa 3–6 Wochen; das entspricht nicht zwangsläufig Ihrem Aufenthalt auf Saipan.",
+      "Der NHS nennt diese Spanne einschließlich etwa zwei Wochen Stimulation. Vorbereitung, Kultur und Transfer beeinflussen den Zeitplan; ein Kryotransfer kann später erfolgen. Bestätigen Sie individuelle Termine vor der Buchung."
+    ],
+    [
+      "Ist ICSI immer erfolgreicher als konventionelle IVF?",
+      "Nein. Die Evidenz unterstützt ICSI nicht als allgemeine Erfolgssteigerung.",
+      "Eine ASRM-Stellungnahme von 2026 nennt eine Studie mit 2.387 Paaren ohne schweren männlichen Faktor: 33,8 % Lebendgeburten mit ICSI und 36,6 % mit konventioneller IVF, ohne statistisch signifikanten Unterschied. Das sind Studienergebnisse, keine Erfolgsraten der Einrichtung auf Saipan."
+    ],
+    [
+      "Kann ich ohne aktuelle Befunde anfragen?",
+      "Ja. Für eine erste Anfrage ist keine vollständige neue Untersuchungsserie erforderlich.",
+      "Nennen Sie Anliegen, Vorgeschichte, Abreiseort und Zeitrahmen. Das behandelnde Team bestimmt akzeptierte Befunde, Gültigkeit und weitere Tests. Fragen Sie auch nach Gesprächssprache und Übersetzungen."
+    ],
+    [
+      "Müssen Eizellentnahme und Transfer in derselben Reise stattfinden?",
+      "Nein. Beide Schritte können in getrennten Etappen organisiert werden.",
+      "Ein Frischtransfer kann zur Entnahmephase gehören. Kryotransfer oder das Warten auf Untersuchungsergebnisse erfordern häufig spätere Vorbereitung. Anzahl und Dauer der Aufenthalte richten sich nach dem individuellen Plan."
+    ]
+  ],
+  "form": {
+    "title": "Ihre Fragen für das Erstgespräch",
+    "intro": "Erstellen Sie einen Entwurf, prüfen Sie ihn und senden Sie ihn aus Ihrem E-Mail-Programm. Diese Website versendet keine Nachrichten.",
+    "subject": "Betreff",
+    "timing": "Gewünschter Zeitrahmen",
+    "topic": "Ihr Anliegen",
+    "message": "Ihre Fragen",
+    "choose": "Thema auswählen",
+    "unknown": "Noch unentschieden",
+    "times": [
+      "Noch offen",
+      "In 1–3 Monaten",
+      "In 3–6 Monaten",
+      "In mehr als 6 Monaten"
+    ],
+    "template": "Fragen für das Erstgespräch einsetzen",
+    "generate": "E-Mail-Entwurf erstellen",
+    "open": "E-Mail-Programm öffnen",
+    "copy": "Anfragetext kopieren",
+    "copied": "Kopiert",
+    "failed": "Bitte markieren und kopieren Sie den Text manuell.",
+    "changed": "Ihre Angaben wurden geändert. Bitte erstellen Sie einen neuen Entwurf.",
+    "unsent": "NICHT GESENDET — Prüfen und versenden Sie den Entwurf in Ihrem E-Mail-Programm oder kopieren Sie ihn in eine eigene Nachricht.",
+    "note": "Bitte keine Ausweisnummern oder vollständigen Krankenakten einfügen. Klären Sie zuerst einen geeigneten Übermittlungsweg.",
+    "templateText": "Guten Tag, ich möchte Folgendes klären:\n1. Ist ein Erstgespräch aus der Ferne möglich, wie wird es gebucht und was kostet es?\n2. Welche vorhandenen Befunde werden benötigt, wie aktuell und in welcher Sprache?\n3. In welcher Sprache findet die Beratung statt und ist Dolmetschen möglich?\n4. Wie werden Termine und Anzahl der Besuche festgelegt?\n5. Können Sie Leistungsumfang, Zusatzkosten und Absagebedingungen schriftlich nennen?"
+  },
+  "budget": {
+    "title": "Ihr Orientierungsbudget zusammenstellen",
+    "path": "Behandlungsweg",
+    "paths": [
+      "IVF: Eizellentnahme und Kultur",
+      "Zyklus zum Einfrieren von Eizellen",
+      "Nur Kryotransfer"
+    ],
+    "labels": [
+      "Stimulationsmedikamente",
+      "Anästhesie zur Entnahme",
+      "ICSI",
+      "Einfrieren von Embryonen",
+      "Kryotransfer (FET)",
+      "PGT-A-Budget",
+      "Jährliche Lagerung"
+    ],
+    "copy": "Budgetdetails kopieren",
+    "copied": "Kopiert",
+    "failed": "Bitte markieren und kopieren Sie das Budget manuell.",
+    "excluded": "Nicht enthalten: Anfangstests, Transfermedikamente, Reise, Unterkunft, weitere Zyklen, Komplikationen und nicht ausgewählte Positionen.",
+    "warning": "ICSI und PGT-A sind nicht für alle erforderlich. Ein Zyklus garantiert weder transferierbare Embryonen noch Schwangerschaft.",
+    "table": "Kosten nach Position",
+    "columns": [
+      "Position",
+      "Budget in USD",
+      "Umfang und Zusatzleistungen"
+    ],
+    "consult": "Ärztliches Erstgespräch",
+    "assessment": "Grundlegende Fertilitätsdiagnostik"
+  }
+}

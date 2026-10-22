@@ -1,6 +1,7 @@
+import { journey as german } from './de-extra';
 import { journey as spanish } from './es-extra';
 export const journeyCopy={
- es:spanish,
+ es:spanish, de:german,
  'zh-CN':{
  title:'从首次咨询到返程随访',intro:'先看六个阶段，再按当前阶段准备。每一步都列清你要做什么、向谁确认、应拿到什么。',labels:['你准备','向谁确认','本阶段应取得'],
  stages:[

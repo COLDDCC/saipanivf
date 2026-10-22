@@ -1,0 +1,11 @@
+# German localization
+
+Added all 23 `/de/` pages with the shared blue design and matching photographs, including all treatment details, six patient guides, budget planner, quotation checklist, preparation journey and email draft. Reciprocal language links now cover seven languages and 161 indexable routes.
+
+The German version uses formal Sie, conventional clinical terms, German number separators and USD labels without converting exchange rates. German nationality, German residence and existing US status are distinguished. Austrian and Swiss readers are directed to the requirements of their own nationality. No German-speaking clinical service or insurer reimbursement is promised.
+
+Country-specific content covers written confirmation of insurance for planned treatment and complications, euro-to-USD bank costs, document translations and follow-up at home. Overseas birth explains the German generation-cutoff exception and potentially required application within one year; third-party family planning does not promise automatic recognition of parentage. Relevant sources: German Foreign Office travel advice; German missions in the US on nationality, overseas birth and the generation cutoff; Foreign Office surrogacy/parentage guidance; federal Informationsportal Kinderwunsch on treatment abroad; US State Department VWP and visitor rules.
+
+Added German canonical/hreflang/sitemap/structured-data/sharing metadata and localized search descriptions. Interaction counting accepts de. Migration 0003 extends the existing language constraint while preserving aggregate counts; infrastructure remains unconfigured and no database setup was performed.
+
+Validation: full build and checks extended to seven languages, 161 indexable routes and image parity on all 138 translated routes. German budget calculations, copying, contact validation and topic prefill, draft invalidation, printable preparation controls, internal anchors, FAQ source rules and SEO declarations are covered. Dictionary shape matches the English source. SQLite smoke check applies all three migrations, preserves previous counts and accepts German counts. This is editorial localization, not certified translation or professional medical/legal review.

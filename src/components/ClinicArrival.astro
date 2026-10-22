@@ -1,8 +1,9 @@
 ---
+import { arrival as german } from '../i18n/de-extra';
 import { arrival as spanish } from '../i18n/es-extra';
 const {locale='zh-CN'}=Astro.props;
 const copy={
- es:spanish,
+ es:spanish, de:german,
  'zh-CN':{title:'到院地址与预约确认',label:'院方官网公开地址',steps:[['出发前','确认接诊日期、时间、医生和具体报到位置；将预约确认与地址保存在手机中。'],['安排交通','用下方英文地址查询地图，再向接诊方确认目的地。地图搜索结果不替代报到位置确认。'],['预留调整空间','按医疗日程安排交通和住宿；接送、陪同及额外费用在预约时分别确认。']],map:'按公开地址搜索地图',source:'查看院方联系方式',checked:'地址来源核对：2026-10-21'},
  en:{title:'Clinic address and appointment confirmation',label:'Address published by the care provider',steps:[['Before departure','Confirm the date, time, physician and check-in point. Save the appointment confirmation and address on your phone.'],['Arrange transport','Search the English address below, then confirm the destination with the receiving team. A map result does not confirm the check-in point.'],['Allow for changes','Arrange transport and accommodation around clinical dates. Confirm transfers, accompanying-person arrangements and additional charges separately.']],map:'Search the published address on Maps',source:'View provider contact information',checked:'Address source checked: 21 October 2026'},
  ja:{title:'所在地と来院予約の確認',label:'施設公式サイトの公開住所',steps:[['出発前','受診日、時間、担当医、受付場所を確認し、予約確認と住所をスマートフォンに保存します。'],['交通の手配','下記の英語住所で地図を検索し、受診先に目的地を確認してください。地図の結果だけでは受付場所を確認できません。'],['変更への備え','治療日程に合わせて交通・宿泊を手配し、送迎、同伴者、追加費用は予約時に個別に確認します。']],map:'公開住所を地図で検索',source:'施設の連絡先を見る',checked:'住所の出典確認：2026年10月21日'},

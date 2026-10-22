@@ -2,9 +2,9 @@
 // Client count supplied by the project owner; not independently audited.
 // This describes clients served, not completed treatments, pregnancies or births.
 const {locale='zh-CN'}=Astro.props;
-const labels={es:'Clientes atendidos','zh-CN':'累计服务客户',en:'Total clients served',ja:'累計サービス利用者数',ko:'누적 서비스 이용 고객'};
+const labels={de:'Betreute Kundinnen und Kunden',es:'Clientes atendidos','zh-CN':'累计服务客户',en:'Total clients served',ja:'累計サービス利用者数',ko:'누적 서비스 이용 고객'};
 ---
-<section class="client-count" aria-label={labels[locale]}><div class="wrap"><strong>1,000<span>+</span></strong><span>{labels[locale]}</span></div></section>
+<section class="client-count" aria-label={labels[locale]}><div class="wrap"><strong>{locale==='de'?'1.000':'1,000'}<span>+</span></strong><span>{labels[locale]}</span></div></section>
 <style>
 .client-count{background:var(--deep);color:white}.client-count>div{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding-block:22px}.client-count>div>span{font-size:20px;letter-spacing:.04em}.client-count strong{font-size:clamp(42px,4vw,58px);font-weight:500;line-height:1.1;letter-spacing:-.035em;font-variant-numeric:tabular-nums}.client-count strong span{font-size:.65em;vertical-align:top;margin-left:5px}@media(max-width:600px){.client-count>div{padding-block:18px;gap:8px}.client-count>div>span{font-size:18px}}
 </style>

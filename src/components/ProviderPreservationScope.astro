@@ -1,8 +1,9 @@
 ---
+import { preservation as german } from '../i18n/de-extra';
 import { preservation as spanish } from '../i18n/es-extra';
 const {locale='zh-CN'}=Astro.props;
 const copy={
- es:spanish,
+ es:spanish, de:german,
  'zh-CN':{title:'院方公开介绍的冻卵服务环节',intro:'院方生育力保存页面列出了以下环节，可据此核对个人治疗计划：',items:['健康评估、视频咨询与个人方案','超声、激素监测与促排用药安排','一次取卵及麻醉','卵子玻璃化冷冻与保存安排','取卵后医疗随访与后续咨询'],note:'预约时核对监测地点、首年费用范围、保存续费和未来使用安排。官网服务介绍没有列出对应美元报价，不能直接视为本站基础预算的包含清单。',source:'查看院方生育力保存介绍'},
  en:{title:'Egg-freezing stages described by the provider',intro:'The provider’s fertility-preservation page lists these stages to discuss when confirming your individual plan:',items:['Health assessment, video consultation and an individual plan','Ultrasound, hormonal monitoring and stimulation medication','One egg retrieval and anaesthesia','Egg vitrification and storage arrangements','Post-retrieval medical follow-up and ongoing consultation'],note:'Confirm monitoring location, first-year fee scope, storage renewals and future use. The service page does not give a matching USD price; its scope is not the inclusion list for this website’s base budget.',source:'Read the provider’s preservation overview'},
  ja:{title:'施設が公開している卵子凍結のサービス工程',intro:'施設の生殖能力温存ページには、次の工程が紹介されています。個別計画の確認に活用してください。',items:['健康評価、ビデオ相談、個別計画','超音波・ホルモン測定と卵巣刺激薬の手配','1回の採卵と麻酔','卵子のガラス化凍結と保存の手配','採卵後の診療フォローと継続相談'],note:'検査場所、初年度の費用範囲、保存更新、将来の使用を確認しましょう。施設のページに対応する米ドル料金はなく、当サイトの基本予算の包含項目を示すものではありません。',source:'施設の生殖能力温存の紹介を見る'},

@@ -1,18 +1,18 @@
 ---
 import { dictionaries } from '../i18n';
 const { locale = 'zh-CN', current = '' } = Astro.props;
-const d = locale === 'en' || locale === 'ja' || locale === 'ko' || locale === 'es' ? dictionaries[locale] : null;
+const d = locale === 'en' || locale === 'ja' || locale === 'ko' || locale === 'es' || locale === 'de' ? dictionaries[locale] : null;
 const labels = d?.nav ?? ['关于中心','治疗项目','医疗团队','IVF流程','费用预算','就诊指南','塞班分娩','联系咨询','常见问题','预约与服务范围'];
 const href = (path: string) => (d ? '/' + locale : '') + '/' + path + '/';
 const guides = [
   ['guides', labels[5]], ['process', labels[3]], ['fees', labels[4]],
   ['faq', labels[8]],
-  ['guides/travel-checklist', locale === 'es' ? 'Preparar el viaje' : locale === 'en' ? 'Travel preparation' : locale === 'ja' ? '渡航の準備' : locale === 'ko' ? '출국 준비' : '出行准备'],
+  ['guides/travel-checklist', locale === 'de' ? 'Reisevorbereitung' : locale === 'es' ? 'Preparar el viaje' : locale === 'en' ? 'Travel preparation' : locale === 'ja' ? '渡航の準備' : locale === 'ko' ? '출국 준비' : '出行准备'],
   ['service-scope', labels[9]], ['birth-planning', labels[6]]
 ];
 const active = (path: string) => current === path ? 'page' : undefined;
 ---
-<nav class="nav" id="main-nav" aria-label={locale === 'es' ? 'Navegación principal' : locale === 'en' ? 'Main navigation' : locale === 'ja' ? 'メインナビゲーション' : locale === 'ko' ? '주 메뉴' : '主要导航'}>
+<nav class="nav" id="main-nav" aria-label={locale === 'de' ? 'Hauptnavigation' : locale === 'es' ? 'Navegación principal' : locale === 'en' ? 'Main navigation' : locale === 'ja' ? 'メインナビゲーション' : locale === 'ko' ? '주 메뉴' : '主要导航'}>
   {['about','treatments','team'].map((path,i) => <a href={href(path)} aria-current={active(path)}>{labels[i]}</a>)}
   <details class="nav-group">
     <summary>{labels[5]}</summary>
