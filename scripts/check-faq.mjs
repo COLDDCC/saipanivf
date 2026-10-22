@@ -38,7 +38,7 @@ for(const locale of ['en','ja','ko']) {
 const tw=fs.readFileSync('dist/zh-hant/faq/index.html','utf8');
 assert.ok(tw.includes('VWP允許符合資格與入境條件者進行醫療訪問'),'Traditional Chinese must allow eligible VWP medical visits');
 for(const wrong of ['ESTA or EVS-TAP authorisation is limited to the Northern Mariana Islands','ESTAやEVS-TAPは北マリアナ諸島のみ','ESTA나 EVS-TAP은 북마리아나제도에만']) {
- for(const locale of ['en','ja','ko','es','de']) assert.ok(!fs.readFileSync(`dist/${locale}/faq/index.html`,'utf8').includes(wrong),'Do not limit ESTA to CNMI');
+ for(const locale of ['en','ja','ko','es','de','fr']) assert.ok(!fs.readFileSync(`dist/${locale}/faq/index.html`,'utf8').includes(wrong),'Do not limit ESTA to CNMI');
 }
 console.log('PASS travel FAQ: distinct programmes, stay limits, medical purpose and official references.');
 
@@ -74,3 +74,15 @@ assert.ok(deFamily.includes('06-leihmutterschaft-606160')&&deFamily.includes('ni
 assert.ok(de.form.templateText.includes('Sprache')&&de.pages['editorial-policy'].sections[4][1].includes('keine deutschsprachige medizinische Betreuung'));
 assert.ok(de.pages.fees.sections[2][1].includes('schriftlich')&&de.pages.fees.sections[2][1].includes('Krankenversicherung'));
 console.log('PASS German adaptation: passport versus residence, insurance, overseas-birth exception, parentage sources and consultation language.');
+
+const fr=JSON.parse(fs.readFileSync('src/i18n/fr.json','utf8'));
+const frFaq=fs.readFileSync('dist/fr/faq/index.html','utf8');
+assert.ok(fr.faq[3][1].includes('90')&&fr.faq[3][1].includes('canadien')&&fr.faq[3][1].includes('ni ESTA'));
+assert.ok(frFaq.includes('citizens-of-canada-and-bermuda.html')&&frFaq.includes('visa-waiver-program.html')&&!frFaq.includes('g-cnmi-eta.cbp.dhs.gov'),'Canadian citizens and European VWP travellers need distinct references');
+const frBirth=fs.readFileSync('dist/fr/birth-planning/index.html','utf8');
+assert.ok(frBirth.includes('F3068')&&frBirth.includes('diplomatie.gouv.fr')&&frBirth.includes('canada.ca'),'French civil status and Canadian citizenship need their own authorities');
+assert.ok(!frBirth.includes('Generationenschnitt')&&!frBirth.includes('innerhalb eines Jahres'),'Do not import the German overseas-birth exception');
+const frFees=fs.readFileSync('dist/fr/fees/index.html','utf8');
+assert.ok(frFees.includes('ameli.fr')&&frFees.includes('quebec.ca')&&frFees.includes('CPAM')&&frFees.includes('RAMQ'));
+assert.ok(fr.form.templateText.includes('langue')&&fr.pages['editorial-policy'].sections[4][1].includes('ne confirme pas une prise en charge médicale francophone'));
+console.log('PASS French adaptation: France/Canada entry distinction, regional insurance, civil-status references and consultation language.');

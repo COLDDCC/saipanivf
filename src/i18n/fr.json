@@ -1,0 +1,687 @@
+{
+  "name": "Saipan IVF",
+  "subtitle": "Votre projet parental à Saipan",
+  "menu": "Menu",
+  "skip": "Aller au contenu",
+  "home": "Accueil",
+  "contact": "Préparer ma consultation",
+  "source": "Source et informations complémentaires",
+  "sources": "Sources et crédits photos",
+  "checked": "Informations générales de référence. Le centre confirme le traitement, la disponibilité et les honoraires selon votre situation.",
+  "nav": [
+    "Le centre",
+    "Traitements",
+    "Équipe médicale",
+    "Parcours FIV",
+    "Tarifs",
+    "Guides pratiques",
+    "Naissance et famille",
+    "Contact",
+    "Questions fréquentes",
+    "Prestations et rôles",
+    "Politique éditoriale",
+    "Confidentialité"
+  ],
+  "footerTitle": "Tout commence par un échange.",
+  "footerText": "Découvrez les possibilités, préparez vos questions et confirmez votre prochain rendez-vous.",
+  "footerNote": "Information sur la fertilité et coordination des consultations. Le projet individuel et le devis écrit précisent les soins et leurs coûts.",
+  "clinic": "Site du centre de soins",
+  "read": "Lire le guide",
+  "details": "Voir le traitement",
+  "fees": "Tarifs et budget",
+  "prepare": "Préparer la première consultation",
+  "related": "Pour poursuivre",
+  "included": "Périmètre de base",
+  "excluded": "Frais supplémentaires",
+  "steps": "Étapes principales",
+  "questions": "Questions à poser",
+  "risk": "Risques et résultats",
+  "budgetNote": "Budget indicatif en dollars américains (USD). Demandez un devis écrit pour votre projet individuel.",
+  "pages": {
+    "": {
+      "title": "FIV et assistance médicale à la procréation à Saipan",
+      "description": "Découvrez la FIV, l’ICSI, la préservation de la fertilité, l’équipe et les étapes pour organiser des soins à Saipan.",
+      "sections": [
+        [
+          "Comprendre les possibilités de traitement",
+          "Comparez FIV, ICSI, congélation d’ovocytes et transfert d’embryons congelés. Vos objectifs et vos bilans disponibles constituent le point de départ ; le médecin détermine les options adaptées."
+        ],
+        [
+          "Identifier votre équipe de soins",
+          "Consultez les profils publiés par le centre, puis confirmez le médecin responsable, le lieu des soins et les modalités de rendez-vous."
+        ],
+        [
+          "Planifier séparément soins et voyage",
+          "Vérifiez le calendrier médical et le devis avant de réserver vols ou hébergement. La ponction et le transfert peuvent se dérouler lors de séjours distincts."
+        ],
+        [
+          "Répondre aux premières questions",
+          "Quel budget prévoir ? Combien de temps dure un cycle ? Peut-on poser des questions sans bilan récent ? Retrouvez des réponses et leurs sources dans la FAQ."
+        ]
+      ]
+    },
+    "about": {
+      "title": "Saipan IVF et la coordination des consultations",
+      "description": "Distinguez information, organisation des rendez-vous et prise en charge par le centre médical.",
+      "sections": [
+        [
+          "Information et coordination",
+          "Ce site vous aide à comprendre les options et à préparer vos questions au centre. Le formulaire crée un brouillon destiné à l’adresse électronique publiée par l’établissement."
+        ],
+        [
+          "Responsabilité médicale",
+          "Examens, diagnostic, prescriptions, ponction, actes de laboratoire et transfert relèvent de l’équipe médicale qui vous reçoit. Confirmez le centre, le médecin et l’accord de prestations avant de réserver."
+        ],
+        [
+          "Honoraires médicaux et coordination",
+          "Vérifiez le destinataire de chaque paiement, les prestations incluses et les règles en cas de modification ou d’annulation. Hébergement, transport, obstétrique et services de tiers nécessitent des accords distincts."
+        ],
+        [
+          "Adresse du centre",
+          "L’établissement se présente comme Saipan IVF Center et publie cette adresse : 3rd Floor, Bank of Guam, Garapan, Saipan, MP 96950. Confirmez le lieu exact du rendez-vous avant le départ."
+        ]
+      ]
+    },
+    "team": {
+      "title": "Équipe médicale et laboratoire d’embryologie",
+      "description": "Consultez les professionnels présentés par le centre et préparez vos questions sur votre propre prise en charge.",
+      "sections": [
+        [
+          "Gary G. Ramsey, M.D. — Directeur médical",
+          "Le centre le présente comme directeur médical et indique un diplôme de médecine de l’University of California, Los Angeles (UCLA). Confirmez qui réalisera votre consultation et expliquera les options."
+        ],
+        [
+          "Irena Lalic — Spécialiste en embryologie",
+          "Selon le centre, elle possède un MSc en biologie de l’Université de Zagreb et un MSc en embryologie clinique de l’Université de Leeds. Demandez quand vous recevrez les comptes rendus de fécondation, culture et congélation, et qui les expliquera."
+        ],
+        [
+          "Rose Wang — Responsable infirmière",
+          "Le centre présente Rose Wang comme Head Nurse. Renseignez-vous sur les consignes de traitement, la préparation des rendez-vous et les contacts de suivi."
+        ],
+        [
+          "Laboratoire et équipements",
+          "La page des installations décrit des systèmes de micromanipulation, postes de travail embryonnaires, incubateurs MIRI® IVF et vitrification ovocytaire. Confirmez le site, les modalités de laboratoire et les actes disponibles pour votre projet."
+        ],
+        [
+          "Confirmer l’équipe de votre rendez-vous",
+          "Un profil public ne confirme ni un rendez-vous ni une présence actuelle. Demandez le nom et les informations d’autorisation professionnelle de la personne qui vous soignera effectivement."
+        ]
+      ]
+    },
+    "treatments": {
+      "title": "Traitements et préservation de la fertilité",
+      "description": "Comparez FIV, ICSI, congélation d’ovocytes et transfert d’embryons congelés, et préparez les questions sur le don.",
+      "sections": [
+        [
+          "Choisir un point de départ",
+          "La FIV comprend un parcours de traitement ; l’ICSI modifie la fécondation au laboratoire. La congélation conserve des ovocytes pour un éventuel usage futur. Le transfert d’embryons congelés utilise des embryons déjà disponibles."
+        ],
+        [
+          "Congélation de sperme et don",
+          "Congélation de sperme, don d’ovocytes ou de spermatozoïdes et participation de tiers nécessitent de confirmer dépistage, disponibilité, consentements et documents. Les règles du lieu de soins et de votre pays de résidence peuvent différer."
+        ],
+        [
+          "Personnes seules et familles LGBTQ+",
+          "Exposez d’abord votre projet parental. Conditions médicales, don, participation de tiers et reconnaissance de la filiation nécessitent une analyse individuelle. Un acte ou accord étranger ne règle pas à lui seul toutes les démarches au retour."
+        ]
+      ]
+    },
+    "process": {
+      "title": "De la première demande au suivi de FIV",
+      "description": "Préparez la consultation, l’évaluation, le projet écrit, les soins et le suivi, étape par étape.",
+      "sections": [
+        [
+          "1. Première demande",
+          "Indiquez votre besoin, les traitements antérieurs, votre ville de départ et vos dates envisagées. Confirmez le canal, le format, la langue, les honoraires et les informations nécessaires."
+        ],
+        [
+          "2. Bilans et antécédents",
+          "Classez les documents par date et résumez traitements, opérations, médicaments et allergies. Confirmez un canal d’envoi adapté ; le médecin détermine les bilans utilisables et les examens à compléter."
+        ],
+        [
+          "3. Évaluation médicale",
+          "Discutez options, alternatives, risques et surveillance. Demandez un projet individuel, les examens prévus et la liste des points restant à confirmer."
+        ],
+        [
+          "4. Devis et voyage",
+          "Vérifiez prestataires, destinataires des paiements, inclusions, exclusions et annulations. Réservez selon les dates du centre et les possibilités de modification."
+        ],
+        [
+          "5. Soins au centre",
+          "Apportez les documents demandés. L’équipe médicale gère diagnostic, prescriptions, surveillance, ponction, culture ou transfert. Récupérez les comptes rendus et consignes correspondant aux actes réalisés."
+        ],
+        [
+          "6. Retour et suivi",
+          "Conservez synthèse médicale, ordonnances, justificatifs et autorisations de conservation. Confirmez les contrôles, contacts, renouvellements de stockage et interlocuteurs en cas de besoin."
+        ],
+        [
+          "Durée du cycle et durée du séjour",
+          "Un cycle de FIV est souvent décrit comme durant environ 3 à 6 semaines, selon le protocole et les étapes comptées. Cela n’impose pas un séjour continu à Saipan. Ponction et transfert ultérieur peuvent être organisés séparément."
+        ],
+        [
+          "Avant de réserver les vols",
+          "Confirmez centre et médecin, dates de surveillance et de retour, devis et annulations, ainsi que contacts pendant les soins et après le retour. Vérifiez séparément la durée de séjour autorisée par l’immigration."
+        ]
+      ]
+    },
+    "fees": {
+      "title": "Tarifs de FIV et préparation du budget",
+      "description": "Séparez ponction, culture, médicaments, laboratoire, transfert, conservation et voyage pour comparer les devis.",
+      "sections": [
+        [
+          "Base et budget combiné",
+          "Le montant indicatif de base de 15 000 USD correspond à la ponction et à la culture. La sélection initiale du calculateur, 26 100–31 100 USD, ajoute médicaments, anesthésie, ICSI, congélation et un transfert d’embryons congelés ; elle ne couvre pas tous les frais possibles."
+        ],
+        [
+          "Avant de payer",
+          "Demandez par écrit monnaie, actes et quantités, suppléments, destinataire du paiement, échéances et conditions d’annulation ou de report. Depuis la France ou la Belgique en euros, le Québec en dollars canadiens ou la Suisse en francs, prévoyez les frais bancaires et le change vers l’USD. Aucun taux de conversion n’est présumé."
+        ],
+        [
+          "Assurance et frais hors calculateur",
+          "Examens initiaux, médicaments de transfert, voyage, hébergement, cycles supplémentaires, complications et postes non sélectionnés sont exclus. En France, interrogez votre CPAM et votre complémentaire sur les soins programmés hors UE/EEE/Suisse ; les règles européennes ne se transposent pas à Saipan. Au Québec, demandez à la RAMQ et à votre assureur une confirmation adaptée à des soins hors Québec. En Belgique ou en Suisse, contactez votre organisme. Une assurance voyage ne garantit pas le remboursement d’une FIV prévue."
+        ]
+      ]
+    },
+    "guides": {
+      "title": "Guides pour préparer vos soins",
+      "description": "Des repères pour la première consultation, la comparaison des traitements, le voyage et le suivi.",
+      "sections": [
+        [
+          "Première démarche de fertilité ?",
+          "Commencez par le guide de première consultation, découvrez l’équipe et préparez quelques questions. Il n’est pas nécessaire de choisir vous-même un protocole."
+        ],
+        [
+          "Comparer traitements et coûts",
+          "Lisez les étapes de FIV et les pages de traitement, puis utilisez calculateur et liste de vérification pour comparer des périmètres équivalents."
+        ],
+        [
+          "Préparer le départ et le retour",
+          "Confirmez rendez-vous, documents et conditions de paiement avant le voyage. Conservez ordonnances, contrôles et contacts de conservation après les soins."
+        ]
+      ]
+    },
+    "guides/first-visit": {
+      "title": "Première consultation : que préparer ?",
+      "description": "Organisez vos bilans disponibles et confirmez le format de consultation avant de réaliser d’autres examens.",
+      "sections": [
+        [
+          "Commencer par quatre informations",
+          "Indiquez votre besoin, les traitements antérieurs, la ville de départ et la période envisagée. Vous pouvez préciser que vous hésitez encore, sans choisir un protocole."
+        ],
+        [
+          "Organiser les documents existants",
+          "Classez analyses, échographies, spermogrammes et comptes rendus de stimulation ou transfert par date. Ajoutez traitements, allergies et opérations. Gardez noms, dates, unités et valeurs de référence. Demandez si des traductions sont nécessaires et dans quelle langue."
+        ],
+        [
+          "Une demande reste possible sans bilan récent",
+          "Demandez si une consultation à distance existe, son coût et les documents attendus. Attendez la liste du centre avant de répéter des examens ou d’en réaliser qui pourraient ne plus être valides."
+        ],
+        [
+          "Confirmer le canal d’envoi",
+          "Un premier courriel peut simplement résumer les questions. Confirmez établissement, confidentialité et mode d’envoi avant de partager le dossier médical complet."
+        ],
+        [
+          "Après la demande",
+          "Confirmez médecin, date, format, langue disponible, bilans acceptés, examens complémentaires, honoraires et devis. Créer un brouillon ne l’envoie pas ; le rendez-vous exige une réponse explicite."
+        ]
+      ]
+    },
+    "guides/ivf-steps": {
+      "title": "Les principales étapes d’un cycle de FIV",
+      "description": "Comprenez l’évaluation, la stimulation, la ponction, la fécondation, la culture, le transfert et le suivi.",
+      "sections": [
+        [
+          "Évaluation et préparation",
+          "Le médecin examine vos antécédents et bilans, expose les options et précise surveillance et médicaments. Demandez quelles étapes sont possibles près de chez vous et lesquelles nécessitent votre présence à Saipan."
+        ],
+        [
+          "Stimulation et surveillance",
+          "Suivez uniquement la prescription et les échographies ou analyses prévues. Les résultats peuvent modifier les rendez-vous suivants."
+        ],
+        [
+          "Ponction, fécondation et culture",
+          "L’équipe organise le prélèvement d’ovocytes et la fécondation au laboratoire. FIV conventionnelle et ICSI sont des méthodes différentes : demandez le motif du choix et la date des résultats."
+        ],
+        [
+          "Transfert ou congélation",
+          "Transfert frais, congélation et transfert différé dépendent du plan et des résultats. Chaque cycle ne produit pas nécessairement des embryons transférables."
+        ],
+        [
+          "Suivi et calendrier",
+          "Demandez calendrier de médicaments, dates de tests, synthèse des soins et contacts. La durée générale de 3 à 6 semaines n’est pas un calendrier universel de voyage ou de grossesse."
+        ]
+      ]
+    },
+    "guides/quotation": {
+      "title": "Comment lire un devis de FIV",
+      "description": "Vérifiez inclusions, suppléments, échéances et annulations avant de comparer les totaux.",
+      "sections": [
+        [
+          "Identifier le prestataire et le bénéficiaire du paiement",
+          "Contrôlez établissement, médecin, monnaie, date et validité. Soins, coordination, hébergement, transport et services de tiers peuvent dépendre de prestataires différents."
+        ],
+        [
+          "Comparer le même périmètre",
+          "Vérifiez surveillance, ponction, fécondation conventionnelle, ICSI, anesthésie, culture, congélation et transfert, ainsi que le nombre de prestations couvertes."
+        ],
+        [
+          "Médicaments, analyses et conservation",
+          "Demandez comment sont facturées les quantités de médicaments, si les tests embryonnaires incluent biopsie, transport et analyse, et quand débute la conservation annuelle. L’usage futur d’ovocytes congelés entraîne de nouvelles étapes et dépenses."
+        ],
+        [
+          "Annulation ou actes supplémentaires",
+          "Avant paiement, demandez la liquidation des frais en cas de cycle annulé, report, absence d’ovocytes utilisables ou d’embryons transférables, et ajout d’actes."
+        ],
+        [
+          "Utiliser le calculateur comme aide à la vérification",
+          "Ajustez les postes puis demandez un devis personnel écrit. L’outil ne décide pas des actes nécessaires et n’inclut pas tous les coûts médicaux ou du voyage."
+        ]
+      ]
+    },
+    "guides/egg-freezing": {
+      "title": "Préparer une consultation de congélation d’ovocytes",
+      "description": "Distinguez évaluation, ponction, congélation, conservation annuelle et utilisation éventuelle.",
+      "sections": [
+        [
+          "Expliquer vos objectifs et disponibilités",
+          "Précisez votre projet de préservation, vos dates, antécédents et médicaments. Apportez les bilans existants ; le médecin fixe l’évaluation utile."
+        ],
+        [
+          "Comprendre le cycle",
+          "Demandez où se déroulent les contrôles, comment sont organisées ponction et anesthésie, et quand vous recevrez le nombre d’ovocytes congelés et le compte rendu de conservation."
+        ],
+        [
+          "Séparer coûts présents et futurs",
+          "La base indicative est de 9 000 USD. Bilans initiaux, médicaments, anesthésie et stockage annuel sont supplémentaires. Décongélation, fécondation, culture et transfert futurs nécessitent une nouvelle évaluation et un budget distinct."
+        ],
+        [
+          "Confirmer la conservation",
+          "Conservez centre de stockage, consentements, frais de renouvellement et contacts. Demandez la procédure en cas de changement de coordonnées, déplacement des échantillons ou arrêt de conservation."
+        ],
+        [
+          "Connaître les limites",
+          "Congeler des ovocytes préserve une possibilité ; cela ne garantit ni grossesse ni naissance. Discutez des perspectives selon votre âge et votre situation plutôt que d’un taux unique."
+        ]
+      ]
+    },
+    "guides/travel-checklist": {
+      "title": "Voyager à Saipan pour des soins : la liste pratique",
+      "description": "Coordonnez rendez-vous, documents, assurance, hébergement et suivi selon votre passeport et votre résidence.",
+      "sections": [
+        [
+          "Confirmer d’abord les dates médicales",
+          "Obtenez centre, médecin, adresse, rendez-vous, surveillance et prévision de retour. Prévoyez correspondances et marge pour des changements cliniques, que vous partiez d’Europe ou du Québec."
+        ],
+        [
+          "Passeports français, belge ou suisse",
+          "Ces nationalités participent au Visa Waiver Program américain. Si toutes les conditions sont remplies, ESTA permet un séjour de 90 jours au maximum. Vérifiez passeport, antécédents de voyage, autres nationalités et finalité médicale réelle. L’autorisation ne garantit pas l’admission."
+        ],
+        [
+          "Québec : citoyenneté canadienne ou résidence ?",
+          "Avec un passeport canadien, les visites ordinaires aux États-Unis ne nécessitent généralement ni visa de visiteur ni ESTA, sous réserve des règles d’admission et du motif. Résider au Québec ne signifie pas être citoyen canadien : pour un autre passeport, vérifiez la voie correspondante. Les citoyens et résidents américains utilisent les documents de leur propre statut."
+        ],
+        [
+          "Assurance, réservations et documents",
+          "Demandez par écrit la couverture du traitement prévu, des complications et du suivi. En France, consultez la CPAM pour les soins hors UE/EEE/Suisse ; au Québec, la RAMQ et votre assureur ; en Belgique ou en Suisse, votre organisme. Vérifiez modifications de réservation, transport local et accompagnant. Emportez confirmation, bilans et prescriptions demandés et précisez les traductions nécessaires."
+        ],
+        [
+          "Avant le retour",
+          "Gardez synthèse médicale, médicaments, contrôles, reçus et autorisations de conservation. Convenez du suivi à domicile et de l’interlocuteur à joindre en cas de problème."
+        ]
+      ]
+    },
+    "guides/family-planning": {
+      "title": "Don et participation de tiers : les questions utiles",
+      "description": "Clarifiez conditions médicales, ressources, frais et filiation avant de vous engager.",
+      "sections": [
+        [
+          "Présenter votre projet parental",
+          "Les personnes seules et familles LGBTQ+ peuvent commencer par décrire leur situation et leurs questions. Les options nécessitent une évaluation individuelle, sans déduire les droits du seul fait de parler français."
+        ],
+        [
+          "Don d’ovocytes ou de spermatozoïdes",
+          "Demandez disponibilité, dépistage, informations sur le donneur, consentement, attente, transport et conservation. Précisez l’accès futur de l’enfant aux informations sur ses origines. Une présentation publique ne garantit pas une ressource disponible."
+        ],
+        [
+          "Filiation et documents au retour",
+          "Soins, accords avec des tiers, décisions judiciaires et état civil sont des sujets distincts. Pour la France, vérifiez les démarches consulaires et les conditions de reconnaissance de la filiation. Au Québec, en Belgique ou en Suisse, consultez les autorités de votre pays. Une convention étrangère ne garantit pas à elle seule tous les effets recherchés."
+        ],
+        [
+          "Avant de verser des fonds",
+          "Obtenez périmètre écrit, paiement, annulations et responsabilités. Faites confirmer indépendamment les aspects juridiques de votre projet avant un engagement. FIV, obstétrique, naissance, passeport et immigration se préparent séparément."
+        ]
+      ]
+    },
+    "birth-planning": {
+      "title": "Naissance à Saipan : nationalité, documents et famille",
+      "description": "Séparez les soins de fertilité, l’accouchement et les démarches selon les nationalités et la filiation.",
+      "sections": [
+        [
+          "Citoyenneté américaine à la naissance",
+          "La règle historique décrite par le Département d’État dans 8 FAM 302.2 concerne les naissances aux Mariannes du Nord depuis le 4 novembre 1986 selon le Covenant, section 303. Lors des démarches, vérifiez les mesures, décisions judiciaires et exceptions liées au statut parental alors applicables."
+        ],
+        [
+          "Si un parent est français",
+          "Un enfant dont au moins un parent est français est en principe français dès la naissance, y compris à l’étranger, si la filiation est établie dans les conditions requises. Confirmez déclaration ou transcription, nom, justificatifs et passeport auprès du consulat compétent."
+        ],
+        [
+          "Familles canadiennes, belges ou suisses",
+          "La transmission de la nationalité et les preuves à fournir relèvent de chaque pays. Pour une famille canadienne, consultez IRCC sur la naissance à l’étranger et la citoyenneté par filiation. Les familles belges ou suisses doivent vérifier leurs propres démarches consulaires. Le français parlé et le lieu de résidence ne déterminent pas la nationalité."
+        ],
+        [
+          "Passeport et prestations",
+          "L’exemption de visa n’autorise ni travail ni installation. Un numéro de sécurité sociale américain ne donne pas automatiquement assurance maladie, prestations ou retraite ; les conditions sont distinctes."
+        ],
+        [
+          "Scolarité et université",
+          "L’école publique américaine dépend notamment de la résidence, du district et de l’âge. La citoyenneté ne garantit ni admission universitaire ni réduction fixe. Au retour en France, au Canada, en Belgique ou en Suisse, vérifiez les règles de scolarité et d’accès aux études applicables."
+        ],
+        [
+          "Travail et droits des parents",
+          "Les citoyens américains n’ont généralement pas besoin de visa de travail, mais certaines professions imposent des autorisations. La citoyenneté de l’enfant ne donne pas de droit automatique au travail ou au séjour à ses parents."
+        ],
+        [
+          "Obstétrique et couverture",
+          "Confirmez séparément hôpital, obstétricien, analgésie, assurance et reste à charge. La FIV n’inclut pas automatiquement suivi de grossesse ou accouchement. Les méthodes disponibles dépendent de la situation clinique et des services réels."
+        ],
+        [
+          "Voyage et retour avec l’enfant",
+          "Vérifiez but réel du séjour, acte de naissance, filiation, nom et documents de voyage. Voyager principalement pour obtenir la citoyenneté américaine par une naissance n’est pas un motif autorisé de visa de visiteur. Prévoyez du temps pour les démarches, sans présumer la reconnaissance automatique de tous les documents étrangers."
+        ],
+        [
+          "Immigration des parents",
+          "Un citoyen américain de 21 ans ou plus peut présenter une demande pour ses parents dans la catégorie des proches immédiats, sans quota annuel de visas. Demande, engagement financier et conditions d’admissibilité restent nécessaires ; la résidence permanente n’est pas automatique."
+        ]
+      ]
+    },
+    "service-scope": {
+      "title": "Rendez-vous, prestations et responsabilités",
+      "description": "Confirmez centre médical, coordination, bénéficiaire des paiements et conditions écrites avant de réserver.",
+      "sections": [
+        [
+          "Première consultation",
+          "Vérifiez canal de réponse, langue, format à distance ou sur place et honoraires. Une demande ou un brouillon ne confirme pas un rendez-vous médical."
+        ],
+        [
+          "Coordination des rendez-vous et du voyage",
+          "Précisez qui organise documents, dates, logement, transport et changements, et si cette coordination est facturée séparément."
+        ],
+        [
+          "Soins cliniques et laboratoire",
+          "Confirmez établissement, médecin et lieu réel des actes. Diagnostic, prescriptions, soins et interprétation des résultats appartiennent à l’équipe médicale."
+        ],
+        [
+          "Documents avant paiement",
+          "Demandez coordonnées du prestataire et du destinataire, plan et devis individuels, inclusions et exclusions, quantités, validité, échéances, reçus et règles d’annulation ou report."
+        ],
+        [
+          "Suivi et conservation",
+          "Identifiez les contacts pour médicaments, contrôles, comptes rendus, conservation, autorisations et renouvellements."
+        ],
+        [
+          "Prestations distinctes",
+          "FIV, accouchement, logement, repas, transport, don, participation de tiers et démarches juridiques ne constituent pas une seule prestation. Vérifiez chaque prestataire et chaque inclusion."
+        ]
+      ]
+    },
+    "editorial-policy": {
+      "title": "Sources, rédaction et crédits photos",
+      "description": "Comprenez l’origine des informations, des budgets indicatifs et des images.",
+      "sections": [
+        [
+          "Sources médicales et administratives",
+          "Les informations médicales renvoient notamment à HFEA, NHS et ASRM. Les règles américaines s’appuient sur les autorités américaines ; les démarches françaises sur Service Public, France Diplomatie et l’Assurance Maladie. Pour le Canada, consultez les autorités fédérales et québécoises compétentes."
+        ],
+        [
+          "Informations sur le centre",
+          "Noms, adresse, profils et équipements décrits sont attribués au site du centre. Une publication ne prouve pas indépendamment une autorisation professionnelle actuelle, une disponibilité ou un rendez-vous."
+        ],
+        [
+          "Coûts et résultats",
+          "Les montants sont indicatifs, pas un forfait personnel confirmé. Demandez un devis écrit. Les résultats d’études concernent leurs populations et ne représentent pas les taux du centre de Saipan."
+        ],
+        [
+          "Photographies",
+          "Les images d’équipe et de bâtiment sont attribuées à l’institution. Les autres photos illustrent des thèmes ; elles n’établissent pas que les personnes ou lieux appartiennent au centre ou sont ses patients."
+        ],
+        [
+          "Langue, mises à jour et corrections",
+          "Cette version d’information en français ne confirme pas une prise en charge médicale francophone. Demandez langue de consultation, traductions et interprétariat avant de réserver. Pour signaler une erreur, écrivez au courriel publié en précisant la page et le passage."
+        ]
+      ]
+    },
+    "privacy": {
+      "title": "Confidentialité et formulaire de contact",
+      "description": "Comment le brouillon est créé, qui le reçoit et comment confirmer l’envoi de documents personnels.",
+      "sections": [
+        [
+          "Fonctionnement du formulaire",
+          "Le formulaire assemble le texte dans votre navigateur. Générer un brouillon ne l’envoie pas : ouvrez votre messagerie ou copiez le texte, vérifiez destinataire et contenu puis envoyez vous-même. Le site ne reçoit pas les données via un point de dépôt du formulaire."
+        ],
+        [
+          "Destinataire du courriel",
+          "L’adresse prévue est info@saipan-ivf.com, publiée par le centre. Après envoi, votre messagerie et l’établissement traitent le message selon leurs propres règles."
+        ],
+        [
+          "Informations à inclure",
+          "Un moyen de contact suffit. Nom, traitement, dates et questions sont facultatifs. Les coordonnées figurent dans le courriel ; leur saisie ne les envoie pas au serveur du site et ne les conserve pas durablement dans le navigateur. Ne joignez pas de numéros d’identité, dossier médical complet ou données de tiers sans consentement. Confirmez d’abord un canal adapté."
+        ],
+        [
+          "Hébergement et liens externes",
+          "Cloudflare Pages héberge les pages. Les prestataires d’hébergement, réseau et messagerie peuvent traiter les informations nécessaires selon leurs politiques. Les sites externes appliquent leurs propres conditions."
+        ],
+        [
+          "Rendez-vous et paiement",
+          "Lire une page ou générer un courriel ne crée ni rendez-vous, contrat médical ni obligation de paiement. Les documents réels de prestation fixent soins, prix, annulations et autorisations de données."
+        ]
+      ]
+    },
+    "contact": {
+      "title": "Contact et première consultation",
+      "description": "Un moyen de contact suffit. Nom, traitement et questions sont facultatifs ; vous pouvez aussi écrire directement.",
+      "sections": []
+    },
+    "faq": {
+      "title": "Questions fréquentes",
+      "description": "Des réponses sur les soins, les tarifs, la durée, les voyages et la nationalité, avec leurs sources.",
+      "sections": []
+    }
+  },
+  "treatments": [
+    {
+      "title": "FIV — Fécondation in vitro",
+      "summary": "Ovocytes et spermatozoïdes sont réunis hors du corps, puis un embryon peut être transféré dans l’utérus. Le médecin considère cause d’infertilité, traitements antérieurs et résultats du bilan.",
+      "suitable": "La FIV peut être discutée pour des problèmes tubaires, certains facteurs ovulatoires ou spermatiques, ou une infertilité inexpliquée après d’autres traitements. Demandez les alternatives.",
+      "stages": [
+        "Évaluation et programmation des examens",
+        "Stimulation prescrite et surveillance",
+        "Ponction, fécondation et culture embryonnaire",
+        "Transfert ou congélation, puis suivi"
+      ],
+      "included": "Surveillance habituelle, une ponction, fécondation conventionnelle et culture embryonnaire.",
+      "excluded": "Bilans initiaux, médicaments de stimulation, anesthésie, ICSI, congélation, conservation annuelle, analyses génétiques, transfert et séjour.",
+      "risk": "Discutez hyperstimulation ovarienne, grossesse multiple ou extra-utérine, annulation et absence possible d’ovocytes utilisables ou d’embryons transférables. Comparez les naissances vivantes avec le même dénominateur ; un test positif ne représente pas une naissance.",
+      "questions": [
+        "Pourquoi ce projet est-il adapté et quelles alternatives existent ?",
+        "Où ont lieu les contrôles et combien de visites faut-il ?",
+        "Comment sont facturés annulation, report ou absence d’embryon transférable ?"
+      ]
+    },
+    {
+      "title": "ICSI — Injection intracytoplasmique d’un spermatozoïde",
+      "summary": "Un embryologiste injecte un spermatozoïde dans un ovocyte. L’ICSI modifie la fécondation au cours d’une FIV ; ce n’est ni un cycle complet ni une amélioration universelle du taux de naissance vivante.",
+      "suitable": "Elle peut être discutée en cas d’anomalies spermatiques importantes ou de fécondation antérieure faible ou échouée. Demandez ce qui motive ce choix plutôt qu’une FIV conventionnelle.",
+      "stages": [
+        "Examiner spermogramme et résultats antérieurs",
+        "Discuter indication et alternatives",
+        "Coordonner préparation du sperme, ponction et injection",
+        "Recevoir les comptes rendus de fécondation et culture"
+      ],
+      "included": "Acte ICSI de laboratoire, chiffré séparément.",
+      "excluded": "Cycle complet de FIV, médicaments, anesthésie, ponction, culture, conservation et transfert.",
+      "risk": "La micromanipulation peut endommager un ovocyte. L’injection ne garantit ni fécondation, embryon transférable ou naissance. Les risques de stimulation, ponction et transfert restent présents.",
+      "questions": [
+        "Quel résultat justifie l’ICSI dans mon cas ?",
+        "Le prix est-il par cycle ou selon le nombre d’ovocytes ?",
+        "Qui explique les résultats de fécondation et de culture ?"
+      ]
+    },
+    {
+      "title": "Congélation d’ovocytes et préservation de la fertilité",
+      "summary": "Les ovocytes sont prélevés puis congelés pour un éventuel usage futur. Cela préserve une possibilité, sans garantir grossesse ou naissance.",
+      "suitable": "Présentez vos objectifs, projets, antécédents et médicaments. Le médecin définit l’évaluation et l’organisation adaptées.",
+      "stages": [
+        "Évaluation et bilans disponibles",
+        "Stimulation, surveillance et ponction",
+        "Compte rendu de congélation et conservation",
+        "Renouvellement et autorisation d’utilisation future"
+      ],
+      "included": "Surveillance habituelle, une ponction et congélation.",
+      "excluded": "Bilans initiaux, médicaments, anesthésie et conservation annuelle. Décongélation, fécondation, culture et transfert ultérieurs sont évalués et facturés séparément.",
+      "risk": "Discutez les risques de stimulation et ponction, le nombre possiblement faible ou nul d’ovocytes adaptés, et les limites de survie, fécondation et grossesse futures. L’âge et les facteurs individuels comptent.",
+      "questions": [
+        "Quels résultats et quelles limites attendre d’un cycle ?",
+        "Congélation et conservation annuelle sont-elles séparées ?",
+        "Que se passe-t-il si je change de coordonnées, transporte les ovocytes ou arrête la conservation ?"
+      ]
+    },
+    {
+      "title": "TEC — Transfert d’embryons congelés",
+      "summary": "Un embryon déjà conservé est décongelé pour un transfert. Comptes rendus, autorisations et situation médicale déterminent si le transfert est possible et comment.",
+      "suitable": "Pour les personnes ayant déjà des embryons congelés ou prévoyant un transfert différé. S’ils sont dans un autre centre, confirmez d’abord acceptation et transport.",
+      "stages": [
+        "Vérifier dossiers, centre de conservation et autorisations",
+        "Confirmer préparation, contrôles, médicaments et présence",
+        "Décongélation et transfert",
+        "Test de grossesse, prescriptions et suivi"
+      ],
+      "included": "Surveillance habituelle, décongélation et un transfert.",
+      "excluded": "Médicaments de transfert, conservation annuelle, transport, examens supplémentaires et autres actes.",
+      "risk": "Tous les embryons ne survivent pas à la décongélation ou ne produisent pas une grossesse. Discutez annulation, nombre transféré, grossesse multiple et suivi.",
+      "questions": [
+        "Les documents des embryons sont-ils acceptés ?",
+        "Quels préparation et calendrier de présence sont prévus ?",
+        "Comment sont facturés décongélation, annulation et report ?"
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Un enfant né à Saipan est-il citoyen américain ?",
+      "Selon la règle historique de citoyenneté à la naissance, généralement oui : citoyenneté, et non simple carte de résident.",
+      "8 FAM 302.2 du Département d’État décrit l’acquisition aux Mariannes du Nord depuis le 4 novembre 1986 selon la section 303 du Covenant. Vérifiez lors des démarches les mesures, décisions de justice et exceptions applicables au statut des parents."
+    ],
+    [
+      "Une FIV à Saipan donne-t-elle la citoyenneté américaine ?",
+      "Non. Le lieu des soins et celui de la naissance sont deux questions différentes.",
+      "Ponction, culture ou transfert à Saipan ne confèrent pas en eux-mêmes la citoyenneté à l’embryon, à l’enfant ou aux parents. Accouchement, frais obstétricaux et documents d’entrée se planifient séparément."
+    ],
+    [
+      "Les parents reçoivent-ils automatiquement une carte verte ?",
+      "Non. La citoyenneté de l’enfant ne donne pas automatiquement séjour ou droit au travail aux parents.",
+      "À partir de 21 ans, un citoyen américain peut présenter une demande pour ses parents comme proches immédiats, sans quota annuel de visas. Demande, engagement financier et admissibilité restent nécessaires."
+    ],
+    [
+      "Faut-il un visa pour venir de France ou du Québec ?",
+      "Avec un passeport français, belge ou suisse et les conditions requises, ESTA permet une visite jusqu’à 90 jours. Avec un passeport canadien, une visite ordinaire ne nécessite généralement ni visa de visiteur ni ESTA.",
+      "La résidence en France ou au Québec ne remplace pas la nationalité. Pour les autres passeports, vérifiez le régime applicable. Un traitement médical peut relever du VWP si toutes ses conditions sont remplies ; les citoyens canadiens relèvent de règles d’entrée distinctes. Confirmez le motif et la durée avec les autorités américaines. Aucune autorisation ne garantit l’admission. Une visite principalement destinée à obtenir la citoyenneté par la naissance n’est pas un motif autorisé de visa de visiteur."
+    ],
+    [
+      "Ce site est-il l’hôpital qui réalise les soins ?",
+      "Il fournit information et coordination des demandes ; le centre qui vous reçoit réalise les soins.",
+      "Confirmez établissement, médecin, destinataire des frais médicaux et coordination. Diagnostic, prescriptions, ponction, laboratoire et transfert relèvent de l’équipe médicale."
+    ],
+    [
+      "Quels services peut-on demander ?",
+      "FIV, ICSI, congélation d’ovocytes ou de sperme, don et projets impliquant des tiers.",
+      "Les transferts d’embryons existants et projets de personnes seules ou de familles LGBTQ+ peuvent aussi être discutés. Disponibilité, conditions, attente et reconnaissance des documents au retour nécessitent une confirmation individuelle."
+    ],
+    [
+      "Quel budget prévoir pour une FIV ?",
+      "La combinaison initiale de l’outil est de 26 100–31 100 USD, à confirmer par un devis individuel écrit.",
+      "Elle additionne ponction et culture (15 000 USD), médicaments (3 000–8 000), anesthésie (800), ICSI (1 800), congélation (1 000) et un TEC (4 500). Bilans initiaux, médicaments de transfert, conservation, voyage, hébergement et soins supplémentaires sont exclus. L’ICSI n’est pas nécessaire pour tout le monde."
+    ],
+    [
+      "Les 15 000 USD couvrent-ils toute la FIV ?",
+      "Non. C’est la base indicative de ponction et culture embryonnaire.",
+      "Stimulation, anesthésie, ICSI, congélation, PGT, transfert, voyage et hébergement s’ajoutent. Comparez le même périmètre et nombre de prestations."
+    ],
+    [
+      "Combien de temps dure un cycle de FIV ?",
+      "Souvent environ 3 à 6 semaines ; ce n’est pas nécessairement votre durée de séjour à Saipan.",
+      "Le NHS décrit cette durée, dont environ deux semaines de stimulation. Préparation, culture et transfert modifient le calendrier ; un TEC peut être différé. Confirmez vos dates avant de réserver."
+    ],
+    [
+      "L’ICSI réussit-elle toujours mieux qu’une FIV conventionnelle ?",
+      "Non. Les données ne justifient pas son utilisation comme amélioration universelle des résultats.",
+      "Un avis de comité ASRM de 2026 cite un essai de 2 387 couples sans facteur masculin sévère : naissances vivantes de 33,8 % avec ICSI et 36,6 % avec FIV conventionnelle, sans différence statistiquement significative. Ce sont les résultats de l’étude, pas ceux du centre de Saipan."
+    ],
+    [
+      "Peut-on poser des questions sans bilan récent ?",
+      "Oui. Inutile de réaliser un bilan complet avant la première demande.",
+      "Indiquez besoin, antécédents, ville de départ et période. Le médecin confirme bilans acceptés, validité et examens complémentaires. Demandez aussi la langue de consultation et les traductions."
+    ],
+    [
+      "Ponction et transfert doivent-ils avoir lieu pendant le même voyage ?",
+      "Non. Ils peuvent être organisés en étapes séparées.",
+      "Un transfert frais peut avoir lieu durant la phase de ponction. Un TEC ou l’attente d’analyses nécessitent souvent une préparation ultérieure. Visites et durée dépendent du projet individuel."
+    ]
+  ],
+  "form": {
+    "title": "Préparez vos questions",
+    "intro": "Créez un brouillon, vérifiez-le et envoyez-le depuis votre messagerie. Ce site n’envoie aucun courriel.",
+    "subject": "Objet",
+    "timing": "Période souhaitée",
+    "topic": "Sujet de la demande",
+    "message": "Vos questions",
+    "choose": "Choisir un sujet",
+    "unknown": "Je ne sais pas encore",
+    "times": [
+      "À définir",
+      "Dans 1 à 3 mois",
+      "Dans 3 à 6 mois",
+      "Dans plus de 6 mois"
+    ],
+    "template": "Utiliser les questions de première consultation",
+    "generate": "Créer le brouillon de courriel",
+    "open": "Ouvrir ma messagerie",
+    "copy": "Copier la demande",
+    "copied": "Copié",
+    "failed": "Sélectionnez et copiez le texte manuellement.",
+    "changed": "Les informations ont changé. Créez un nouveau brouillon.",
+    "unsent": "NON ENVOYÉ — Vérifiez et envoyez le brouillon dans votre messagerie ou copiez-le dans un nouveau courriel.",
+    "note": "N’insérez pas de numéros d’identité ni de dossier médical complet. Confirmez d’abord un canal adapté.",
+    "templateText": "Bonjour, je souhaite préciser :\n1. Une première consultation à distance est-elle possible, comment la réserver et à quel tarif ?\n2. Quels bilans faut-il, de quelle date et dans quelle langue ?\n3. Quelle est la langue de consultation et un interprète est-il possible ?\n4. Comment déterminer les dates et le nombre de visites ?\n5. Pouvez-vous préciser par écrit inclusions, suppléments et annulations ?"
+  },
+  "budget": {
+    "title": "Composer votre budget indicatif",
+    "path": "Parcours de traitement",
+    "paths": [
+      "FIV : ponction et culture",
+      "Cycle de congélation d’ovocytes",
+      "Transfert d’embryons congelés seul"
+    ],
+    "labels": [
+      "Médicaments de stimulation",
+      "Anesthésie de la ponction",
+      "ICSI",
+      "Congélation d’embryons",
+      "Transfert d’embryons congelés (TEC)",
+      "Budget PGT-A",
+      "Conservation annuelle"
+    ],
+    "copy": "Copier le détail du budget",
+    "copied": "Copié",
+    "failed": "Sélectionnez et copiez le budget manuellement.",
+    "excluded": "Non inclus : bilans initiaux, médicaments de transfert, voyage, hébergement, cycles supplémentaires, complications et postes non sélectionnés.",
+    "warning": "ICSI et PGT-A ne sont pas nécessaires pour tous. Un cycle ne garantit ni embryon transférable ni grossesse.",
+    "table": "Détail des coûts indicatifs",
+    "columns": [
+      "Poste",
+      "Budget en USD",
+      "Périmètre et suppléments"
+    ],
+    "consult": "Première consultation médicale",
+    "assessment": "Bilan initial de fertilité"
+  }
+}

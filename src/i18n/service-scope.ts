@@ -1,7 +1,8 @@
+import { serviceScope as french } from './fr-extra';
 import { serviceScope as german } from './de-extra';
 import { serviceScope as spanish } from './es-extra';
 export const serviceScopeCopy = {
- es:spanish, de:german,
+ es:spanish, de:german, fr:french,
   "zh-CN": {
     "title": "每一件事，都有明确的对接方",
     "intro": "预约时，请确认各环节的机构名称、负责人及有效联系方式，并保留书面记录。以下是需要逐项确认的分工。",

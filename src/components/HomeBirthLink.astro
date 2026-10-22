@@ -1,10 +1,11 @@
 ---
+import { birthLink as french } from '../i18n/fr-extra';
 import { birthLink as german } from '../i18n/de-extra';
 import { birthLink as spanish } from '../i18n/es-extra';
 import ResponsiveImage from './ResponsiveImage.astro';
 const {locale='zh-CN'}=Astro.props;
 const copy={
- es:spanish, de:german,
+ es:spanish, de:german, fr:french,
  'zh-CN':['相关就诊信息','也在考虑塞班分娩？','IVF治疗与分娩需要分别安排。了解产科接诊、出行证件与出生登记等准备事项。','查看塞班分娩指南','牵手的伴侣'],
  en:['Related patient information','Also considering childbirth in Saipan?','IVF treatment and childbirth require separate arrangements. Explore obstetric care, travel documents and birth registration.','Read the childbirth guide','A couple holding hands'],
  ja:['関連する受診情報','サイパンでの出産も検討していますか？','IVF治療と出産は別々に準備します。産科の受診、渡航書類、出生登録などの確認事項をご覧ください。','出産ガイドを見る','手をつなぐ二人'],

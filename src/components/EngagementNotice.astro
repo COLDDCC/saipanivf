@@ -1,9 +1,10 @@
 ---
+import { engagement as french } from '../i18n/fr-extra';
 import { engagement as german } from '../i18n/de-extra';
 import { engagement as spanish } from '../i18n/es-extra';
 const {locale='zh-CN'}=Astro.props;
 const c={
- es:spanish, de:german,
+ es:spanish, de:german, fr:french,
  'zh-CN':['网站操作统计','启用统计后，本站按日汇总治疗页浏览、预算调整、咨询开始、草稿生成、打开邮件和成功复制等操作次数及页面语言。不设置访客标识或统计 Cookie，不保存姓名、联系方式、咨询正文、完整网址或 IP 地址。操作计数不等于独立访客或实际发送的咨询数；浏览器的“不跟踪”及 Global Privacy Control 信号会被尊重。统计接口与数据库使用 Cloudflare 托管，网络请求仍按托管服务规则处理。'],
  en:['Website interaction counts','When enabled, this site stores daily counts of treatment-page views, budget changes, enquiry starts, drafts, email-opening clicks and successful copies, grouped by page language. No visitor identifier or analytics cookie is set. Names, contact details, enquiry text, full URLs and IP addresses are not stored in these statistics. Counts are not unique visitors or confirmed sent enquiries. Do Not Track and Global Privacy Control signals are respected. Cloudflare hosts the endpoint and database; network requests remain subject to its hosting practices.'],
  ja:['サイト操作の集計','統計が有効な場合、治療ページの閲覧、予算変更、相談入力開始、下書き作成、メール起動クリック、コピー成功の回数を日別・表示言語別に集計します。訪問者IDや統計Cookieは設定せず、氏名、連絡先、相談本文、完全なURL、IPアドレスはこの統計に保存しません。回数はユニーク訪問者数や送信済み相談数ではありません。Do Not TrackとGlobal Privacy Controlを尊重します。集計先とデータベースはCloudflareでホストされ、通信には同社の取扱いが適用されます。'],

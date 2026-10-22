@@ -1,7 +1,8 @@
+import { outcomes as french } from './fr-extra';
 import { outcomes as german } from './de-extra';
 import { outcomes as spanish } from './es-extra';
 export const outcomeCopy = {
- es:spanish, de:german,
+ es:spanish, de:german, fr:french,
  'zh-CN': {
   title:'读懂成功率，再比较治疗方案', link:'怎样比较成功率',
   intro:'同一个“成功率”，可能统计的是不同人群和治疗阶段。先统一口径，才能问到对自己有用的信息。',

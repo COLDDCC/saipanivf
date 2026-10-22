@@ -1,5 +1,5 @@
 const EVENTS=new Set(['treatment_view','contact_open','budget_use','consult_start','consult_draft','email_open','consult_copy']);
-const LANGUAGES=new Set(['zh-CN','zh-TW','en','ja','ko','es','de']);
+const LANGUAGES=new Set(['zh-CN','zh-TW','en','ja','ko','es','de','fr']);
 const reply=(body,status=200)=>new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store','X-Robots-Tag':'noindex','X-Content-Type-Options':'nosniff'}});
 export async function onRequest({request,env}) {
  const url=new URL(request.url);

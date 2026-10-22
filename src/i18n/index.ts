@@ -1,9 +1,10 @@
 import en from './en.json';
+import fr from './fr.json';
 import de from './de.json';
 import es from './es.json';
 import ja from './ja.json';
 import ko from './ko.json';
-export const dictionaries={en,ja,ko,es,de};
+export const dictionaries={en,ja,ko,es,de,fr};
 export type Locale=keyof typeof dictionaries;
 export const treatmentSlugs=['ivf','icsi','egg-freezing','frozen-embryo-transfer'];
 export const routeKeys=[...Object.keys(en.pages),...treatmentSlugs.map(s=>'treatments/'+s)];
