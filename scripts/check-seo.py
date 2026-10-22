@@ -6,10 +6,12 @@ import json, xml.etree.ElementTree as ET
 ORIGIN='https://saipanivf.pages.dev'
 class Head(HTMLParser):
  def __init__(self):
-  super().__init__();self.meta={};self.canonical=None;self.ld=[];self.in_ld=False;self.buf='';self.images=[]
+  super().__init__();self.meta={};self.canonical=None;self.ld=[];self.in_ld=False;self.buf='';self.images=[];self.alternate_locales=[]
  def handle_starttag(self,tag,attrs):
   a=dict(attrs)
-  if tag=='meta':self.meta[a.get('name',a.get('property',''))]=a.get('content')
+  if tag=='meta':
+   self.meta[a.get('name',a.get('property',''))]=a.get('content')
+   if a.get('property')=='og:locale:alternate':self.alternate_locales.append(a.get('content'))
   if tag=='link' and a.get('rel')=='canonical':self.canonical=a.get('href')
   if tag=='script' and a.get('type')=='application/ld+json':self.in_ld=True;self.buf=''
   if tag=='img':self.images.append(a)
@@ -31,9 +33,19 @@ for path in Path('dist').rglob('index.html'):
  assert share.is_file(),(path,'share image')
  graph=page.ld[0]['@graph'];types=[node['@type'] for node in graph]
  assert 'WebSite' in types and 'WebPage' in types
+ website=next(node for node in graph if node['@type']=='WebSite');webpage=next(node for node in graph if node['@type']=='WebPage')
+ assert website['@id']==ORIGIN+'/#website' and website['url']==ORIGIN+'/' and website['name']=='Saipan IVF',(path,'shared website identity')
+ assert webpage['isPartOf']['@id']==website['@id'],(path,'website reference')
+ assert set(website['inLanguage'])=={'zh-CN','zh-TW','en','ja','ko'},(path,'website languages')
+ assert len(page.alternate_locales)==4 and set(page.alternate_locales)=={'zh_CN','zh_TW','en_US','ja_JP','ko_KR'}-{page.meta['og:locale']},(path,'sharing locales')
+ assert page.meta['og:site_name']=='Saipan IVF',(path,'sharing site name')
  if route not in ['/','/en/','/ja/','/ko/','/zh-hant/']:
   crumbs=next(node['itemListElement'] for node in graph if node['@type']=='BreadcrumbList')
   assert crumbs[-1]['item']==page.canonical
+  parts=[part for part in route.split('/') if part]
+  if parts and parts[0] in ['zh-hant','en','ja','ko']:parts=parts[1:]
+  if len(parts)==2 and parts[0] in ['guides','treatments']:
+   assert len(crumbs)==3 and crumbs[1]['item']==page.canonical.rsplit(parts[-1]+'/',1)[0],(path,'parent breadcrumb')
  for image in page.images:
   if (image.get('data-src') or image.get('src','')).startswith('/'):
    if urlparse(image.get('data-src') or image['src']).path.endswith('.svg'):

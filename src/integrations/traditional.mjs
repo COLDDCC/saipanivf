@@ -27,6 +27,8 @@ function local(value){
  const url=new URL(value,origin);for(const [key,value] of [...url.searchParams])url.searchParams.set(key,convert(value));return '/zh-hant'+url.pathname+url.search+url.hash;
 }
 function graph(value,key=''){
+ if(value===origin+'/#website')return value;
+ if(value&&typeof value==='object'&&!Array.isArray(value)&&value['@type']==='WebSite')return value;
  if(typeof value==='string'){if(['url','item','@id'].includes(key)&&value.startsWith(origin)&&!value.startsWith(origin+'/images/'))return origin+'/zh-hant'+value.slice(origin.length);return value==='zh-CN'?'zh-TW':tw(convert(value))}
  if(Array.isArray(value))return value.map(v=>graph(v));if(value&&typeof value==='object')return Object.fromEntries(Object.entries(value).map(([k,v])=>[k,graph(v,k)]));return value;
 }
@@ -38,7 +40,7 @@ export default function traditional(){return {name:'complete-traditional-chinese
    for(const text of node.childNodes||[])if(text.nodeName==='#text'){text.value=get('type')==='application/ld+json'?JSON.stringify(graph(JSON.parse(text.value))):tw(convert(text.value))}return;
   }
   if(node.nodeName==='#text')node.value=tw(convert(node.value));
-  for(const a of attrs){if(a.name==='lang'&&node.tagName==='html'){a.value='zh-TW';continue}if(isAlt)continue;if((a.name==='href'||a.name==='value')&&!get('hreflang')){a.value=local(a.value);if(a.value.startsWith(origin)&&node.tagName==='link'&&get('rel')==='canonical')a.value=origin+'/zh-hant'+a.value.slice(origin.length)}if(a.name==='content'&&get('property')==='og:url')a.value=origin+'/zh-hant'+a.value.slice(origin.length);if(a.name==='content'&&get('property')==='og:locale')a.value='zh_TW';if(!['src','srcset','href','style','class','id'].includes(a.name))a.value=tw(convert(a.value))}
+  for(const a of attrs){if(a.name==='lang'&&node.tagName==='html'){a.value='zh-TW';continue}if(isAlt)continue;if((a.name==='href'||a.name==='value')&&!get('hreflang')){a.value=local(a.value);if(a.value.startsWith(origin)&&node.tagName==='link'&&get('rel')==='canonical')a.value=origin+'/zh-hant'+a.value.slice(origin.length)}if(a.name==='content'&&get('property')==='og:url')a.value=origin+'/zh-hant'+a.value.slice(origin.length);if(a.name==='content'&&get('property')==='og:locale')a.value='zh_TW';if(a.name==='content'&&get('property')==='og:locale:alternate'&&a.value==='zh_TW')a.value='zh_CN';if(!['src','srcset','href','style','class','id'].includes(a.name))a.value=tw(convert(a.value))}
   for(const child of node.childNodes||[])visit(child);if(node.content)visit(node.content);
   if(node.tagName==='details'&&get('class')?.split(' ').includes('language-switcher')){const summary=node.childNodes?.find(child=>child.tagName==='summary');if(summary)summary.childNodes=[{nodeName:'#text',value:'繁體中文 ▾',parentNode:summary}]}
  }
