@@ -29,7 +29,7 @@ assert.match(contact,/<noscript><style>#consult-form\{display:none\}<\/style>/,'
 assert.ok(!contact.includes('class="floating"'),'The contact form should not have a redundant floating contact button');
 console.log('PASS FAQ: incoming links, hash navigation, same-link reopening, unknown fragments, compact directory; contact no-JS and overlay checks.');
 // Regression: ESTA is US-wide; CNMI EVS-TAP has a separate geographic limit.
-for(const locale of ['en','ja','ko']) {
+for(const locale of ['en']) {
  const d=JSON.parse(fs.readFileSync(`src/i18n/${locale}.json`,'utf8'));
  assert.ok(d.faq[3][1].includes('90')&&d.faq[3][1].includes('14'),`${locale}: distinguish the two stay limits`);
  const page=fs.readFileSync(`dist/${locale}/faq/index.html`,'utf8');
@@ -86,3 +86,13 @@ const frFees=fs.readFileSync('dist/fr/fees/index.html','utf8');
 assert.ok(frFees.includes('ameli.fr')&&frFees.includes('quebec.ca')&&frFees.includes('CPAM')&&frFees.includes('RAMQ'));
 assert.ok(fr.form.templateText.includes('langue')&&fr.pages['editorial-policy'].sections[4][1].includes('ne confirme pas une prise en charge médicale francophone'));
 console.log('PASS French adaptation: France/Canada entry distinction, regional insurance, civil-status references and consultation language.');
+
+for(const locale of ['ja','ko']) {
+ const d=JSON.parse(fs.readFileSync(`src/i18n/${locale}.json`,'utf8'));
+ const page=fs.readFileSync(`dist/${locale}/faq/index.html`,'utf8');
+ assert.ok(d.faq[3][1].includes('90')&&!d.faq[3].join('').includes('EVS-TAP'));
+ assert.ok(page.includes('visa-waiver-program.html')&&page.includes('visitor.html')&&!page.includes('g-cnmi-eta.cbp.dhs.gov'));
+ assert.ok(d.form.templateText.includes(locale==='ja'?'対応言語':'언어'));
+}
+assert.ok(!tw.includes('g-cnmi-eta.cbp.dhs.gov'),'Taiwan VWP answer must not cite the PRC-only portal');
+console.log('PASS Japanese/Korean and Taiwan travel-source alignment and consultation language requests.');

@@ -9,6 +9,10 @@ const options=[['zh-CN','简体中文',path],['zh-TW','繁體中文','/zh-hant'+
 
 <script>
 document.querySelectorAll<HTMLDetailsElement>('.language-switcher').forEach(switcher=>{
+ const topic=new URLSearchParams(window.location.search).get('topic');
+ if(topic&&['ivf','icsi','egg-freezing','frozen-embryo-transfer'].includes(topic)&&/\/contact\/?$/.test(window.location.pathname)){
+  switcher.querySelectorAll<HTMLAnchorElement>('a').forEach(link=>{const target=new URL(link.href);target.searchParams.set('topic',topic);link.href=target.pathname+target.search;});
+ }
  document.addEventListener('click',event=>{if(!switcher.contains(event.target as Node))switcher.open=false;});
  switcher.addEventListener('keydown',event=>{if(event.key==='Escape'&&switcher.open){event.preventDefault();switcher.open=false;switcher.querySelector('summary')?.focus();}});
 });

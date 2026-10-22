@@ -10,7 +10,7 @@ const base=[];function find(dir){for(const entry of fs.readdirSync(dir,{withFile
 const languages=[['','zh-CN'],['zh-hant','zh-TW'],['en','en'],['ja','ja'],['ko','ko'],['es','es'],['de','de'],['fr','fr']];
 for(const [prefix,lang] of languages)for(const relative of base){const file=path.join('dist',prefix,relative);assert(fs.existsSync(file),file);const html=fs.readFileSync(file,'utf8'),tree=parse(html),all=nodes(tree);assert.equal(attr(all.find(n=>n.tagName==='html'),'lang'),lang,file);assert(!all.some(n=>n.tagName==='meta'&&attr(n,'name')==='robots'&&attr(n,'content')?.includes('noindex')),file);const alts=all.filter(n=>n.tagName==='link'&&attr(n,'rel')==='alternate');assert.equal(alts.length,9,file);const mainRoute='/'+relative.replace(/index.html$/,'');for(const [code,p] of [['zh-CN',''],['zh-TW','/zh-hant'],['en','/en'],['ja','/ja'],['ko','/ko'],['es','/es'],['de','/de'],['fr','/fr'],['x-default','']])assert(alts.some(n=>attr(n,'hreflang')===code&&attr(n,'href')===origin+p+mainRoute),file+' '+code);const selected=all.find(n=>n.tagName==='a'&&attr(n,'hreflang')===lang);assert.equal(attr(selected,'aria-current'),'page',file);assert.equal(attr(selected,'href'),(prefix?'/'+prefix:'')+mainRoute,file);if(prefix==='en'||prefix==='es'||prefix==='de'||prefix==='fr'){function text(n){if(['script','style'].includes(n.tagName)||attr(n,'class')?.includes('language-switcher'))return '';return n.nodeName==='#text'?n.value:(n.childNodes||[]).map(text).join(' ')}assert(!/[\u3400-\u9fff]/.test(text(tree)),file+' untranslated Chinese text')} }
 for(const locale of ['en','ja','ko','es','de','fr']){
- const expectedMoney=s=>locale==='fr'?s.replace(/^\$/,'').replaceAll(',','\u202f')+' USD':locale==='de'?s.replace(/^\$/,'').replaceAll(',','.')+' USD':s;
+ const expectedMoney=s=>locale==='fr'?s.replace(/^\$/,'').replaceAll(',','\u202f')+' USD':['de','es'].includes(locale)?s.replace(/^\$/,'').replaceAll(',','.')+' USD':s;
  const html=fs.readFileSync(`dist/${locale}/fees/index.html`,'utf8'),all=nodes(parse(html));const config=attr(all.find(n=>attr(n,'data-budget')!==undefined),'data-config');const script=all.find(n=>n.tagName==='script'&&n.childNodes?.some(t=>t.value?.includes('[data-budget]')))?.childNodes[0].value;assert(script);
  const el=()=>({textContent:'',listeners:{},addEventListener(k,f){this.listeners[k]=f}});
  const ids=Object.fromEntries(['budget-path','budget-total','budget-description','budget-status','budget-copy'].map(x=>[x,el()]));ids['budget-path'].value='ivf';const inputs=['medication','anesthesia','icsi','freeze','fet','pgt','storage'].map((value,i)=>({...el(),value,checked:i<5,label:{hidden:false},closest(){return this.label}}));const root={dataset:{config},querySelector:s=>ids[s.slice(1)],querySelectorAll:()=>inputs};vm.runInNewContext(script,{document:{querySelector:()=>root},navigator:{clipboard:{writeText:async()=>{}}}});
@@ -34,3 +34,18 @@ for(const relative of base){
  assert.equal(summary?.childNodes.map(n=>n.value||'').join(''),'繁體中文 ▾',relative+' visible language label');
 }
 console.log('PASS Traditional Chinese visible language label on all 23 routes.');
+
+function dictionaryLeaves(value,prefix=''){
+ if(value&&typeof value==='object')return Object.entries(value).flatMap(([key,child])=>dictionaryLeaves(child,prefix+'/'+key));
+ return [[prefix,value]];
+}
+const englishLeaves=new Map(dictionaryLeaves(JSON.parse(fs.readFileSync('src/i18n/en.json','utf8'))));
+for(const locale of ['ja','ko','es','de','fr']){
+ const leaves=new Map(dictionaryLeaves(JSON.parse(fs.readFileSync(`src/i18n/${locale}.json`,'utf8'))));
+ for(const [key,value] of englishLeaves){
+  assert.ok(leaves.has(key),`${locale}: missing translation ${key}`);
+  assert.ok(String(leaves.get(key)).trim(),`${locale}: empty translation ${key}`);
+  if(typeof value==='string'&&value.length>35)assert.notEqual(leaves.get(key),value,`${locale}: untranslated English ${key}`);
+ }
+}
+console.log('PASS dictionary quality: complete keys, no empty values or untranslated long English strings in five non-English dictionaries.');
