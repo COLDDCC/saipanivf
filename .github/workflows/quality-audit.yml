@@ -51,8 +51,12 @@ jobs:
               const lhr = JSON.parse(fs.readFileSync(r.jsonPath, "utf8"));
               const path = new URL(r.url).pathname;
               const failed = Object.values(lhr.categories).flatMap(c => c.auditRefs.filter(a => a.weight > 0).map(a => lhr.audits[a.id]).filter(a => a.score !== null && a.score < 0.9).map(a => `${c.id}:${a.id}(${a.score})`));
-              const shifts = (lhr.audits["layout-shifts"]?.details?.items || []).slice(0, 3).map(i => `${(i.score ?? 0).toFixed(3)} ${i.node?.selector || ""}`);
+              const shifts = (lhr.audits["layout-shifts"]?.details?.items || []).slice(0, 3).map(i => `${(i.score ?? 0).toFixed(3)} ${i.node?.selector || ""} [${(i.subItems?.items || []).map(c => `${c.cause || ""} ${c.extra?.value?.url || c.extra?.url || ""}`.trim()).join(", ")}]`);
               if (failed.length || shifts.length) console.log(`::notice title=Lighthouse details ${path}::failed: ${failed.join(", ") || "none"} | layout shifts: ${shifts.join(" ; ") || "none"}`);
+              for (const a of Object.values(lhr.audits).filter(a => a.score === 0 && ["link-text", "color-contrast", "image-alt", "tap-targets", "hreflang", "crawlable-anchors"].includes(a.id))) {
+                const items = (a.details?.items || []).slice(0, 5).map(i => (i.text || i.node?.snippet || i.href || "").replace(/\s+/g, " ").slice(0, 120));
+                console.log(`::notice title=Lighthouse ${a.id} ${path}::${items.join(" ; ")}`);
+              }
             }
           '
       - name: Job summary
