@@ -94,5 +94,5 @@ for(const locale of ['ja','ko']) {
  assert.ok(page.includes('visa-waiver-program.html')&&page.includes('visitor.html')&&!page.includes('g-cnmi-eta.cbp.dhs.gov'));
  assert.ok(d.form.templateText.includes(locale==='ja'?'対応言語':'언어'));
 }
-assert.ok(!tw.includes('g-cnmi-eta.cbp.dhs.gov'),'Taiwan VWP answer must not cite the PRC-only portal');
+assert.ok(tw.includes('g-cnmi-eta.cbp.dhs.gov'),'Taiwan G-CNMI guidance should link the official CBP ETA portal');
 console.log('PASS Japanese/Korean and Taiwan travel-source alignment and consultation language requests.');
