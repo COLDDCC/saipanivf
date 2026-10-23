@@ -14,8 +14,8 @@ const sectionId=fees?'fee-comparison':'treatment-comparison';
 ---
 <section class="comparison" id={sectionId} aria-labelledby={sectionId+'-title'}>
  <h2 id={sectionId+'-title'}>{title}</h2><p class="comparison-intro">{fees?c.feeIntro:c.intro}</p>
- <div class="comparison-desktop"><table><caption class="sr-only">{title}</caption><thead><tr>{headers.map(label=><th scope="col">{label}</th>)}</tr></thead><tbody>{rows.map(row=><tr><th scope="row">{row.title}{fees&&<strong class="base-price">{row.price}</strong>}</th>{row.cells.map(cell=><td>{cell}</td>)}<td><a href={row.url}>{row.next}</a></td></tr>)}</tbody></table></div>
- <div class="comparison-mobile">{rows.map(row=><article><h3>{row.title}</h3>{fees&&<strong class="base-price">{row.price}{!['es','de','fr'].includes(locale)&&' USD'}</strong>}<dl>{row.cells.map((cell,i)=><div><dt>{headers[i+1]}</dt><dd>{cell}</dd></div>)}</dl><a class="inline-link" href={row.url}>{row.next}</a></article>)}</div>
+ <div class="comparison-desktop"><table><caption class="sr-only">{title}</caption><thead><tr>{headers.map(label=><th scope="col">{label}</th>)}</tr></thead><tbody>{rows.map(row=><tr><th scope="row">{row.title}{fees&&<strong class="base-price">{row.price}</strong>}</th>{row.cells.map(cell=><td>{cell}</td>)}<td><a href={row.url}>{row.next}{fees&&<span class="visually-hidden"> · {row.title}</span>}</a></td></tr>)}</tbody></table></div>
+ <div class="comparison-mobile">{rows.map(row=><article><h3>{row.title}</h3>{fees&&<strong class="base-price">{row.price}{!['es','de','fr'].includes(locale)&&' USD'}</strong>}<dl>{row.cells.map((cell,i)=><div><dt>{headers[i+1]}</dt><dd>{cell}</dd></div>)}</dl><a class="inline-link" href={row.url}>{row.next}{fees&&<span class="visually-hidden"> · {row.title}</span>}</a></article>)}</div>
  {fees&&<p class="comparison-note">{c.note}</p>}
  <nav class="comparison-links" aria-label={title}><a class="inline-link" href={fees?'#budget-planner':href('fees')}>{c.budget}</a><a class="inline-link" href={href('service-scope')}>{c.scope}</a>{!fees&&<a class="inline-link" href="#outcomes">{outcomeCopy[locale].link}</a>}</nav>
 </section>
