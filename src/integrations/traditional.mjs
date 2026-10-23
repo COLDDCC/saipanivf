@@ -54,6 +54,12 @@ export default function traditional(){return {name:'complete-traditional-chinese
   .replaceAll('CBP官方旅行授權系統','CBP：G-CNMI ETA 官方申請系統')
   .replaceAll('<a href="https://www.nia.gov.cn/n741440/n741547/c1013967/content.html" target="_blank" rel="noopener">國家移民管理局：《中華人民共和國國籍法》</a>','<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030001" target="_blank" rel="noopener">全國法規資料庫：《國籍法》</a>')
   .replaceAll('<a href="https://www.moe.gov.cn/srcsite/A20/moe_850/202006/t20200609_464159.html" target="_blank" rel="noopener">教育部：規範高等學校接受國際學生有關工作的通知</a>','<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0110001" target="_blank" rel="noopener">教育部：外國學生來台就學相關規定</a>');
+ if(path.endsWith(join('contact','index.html'))||path.endsWith(join('fees','index.html'))||path.endsWith(join('service-scope','index.html'))){
+  const selected=path.endsWith(join('contact','index.html'))?[3,4]:path.endsWith(join('fees','index.html'))?[2,4]:[0,1,2,4];
+  const rows=selected.map(i=>'<details><summary>'+taiwanGuide.rows[i][0]+'</summary><p>'+taiwanGuide.rows[i][1]+'</p></details>').join('');
+  const block='<section class="section wrap localized-content" lang="zh-TW" aria-label="台灣旅客專屬資訊"><h2>台灣旅客：預約前請確認</h2><p>'+taiwanGuide.intro+'</p>'+rows+'<p><a href="/zh-hant/guides/travel-checklist/">查看台灣旅客入境與就醫準備</a></p></section>';
+  html=html.replace('</main>',block+'</main>');
+ }
  if(path.endsWith(join('guides','travel-checklist','index.html'))){const rows=taiwanGuide.rows.map(([a,b])=>'<section class="localized-section"><h2>'+a+'</h2><p>'+b+'</p></section>').join('');html=html.replace('</main>','<section class="section wrap localized-content" lang="zh-TW" aria-label="台灣旅客出行資訊"><h2>'+taiwanGuide.title+'</h2><p>'+taiwanGuide.intro+'</p>'+rows+'<p><a href="https://g-cnmi-eta.cbp.dhs.gov/" target="_blank" rel="noopener">CBP：G-CNMI ETA 官方資訊</a> · <a href="https://www.ait.org.tw/" target="_blank" rel="noopener">美國在台協會（AIT）</a></p></section></main>');}const out=join(root,'zh-hant',relative(root,path));mkdirSync(dirname(out),{recursive:true});writeFileSync(out,html);}
  const paths=pages.map(p=>'/'+relative(root,dirname(p)).split('\\').join('/')+'/').map(p=>p==='//'?'/':p);
  const locales=[['zh-CN',''],['zh-TW','/zh-hant'],['en','/en'],['ja','/ja'],['ko','/ko'],['es','/es'],['de','/de'],['fr','/fr']];
