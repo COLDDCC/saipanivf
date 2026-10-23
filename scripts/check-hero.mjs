@@ -10,7 +10,8 @@ function setup(){
  const pause=element(),prev=element(),next=element(),root=element();root.dataset={pauseLabel:'暂停自动切换',resumeLabel:'继续自动切换'};
  root.querySelectorAll=s=>s==='[data-slide]'?slides:tabs;root.querySelector=s=>s==='[data-hero-pause]'?pause:s==='[data-hero-prev]'?prev:next;root.contains=()=>false;
  const document={hidden:false,activeElement:null,querySelector:()=>root,addEventListener(){}};let tick=null;
- vm.runInNewContext(code,{document,Map,Promise,setInterval(fn,ms){assert.equal(ms,5000);tick=fn;return 1},clearInterval(){tick=null},queueMicrotask:fn=>fn()});
+ const window={requestIdleCallback:fn=>fn(),addEventListener(){},setTimeout:fn=>fn()};const navigator={connection:{}};
+ vm.runInNewContext(code,{document,window,navigator,Map,Promise,setInterval(fn,ms){assert.equal(ms,5000);tick=fn;return 1},clearInterval(){tick=null},queueMicrotask:fn=>fn()});
  return {images,slides,tabs,pause,prev,next,get tick(){return tick},loaded(i){images[i].naturalWidth=800;images[i].complete=true;images[i].listeners.load?.();}};
 }
 const a=setup();await flush();assert(a.tick);assert.equal(a.images[1].src,'/slide1.webp');assert.equal(a.images[2].src,undefined);assert.equal(a.images[3].src,undefined);
