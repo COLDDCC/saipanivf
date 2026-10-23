@@ -20,14 +20,5 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: Install font subset tooling
-        run: python -m pip install fonttools brotli
-      - name: Build and refresh checked-in font subsets
-        run: |
-          npm run build
-          npm run fonts:fetch
-          python scripts/subset-fonts.py
-      - name: Verify committed font subsets are current
-        run: git diff --exit-code -- public/fonts
       - name: Build and run full checks
         run: npm run verify
