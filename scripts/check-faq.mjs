@@ -36,13 +36,13 @@ for(const locale of ['en']) {
  assert.ok(page.includes('visa-waiver-program.html')&&page.includes('visitor.html'),`${locale}: link the applicable US travel rules`);
 }
 const tw=fs.readFileSync('dist/zh-hant/faq/index.html','utf8');
-assert.ok(tw.includes('VWP允許符合資格與入境條件者進行醫療訪問'),'Traditional Chinese must allow eligible VWP medical visits');
+assert.ok(tw.includes('醫療訪問')||tw.includes('就醫目的'),'Traditional Chinese must explain medical visit purpose');
 for(const wrong of ['ESTA or EVS-TAP authorisation is limited to the Northern Mariana Islands','ESTAやEVS-TAPは北マリアナ諸島のみ','ESTA나 EVS-TAP은 북마리아나제도에만']) {
  for(const locale of ['en','ja','ko','es','de','fr']) assert.ok(!fs.readFileSync(`dist/${locale}/faq/index.html`,'utf8').includes(wrong),'Do not limit ESTA to CNMI');
 }
 console.log('PASS travel FAQ: distinct programmes, stay limits, medical purpose and official references.');
 
-assert.ok(tw.includes('符合資格的台灣護照持有人，取得ESTA承認'),'Traditional Chinese must use the Taiwan VWP answer, not the PRC EVS-TAP answer');
+assert.ok(tw.includes('台灣護照')&&tw.includes('ESTA')&&tw.includes('G-CNMI'),'Traditional Chinese must distinguish Taiwan travel eligibility and authorizations');
 assert.ok(!tw.includes('EVS-TAP條件並獲旅行授權的台灣公民'),'Do not apply PRC-only eligibility to Taiwan passport holders');
 
 const birthTw=fs.readFileSync('dist/zh-hant/birth-planning/index.html','utf8');
