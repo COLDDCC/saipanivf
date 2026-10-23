@@ -314,7 +314,7 @@
         ],
         [
           "Passeports français, belge ou suisse",
-          "Ces nationalités participent au Visa Waiver Program américain. Si toutes les conditions sont remplies, ESTA permet un séjour de 90 jours au maximum. Vérifiez passeport, antécédents de voyage, autres nationalités et finalité médicale réelle. L’autorisation ne garantit pas l’admission."
+          "Ces nationalités participent au Visa Waiver Program américain. Si toutes les conditions sont remplies, ESTA permet un séjour de 90 jours au maximum. Vérifiez passeport, antécédents de voyage, autres nationalités et finalité médicale réelle. L’autorisation ne garantit pas l’admission. Le programme Guam–CNMI (G-CNMI ETA, généralement 45 jours au maximum) est distinct du programme américain VWP (ESTA, généralement 90 jours au maximum). La France, la Belgique et la Suisse participent au VWP américain mais ne figurent pas parmi les pays du programme G-CNMI. Les titulaires admissibles de ces passeports doivent vérifier ESTA, les escales et le motif médical. Les citoyens canadiens relèvent d’autres règles ; résider au Québec ne suffit pas. L’admission n’est pas garantie."
         ],
         [
           "Québec : citoyenneté canadienne ou résidence ?",
@@ -325,20 +325,16 @@
           "Demandez par écrit la couverture du traitement prévu, des complications et du suivi. En France, consultez la CPAM pour les soins hors UE/EEE/Suisse ; au Québec, la RAMQ et votre assureur ; en Belgique ou en Suisse, votre organisme. Vérifiez modifications de réservation, transport local et accompagnant. Emportez confirmation, bilans et prescriptions demandés et précisez les traductions nécessaires."
         ],
         [
-          "Avant le retour",
-          "Gardez synthèse médicale, médicaments, contrôles, reçus et autorisations de conservation. Convenez du suivi à domicile et de l’interlocuteur à joindre en cas de problème."
-        ],
-        [
-          "Passeport français, canadien ou autre",
-          "Le programme Guam–CNMI (G-CNMI ETA, généralement 45 jours au maximum) est distinct du programme américain VWP (ESTA, généralement 90 jours au maximum). La France, la Belgique et la Suisse participent au VWP américain mais ne figurent pas parmi les pays du programme G-CNMI. Les titulaires admissibles de ces passeports doivent vérifier ESTA, les escales et le motif médical. Les citoyens canadiens relèvent d’autres règles ; résider au Québec ne suffit pas. L’admission n’est pas garantie."
-        ],
-        [
           "Paiement en USD et dossier",
           "Demandez un devis détaillé en dollars, le destinataire des frais médicaux et de coordination, acompte, paiement, taux EUR/CAD vers USD, frais et remboursement. Préparez passeport, autorisation éventuelle, rendez-vous et bilans; vérifiez les traductions et l’envoi sécurisé."
         ],
         [
           "Trois langues à distinguer",
           "Langue du site : français. Langue de coordination des demandes : à confirmer. Langue des consultations médicales : à confirmer directement avec l’établissement. Interprétariat et frais non garantis."
+        ],
+        [
+          "Avant le retour",
+          "Gardez synthèse médicale, médicaments, contrôles, reçus et autorisations de conservation. Convenez du suivi à domicile et de l’interlocuteur à joindre en cas de problème."
         ]
       ]
     },
