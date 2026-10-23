@@ -74,7 +74,17 @@ if(root){
  document.addEventListener('visibilitychange',schedule);
 
  // The first image remains discoverable in HTML; warm only the next slide after it is ready.
- void loadSlide(0).then(()=>loadSlide(1));
+ // Do not fetch the next slide during the critical first paint.
+ // Wait until the browser is idle, with a fallback for browsers without requestIdleCallback.
+ // Skip speculative downloads on constrained connections and when the tab is hidden.
+ const warmNext=()=>{
+  const connection=(navigator as Navigator & {connection?:{saveData?:boolean;effectiveType?:string}}).connection;
+  if(document.hidden||connection?.saveData||connection?.effectiveType==='slow-2g'||connection?.effectiveType==='2g')return;
+  void loadSlide(1);
+ };
+ const idleWindow=window as Window & {requestIdleCallback?:(callback:()=>void,options?:{timeout:number})=>number};
+ if(idleWindow.requestIdleCallback)idleWindow.requestIdleCallback(warmNext,{timeout:4000});
+ else window.addEventListener('load',()=>window.setTimeout(warmNext,1500),{once:true});
  schedule();
 }
 </script>
