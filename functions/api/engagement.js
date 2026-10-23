@@ -20,6 +20,16 @@ export async function onRequest({request,env}) {
  let payload;try{payload=JSON.parse(new TextDecoder().decode(body));}catch{return reply({error:'invalid_json'},400);}
  if(!payload||Array.isArray(payload)||Object.keys(payload).sort().join(',')!=='event,language'||!EVENTS.has(payload.event)||!LANGUAGES.has(payload.language))return reply({error:'invalid_event'},400);
  if(!env.ENGAGEMENT_DB)return reply({error:'not_configured'},503);
+ // Optional Cloudflare Rate Limiting binding. Configure ENGAGEMENT_RATE_LIMITER
+ // in the Pages project before treating this endpoint as rate limited.
+ if(env.ENGAGEMENT_RATE_LIMITER){
+  try{
+   const key=request.headers.get('CF-Connecting-IP');
+   if(!key)return reply({error:'temporarily_unavailable'},503);
+   const result=await env.ENGAGEMENT_RATE_LIMITER.limit({key});
+   if(!result.success)return reply({error:'rate_limited'},429);
+  }catch{return reply({error:'temporarily_unavailable'},503);}
+ }
  const day=new Date().toISOString().slice(0,10);
  try{
   await env.ENGAGEMENT_DB.prepare('INSERT INTO engagement_daily (day, event, language, count) VALUES (?, ?, ?, 1) ON CONFLICT(day,event,language) DO UPDATE SET count=count+1').bind(day,payload.event,payload.language).run();
