@@ -7,6 +7,7 @@ assert.match(headers,/^\/\*\s*$/m);
 for(const name of ['X-Content-Type-Options','Referrer-Policy','Permissions-Policy','X-Frame-Options'])assert.match(headers,new RegExp('^\\s+'+name+':','m'));
 assert.match(integration,/Taiwan content leak/);
 assert.match(integration,/CNMI EVS-TAP/);
+assert.match(integration,/relativePath/);
 assert.match(integration,/Traditional Chinese locale missing/);
 assert.equal(taiwanGuide.rows.length,5);
 for(const [title,body] of taiwanGuide.rows){assert.ok(title.trim());assert.ok(body.trim());}
