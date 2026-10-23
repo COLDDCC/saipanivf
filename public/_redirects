@@ -1,0 +1,10 @@
+# Commonly guessed language prefixes → the site's real language paths.
+/zh-cn/*    /:splat          301
+/zh-hans/*  /:splat          301
+/zh/*       /:splat          301
+/cn/*       /:splat          301
+/zh-tw/*    /zh-hant/:splat  301
+/zh-hk/*    /zh-hant/:splat  301
+/tw/*       /zh-hant/:splat  301
+/jp/*       /ja/:splat       301
+/kr/*       /ko/:splat       301

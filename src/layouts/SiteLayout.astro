@@ -1,7 +1,8 @@
 ---
 import homeStyles from '../styles/home.css?url';
 import HomeImagePreload from '../components/HomeImagePreload.astro';
-import { websiteSchema, shareLocales } from "../data/website-schema";
+import { websiteSchema, shareLocales, faqPageSchema } from "../data/website-schema";
+import { faqs } from "../data/faq";
 import { searchMetadata } from "../data/search-metadata";
 import MainNavigation from "../components/MainNavigation.astro";
 import LanguageSwitcher from "../components/LanguageSwitcher.astro";
@@ -24,7 +25,8 @@ const crumbs=[{name:'首页',path:'/'},...(section?[section]:[]),...(!home?[{nam
 const structuredData={
  '@context':'https://schema.org','@graph':[
  websiteSchema,
- {'@type':'WebPage','@id':canonical.href+'#webpage',url:canonical.href,name:searchTitle,description:searchDescription,inLanguage:'zh-CN',isPartOf:{'@id':site.origin+'/#website'}},
+ {'@type':'WebPage','@id':canonical.href+'#webpage',url:canonical.href,name:searchTitle,description:searchDescription,inLanguage:'zh-CN',isPartOf:{'@id':site.origin+'/#website'},...(!noindex?{lastReviewed:site.sourceChecked}:{})},
+ ...(pageKey==='faq'?[faqPageSchema(canonical.href,'zh-CN',faqs.map(item=>({question:item.question,answer:item.answer+' '+item.detail})))]:[]),
  ...(!home?[{'@type':'BreadcrumbList',itemListElement:crumbs.map((crumb,i)=>({'@type':'ListItem',position:i+1,name:crumb.name,item:new URL(crumb.path,site.origin).href}))}]:[])
  ]
 };

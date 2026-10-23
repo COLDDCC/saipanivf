@@ -18,6 +18,14 @@ const limitedRequest=()=>new Request('https://example.com/api/engagement',{metho
 assert.equal((await onRequest({request:limitedRequest(),env:{ENGAGEMENT_DB:db,ENGAGEMENT_RATE_LIMITER:{limit:async()=>({success:false})}}})).status,429);
 assert.equal((await onRequest({request:limitedRequest(),env:{ENGAGEMENT_DB:db,ENGAGEMENT_RATE_LIMITER:{limit:async()=>{throw Error('down')}}}})).status,503);
 assert.equal((await onRequest({request:limitedRequest(),env:{ENGAGEMENT_DB:db,ENGAGEMENT_RATE_LIMITER:{limit:async()=>({success:true})}}})).status,200);
+// Configuration probe: one D1 read per isolate for 5 minutes, cacheable by the browser.
+let probes=0;const probeDb={prepare(){return {first:async()=>{probes++;return null}}}};
+const probeGet=()=>onRequest({request:new Request('https://example.com/api/engagement'),env:{ENGAGEMENT_DB:probeDb}});
+const firstProbe=await probeGet();assert.deepEqual(await firstProbe.json(),{configured:true});assert.equal(firstProbe.headers.get('Cache-Control'),'private, max-age=300');
+assert.deepEqual(await(await probeGet()).json(),{configured:true});assert.equal(probes,1,'probe result is reused within the isolate');
+const failingDb={prepare(){return {first:async()=>{throw Error('no table')}}}};
+const failed=await onRequest({request:new Request('https://example.com/api/engagement'),env:{ENGAGEMENT_DB:failingDb}});
+assert.deepEqual(await failed.json(),{configured:false});assert.equal(failed.headers.get('Cache-Control'),'no-store','unconfigured answers are never cached');
 const code=fs.readFileSync('public/engagement.js','utf8');
 async function client(configured,privacy={}){
  const calls=[],handlers={};const context={navigator:privacy,window:{},document:{documentElement:{lang:'en'},addEventListener:(key,fn)=>handlers[key]=fn,getElementById:()=>({hidden:false,getAttribute:()=> 'mailto:test?subject=draft'})},location:{origin:'https://example.com',pathname:'/en/treatments/ivf/'},URL,fetch:async(url,options)=>{calls.push(options);return {ok:true,json:async()=>({configured})}}};

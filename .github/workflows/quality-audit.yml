@@ -1,0 +1,74 @@
+name: Quality audit
+# Weekly and on demand: build-output audit (page weight, SEO, accessibility
+# heuristics), external source links and Lighthouse budgets. Advisory only:
+# the blocking gate stays in verify.yml. Findings appear as annotations on the
+# run page; full reports are uploaded as the "quality-reports" artifact.
+on:
+  schedule:
+    - cron: '17 0 * * 1'   # Mondays 09:17 JST
+  workflow_dispatch:
+  pull_request:
+    paths: ['src/**', 'public/**', 'scripts/audit-dist.mjs', 'scripts/check-external-links.mjs', 'lighthouserc.json', '.github/workflows/quality-audit.yml']
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Build-output audit
+        run: node scripts/audit-dist.mjs
+      - name: External source links
+        run: node scripts/check-external-links.mjs
+        continue-on-error: true
+      - name: Lighthouse
+        id: lighthouse
+        uses: treosh/lighthouse-ci-action@v12
+        continue-on-error: true
+        with:
+          configPath: ./lighthouserc.json
+      - name: Lighthouse scores
+        if: always() && steps.lighthouse.outputs.manifest
+        env:
+          MANIFEST: ${{ steps.lighthouse.outputs.manifest }}
+        run: |
+          node -e '
+            const runs = JSON.parse(process.env.MANIFEST).filter(r => r.isRepresentativeRun);
+            const pct = v => v == null ? "-" : Math.round(v * 100);
+            const line = runs.map(r => `${new URL(r.url).pathname} P${pct(r.summary.performance)} A${pct(r.summary.accessibility)} SEO${pct(r.summary.seo)} BP${pct(r.summary["best-practices"])}`).join(" | ");
+            console.log(`::notice title=Lighthouse (representative runs)::${line}`);
+            const fs = require("fs");
+            for (const r of runs) {
+              const lhr = JSON.parse(fs.readFileSync(r.jsonPath, "utf8"));
+              const path = new URL(r.url).pathname;
+              const failed = Object.values(lhr.categories).flatMap(c => c.auditRefs.filter(a => a.weight > 0).map(a => lhr.audits[a.id]).filter(a => a.score !== null && a.score < 0.9).map(a => `${c.id}:${a.id}(${a.score})`));
+              const shifts = (lhr.audits["layout-shifts"]?.details?.items || []).slice(0, 3).map(i => `${(i.score ?? 0).toFixed(3)} ${i.node?.selector || ""} [${(i.subItems?.items || []).map(c => `${c.cause || ""} ${c.extra?.value?.url || c.extra?.url || ""}`.trim()).join(", ")}]`);
+              if (failed.length || shifts.length) console.log(`::notice title=Lighthouse details ${path}::failed: ${failed.join(", ") || "none"} | layout shifts: ${shifts.join(" ; ") || "none"}`);
+              for (const a of Object.values(lhr.audits).filter(a => a.score === 0 && ["link-text", "color-contrast", "image-alt", "tap-targets", "hreflang", "crawlable-anchors"].includes(a.id))) {
+                const items = (a.details?.items || []).slice(0, 5).map(i => (i.text || i.node?.snippet || i.href || "").replace(/\s+/g, " ").slice(0, 120));
+                console.log(`::notice title=Lighthouse ${a.id} ${path}::${items.join(" ; ")}`);
+              }
+            }
+          '
+      - name: Job summary
+        if: always()
+        run: |
+          [ -f reports/audit.md ] && sed -n '1,60p' reports/audit.md >> "$GITHUB_STEP_SUMMARY" || true
+          [ -f reports/external-links.md ] && sed -n '1,40p' reports/external-links.md >> "$GITHUB_STEP_SUMMARY" || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: quality-reports
+          path: |
+            reports/
+            .lighthouseci/
+          retention-days: 30

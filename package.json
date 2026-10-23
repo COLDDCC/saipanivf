@@ -24,7 +24,9 @@
     "check:loading": "node scripts/check-loading.mjs",
     "fonts:fetch": "python scripts/fetch-font-sources.py",
     "fonts:regen": "npm run build && npm run fonts:fetch && python scripts/subset-fonts.py && node scripts/check-loading.mjs",
-    "check:p0": "node scripts/check-p0-source.mjs"
+    "check:p0": "node scripts/check-p0-source.mjs",
+    "audit": "node scripts/audit-dist.mjs",
+    "check:links": "node scripts/check-external-links.mjs"
   },
   "dependencies": {
     "acorn": "^8.19.0",

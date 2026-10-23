@@ -2,7 +2,8 @@ export const taiwanGuide={
   title:'台灣旅客：塞班就醫與入境準備',
   intro:'繁體中文網頁不代表提供繁體中文協調服務，也不代表醫師可使用中文問診。請在預約前分別確認三種語言支援。',
   sources:{
-    cbp:'https://www.cbp.gov/travel/international-visitors/visa-waiver-program/guam-cnmi-visa-waiver-program',
+    // CBP removed its G-CNMI VWP landing page (404 as of 2026-10-23); cite the rule itself.
+    vwpRule:'https://www.federalregister.gov/documents/2024/01/18/2024-00645/guam-commonwealth-of-the-northern-mariana-islands-cnmi-visa-waiver-program-automation-and-electronic',
     eta:'https://g-cnmi-eta.cbp.dhs.gov/',
     ait:'https://www.ait.org.tw/',
     taiwanBoca:'https://www.boca.gov.tw/sp-foof-countrycp-03-134-8775a-02-1.html',
