@@ -63,7 +63,7 @@ assert(taiwanFaq.includes('台灣護照去塞班需要簽證嗎'), 'Taiwan FAQ m
 assert(taiwanFaq.includes('實際諮詢協調語言須事先確認'), 'Taiwan FAQ falsely promises Chinese-language coordination');
 assert(!taiwanFaq.includes('本站提供中文諮詢和就診協調'), 'Taiwan FAQ leaked mainland service-language promise');
 const taiwanChecklist=fs.readFileSync('dist/zh-hant/guides/travel-checklist/index.html','utf8');
-assert(taiwanChecklist.includes('CBP：G-CNMI VWP 官方規定'), 'Taiwan checklist missing CBP entry-policy source');
+assert(taiwanChecklist.includes('G-CNMI VWP 規則（89 FR 3299）')&&taiwanChecklist.includes('federalregister.gov/documents/2024/01/18/2024-00645'), 'Taiwan checklist missing the G-CNMI VWP rule source');
 assert(taiwanChecklist.includes('新台幣'), 'Taiwan checklist missing local currency guidance');
 console.log('PASS Taiwan: distinct entry, documents, payments and language disclosures on four high-intent pages.');
 

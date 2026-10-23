@@ -46,6 +46,14 @@ jobs:
             const pct = v => v == null ? "-" : Math.round(v * 100);
             const line = runs.map(r => `${new URL(r.url).pathname} P${pct(r.summary.performance)} A${pct(r.summary.accessibility)} SEO${pct(r.summary.seo)} BP${pct(r.summary["best-practices"])}`).join(" | ");
             console.log(`::notice title=Lighthouse (representative runs)::${line}`);
+            const fs = require("fs");
+            for (const r of runs) {
+              const lhr = JSON.parse(fs.readFileSync(r.jsonPath, "utf8"));
+              const path = new URL(r.url).pathname;
+              const failed = Object.values(lhr.categories).flatMap(c => c.auditRefs.filter(a => a.weight > 0).map(a => lhr.audits[a.id]).filter(a => a.score !== null && a.score < 0.9).map(a => `${c.id}:${a.id}(${a.score})`));
+              const shifts = (lhr.audits["layout-shifts"]?.details?.items || []).slice(0, 3).map(i => `${(i.score ?? 0).toFixed(3)} ${i.node?.selector || ""}`);
+              if (failed.length || shifts.length) console.log(`::notice title=Lighthouse details ${path}::failed: ${failed.join(", ") || "none"} | layout shifts: ${shifts.join(" ; ") || "none"}`);
+            }
           '
       - name: Job summary
         if: always()
