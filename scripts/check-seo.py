@@ -39,6 +39,14 @@ for path in Path('dist').rglob('index.html'):
  assert set(website['inLanguage'])=={'zh-CN','zh-TW','en','ja','ko','es','de','fr'},(path,'website languages')
  assert len(page.alternate_locales)==7 and set(page.alternate_locales)=={'zh_CN','zh_TW','en_US','ja_JP','ko_KR','es_ES','de_DE','fr_FR'}-{page.meta['og:locale']},(path,'sharing locales')
  assert page.meta['og:site_name']=='Saipan IVF',(path,'sharing site name')
+ for key in ['og:image:width','og:image:height','og:image:alt']:
+  assert page.meta.get(key),(path,key)
+ assert website.get('publisher',{}).get('@id')==ORIGIN+'/#organization',(path,'publisher organization')
+ if not route.endswith('/404/'):assert webpage.get('lastReviewed'),(path,'lastReviewed')
+ if route.rstrip('/').endswith('faq'):
+  faq=next((node for node in graph if node['@type']=='FAQPage'),None)
+  assert faq and len(faq['mainEntity'])>=10 and all(q['name'] and q['acceptedAnswer']['text'] for q in faq['mainEntity']),(path,'FAQPage structured data')
+  assert faq['@id']==page.canonical+'#faq',(path,'FAQPage id')
  if route not in ['/','/en/','/ja/','/ko/','/es/','/de/','/fr/','/zh-hant/']:
   crumbs=next(node['itemListElement'] for node in graph if node['@type']=='BreadcrumbList')
   assert crumbs[-1]['item']==page.canonical
