@@ -3,7 +3,7 @@
 代码部署不会自动创建数据库。未绑定或未建表时，接口返回 configured:false，浏览器不发送操作记录，咨询邮件功能照常使用。
 
 1. 在 Cloudflare 控制台创建 D1 数据库，建议名称 saipanivf-engagement。
-2. 在数据库 Console 执行仓库 migrations/0001_engagement.sql 中的建表语句。
+2. 在数据库 Console 按编号顺序执行仓库 migrations/ 下的全部 SQL（0001 → 0005）。只执行 0001 会缺少 es/de/fr 语言，西、德、法页面的记录会被拒绝。已启用的数据库只需补执行尚未执行的编号。
 3. 在 Pages 项目 saipanivf 的 Settings → Bindings 添加 D1 数据库绑定：变量名 ENGAGEMENT_DB，选择刚创建的数据库，应用到 Production。重新部署项目。预览环境可保持不绑定，避免测试操作混入。
 4. 打开 /api/engagement，显示 {"configured":true} 即表示数据库及表可用。浏览器开启 DNT、GPC 或自动化模式时不会记录操作。
 

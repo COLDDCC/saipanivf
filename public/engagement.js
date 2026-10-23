@@ -25,5 +25,5 @@
   try{const target=new URL(href,location.origin);if(target.origin===location.origin&&/^\/(?:en\/|ja\/|ko\/|es\/|de\/|fr\/|zh-hant\/)?contact\/$/.test(target.pathname))track('contact_open');}catch{}
  });
  if(/^\/(?:en\/|ja\/|ko\/|es\/|de\/|fr\/|zh-hant\/)?treatments\/(?:ivf|icsi|egg-freezing|frozen-embryo-transfer)\/$/.test(location.pathname))track('treatment_view',true);
- fetch(endpoint,{credentials:'omit',referrerPolicy:'no-referrer',cache:'no-store'}).then(r=>r.ok?r.json():null).then(status=>{enabled=status?.configured===true;waiting=false;if(enabled)pending.forEach(post);pending=[];}).catch(()=>{waiting=false;pending=[];});
+ fetch(endpoint,{credentials:'omit',referrerPolicy:'no-referrer'}).then(r=>r.ok?r.json():null).then(status=>{enabled=status?.configured===true;waiting=false;if(enabled)pending.forEach(post);pending=[];}).catch(()=>{waiting=false;pending=[];});
 })();

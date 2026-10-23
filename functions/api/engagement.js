@@ -1,12 +1,14 @@
 const EVENTS=new Set(['treatment_view','contact_open','budget_use','consult_start','consult_draft','email_open','consult_copy']);
 const LANGUAGES=new Set(['zh-CN','zh-TW','en','ja','ko','es','de','fr']);
-const reply=(body,status=200)=>new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json','Cache-Control':'no-store','X-Robots-Tag':'noindex','X-Content-Type-Options':'nosniff'}});
+const reply=(body,status=200,cache='no-store')=>new Response(JSON.stringify(body),{status,headers:{'Content-Type':'application/json','Cache-Control':cache,'X-Robots-Tag':'noindex','X-Content-Type-Options':'nosniff'}});
 export async function onRequest({request,env}) {
  const url=new URL(request.url);
  if(url.search)return reply({error:'invalid_request'},400);
  if(request.method==='GET') {
   if(!env.ENGAGEMENT_DB)return reply({configured:false});
-  try{await env.ENGAGEMENT_DB.prepare('SELECT day FROM engagement_daily LIMIT 1').first();return reply({configured:true});}
+  // The status probe runs on page load; let each browser reuse it for an hour
+  // instead of invoking the Function (and D1) on every page view.
+  try{await env.ENGAGEMENT_DB.prepare('SELECT day FROM engagement_daily LIMIT 1').first();return reply({configured:true},200,'private, max-age=3600');}
   catch{return reply({configured:false});}
  }
  if(request.method!=='POST')return reply({error:'method_not_allowed'},405);

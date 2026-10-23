@@ -6,10 +6,10 @@ import {join,relative,dirname} from 'node:path';
 import * as OpenCC from 'opencc-js';
 import {parse,serialize} from 'parse5';
 const convert=OpenCC.Converter({from:'cn',to:'tw'});
-function tw(s){
- if(typeof s!=='string')return s;
- s=s.replaceAll('免籤','免簽').replaceAll('工籤','工簽');
- const reps=[
+// Region-specific replacements applied after OpenCC conversion. Each target must
+// appear in the generated zh-hant output; if the Simplified source text changes,
+// the build fails instead of silently shipping mainland-only guidance to Taiwan.
+const TW_REPLACEMENTS=[
   ['身份與回國','身份與返台'],
   ['中國國籍、旅行證和戶口分別確認','台灣國籍、護照與戶籍分別確認'],
   ['中國不承認雙重國籍。境外出生子女的中國國籍認定與父母國籍、定居情況等有關；旅行證、戶籍辦理應向主管機關核實，並不存在統一的“18歲任選中美國籍”規則。','依《國籍法》第2條，出生時父或母為中華民國國民者，屬中華民國國籍。境外出生不等於已完成台灣戶籍登記；國籍、護照及戶籍應分別確認。並不存在“18歲任選台美國籍”的統一規則。'],
@@ -22,10 +22,18 @@ function tw(s){
   ['符合CNMI EVS-TAP條件並獲旅行授權的中國公民，可以免簽赴北馬里亞納群島，通常最長14天。','台灣旅客適用的入境制度須依護照、身分證、航線及個人條件判斷；G-CNMI VWP／G-CNMI ETA（原則45天）與美國 VWP／ESTA（原則90天）為不同制度，不能直接互換。'],
   ['美國海關與邊境保護局的CNMI EVS-TAP要求符合條件的旅客提前取得電子旅行授權；該安排僅限北馬里亞納群島，不等於獲得前往關島或美國本土的許可。治療或分娩所需停留可能超過14天，不能直接套用短期商旅安排，應按真實出行目的確認適用路徑。授權也不保證獲准入境。','就醫目的、轉機路線與預計停留天數均可能影響入境資格。請依 CBP 最新規定確認適用的旅行授權與所需證件，取得授權不保證獲准入境；切勿將不同免簽制度視為相同。']
  ];
- for(const [f,r] of reps) s=s.replaceAll(f,r);
+function tw(s){
+ if(typeof s!=='string')return s;
+ s=s.replaceAll('免籤','免簽').replaceAll('工籤','工簽');
+ for(const [f,r] of TW_REPLACEMENTS) s=s.replaceAll(f,r);
  return s;
 }
 
+const TW_HTML_REPLACEMENTS=[
+ ['CBP官方旅行授權系統','CBP：G-CNMI ETA 官方申請系統'],
+ ['<a href="https://www.nia.gov.cn/n741440/n741547/c1013967/content.html" target="_blank" rel="noopener">國家移民管理局：《中華人民共和國國籍法》</a>','<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030001" target="_blank" rel="noopener">全國法規資料庫：《國籍法》</a>'],
+ ['<a href="https://www.moe.gov.cn/srcsite/A20/moe_850/202006/t20200609_464159.html" target="_blank" rel="noopener">教育部：規範高等學校接受國際學生有關工作的通知</a>','<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0110001" target="_blank" rel="noopener">教育部：外國學生來台就學相關規定</a>'],
+];
 
 const origin=siteOrigin;
 function local(value){
@@ -40,6 +48,7 @@ function graph(value,key=''){
 }
 export default function traditional(){return {name:'complete-traditional-chinese',hooks:{'astro:build:done':({dir})=>{
  const root=fileURLToPath(dir);const pages=[];
+ const expected=new Set([...TW_REPLACEMENTS,...TW_HTML_REPLACEMENTS].map(([,to])=>to));
  function find(folder){for(const entry of readdirSync(folder,{withFileTypes:true})){if(entry.isDirectory()&&!['en','ja','ko','es','de','fr','zh-hant','images','_astro'].includes(entry.name))find(join(folder,entry.name));if(entry.isFile()&&entry.name==='index.html')pages.push(join(folder,entry.name))}}
  find(root);
  for(const path of pages){const tree=parse(readFileSync(path,'utf8'));function visit(node){const attrs=node.attrs||[];const get=name=>attrs.find(a=>a.name===name)?.value;const isAlt=node.tagName==='link'&&get('rel')==='alternate';if(node.tagName==='a'&&get('hreflang')){node.attrs=node.attrs.filter(a=>a.name!=='aria-current');if(get('hreflang')==='zh-TW')node.attrs.push({name:'aria-current',value:'page'})}if(node.tagName==='script'){
@@ -51,11 +60,7 @@ export default function traditional(){return {name:'complete-traditional-chinese
   if(node.tagName==='details'&&get('class')?.split(' ').includes('language-switcher')){const summary=node.childNodes?.find(child=>child.tagName==='summary');if(summary)summary.childNodes=[{nodeName:'#text',value:'繁體中文 ▾',parentNode:summary}]}
  }
  visit(tree);let html=serialize(tree);
- html=html
-
-  .replaceAll('CBP官方旅行授權系統','CBP：G-CNMI ETA 官方申請系統')
-  .replaceAll('<a href="https://www.nia.gov.cn/n741440/n741547/c1013967/content.html" target="_blank" rel="noopener">國家移民管理局：《中華人民共和國國籍法》</a>','<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030001" target="_blank" rel="noopener">全國法規資料庫：《國籍法》</a>')
-  .replaceAll('<a href="https://www.moe.gov.cn/srcsite/A20/moe_850/202006/t20200609_464159.html" target="_blank" rel="noopener">教育部：規範高等學校接受國際學生有關工作的通知</a>','<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0110001" target="_blank" rel="noopener">教育部：外國學生來台就學相關規定</a>');
+ for(const [f,r] of TW_HTML_REPLACEMENTS)html=html.replaceAll(f,r);
  if(path.endsWith(join('contact','index.html'))||path.endsWith(join('fees','index.html'))||path.endsWith(join('service-scope','index.html'))){
   const selected=path.endsWith(join('contact','index.html'))?[3,4]:path.endsWith(join('fees','index.html'))?[2,4]:[0,1,2,4];
   const rows=selected.map(i=>'<details><summary>'+taiwanGuide.rows[i][0]+'</summary><p>'+taiwanGuide.rows[i][1]+'</p></details>').join('');
@@ -67,7 +72,9 @@ export default function traditional(){return {name:'complete-traditional-chinese
   for(const term of ['CNMI EVS-TAP','CNMI EVS.TAP'])if(html.includes(term))throw new Error('Taiwan content leak: '+relativePath+' contains '+term);
  }
  if(!html.includes('lang="zh-TW"'))throw new Error('Traditional Chinese locale missing: '+relativePath);
+ for(const target of expected)if(html.includes(target))expected.delete(target);
  const out=join(root,'zh-hant',relative(root,path));mkdirSync(dirname(out),{recursive:true});writeFileSync(out,html);}
+ if(expected.size)throw new Error('Taiwan replacement not applied (Simplified source text changed?): '+[...expected].map(t=>t.slice(0,40)).join(' | '));
  const paths=pages.map(p=>'/'+relative(root,dirname(p)).split('\\').join('/')+'/').map(p=>p==='//'?'/':p);
  const locales=[['zh-CN',''],['zh-TW','/zh-hant'],['en','/en'],['ja','/ja'],['ko','/ko'],['es','/es'],['de','/de'],['fr','/fr']];
  const xml='<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'+paths.flatMap(path=>locales.map(([,prefix])=>'<url><loc>'+origin+prefix+path+'</loc>'+[...locales,['x-default','']].map(([lang,p])=>'<xhtml:link rel="alternate" hreflang="'+lang+'" href="'+origin+p+path+'"/>').join('')+'</url>')).join('')+'</urlset>';

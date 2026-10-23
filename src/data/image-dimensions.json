@@ -7,38 +7,6 @@
     640,
     358
   ],
-  "/images/scenes/flight-wing.webp": [
-    1100,
-    731
-  ],
-  "/images/scenes/quiet-botanical.webp": [
-    600,
-    900
-  ],
-  "/images/scenes/couple-editorial.webp": [
-    1100,
-    733
-  ],
-  "/images/scenes/family-moment.webp": [
-    1100,
-    733
-  ],
-  "/images/scenes/laboratory-care.webp": [
-    1000,
-    667
-  ],
-  "/images/scenes/care-consultation.webp": [
-    1000,
-    667
-  ],
-  "/images/scenes/daily-meals.webp": [
-    1000,
-    667
-  ],
-  "/images/scenes/stay-room.webp": [
-    1100,
-    733
-  ],
   "/images/official/center.webp": [
     870,
     550
@@ -71,20 +39,8 @@
     750,
     1000
   ],
-  "/images/stock/legacy-ultrasound-scan.webp": [
-    1200,
-    800
-  ],
   "/images/stock/travel-new.webp": [
     750,
-    1000
-  ],
-  "/images/stock/legacy-notebook-yellow.webp": [
-    1200,
-    800
-  ],
-  "/images/stock/legacy-wing-view.webp": [
-    563,
     1000
   ],
   "/images/stock/wing-new.webp": [
@@ -123,10 +79,6 @@
     1200,
     801
   ],
-  "/images/stock/legacy-stethoscope-mono.webp": [
-    1200,
-    797
-  ],
   "/images/stock/wing-sky.webp": [
     563,
     1000
@@ -151,33 +103,13 @@
     750,
     1000
   ],
-  "/images/stock/legacy-ultrasound-keys.webp": [
-    1200,
-    800
-  ],
-  "/images/stock/legacy-lab-hands.webp": [
-    667,
-    1000
-  ],
-  "/images/stock/ultrasound-room.webp": [
-    1200,
-    801
-  ],
   "/images/stock/leaves-oak.webp": [
     1000,
     1000
   ],
-  "/images/stock/legacy-stethoscope-detail.webp": [
-    1200,
-    800
-  ],
   "/images/stock/medical-hands.webp": [
     667,
     1000
-  ],
-  "/images/stock/ultrasound-panel.webp": [
-    1200,
-    800
   ],
   "/images/stock/budget-documents.webp": [
     667,
@@ -227,14 +159,6 @@
     1200,
     900
   ],
-  "/images/stock/legacy-wing-horizon.webp": [
-    750,
-    1000
-  ],
-  "/images/stock/legacy-stethoscope-red.webp": [
-    1200,
-    800
-  ],
   "/images/stock/notebook-wood.webp": [
     1200,
     800
@@ -242,22 +166,6 @@
   "/images/stock/leaves-pattern.webp": [
     673,
     1000
-  ],
-  "/images/stock/hero-care-hands.webp": [
-    667,
-    1000
-  ],
-  "/images/stock/hero-consultation-record.webp": [
-    1200,
-    800
-  ],
-  "/images/stock/hero-laboratory.webp": [
-    667,
-    1000
-  ],
-  "/images/stock/legacy-planner-pink.webp": [
-    1200,
-    800
   ],
   "/images/stock/weekly-planner.webp": [
     1200,
@@ -299,14 +207,6 @@
     1200,
     800
   ],
-  "/images/stock/legacy-wing-flight.webp": [
-    750,
-    1000
-  ],
-  "/images/stock/legacy-planner-green.webp": [
-    1200,
-    800
-  ],
   "/images/stock/luggage-cabin.webp": [
     1200,
     801
@@ -316,10 +216,6 @@
     1000
   ],
   "/images/stock/baby-socks.webp": [
-    750,
-    1000
-  ],
-  "/images/stock/legacy-wing-runway.webp": [
     750,
     1000
   ],
