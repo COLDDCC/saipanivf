@@ -49,3 +49,13 @@ for(const locale of ['ja','ko','es','de','fr']){
  }
 }
 console.log('PASS dictionary quality: complete keys, no empty values or untranslated long English strings in five non-English dictionaries.');
+
+// Taiwan-specific content must be visible on every high-intent Traditional Chinese route.
+for(const route of ['contact','fees','service-scope','guides/travel-checklist']){
+ const html=fs.readFileSync('dist/zh-hant/'+route+'/index.html','utf8');
+ assert(html.includes('台灣旅客'),route+' missing Taiwan-specific content');
+ assert(html.includes('諮詢協調語言'),route+' missing language-service clarification');
+ if(route==='fees'||route==='service-scope'||route==='guides/travel-checklist')assert(html.includes('新台幣'),route+' missing Taiwan payment details');
+ if(route==='service-scope'||route==='guides/travel-checklist')assert(html.includes('G-CNMI'),route+' missing Taiwan entry guidance');
+}
+console.log('PASS Taiwan: distinct entry, documents, payments and language disclosures on four high-intent pages.');
