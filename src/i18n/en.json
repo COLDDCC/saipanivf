@@ -314,7 +314,7 @@
         ],
         [
           "Verify the correct entry pathway",
-          "Check requirements for your passport, genuine purpose of travel and intended stay. An authorisation does not guarantee admission, and treatment duration is separate from permitted stay."
+          "Check requirements for your passport, genuine purpose of travel and intended stay. An authorisation does not guarantee admission, and treatment duration is separate from permitted stay. Check your passport nationality and itinerary rather than assuming English-language access means ESTA eligibility. The Guam–CNMI Visa Waiver Program (G-CNMI ETA, generally up to 45 days), US Visa Waiver Program (ESTA, generally up to 90 days), and CNMI EVS-TAP are distinct routes with different eligibility and geographic limits. Confirm medical-purpose eligibility and any transit requirements with CBP."
         ],
         [
           "Book flexible transport and accommodation",
@@ -325,20 +325,16 @@
           "Bring the clinic’s confirmation, relevant reports, prescriptions and other requested documents. Confirm how the institution will receive sensitive records before sending them."
         ],
         [
-          "Before returning home",
-          "Keep the treatment summary, medication and review instructions, payment records and any storage authorisation. Confirm follow-up contacts and where to seek medical help if needed."
-        ],
-        [
-          "Entry route and transit",
-          "Check your passport nationality and itinerary rather than assuming English-language access means ESTA eligibility. The Guam–CNMI Visa Waiver Program (G-CNMI ETA, generally up to 45 days), US Visa Waiver Program (ESTA, generally up to 90 days), and CNMI EVS-TAP are distinct routes with different eligibility and geographic limits. Confirm medical-purpose eligibility and any transit requirements with CBP."
-        ],
-        [
           "USD payments and documentation",
           "Request an itemised USD quotation naming the medical provider, any coordination provider, deposit, payment channels, FX fees and refund terms. Prepare your passport, relevant authorisation, appointment confirmation, medical history and tests; confirm secure transfer and translation requirements."
         ],
         [
           "Three different language services",
           "Website display: English. Enquiry coordination language: confirm before booking. Clinician consultation language: confirm directly with the receiving provider. Interpretation availability and fees are not guaranteed."
+        ],
+        [
+          "Before returning home",
+          "Keep the treatment summary, medication and review instructions, payment records and any storage authorisation. Confirm follow-up contacts and where to seek medical help if needed."
         ]
       ]
     },
