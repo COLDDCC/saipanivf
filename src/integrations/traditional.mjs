@@ -1,3 +1,4 @@
+import { taiwanGuide } from '../data/taiwan-region.mjs';
 import { siteOrigin } from '../data/origin.mjs';
 import {readFileSync,writeFileSync,readdirSync,mkdirSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
@@ -16,12 +17,14 @@ function tw(s){
   ['回中國接受義務教育需要核實當地入學條件。申請中國高校國際學生項目另有國籍、護照持有時間、境外居住經歷及學校考核要求，持外國護照不等於可免試進入清華、北大。','持美國護照不等於自動符合外國學生或僑生招生資格。外國學生資格依國籍、曾否具有中華民國國籍、戶籍及海外居留等條件認定；僑生另有招生規定。應先確認適用入學管道，再核對學校要求，不能承諾免試進入頂尖大學。'],
   ['回國證件','返台證件'],
   ['中國護照可以免簽去塞班嗎？','台灣護照去塞班需要簽證嗎？'],
-  ['符合CNMI EVS-TAP條件並獲旅行授權的中國公民，可以免簽赴北馬里亞納群島，通常最長14天。','符合資格的台灣護照持有人，取得ESTA承認並滿足美國免簽證計畫（VWP）條件後，可赴美短期訪問，一般最長90天。'],
-  ['美國海關與邊境保護局的CNMI EVS-TAP要求符合條件的旅客提前取得電子旅行授權；該安排僅限北馬里亞納群島，不等於獲得前往關島或美國本土的許可。治療或分娩所需停留可能超過14天，不能直接套用短期商旅安排，應按真實出行目的確認適用路徑。授權也不保證獲准入境。','VWP允許符合資格與入境條件者進行醫療訪問；ESTA並非僅適用於北馬里亞納群島。應確認治療日程可在獲准停留期限內完成，授權也不保證入境。以取得子女美國籍為主要目的的生產旅行，不屬於訪客簽證允許的目的。出發前請向美國在台協會（AIT）確認適用規定。']
+  ['符合CNMI EVS-TAP條件並獲旅行授權的中國公民，可以免簽赴北馬里亞納群島，通常最長14天。','台灣旅客適用的入境制度須依護照、身分證、航線及個人條件判斷；G-CNMI VWP／G-CNMI ETA（原則45天）與美國 VWP／ESTA（原則90天）為不同制度，不能直接互換。'],
+  ['美國海關與邊境保護局的CNMI EVS-TAP要求符合條件的旅客提前取得電子旅行授權；該安排僅限北馬里亞納群島，不等於獲得前往關島或美國本土的許可。治療或分娩所需停留可能超過14天，不能直接套用短期商旅安排，應按真實出行目的確認適用路徑。授權也不保證獲准入境。','就醫目的、轉機路線與預計停留天數均可能影響入境資格。請依 CBP 最新規定確認適用的旅行授權與所需證件，取得授權不保證獲准入境；切勿將不同免簽制度視為相同。']
  ];
  for(const [f,r] of reps) s=s.replaceAll(f,r);
  return s;
 }
+
+
 const origin=siteOrigin;
 function local(value){
  if(!value.startsWith('/')||value.startsWith('//')||/^\/(images|_astro|favicon|en|ja|ko|es|de|fr|zh-hant)(\/|\.|$)/.test(value))return value;
@@ -47,11 +50,11 @@ export default function traditional(){return {name:'complete-traditional-chinese
  }
  visit(tree);let html=serialize(tree);
  html=html
-  .replaceAll('https://g-cnmi-eta.cbp.dhs.gov/','https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html')
-  .replaceAll('CBP官方旅行授權系統','美國國務院：VWP與ESTA')
+
+  .replaceAll('CBP官方旅行授權系統','CBP：G-CNMI ETA 官方申請系統')
   .replaceAll('<a href="https://www.nia.gov.cn/n741440/n741547/c1013967/content.html" target="_blank" rel="noopener">國家移民管理局：《中華人民共和國國籍法》</a>','<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030001" target="_blank" rel="noopener">全國法規資料庫：《國籍法》</a>')
   .replaceAll('<a href="https://www.moe.gov.cn/srcsite/A20/moe_850/202006/t20200609_464159.html" target="_blank" rel="noopener">教育部：規範高等學校接受國際學生有關工作的通知</a>','<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0110001" target="_blank" rel="noopener">教育部：外國學生來台就學相關規定</a>');
- const out=join(root,'zh-hant',relative(root,path));mkdirSync(dirname(out),{recursive:true});writeFileSync(out,html);}
+ if(path.endsWith(join('guides','travel-checklist','index.html'))){const rows=taiwanGuide.rows.map(([a,b])=>'<section class="localized-section"><h2>'+a+'</h2><p>'+b+'</p></section>').join('');html=html.replace('</main>','<section class="section wrap localized-content" lang="zh-TW" aria-label="台灣旅客出行資訊"><h2>'+taiwanGuide.title+'</h2><p>'+taiwanGuide.intro+'</p>'+rows+'<p><a href="https://g-cnmi-eta.cbp.dhs.gov/" target="_blank" rel="noopener">CBP：G-CNMI ETA 官方資訊</a> · <a href="https://www.ait.org.tw/" target="_blank" rel="noopener">美國在台協會（AIT）</a></p></section></main>');}const out=join(root,'zh-hant',relative(root,path));mkdirSync(dirname(out),{recursive:true});writeFileSync(out,html);}
  const paths=pages.map(p=>'/'+relative(root,dirname(p)).split('\\').join('/')+'/').map(p=>p==='//'?'/':p);
  const locales=[['zh-CN',''],['zh-TW','/zh-hant'],['en','/en'],['ja','/ja'],['ko','/ko'],['es','/es'],['de','/de'],['fr','/fr']];
  const xml='<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'+paths.flatMap(path=>locales.map(([,prefix])=>'<url><loc>'+origin+prefix+path+'</loc>'+[...locales,['x-default','']].map(([lang,p])=>'<xhtml:link rel="alternate" hreflang="'+lang+'" href="'+origin+p+path+'"/>').join('')+'</url>')).join('')+'</urlset>';
