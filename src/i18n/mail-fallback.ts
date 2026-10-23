@@ -1,0 +1,102 @@
+// Copy for the "email app did not open" fallback on the consultation form.
+// Traditional Chinese is produced from zh-CN by the post-build conversion.
+export const mailFallback = {
+ 'zh-CN': {
+  trouble:'邮件应用没有打开？',
+  title:'邮件应用没有打开时，可以这样发送',
+  intro:'咨询内容已经生成，任选一种方式发出即可。本网站不会保存或发送你的信息。',
+  copyStep:'复制咨询内容，粘贴到你常用的邮箱',
+  address:'收件邮箱',
+  copyAddress:'复制邮箱地址',
+  addressCopied:'已复制邮箱地址',
+  webmail:'或在网页邮箱中打开草稿',
+  gmail:'Gmail 网页版',
+  outlook:'Outlook 网页版',
+  webmailNote:'将在新标签页打开，咨询内容会填入该邮箱的写信页面。',
+  inApp:'你可能正在微信、LINE 等应用内浏览器中浏览，这类浏览器通常无法打开邮件应用。请复制内容后用常用邮箱发送，或通过右上角菜单在系统浏览器中打开本页。'
+ },
+ en: {
+  trouble:'Email app didn’t open?',
+  title:'If your email app didn’t open',
+  intro:'Your consultation text is ready. Send it in any of these ways. This website does not store or send your details.',
+  copyStep:'Copy the consultation text and paste it into your usual email',
+  address:'Send to',
+  copyAddress:'Copy email address',
+  addressCopied:'Email address copied',
+  webmail:'Or open the draft in webmail',
+  gmail:'Gmail (web)',
+  outlook:'Outlook (web)',
+  webmailNote:'Opens in a new tab with your consultation text in that service’s compose window.',
+  inApp:'You may be using an in-app browser (WeChat, LINE, KakaoTalk, Instagram and similar), which usually cannot open an email app. Copy the text and send it from your usual email, or use the menu to open this page in your browser.'
+ },
+ ja: {
+  trouble:'メールアプリが開きませんか？',
+  title:'メールアプリが開かない場合',
+  intro:'相談内容はすでに作成されています。次のいずれかの方法で送信してください。当サイトが情報を保存・送信することはありません。',
+  copyStep:'相談内容をコピーし、普段お使いのメールに貼り付けてください',
+  address:'送信先',
+  copyAddress:'メールアドレスをコピー',
+  addressCopied:'メールアドレスをコピーしました',
+  webmail:'または Web メールで下書きを開く',
+  gmail:'Gmail（Web 版）',
+  outlook:'Outlook（Web 版）',
+  webmailNote:'新しいタブで開き、相談内容が作成画面に入力されます。',
+  inApp:'LINE などのアプリ内ブラウザでは、メールアプリを開けないことがあります。内容をコピーして普段のメールから送信するか、メニューから標準のブラウザで開き直してください。'
+ },
+ ko: {
+  trouble:'메일 앱이 열리지 않나요?',
+  title:'메일 앱이 열리지 않을 때',
+  intro:'상담 내용은 이미 작성되었습니다. 아래 방법 중 하나로 보내 주세요. 이 사이트는 입력한 정보를 저장하거나 전송하지 않습니다.',
+  copyStep:'상담 내용을 복사해 평소 쓰는 메일에 붙여 넣으세요',
+  address:'받는 주소',
+  copyAddress:'이메일 주소 복사',
+  addressCopied:'이메일 주소를 복사했습니다',
+  webmail:'또는 웹메일에서 초안 열기',
+  gmail:'Gmail 웹',
+  outlook:'Outlook 웹',
+  webmailNote:'새 탭에서 열리며 상담 내용이 메일 작성 화면에 입력됩니다.',
+  inApp:'카카오톡 등 앱 내 브라우저에서는 메일 앱이 열리지 않을 수 있습니다. 내용을 복사해 평소 쓰는 메일로 보내거나, 메뉴에서 기본 브라우저로 이 페이지를 다시 열어 주세요.'
+ },
+ es: {
+  trouble:'¿No se abrió tu aplicación de correo?',
+  title:'Si tu aplicación de correo no se abrió',
+  intro:'El texto de tu consulta ya está listo. Envíalo de cualquiera de estas formas. Esta web no guarda ni envía tus datos.',
+  copyStep:'Copia el texto de la consulta y pégalo en tu correo habitual',
+  address:'Enviar a',
+  copyAddress:'Copiar dirección de correo',
+  addressCopied:'Dirección copiada',
+  webmail:'O abre el borrador en tu correo web',
+  gmail:'Gmail (web)',
+  outlook:'Outlook (web)',
+  webmailNote:'Se abre en una pestaña nueva con el texto de tu consulta en la ventana de redacción de ese servicio.',
+  inApp:'Es posible que estés en el navegador integrado de una aplicación (WhatsApp, Instagram, LINE u otras), que normalmente no puede abrir el correo. Copia el texto y envíalo desde tu correo habitual, o usa el menú para abrir esta página en tu navegador.'
+ },
+ de: {
+  trouble:'E-Mail-Programm hat sich nicht geöffnet?',
+  title:'Falls sich Ihr E-Mail-Programm nicht geöffnet hat',
+  intro:'Ihr Anfragetext ist fertig. Senden Sie ihn auf einem dieser Wege. Diese Website speichert oder versendet Ihre Angaben nicht.',
+  copyStep:'Kopieren Sie den Anfragetext und fügen Sie ihn in Ihr gewohntes E-Mail-Programm ein',
+  address:'Empfänger',
+  copyAddress:'E-Mail-Adresse kopieren',
+  addressCopied:'E-Mail-Adresse kopiert',
+  webmail:'Oder öffnen Sie den Entwurf im Webmail',
+  gmail:'Gmail (Web)',
+  outlook:'Outlook (Web)',
+  webmailNote:'Öffnet sich in einem neuen Tab mit Ihrem Anfragetext im Verfassen-Fenster dieses Dienstes.',
+  inApp:'Möglicherweise nutzen Sie den Browser einer App (WhatsApp, Instagram, LINE o. Ä.), der meist kein E-Mail-Programm öffnen kann. Kopieren Sie den Text und senden Sie ihn aus Ihrem gewohnten Postfach, oder öffnen Sie diese Seite über das Menü in Ihrem Browser.'
+ },
+ fr: {
+  trouble:'Votre messagerie ne s’est pas ouverte ?',
+  title:'Si votre messagerie ne s’est pas ouverte',
+  intro:'Votre demande est prête. Envoyez-la de l’une de ces façons. Ce site n’enregistre ni n’envoie vos informations.',
+  copyStep:'Copiez la demande et collez-la dans votre messagerie habituelle',
+  address:'Destinataire',
+  copyAddress:'Copier l’adresse e-mail',
+  addressCopied:'Adresse copiée',
+  webmail:'Ou ouvrez le brouillon dans votre webmail',
+  gmail:'Gmail (web)',
+  outlook:'Outlook (web)',
+  webmailNote:'S’ouvre dans un nouvel onglet avec votre demande dans la fenêtre de rédaction de ce service.',
+  inApp:'Vous utilisez peut-être le navigateur intégré d’une application (WhatsApp, Instagram, LINE…), qui ne peut généralement pas ouvrir de messagerie. Copiez le texte et envoyez-le depuis votre messagerie habituelle, ou ouvrez cette page dans votre navigateur via le menu.'
+ }
+} as const;
