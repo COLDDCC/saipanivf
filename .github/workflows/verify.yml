@@ -5,7 +5,7 @@ on:
   pull_request:
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
 jobs:
   verify:
     runs-on: ubuntu-latest
@@ -27,15 +27,7 @@ jobs:
           npm run build
           npm run fonts:fetch
           python scripts/subset-fonts.py
-      - name: Commit refreshed font subsets to PR branch
-        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
-        run: |
-          if ! git diff --quiet -- public/fonts; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add public/fonts
-            git commit -m "build(fonts): refresh multilingual heading subsets"
-            git push origin HEAD:${{ github.head_ref }}
-          fi
+      - name: Verify committed font subsets are current
+        run: git diff --exit-code -- public/fonts
       - name: Build and run full checks
         run: npm run verify
