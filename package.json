@@ -23,10 +23,11 @@
     "check:mobile": "node scripts/check-mobile-content.mjs",
     "check:loading": "node scripts/check-loading.mjs",
     "fonts:fetch": "python scripts/fetch-font-sources.py",
-    "fonts:regen": "npm run build && npm run fonts:fetch && python scripts/subset-fonts.py && node scripts/check-loading.mjs",
+    "fonts:regen": "npm run build && npm run fonts:fetch && python scripts/subset-fonts.py && npm run fonts:slice && node scripts/check-loading.mjs",
     "check:p0": "node scripts/check-p0-source.mjs",
     "audit": "node scripts/audit-dist.mjs",
-    "check:links": "node scripts/check-external-links.mjs"
+    "check:links": "node scripts/check-external-links.mjs",
+    "fonts:slice": "python scripts/slice-fonts.py && npm run build"
   },
   "dependencies": {
     "acorn": "^8.19.0",

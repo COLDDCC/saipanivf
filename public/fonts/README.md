@@ -20,3 +20,15 @@ re-checks). The script fails if any regenerated subset is over 10% larger than
 the checked-in one. Requires Python fonttools and brotli. Do not place the full
 upstream TTF files on the website.
 `manifest.json` records byte counts, cmap coverage, and SHA256 for verification.
+
+CJK heading faces are served as unicode-range slices (`public/fonts/cjk/`), not
+as the whole subsets: a page downloads only the slices its headings use (about
+25–35 KB for Chinese and Korean pages and about 55–65 KB for Japanese pages,
+instead of 80–135 KB). `scripts/slice-fonts.py` cuts the slices from the subsets
+above using the built HTML, keeps characters the font kerns against each other
+in one slice (Japanese kana and punctuation), and writes
+`src/data/cjk-font-faces.json`, which the layouts inline on pages of that
+language only. After `fonts:regen`, or when headings change a lot, run
+`npm run fonts:slice`; check:loading fails when slices are stale or a page's
+slices exceed 60% of its whole subset. The whole subsets stay in this folder as
+the slicing source.

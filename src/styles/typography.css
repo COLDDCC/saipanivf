@@ -1,20 +1,18 @@
 /* Font Pairing Skill: calm healthcare headings, clear reading and UI text.
-   Self-hosted OFL fonts; CJK subsets contain the site's h1/h2 characters. */
+   Self-hosted OFL fonts; CJK subsets contain the site's h1/h2 characters.
+   The CJK heading faces ('SIVF Serif SC/TC/JP/KR') are split by unicode-range
+   (scripts/slice-fonts.py) and inlined only on pages of their language. */
 @font-face{font-family:'SIVF Lora';src:url('/fonts/lora.woff2') format('woff2');font-style:normal;font-weight:600;font-display:swap}
 @font-face{font-family:'SIVF Sans';src:url('/fonts/dm-sans.woff2') format('woff2');font-style:normal;font-weight:400 700;font-display:swap}
 /* Metric-matched fallbacks: while DM Sans / Lora load, text is set in a local
    Arial / Times scaled to the web font's average glyph width, so the swap does
-   not re-wrap lines (Lighthouse traced the remaining CLS to "Web font loaded").
+   not re-wrap lines. Platforms without these fonts (Android) skip the face (Lighthouse traced the remaining CLS to "Web font loaded").
    Widths measured with English letter frequencies against the metric-identical
    Liberation fonts: DM Sans 400 .4536 / Arial .4333, DM Sans 600 .4712 / Arial
    Bold .4684, Lora 600 .4642 / Times Bold .4192. */
-@font-face{font-family:'SIVF Sans Fallback';src:local('Arial'),local('ArialMT'),local('Liberation Sans'),local('LiberationSans'),local('Roboto');font-weight:400 500;size-adjust:104.7%;ascent-override:94.7%;descent-override:29.6%;line-gap-override:0%}
-@font-face{font-family:'SIVF Sans Fallback';src:local('Arial Bold'),local('Arial-BoldMT'),local('Liberation Sans Bold'),local('LiberationSans-Bold'),local('Roboto Bold'),local('Roboto-Bold');font-weight:600 700;size-adjust:101%;ascent-override:98.2%;descent-override:30.7%;line-gap-override:0%}
+@font-face{font-family:'SIVF Sans Fallback';src:local('Arial'),local('ArialMT'),local('Liberation Sans'),local('LiberationSans');font-weight:400 500;size-adjust:104.7%;ascent-override:94.7%;descent-override:29.6%;line-gap-override:0%}
+@font-face{font-family:'SIVF Sans Fallback';src:local('Arial Bold'),local('Arial-BoldMT'),local('Liberation Sans Bold'),local('LiberationSans-Bold');font-weight:600 700;size-adjust:101%;ascent-override:98.2%;descent-override:30.7%;line-gap-override:0%}
 @font-face{font-family:'SIVF Lora Fallback';src:local('Times New Roman Bold'),local('TimesNewRomanPS-BoldMT'),local('Liberation Serif Bold'),local('LiberationSerif-Bold');font-weight:600;size-adjust:110.7%;ascent-override:90.9%;descent-override:24.8%;line-gap-override:0%}
-@font-face{font-family:'SIVF Serif SC';src:url('/fonts/noto-serif-sc.woff2') format('woff2');font-style:normal;font-weight:600;font-display:swap}
-@font-face{font-family:'SIVF Serif TC';src:url('/fonts/noto-serif-tc.woff2') format('woff2');font-style:normal;font-weight:600;font-display:swap}
-@font-face{font-family:'SIVF Serif JP';src:url('/fonts/noto-serif-ja.woff2') format('woff2');font-style:normal;font-weight:600;font-display:swap}
-@font-face{font-family:'SIVF Serif KR';src:url('/fonts/noto-serif-ko.woff2') format('woff2');font-style:normal;font-weight:600;font-display:swap}
 :root body{--font:'SIVF Sans','SIVF Sans Fallback','PingFang SC','Microsoft YaHei','Noto Sans SC',sans-serif;--font-heading:'SIVF Lora','SIVF Lora Fallback','SIVF Serif SC','Songti SC','SimSun',serif}
 html:lang(zh-TW) body{--font:'SIVF Sans','SIVF Sans Fallback','PingFang TC','Microsoft JhengHei',sans-serif;--font-heading:'SIVF Lora','SIVF Lora Fallback','SIVF Serif TC','Songti TC',serif}
 html:lang(en) body,html:lang(es) body,html:lang(de) body,html:lang(fr) body{--font:'SIVF Sans','SIVF Sans Fallback',Arial,sans-serif;--font-heading:'SIVF Lora','SIVF Lora Fallback',Georgia,serif}

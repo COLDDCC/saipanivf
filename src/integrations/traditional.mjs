@@ -6,6 +6,8 @@ import {join,relative,dirname} from 'node:path';
 import * as OpenCC from 'opencc-js';
 import {parse,serialize} from 'parse5';
 const convert=OpenCC.Converter({from:'cn',to:'tw'});
+// Traditional pages swap the inlined Simplified heading faces for the TC slices.
+const cjkFaces=JSON.parse(readFileSync(new URL('../data/cjk-font-faces.json',import.meta.url),'utf8'));
 function tw(s){
  if(typeof s!=='string')return s;
  s=s.replaceAll('免籤','免簽').replaceAll('工籤','工簽');
@@ -42,7 +44,7 @@ export default function traditional(){return {name:'complete-traditional-chinese
  const root=fileURLToPath(dir);const pages=[];
  function find(folder){for(const entry of readdirSync(folder,{withFileTypes:true})){if(entry.isDirectory()&&!['en','ja','ko','es','de','fr','zh-hant','images','_astro'].includes(entry.name))find(join(folder,entry.name));if(entry.isFile()&&entry.name==='index.html')pages.push(join(folder,entry.name))}}
  find(root);
- for(const path of pages){const tree=parse(readFileSync(path,'utf8'));function visit(node){const attrs=node.attrs||[];const get=name=>attrs.find(a=>a.name===name)?.value;const isAlt=node.tagName==='link'&&get('rel')==='alternate';if(node.tagName==='a'&&get('hreflang')){node.attrs=node.attrs.filter(a=>a.name!=='aria-current');if(get('hreflang')==='zh-TW')node.attrs.push({name:'aria-current',value:'page'})}if(node.tagName==='script'){
+ for(const path of pages){const tree=parse(readFileSync(path,'utf8'));function visit(node){const attrs=node.attrs||[];const get=name=>attrs.find(a=>a.name===name)?.value;const isAlt=node.tagName==='link'&&get('rel')==='alternate';if(node.tagName==='a'&&get('hreflang')){node.attrs=node.attrs.filter(a=>a.name!=='aria-current');if(get('hreflang')==='zh-TW')node.attrs.push({name:'aria-current',value:'page'})}if(node.tagName==='style'&&get('data-cjk-fonts')){node.attrs.find(x=>x.name==='data-cjk-fonts').value='tc';node.childNodes=[{nodeName:'#text',value:cjkFaces.tc,parentNode:node}];return}if(node.tagName==='script'){
    for(const text of node.childNodes||[])if(text.nodeName==='#text'){text.value=get('type')==='application/ld+json'?JSON.stringify(graph(JSON.parse(text.value))):tw(convert(text.value))}return;
   }
   if(node.nodeName==='#text')node.value=tw(convert(node.value));
