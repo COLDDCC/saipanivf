@@ -68,3 +68,17 @@ for(const locale of ['ja','ko'])for(const route of ['contact','fees','service-sc
  assert(html.includes('USD'),locale+'/'+route+' missing payment clarification');
 }
 console.log('PASS JP/KR: region-specific entry, payment, documents and language guidance on four high-intent routes each.');
+
+// Cross-region policy guard: China-only EVS-TAP language must not leak into other locales.
+for(const prefix of ['zh-hant','en','ja','ko','es','de','fr']){
+ for(const route of ['faq','guides/travel-checklist']){
+  const html=fs.readFileSync('dist/'+prefix+'/'+route+'/index.html','utf8');
+  assert(!/CNMI EVS-TAP|CNMI EVS.TAP/.test(html),prefix+'/'+route+' contains PRC-specific EVS-TAP');
+ }
+}
+// Locale-specific medical coordination claims must remain separate from web translation.
+for(const prefix of ['zh-hant','ja','ko']){
+ const html=fs.readFileSync('dist/'+prefix+'/guides/travel-checklist/index.html','utf8');
+ assert(html.includes('regional-readiness')||html.includes('台灣旅客出行資訊'),prefix+' missing regional checklist');
+}
+console.log('PASS regional guard: no PRC-only EVS-TAP in seven translated travel/FAQ routes.');
