@@ -1,3 +1,4 @@
+import { taiwanGuide } from '../data/taiwan-region.mjs';
 import { siteOrigin } from '../data/origin.mjs';
 import {readFileSync,writeFileSync,readdirSync,mkdirSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
@@ -23,17 +24,7 @@ function tw(s){
  return s;
 }
 
-const taiwanGuide={
-  title:'台灣旅客：塞班就醫與入境準備',
-  intro:'繁體中文網頁不代表提供繁體中文協調服務，也不代表醫師可使用中文問診。請在預約前分別確認三種語言支援。',
-  rows:[
-    ['入境資格','台灣旅客是否符合關島－北馬里亞納群島免簽計畫（G-CNMI VWP），需依護照、戶籍、身分證、出發地及航線等條件判斷；此計畫原則上最長45天並須確認 G-CNMI ETA。美國 VWP／ESTA 是不同制度，不能直接互換。'],
-    ['證件與航線','備妥有效護照、國民身分證及適用的旅行授權；台灣相關特別條件與轉機航線須以 CBP 最新規定核對。並保留回程或續程機票、就診預約與住宿資訊。'],
-    ['付款與匯率','向院方索取美元（USD）書面報價，確認醫療費、協調費與其他費用的收款方。新台幣換算金額依付款日匯率、信用卡或銀行手續費變動，支付與取消條款應先以書面核對。'],
-    ['醫療資料','準備病史摘要、檢驗報告、影像與既有用藥資訊；詢問院方接受的檔案格式、翻譯要求及安全傳送方式，無須在首次聯絡時寄送全部敏感資料。'],
-    ['三種語言','網站語言：繁體中文。諮詢協調語言：尚待確認。醫療問診語言：由實際接診的醫療團隊確認；是否能安排口譯、費用及形式皆須另行確認。']
-  ]
-};
+
 const origin=siteOrigin;
 function local(value){
  if(!value.startsWith('/')||value.startsWith('//')||/^\/(images|_astro|favicon|en|ja|ko|es|de|fr|zh-hant)(\/|\.|$)/.test(value))return value;
