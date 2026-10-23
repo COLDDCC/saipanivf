@@ -1,0 +1,93 @@
+export const homeDecisions = {
+  "zh-CN": [
+    "先看费用、时间与初诊准备",
+    "费用预算",
+    "按治疗路径组合费用，核对包含与另计项目。",
+    "就诊时间",
+    "先看治疗阶段，再确认个人到院日程。",
+    "初诊资料",
+    "已有报告可以先整理；没有完整报告也能开始咨询。",
+    "了解接诊与服务分工",
+    "本站提供生育信息与咨询协调；诊疗由接诊机构的医疗团队负责。",
+    "查看服务范围",
+    "开始咨询"
+  ],
+  "en": [
+    "Costs, timing and your first consultation",
+    "Treatment costs",
+    "Build a budget by treatment pathway and check what is included.",
+    "Treatment timing",
+    "Review the stages, then confirm your personal appointment dates.",
+    "First-visit preparation",
+    "Organise existing reports; you can enquire without a complete set.",
+    "Your provider and service team",
+    "This website provides fertility information and consultation coordination. The receiving medical team delivers clinical care.",
+    "View service responsibilities",
+    "Start an enquiry"
+  ],
+  "ja": [
+    "費用・日程・初回相談の準備",
+    "費用の目安",
+    "治療ごとに予算を組み、含まれる項目と別料金を確認。",
+    "受診の日程",
+    "治療段階を確認してから、個別の来院日程を相談。",
+    "初診の資料",
+    "手元の検査結果を整理。資料が揃う前でも相談できます。",
+    "受診先とサービスの役割",
+    "本サイトは生殖医療の情報と相談調整を提供します。診療は受診先の医療チームが担当します。",
+    "サービス範囲を確認",
+    "相談を始める"
+  ],
+  "ko": [
+    "비용·일정·첫 상담 준비",
+    "치료 비용",
+    "치료 경로별 예산을 계산하고 포함·별도 항목을 확인하세요.",
+    "진료 일정",
+    "치료 단계를 살펴본 뒤 개인별 방문 일정을 확인하세요.",
+    "첫 상담 자료",
+    "기존 검사 자료를 정리하세요. 자료가 모두 없어도 문의할 수 있습니다.",
+    "진료기관과 서비스 역할",
+    "이 사이트는 생식의료 정보와 상담 조정을 제공합니다. 진료는 해당 의료기관의 의료진이 담당합니다.",
+    "서비스 범위 확인",
+    "상담 시작"
+  ],
+  "es": [
+    "Costes, fechas y primera consulta",
+    "Presupuesto",
+    "Calcula por tratamiento y revisa qué está incluido y qué se cobra aparte.",
+    "Fechas del tratamiento",
+    "Revisa las etapas antes de confirmar tus fechas de visita.",
+    "Preparar la consulta",
+    "Reúne los informes disponibles; puedes consultar aunque no los tengas todos.",
+    "Centro médico y coordinación",
+    "Esta web ofrece información sobre fertilidad y coordinación de consultas. La atención clínica corresponde al equipo del centro receptor.",
+    "Ver responsabilidades",
+    "Iniciar consulta"
+  ],
+  "de": [
+    "Kosten, Termine und Erstgespräch",
+    "Behandlungskosten",
+    "Budget nach Behandlungsweg planen und enthaltene Leistungen prüfen.",
+    "Zeitplanung",
+    "Erst die Behandlungsschritte ansehen, dann persönliche Termine bestätigen.",
+    "Erstgespräch vorbereiten",
+    "Vorhandene Befunde sammeln. Eine Anfrage ist auch ohne vollständige Unterlagen möglich.",
+    "Behandlungszentrum und Koordination",
+    "Diese Website bietet Informationen zur Fruchtbarkeit und koordiniert Anfragen. Die medizinische Versorgung übernimmt das behandelnde Zentrum.",
+    "Leistungsumfang ansehen",
+    "Anfrage beginnen"
+  ],
+  "fr": [
+    "Coûts, calendrier et première consultation",
+    "Budget des soins",
+    "Composez votre budget et vérifiez les prestations incluses et les suppléments.",
+    "Calendrier des soins",
+    "Consultez les étapes avant de confirmer vos dates de rendez-vous.",
+    "Préparer la consultation",
+    "Rassemblez les comptes rendus disponibles. Vous pouvez poser vos questions sans dossier complet.",
+    "Centre médical et coordination",
+    "Ce site propose des informations sur la fertilité et la coordination des demandes. Les soins sont assurés par l’équipe du centre médical.",
+    "Voir les responsabilités",
+    "Poser une question"
+  ]
+};

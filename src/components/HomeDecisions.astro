@@ -1,0 +1,10 @@
+---
+import { homeDecisions } from '../i18n/home-decisions';
+const {locale='zh-CN'}=Astro.props;
+const c=homeDecisions[locale];
+const href=(key)=>`${locale==='zh-CN'?'':'/'+locale}/${key}/`;
+---
+<section class="home-decisions wrap" aria-label={c[0]}><div class="decision-links">{['fees','process','guides/first-visit'].map((key,i)=><a href={href(key)}><strong>{c[1+i*2]} <span aria-hidden="true">↗</span></strong><span>{c[2+i*2]}</span></a>)}</div><div class="service-identity"><p><strong>{c[7]}</strong><span>{c[8]}</span></p><a class="inline-link" href={href('service-scope')}>{c[9]}</a><a class="button" href={href('contact')}>{c[10]}</a></div></section>
+<style>
+.home-decisions{padding-block:22px 32px}.decision-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-block:1px solid var(--rule);gap:28px}.decision-links>a{min-width:0;padding:22px 0;display:grid;gap:8px}.decision-links strong{font-size:20px;font-weight:600;display:flex;justify-content:space-between;gap:12px}.decision-links>a>span{font-size:15px;line-height:1.7}.decision-links a:hover strong{color:var(--blue)}.service-identity{display:flex;gap:24px;align-items:center;padding-top:22px}.service-identity p{flex:1;margin:0;font-size:14px;line-height:1.8}.service-identity p strong,.service-identity p span{display:block}.service-identity>a{flex-shrink:0;font-size:14px}.home-decisions a:focus-visible{outline:3px solid var(--blue);outline-offset:4px}@media(max-width:700px){.decision-links{gap:12px}.decision-links strong{font-size:17px}.decision-links>a>span{font-size:13px}.service-identity{flex-wrap:wrap;gap:16px}.service-identity p{flex-basis:100%}.service-identity .button{margin-left:auto}}@media(max-width:420px){.decision-links{gap:10px}.decision-links strong{font-size:15px}.decision-links>a{padding-block:16px}.decision-links strong span{display:none}}
+</style>

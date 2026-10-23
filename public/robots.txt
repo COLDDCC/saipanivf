@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://saipanivf.pages.dev/sitemap.xml

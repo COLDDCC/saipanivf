@@ -1,3 +1,4 @@
+import { siteOrigin } from '../data/origin.mjs';
 import {readFileSync,writeFileSync,readdirSync,mkdirSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {join,relative,dirname} from 'node:path';
@@ -21,7 +22,7 @@ function tw(s){
  for(const [f,r] of reps) s=s.replaceAll(f,r);
  return s;
 }
-const origin='https://saipanivf.pages.dev';
+const origin=siteOrigin;
 function local(value){
  if(!value.startsWith('/')||value.startsWith('//')||/^\/(images|_astro|favicon|en|ja|ko|es|de|fr|zh-hant)(\/|\.|$)/.test(value))return value;
  const url=new URL(value,origin);for(const [key,value] of [...url.searchParams])url.searchParams.set(key,convert(value));return '/zh-hant'+url.pathname+url.search+url.hash;

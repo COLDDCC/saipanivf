@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {parse} from 'parse5';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
 const html=fs.readFileSync('dist/fees/index.html','utf8');
@@ -9,7 +10,10 @@ const element=()=>({textContent:'',listeners:{},addEventListener(event,fn){this.
 const ids=Object.fromEntries(['budget-path','budget-total','budget-description','budget-status','budget-copy'].map(id=>[id,element()]));
 ids['budget-path'].value='ivf';
 const inputs=['medication','anesthesia','icsi','freeze','fet','pgt','storage'].map(value=>({...element(),value,checked:!['pgt','storage'].includes(value),disabled:false,label:{hidden:false},closest(){return this.label;}}));
-const document={querySelector:s=>ids[s.slice(1)],querySelectorAll:()=>inputs};
+const nodes=n=>[n,...(n.childNodes||[]).flatMap(nodes)];
+const config=nodes(parse(html)).find(n=>n.attrs?.some(a=>a.name==='data-budget')).attrs.find(a=>a.name==='data-config').value;
+const root={dataset:{config},querySelector:s=>ids[s.slice(1)],querySelectorAll:()=>inputs};
+const document={querySelector:()=>root};
 vm.runInNewContext(script,{document,navigator:{clipboard:{writeText:async()=>{}}}});
 assert.equal(ids['budget-total'].textContent,'$26,100–31,100');
 inputs.find(i=>i.value==='pgt').checked=true;inputs[0].listeners.change();

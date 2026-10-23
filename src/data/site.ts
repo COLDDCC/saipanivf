@@ -1,5 +1,6 @@
+import { siteOrigin } from './origin.mjs';
 export const site = {
-  origin: 'https://saipanivf.pages.dev',
+  origin: siteOrigin,
   name: 'Saipan IVF 中文就诊指南',
   sourceChecked: '2026-10-19',
 };

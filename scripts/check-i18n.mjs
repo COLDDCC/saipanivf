@@ -3,7 +3,7 @@ import path from 'node:path';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
 import {parse} from 'parse5';
-const origin='https://saipanivf.pages.dev';
+const origin=(process.env.SITE_ORIGIN||'https://saipanivf.pages.dev').replace(/\/$/,'');
 function nodes(tree){return [tree,...(tree.childNodes||[]).flatMap(nodes)]}
 function attr(node,name){return node.attrs?.find(a=>a.name===name)?.value}
 const base=[];function find(dir){for(const entry of fs.readdirSync(dir,{withFileTypes:true})){if(entry.isDirectory()&&!['en','ja','ko','es','de','fr','zh-hant','images','_astro'].includes(entry.name))find(path.join(dir,entry.name));if(entry.isFile()&&entry.name==='index.html')base.push(path.relative('dist',path.join(dir,entry.name)).split(path.sep).join('/'))}}find('dist');assert.equal(base.length,23);

@@ -187,3 +187,9 @@ html:lang(de) :is(h1,h2,h3,.button), html:lang(fr) :is(h1,h2,h3,.button) { hyphe
  :root body .form-card :is(.button,.template){white-space:normal;text-align:center}
 }
 @media(max-width:380px){:root body .header{padding-inline:12px;gap:6px}:root body .brand{gap:5px}:root body .language-switcher summary{font-size:12px;padding-inline:4px}:root body .menu-button{min-width:44px;padding-inline:8px}}
+
+/* Keep mobile carousel navigation compact so the decision links arrive sooner. */
+@media(max-width:650px){
+ :root body .hero-tabs{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:20px;scrollbar-width:thin}
+ :root body .hero-tab{flex:0 0 auto;white-space:nowrap}
+}

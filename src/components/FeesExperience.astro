@@ -1,0 +1,14 @@
+---
+import { dictionaries } from '../i18n';
+import { frenchPageSources } from '../data/french-sources';
+import { germanPageSources } from '../data/german-sources';
+import LocalizedBudget from './LocalizedBudget.astro';
+import TreatmentComparison from './TreatmentComparison.astro';
+import { budgetEvidence } from '../i18n/budget-evidence';
+const {locale='zh-CN'}=Astro.props;const c=budgetEvidence[locale];
+const sections=locale==='zh-CN'?[]:dictionaries[locale].pages.fees.sections.slice(1);
+const sources=locale==='fr'?frenchPageSources.fees:locale==='de'?germanPageSources.fees:[];
+const prefix=locale==='zh-CN'?'':'/'+locale;
+---
+<div class="fees-experience section wrap"><nav class="fees-index" aria-label={c[0]}>{[['budget-planner',6],['fee-comparison',5],['itemized-costs',7]].map(([id,i])=><a href={'#'+id}>{c[i]}</a>)}</nav><p class="budget-basis">{c[1]}</p><LocalizedBudget locale={locale}/><TreatmentComparison locale={locale} mode="fees"/><section id="budget-evidence" class="budget-evidence"><h2>{c[0]}</h2><p>{c[2]}</p><div class="payment-notes">{sections.map(([title,text])=><details><summary>{title}</summary><p>{text}</p></details>)}</div>{sources.length>0&&<ul>{sources.map(item=><li><a class="inline-link" href={item.url} target="_blank" rel="noopener">{item.label}</a></li>)}</ul>}<a class="inline-link" href={prefix+'/guides/quotation/'}>{c[3]}</a></section></div>
+<style>.fees-experience{padding-top:28px}.fees-index{display:flex;flex-wrap:wrap;gap:14px 28px}.fees-index a{min-height:44px;display:flex;align-items:center;text-decoration:underline;text-underline-offset:5px}.budget-basis{background:var(--light);border-left:3px solid var(--blue);padding:18px 22px;margin:16px 0 28px;max-width:70em;font-size:15px;line-height:1.8}.budget-evidence{max-width:65em}.payment-notes{display:grid;gap:12px;margin:24px 0}.payment-notes details{background:var(--light);padding:18px 22px}.payment-notes summary{cursor:pointer;min-height:30px;font-weight:600}.payment-notes p{font-size:15px}.budget-evidence h2{font-size:clamp(26px,2.5vw,34px)}.fees-index a:focus-visible{outline:3px solid var(--blue);outline-offset:4px}</style>
