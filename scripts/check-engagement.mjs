@@ -13,6 +13,11 @@ assert.equal((await onRequest({request:request({...valid,message:'x'.repeat(300)
 assert.equal((await onRequest({request:request(valid),env:{ENGAGEMENT_DB:db}})).status,200);
 assert.deepEqual(bound.args.slice(1),['consult_draft','ko']);assert.match(bound.args[0],/^\d{4}-\d{2}-\d{2}$/);assert.match(bound.sql,/ON CONFLICT/);
 assert.deepEqual(await(await onRequest({request:new Request('https://example.com/api/engagement'),env:{}})).json(),{configured:false});
+// Rate limiter is opt-in until ENGAGEMENT_RATE_LIMITER is bound in Cloudflare Pages.
+const limitedRequest=()=>new Request('https://example.com/api/engagement',{method:'POST',headers:{Origin:'https://example.com','Content-Type':'application/json','CF-Connecting-IP':'192.0.2.1'},body:JSON.stringify(valid)});
+assert.equal((await onRequest({request:limitedRequest(),env:{ENGAGEMENT_DB:db,ENGAGEMENT_RATE_LIMITER:{limit:async()=>({success:false})}}})).status,429);
+assert.equal((await onRequest({request:limitedRequest(),env:{ENGAGEMENT_DB:db,ENGAGEMENT_RATE_LIMITER:{limit:async()=>{throw Error('down')}}}})).status,503);
+assert.equal((await onRequest({request:limitedRequest(),env:{ENGAGEMENT_DB:db,ENGAGEMENT_RATE_LIMITER:{limit:async()=>({success:true})}}})).status,200);
 const code=fs.readFileSync('public/engagement.js','utf8');
 async function client(configured,privacy={}){
  const calls=[],handlers={};const context={navigator:privacy,window:{},document:{documentElement:{lang:'en'},addEventListener:(key,fn)=>handlers[key]=fn,getElementById:()=>({hidden:false,getAttribute:()=> 'mailto:test?subject=draft'})},location:{origin:'https://example.com',pathname:'/en/treatments/ivf/'},URL,fetch:async(url,options)=>{calls.push(options);return {ok:true,json:async()=>({configured})}}};

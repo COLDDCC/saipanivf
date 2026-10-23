@@ -15,6 +15,8 @@ function tw(s){
   ['中國不承認雙重國籍。境外出生子女的中國國籍認定與父母國籍、定居情況等有關；旅行證、戶籍辦理應向主管機關核實，並不存在統一的“18歲任選中美國籍”規則。','依《國籍法》第2條，出生時父或母為中華民國國民者，屬中華民國國籍。境外出生不等於已完成台灣戶籍登記；國籍、護照及戶籍應分別確認。並不存在“18歲任選台美國籍”的統一規則。'],
   ['中國就學','返台就學'],
   ['回中國接受義務教育需要核實當地入學條件。申請中國高校國際學生項目另有國籍、護照持有時間、境外居住經歷及學校考核要求，持外國護照不等於可免試進入清華、北大。','持美國護照不等於自動符合外國學生或僑生招生資格。外國學生資格依國籍、曾否具有中華民國國籍、戶籍及海外居留等條件認定；僑生另有招生規定。應先確認適用入學管道，再核對學校要求，不能承諾免試進入頂尖大學。'],
+  ['本站提供中文諮詢和就診協調，醫療檢查與治療由接診機構負責。','本站提供繁體中文網站資訊；實際諮詢協調語言須事先確認，醫療檢查與治療由接診機構負責。'],
+  ['本站提供中文諮詢和就診協調','本站提供繁體中文網站資訊；實際諮詢協調語言須事先確認'],
   ['回國證件','返台證件'],
   ['中國護照可以免簽去塞班嗎？','台灣護照去塞班需要簽證嗎？'],
   ['符合CNMI EVS-TAP條件並獲旅行授權的中國公民，可以免簽赴北馬里亞納群島，通常最長14天。','台灣旅客適用的入境制度須依護照、身分證、航線及個人條件判斷；G-CNMI VWP／G-CNMI ETA（原則45天）與美國 VWP／ESTA（原則90天）為不同制度，不能直接互換。'],
@@ -60,7 +62,12 @@ export default function traditional(){return {name:'complete-traditional-chinese
   const block='<section class="section wrap localized-content" lang="zh-TW" aria-label="台灣旅客專屬資訊"><h2>台灣旅客：預約前請確認</h2><p>'+taiwanGuide.intro+'</p>'+rows+'<p><a href="/zh-hant/guides/travel-checklist/">查看台灣旅客入境與就醫準備</a></p></section>';
   html=html.replace('</main>',block+'</main>');
  }
- if(path.endsWith(join('guides','travel-checklist','index.html'))){const rows=taiwanGuide.rows.map(([a,b])=>'<section class="localized-section"><h2>'+a+'</h2><p>'+b+'</p></section>').join('');html=html.replace('</main>','<section class="section wrap localized-content" lang="zh-TW" aria-label="台灣旅客出行資訊"><h2>'+taiwanGuide.title+'</h2><p>'+taiwanGuide.intro+'</p>'+rows+'<p><a href="https://g-cnmi-eta.cbp.dhs.gov/" target="_blank" rel="noopener">CBP：G-CNMI ETA 官方資訊</a> · <a href="https://www.ait.org.tw/" target="_blank" rel="noopener">美國在台協會（AIT）</a></p></section></main>');}const out=join(root,'zh-hant',relative(root,path));mkdirSync(dirname(out),{recursive:true});writeFileSync(out,html);}
+ if(path.endsWith(join('guides','travel-checklist','index.html'))){const rows=taiwanGuide.rows.map(([a,b])=>'<section class="localized-section"><h2>'+a+'</h2><p>'+b+'</p></section>').join('');html=html.replace('</main>','<section class="section wrap localized-content" lang="zh-TW" aria-label="台灣旅客出行資訊"><h2>'+taiwanGuide.title+'</h2><p>'+taiwanGuide.intro+'</p>'+rows+'<p><a href="'+taiwanGuide.sources.cbp+'" target="_blank" rel="noopener">CBP：G-CNMI VWP 官方規定</a> · <a href="'+taiwanGuide.sources.eta+'" target="_blank" rel="noopener">G-CNMI ETA 官方申請系統</a> · <a href="'+taiwanGuide.sources.taiwanBoca+'" target="_blank" rel="noopener">台灣外交部領事事務局：入境資訊</a> · <a href="'+taiwanGuide.sources.ait+'" target="_blank" rel="noopener">美國在台協會（AIT）</a></p></section></main>');}const relativePath=relative(root,path).split('\\').join('/');
+ if(['faq/index.html','guides/travel-checklist/index.html'].includes(relativePath)){
+  for(const term of ['CNMI EVS-TAP','CNMI EVS.TAP'])if(html.includes(term))throw new Error('Taiwan content leak: '+relativePath+' contains '+term);
+ }
+ if(!html.includes('lang="zh-TW"'))throw new Error('Traditional Chinese locale missing: '+relativePath);
+ const out=join(root,'zh-hant',relative(root,path));mkdirSync(dirname(out),{recursive:true});writeFileSync(out,html);}
  const paths=pages.map(p=>'/'+relative(root,dirname(p)).split('\\').join('/')+'/').map(p=>p==='//'?'/':p);
  const locales=[['zh-CN',''],['zh-TW','/zh-hant'],['en','/en'],['ja','/ja'],['ko','/ko'],['es','/es'],['de','/de'],['fr','/fr']];
  const xml='<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'+paths.flatMap(path=>locales.map(([,prefix])=>'<url><loc>'+origin+prefix+path+'</loc>'+[...locales,['x-default','']].map(([lang,p])=>'<xhtml:link rel="alternate" hreflang="'+lang+'" href="'+origin+p+path+'"/>').join('')+'</url>')).join('')+'</urlset>';
