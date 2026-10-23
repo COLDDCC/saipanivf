@@ -59,3 +59,12 @@ for(const route of ['contact','fees','service-scope','guides/travel-checklist'])
  if(route==='service-scope'||route==='guides/travel-checklist')assert(html.includes('G-CNMI'),route+' missing Taiwan entry guidance');
 }
 console.log('PASS Taiwan: distinct entry, documents, payments and language disclosures on four high-intent pages.');
+
+for(const locale of ['ja','ko'])for(const route of ['contact','fees','service-scope','guides/travel-checklist']){
+ const html=fs.readFileSync('dist/'+locale+'/'+route+'/index.html','utf8');
+ assert(html.includes('regional-readiness'),locale+'/'+route+' missing regional guidance');
+ assert(html.includes('G-CNMI'),locale+'/'+route+' missing entry guidance');
+ assert(html.includes('ESTA'),locale+'/'+route+' missing distinct VWP guidance');
+ assert(html.includes('USD'),locale+'/'+route+' missing payment clarification');
+}
+console.log('PASS JP/KR: region-specific entry, payment, documents and language guidance on four high-intent routes each.');
