@@ -5,7 +5,7 @@ export const serviceScopeCopy = {
  es:spanish, de:german, fr:french,
   "zh-CN": {
     "title": "每一件事，都有明确的对接方",
-    "intro": "预约时，请确认各环节的机构名称、负责人及有效联系方式，并保留书面记录。以下是需要逐项确认的分工。",
+    "intro": "预约时，请确认各环节的机构名称、负责人及有效联系方式，并保留书面记录。网站提供某种语言，不代表咨询协调、医生问诊或医疗翻译也提供该语言；请分别确认实际可用语言及费用。以下是需要逐项确认的分工。",
     "headers": [
       "事项",
       "向谁确认",
@@ -63,7 +63,7 @@ export const serviceScopeCopy = {
   },
   "en": {
     "title": "Know who handles each step",
-    "intro": "Before booking, confirm the institution, named contact and working contact details for each stage. Keep the agreed responsibilities in writing.",
+    "intro": "Before booking, confirm the institution, named contact and working contact details for each stage. A translated website does not confirm that enquiry coordinators, treating clinicians or medical interpreters speak that language; check each separately, including any fees.",
     "headers": [
       "Matter",
       "Who to confirm with",
@@ -121,7 +121,7 @@ export const serviceScopeCopy = {
   },
   "ja": {
     "title": "各段階の窓口を確認する",
-    "intro": "予約前に、各段階の機関名、担当者、連絡先を確認し、合意した役割を書面で残してください。",
+    "intro": "予約前に、各段階の機関名、担当者、連絡先を確認し、合意した役割を書面で残してください。日本語のウェブサイト表示は、日本語での相談調整・医師の診察・医療通訳の提供を意味しません。それぞれの対応言語と費用を事前に確認してください。",
     "headers": [
       "確認事項",
       "確認先",
@@ -179,7 +179,7 @@ export const serviceScopeCopy = {
   },
   "ko": {
     "title": "단계별 담당 창구를 확인하세요",
-    "intro": "예약 전에 단계별 기관명, 담당자와 유효한 연락처를 확인하고 합의한 역할을 서면으로 보관하세요.",
+    "intro": "예약 전에 단계별 기관명, 담당자와 유효한 연락처를 확인하고 합의한 역할을 서면으로 보관하세요. 한국어 웹사이트가 한국어 상담 조정, 의료진의 한국어 진료 또는 의료 통역 제공을 의미하지는 않습니다. 각각의 지원 언어와 비용을 사전에 확인하세요.",
     "headers": [
       "확인 사항",
       "확인할 상대",
