@@ -56,7 +56,7 @@ for path in Path('dist').rglob('index.html'):
     assert (Path('dist')/candidate.strip().split()[0].lstrip('/')).is_file(),(path,candidate)
 root=ET.parse('dist/sitemap.xml').getroot();ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
 urls=[node.text for node in root.findall('s:url/s:loc',ns)]
-assert len(urls)==len(set(urls)) and set(urls)==expected,('sitemap mismatch',set(urls)^expected)
+assert len(urls)==len(set(urls)) and set(urls)==expected,('sitemap mismatch', {'missing_from_sitemap':sorted(expected-set(urls)), 'extra_in_sitemap':sorted(set(urls)-expected), 'total_urls':len(urls), 'expected':len(expected)})
 hero=Head();hero.feed(Path('dist/index.html').read_text(encoding='utf-8'))
 slides=[im for im in hero.images if 'hero-slide-image' in im.get('class','')]
 assert len(slides)==4 and slides[0]['loading']=='eager' and slides[0]['fetchpriority']=='high'
