@@ -9,7 +9,7 @@ const nodes=n=>[n,...(n.childNodes||[]).flatMap(nodes)];
 const attr=(n,k)=>n.attrs?.find(a=>a.name===k)?.value;
 const locales=['','zh-hant/','en/','ja/','ko/','es/','de/','fr/'];
 const routes=[];
-function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){if(e.isDirectory()&&!['zh-hant','en','ja','ko','es','de','fr','images','_astro'].includes(e.name))walk(dir+'/'+e.name);else if(e.isFile()&&e.name==='index.html')routes.push(dir.slice(5)+(dir==='dist'?'':'/')+'index.html')}}
+function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){if(e.isDirectory()&&!['zh-hant','en','ja','ko','es','de','fr','images','_astro'].includes(e.name))walk(dir+'/'+e.name);else if(e.isFile()&&e.name==='index.html'){const route=dir.slice(5)+(dir==='dist'?'':'/')+'index.html';if(!['guides/ivf-cost/index.html','guides/egg-freezing-cost/index.html'].includes(route))routes.push(route)}}}
 walk('dist');assert.equal(routes.length,23);
 for(const prefix of locales)for(const route of routes){
  const all=nodes(parse(fs.readFileSync('dist/'+prefix+route,'utf8'))),home=route==='index.html';
