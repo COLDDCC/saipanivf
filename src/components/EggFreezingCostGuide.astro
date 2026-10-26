@@ -4,7 +4,7 @@ import {site} from '../data/site';
 import '../styles/site.css';
 import '../styles/typography.css';
 const {traditional=false}=Astro.props;
-const p=(id)=>pricing.find(x=>x.id===id);
+const p=(id:string)=>pricing.find(x=>x.id===id)!;
 const egg=p('egg'),drug=p('medication'),anesthesia=p('anesthesia'),storage=p('storage');
 const lower=egg.min+drug.min+anesthesia.min+storage.min;
 const upper=egg.max+drug.max+anesthesia.max+storage.max;
@@ -20,7 +20,7 @@ const faq=[
 [t('保存费用只交一次吗？','保存費用只繳一次嗎？'),t('通常应特别核对年度续费、续存授权、停止保存和后续使用费用；具体看合同。','應特別核對年度續費、續存授權、停止保存及未來使用費用；具體依合約為準。')],
 [t('冻卵能保证未来生育吗？','凍卵能保證未來生育嗎？'),t('不能。结果取决于年龄、卵子数量与质量、未来解冻受精等多种因素。','不能。結果取決於年齡、卵子數量與品質，以及未來解凍、受精等多種因素。')]
 ];
-const rows=[
+const rows: Array<[string,{min:number,max:number}]>=[
 [t('冻卵周期：监测、取卵、冷冻','凍卵週期：監測、取卵、冷凍'),egg],
 [t('促排药物','促排藥物'),drug],
 [t('取卵麻醉','取卵麻醉'),anesthesia],
