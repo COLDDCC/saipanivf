@@ -14,6 +14,6 @@ function discover(dir: URL, prefix=''): string[] {
  });
 }
 export const GET = () => {
- const routes=[...new Set([...discover(pathToFileURL(resolve('src/pages')+'/')),...treatments.map(item=>'treatments/'+item.slug+'/'),...(['en','ja','ko','es','de','fr'] as const).flatMap(locale=>routeKeys.map(key=>locale+'/'+(key?key+'/':'')))])].sort();
+ const routes=[...new Set([...discover(pathToFileURL(resolve('src/pages')+'/')),...treatments.map(item=>'treatments/'+item.slug+'/'),...(['en','ja','ko','es','de','fr'] as const).flatMap(locale=>routeKeys.map(key=>locale+'/'+(key?key+'/':'')))])].filter(route=>!/^(en|ja|ko|es|de|fr)\/guides\/(ivf-cost|egg-freezing-cost)\/$/.test(route)).sort();
  return new Response('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+routes.map(route=>`<url><loc>${new URL(route,site.origin+'/').href}</loc></url>`).join('')+'</urlset>',{headers:{'Content-Type':'application/xml; charset=utf-8'}});
 };
