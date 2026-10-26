@@ -67,7 +67,7 @@ export default function traditional(){return {name:'complete-traditional-chinese
   for(const term of ['CNMI EVS-TAP','CNMI EVS.TAP'])if(html.includes(term))throw new Error('Taiwan content leak: '+relativePath+' contains '+term);
  }
  if(!html.includes('lang="zh-TW"'))throw new Error('Traditional Chinese locale missing: '+relativePath);
- const out=join(root,'zh-hant',relative(root,path));mkdirSync(dirname(out),{recursive:true});writeFileSync(out,html);}
+ const out=join(root,'zh-hant',relative(root,path));if(['guides/egg-freezing-cost/index.html','guides/ivf-cost/index.html'].includes(relativePath))continue;mkdirSync(dirname(out),{recursive:true});writeFileSync(out,html);}
  const paths=pages.map(p=>'/'+relative(root,dirname(p)).split('\\').join('/')+'/').map(p=>p==='//'?'/':p);
  const locales=[['zh-CN',''],['zh-TW','/zh-hant'],['en','/en'],['ja','/ja'],['ko','/ko'],['es','/es'],['de','/de'],['fr','/fr']];
  const xml='<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'+paths.flatMap(path=>locales.map(([,prefix])=>'<url><loc>'+origin+prefix+path+'</loc>'+[...locales,['x-default','']].map(([lang,p])=>'<xhtml:link rel="alternate" hreflang="'+lang+'" href="'+origin+p+path+'"/>').join('')+'</url>')).join('')+'</urlset>';
