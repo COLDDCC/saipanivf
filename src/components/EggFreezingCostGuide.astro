@@ -16,7 +16,7 @@ const num=(n:number)=>n.toLocaleString('en-US');
 // Hotel = about 14 nights; misc = meals, local transport and phone for about 14 days.
 const checked='2026-10-26';
 const usdCny=6.68;
-const cny=(n:number)=>'¥'+(n*usdCny/10000).toFixed(1)+t(' 万',' 萬');
+const cny=(n:number)=>'¥'+(n*usdCny/10000).toFixed(1)+t('\u00a0万','\u00a0萬');
 const tiers=[
  {name:t('节约型','節約型'),drug:drug.min,flight:450,hotel:1050,misc:500},
  {name:t('常规型','一般型'),drug:Math.round((drug.min+drug.max)/2/100)*100,flight:700,hotel:1600,misc:600},
@@ -67,41 +67,112 @@ const timeline='https://fertilityinstitute.com/egg-freezing-timeline/';
 <link rel="alternate" hreflang="x-default" href={new URL('/guides/egg-freezing-cost/',site.origin).href}/>
 <meta property="og:title" content={title}/><meta property="og:description" content={summary}/><meta property="og:type" content="article"/><meta property="og:url" content={canonical}/>
 <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}/>
-<style>
-*{box-sizing:border-box}body{margin:0;color:#203b4d;background:#fbfcfc;font-family:system-ui,-apple-system,"Noto Sans TC","Noto Sans SC",sans-serif;line-height:1.75}a{color:#1169a0}header{border-bottom:1px solid #e2ebee;background:#fff}.bar{max-width:1000px;margin:auto;padding:15px 24px;display:flex;justify-content:space-between;gap:18px;align-items:center}.brand{font-weight:750;text-decoration:none;color:#153f58}.switch{font-size:14px}main{max-width:960px;padding:38px 24px 80px;margin:auto}.eyebrow{color:#527286;font-size:13px;letter-spacing:.08em}.hero{padding-bottom:25px;border-bottom:1px solid #dce7ea}h1{font-size:clamp(30px,4vw,46px);line-height:1.22;letter-spacing:-.03em;margin:12px 0 16px}h2{font-size:clamp(22px,3vw,30px);line-height:1.3;margin:42px 0 16px}h3{font-size:18px}p{max-width:750px}.lead{font-size:17px;color:#476475}.notice{border-left:3px solid #498aab;padding:14px 18px;background:#edf5f8;margin:22px 0}table{width:100%;border-collapse:collapse;font-size:15px}th,td{text-align:left;padding:14px;border-bottom:1px solid #dce7ea}th{background:#eef4f5}.tablewrap{overflow:auto}td:last-child,th:last-child{text-align:right;white-space:nowrap}ul,ol{padding-left:25px}li{margin:8px 0}details{border-bottom:1px solid #dce7ea;padding:14px 0}summary{cursor:pointer;font-weight:650}details p{margin-bottom:0}.cta{display:inline-block;background:#146b98;color:#fff;text-decoration:none;padding:13px 20px;border-radius:8px;font-weight:650}footer{padding:30px 24px;text-align:center;border-top:1px solid #dce7ea;color:#587080;font-size:13px}@media(max-width:780px){th,td{padding:10px 7px;font-size:13px}main{padding:28px 18px 60px}}
-.article-toc{display:flex;flex-wrap:wrap;gap:9px;padding:12px 0 19px;margin:0 0 16px;border-bottom:1px solid #e2e9ed}.article-toc a{padding:6px 12px;border:1px solid #d6e4e8;border-radius:99px;text-decoration:none;font-size:13px;background:white;color:#2d536b}.article-toc a:hover,.article-toc a:focus-visible{background:#e9f3f7}section{scroll-margin-top:20px}.kicker{display:block;color:#397794;text-transform:uppercase;letter-spacing:.1em;font-size:12px;font-weight:700}.steps{display:grid;gap:0;margin:20px 0}.steps article{display:grid;grid-template-columns:52px 1fr;gap:16px;border-top:1px solid #dce7ea;padding:17px 0}.steps article span{font-size:18px;font-weight:750;color:#287795}.steps h3{margin:0 0 4px}.steps p{margin:0;color:#506a78}.hero{padding-top:12px}@media(min-width:800px){.hero{max-width:880px}.article-toc{position:sticky;top:0;z-index:2;background:#fbfcfc}}.source-ref{font-size:12px;white-space:nowrap;text-decoration:none;padding:1px 4px;font-weight:750;color:#146a95;background:#e7f3f7;border-radius:4px}.source-ref:hover,.source-ref:focus-visible{text-decoration:underline}.source-caption{font-size:13px;color:#536e7d;margin:12px 0 20px}.reference-list li{margin:10px 0;overflow-wrap:anywhere}.reference-list a{font-weight:600}.byline{display:flex;flex-wrap:wrap;gap:8px 18px;color:#537187;font-size:13px;padding:0 0 6px}.byline a{font-weight:600}
-.answer{margin:24px 0 8px;padding:22px 24px;border:1px solid #cfe1e8;border-radius:14px;background:#f2f8fa}.answer h2{margin:0 0 4px;font-size:15px;letter-spacing:.06em;color:#397794}.answer .total{display:block;font-size:clamp(26px,4vw,38px);font-weight:750;line-height:1.3;color:#153f58;margin:4px 0 14px}.answer .total small{display:block;font-size:15px;font-weight:600;color:#476475}.answer table{background:#fff;border-radius:8px}.answer p{margin:12px 0 0;font-size:14px;color:#476475}.answer .cta{margin-top:14px}.total-row td{font-weight:750;background:#f6fafb}.text-table td:last-child,.text-table th:last-child{text-align:left;white-space:normal}.ready{margin:22px 0;padding:16px 20px;border-left:3px solid #146b98;background:#eef6f9}.ready p{margin:0 0 10px}.tip-list li{margin:6px 0}.num{white-space:nowrap}@media(max-width:700px){.answer{padding:16px}}
+<style is:global>
+/* Article reading surface (taste-skill house rules applied to long-form reading):
+   one white ground, one neutral surface step, no tinted blue blocks, CJK measure ~38 chars.
+   Selectors start with `html body.article` so global site.css/typography.css cannot override them. */
+html body.article{--bg:#fff;--surface:#f5f6f6;--ink:#1c2429;--text:#2a3238;--muted:#5b666e;--accent:#0f5f8c;--accent-deep:#0b4a6e;--rule:#e3e7e9;--rule-strong:#c9d0d4;margin:0;background:var(--bg);color:var(--text);font-size:17px;line-height:1.85;-webkit-font-smoothing:antialiased}
+html body.article *{box-sizing:border-box}
+html body.article a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+html body.article a:hover{color:var(--accent-deep);text-decoration-thickness:2px}
+html body.article a:focus-visible,html body.article summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+html body.article header{background:var(--bg)}
+html body.article .bar{max-width:880px;margin:0 auto;padding:16px 24px;display:flex;justify-content:space-between;align-items:center;gap:18px;font-size:15px}
+html body.article .brand{font-size:19px;letter-spacing:-.01em;font-weight:700;color:var(--ink);text-decoration:none}
+html body.article .switch{color:var(--muted)}
+html body.article .switch a{color:var(--muted);text-decoration:none}
+html body.article .switch a:hover{color:var(--ink);text-decoration:underline}
+html body.article main{max-width:880px;margin:0 auto;padding:0 24px 96px}
+html body.article :is(p,li){font-size:17px;line-height:1.85;color:var(--text);max-width:38em;text-wrap:pretty}
+html body.article strong{color:var(--ink);font-weight:650}
+html body.article h1{font-size:clamp(28px,3.6vw,40px);line-height:1.32;color:var(--ink);margin:32px 0 14px;max-width:22em}
+html body.article h2{font-size:clamp(22px,2.4vw,27px);line-height:1.4;color:var(--ink);margin:64px 0 18px;max-width:30em}
+html body.article h3{font-size:18px;color:var(--ink)}
+html body.article section{scroll-margin-top:64px}
+html body.article ul,html body.article ol{padding-left:1.4em;margin:16px 0}
+html body.article li{margin:6px 0}
+html body.article li::marker{color:var(--muted)}
 
-/* Reading surface: white page, neutral fills, darker body text.
-   Tinted blue blocks lowered contrast for long Chinese paragraphs. */
-body{background:#fff;color:#1f2d36}
-p,li,td{color:#2b3a44}
-p,li{line-height:1.9}
-.lead,.answer .total small{color:#3f5563}
-.answer p,.steps p{color:#465a66}
-.byline,.source-caption,.eyebrow{color:#55697a}
-.article-toc,.article-toc a{background:#fff}
-.article-toc a:hover,.article-toc a:focus-visible{background:#f3f6f7}
-.answer{background:#fff;border-color:#dfe6ea}
-.answer table{background:transparent}
-.notice,.ready{background:#f6f8f9}
-th{background:#f4f6f7;color:#24343e}
-.total-row td{background:#f4f6f7;color:#1f2d36}
-.source-ref{background:none;padding:0 2px}
+/* Table of contents: plain text links on the page ground; one rule only while it floats. */
+html body.article .article-toc{position:sticky;top:0;z-index:5;display:flex;gap:4px 22px;overflow-x:auto;white-space:nowrap;scrollbar-width:none;margin:0;padding:10px 0;background:var(--bg);box-shadow:0 1px 0 var(--rule);font-size:14px}
+html body.article .article-toc::-webkit-scrollbar{display:none}
+html body.article .article-toc a{color:var(--muted);text-decoration:none;padding:6px 0}
+html body.article .article-toc a:hover{color:var(--ink);text-decoration:underline}
+
+html body.article .hero{padding:0;border:0}
+html body.article .byline{display:flex;flex-wrap:wrap;gap:4px 18px;color:var(--muted);font-size:14px;line-height:1.7}
+html body.article .byline a{font-weight:600}
+
+/* 30-second answer: the page's one filled panel. */
+html body.article .answer{margin:32px 0 8px;padding:28px 32px;background:var(--surface);border:0;border-radius:12px}
+html body.article .answer h2{margin:0;font-family:var(--font);font-size:15px;font-weight:600;letter-spacing:0;line-height:1.5;color:var(--muted)}
+html body.article .answer .total{display:block;margin:6px 0 18px;font-size:clamp(26px,3.4vw,34px);font-weight:700;line-height:1.3;color:var(--ink);font-variant-numeric:lining-nums tabular-nums}
+html body.article .answer .total small{display:block;margin-top:4px;font-size:15px;font-weight:600;color:var(--muted)}
+html body.article .answer table{background:transparent}
+html body.article .answer p{margin:16px 0 0;font-size:15px;line-height:1.8;color:var(--text)}
+html body.article .answer .cta{margin-top:20px}
+
+/* Tables keep lines (taste exemption) but no tinted fills. */
+html body.article .tablewrap{overflow-x:auto;margin:20px 0}
+html body.article table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.65;font-variant-numeric:lining-nums tabular-nums}
+html body.article th,html body.article td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--rule);color:var(--text);vertical-align:top}
+html body.article th{background:none;color:var(--ink);font-weight:650;border-bottom:2px solid var(--rule-strong)}
+html body.article :is(td,th):first-child{padding-left:0}
+html body.article :is(td,th):last-child{padding-right:0;text-align:right;white-space:nowrap}
+html body.article table:not(.text-table) :is(th,td):not(:first-child){text-align:right}
+html body.article .text-table :is(td,th):last-child{text-align:left;white-space:normal}
+html body.article .total-row td{background:none;font-weight:700;color:var(--ink);border-top:2px solid var(--ink);border-bottom:0}
+html body.article .num{white-space:nowrap}
+html body.article caption{text-align:left}
+
+html body.article .notice{margin:24px 0;padding:16px 20px;background:var(--surface);border:0;border-radius:8px}
+html body.article .ready{margin:28px 0;padding:2px 0 2px 18px;background:none;border-left:3px solid var(--accent)}
+html body.article .ready p{margin:0 0 12px}
+html body.article .tip-list li{margin:6px 0}
+html body.article .source-ref{font-size:13px;font-weight:600;white-space:nowrap;text-decoration:none;padding:0 1px;background:none}
+html body.article .source-ref:hover{text-decoration:underline}
+html body.article .source-caption{font-size:14px;line-height:1.75;color:var(--muted);margin:12px 0 20px}
+html body.article .reference-list li{margin:10px 0;overflow-wrap:anywhere}
+html body.article .reference-list a{font-weight:600}
+
+/* FAQ: a tone step instead of divider lines. */
+html body.article details{margin:8px 0;padding:14px 20px;background:var(--surface);border:0;border-radius:8px}
+html body.article summary{cursor:pointer;font-weight:650;color:var(--ink);line-height:1.7}
+html body.article details p{margin:10px 0 2px}
+
+html body.article .cta{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;padding:14px 22px;border-radius:8px;font-weight:650;line-height:1.4}
+html body.article .cta:hover{background:var(--accent-deep);color:#fff}
+html body.article footer{padding:32px 24px;text-align:center;background:var(--surface);color:var(--muted);font-size:13px}
+
+@media(max-width:700px){
+html body.article{font-size:16px}
+html body.article :is(p,li){font-size:16px;line-height:1.85}
+html body.article .bar{padding:14px 18px}
+html body.article main{padding:0 18px 72px}
+html body.article h1{margin-top:24px}
+html body.article h2{margin-top:48px}
+html body.article .answer{padding:20px 18px;margin-top:24px}
+html body.article .answer .total{font-size:24px}
+html body.article .answer td:is(.num,:last-child){white-space:normal}
+html body.article .answer td:first-child{min-width:7.5em}
+html body.article table{font-size:14px}
+html body.article th,html body.article td{padding:10px 8px}
+html body.article details{padding:12px 16px}
+}
 </style>
 </head>
-<body>
+<body class="article">
 <header><nav class="bar" aria-label={t('页面导航','頁面導覽')}><a class="brand" href="/">Saipan IVF</a><div class="switch"><a href="/guides/">{t('全部指南','全部指南')}</a> · <a href={traditional?'/guides/egg-freezing-cost/':'/zh-hant/guides/egg-freezing-cost/'}>{traditional?'简体中文':'繁體中文'}</a></div></nav></header>
 <main>
 <nav class="article-toc" aria-label={t('文章目录','文章目錄')}><a href="#tiers">{t('三档预算','三檔預算')}</a><a href="#cost-breakdown">{t('医疗费','醫療費')}</a><a href="#travel">{t('行程费用','行程費用')}</a><a href="#days">{t('在岛天数','在島天數')}</a><a href="#storage-years">{t('多年保存','多年保存')}</a><a href="#compare">{t('付款前核对','付款前核對')}</a><a href="#reference">{t('其他地区','其他地區')}</a><a href="#questions">FAQ</a><a href="#sources">{t('来源','來源')}</a></nav>
-<div class="hero"><div class="eyebrow">{t('费用指南 · 2026 · 美元','費用指南 · 2026 · 美元')}</div><h1>{title}</h1>
-<div class="byline"><span>{t('撰写：Saipan IVF 网站内容团队','撰寫：Saipan IVF 網站內容團隊')}</span><span>{t('页面更新：2026 年 10 月 26 日','頁面更新：2026 年 10 月 26 日')}</span><a href="/editorial-policy/">{t('编辑与资料来源政策','編輯與資料來源政策')}</a></div>
+<div class="hero"><h1>{title}</h1>
+<div class="byline"><span>{t('撰写：Saipan IVF 网站内容团队','撰寫：Saipan IVF 網站內容團隊')}</span><span>{t('页面更新：2026 年 10 月 26 日','頁面更新：2026 年 10 月 26 日')}</span><span>{t('金额单位：美元','金額單位：美元')}</span><a href="/editorial-policy/">{t('编辑与资料来源政策','編輯與資料來源政策')}</a></div>
 <section class="answer" aria-labelledby="answer-title"><h2 id="answer-title">{t('30 秒答案','30 秒答案')}</h2>
-<strong class="total">{t('全程预算约','全程預算約')} {money(totalLow)}–{num(totalHigh)}{!traditional&&<small>{t('约','约')} {cny(totalLow)}–{cny(totalHigh)}</small>}</strong>
+<strong class="total">{t('全程预算约','全程預算約')} {money(totalLow)}–<wbr/>{num(totalHigh)}{!traditional&&<small>{t('约','约')} {cny(totalLow)}–<wbr/>{cny(totalHigh)}</small>}</strong>
 <div class="tablewrap"><table><thead><tr><th>{t('项目','項目')}</th><th>USD</th>{!traditional&&<th>{t('约合人民币','约合人民币')}</th>}</tr></thead><tbody>
-<tr><td>{t('医疗费（周期 + 药 + 麻醉 + 首年保存）','醫療費（週期 + 藥物 + 麻醉 + 首年保存）')}</td><td class="num">{num(lower)}–{num(upper)}</td>{!traditional&&<td class="num">{cny(lower)}–{cny(upper)}</td>}</tr>
-<tr><td>{t('行程（机票 + 约 14 晚住宿 + 当地生活）','行程（機票 + 約 14 晚住宿 + 當地生活）')}</td><td class="num">{num(travelLow)}–{num(travelHigh)}</td>{!traditional&&<td class="num">{cny(travelLow)}–{cny(travelHigh)}</td>}</tr>
-<tr class="total-row"><td>{t('合计','合計')}</td><td class="num">{num(totalLow)}–{num(totalHigh)}</td>{!traditional&&<td class="num">{cny(totalLow)}–{cny(totalHigh)}</td>}</tr>
+<tr><td>{t('医疗费（周期 + 药 + 麻醉 + 首年保存）','醫療費（週期 + 藥物 + 麻醉 + 首年保存）')}</td><td class="num">{num(lower)}–<wbr/>{num(upper)}</td>{!traditional&&<td class="num">{cny(lower)}–<wbr/>{cny(upper)}</td>}</tr>
+<tr><td>{t('行程（机票 + 约 14 晚住宿 + 当地生活）','行程（機票 + 約 14 晚住宿 + 當地生活）')}</td><td class="num">{num(travelLow)}–<wbr/>{num(travelHigh)}</td>{!traditional&&<td class="num">{cny(travelLow)}–<wbr/>{cny(travelHigh)}</td>}</tr>
+<tr class="total-row"><td>{t('合计','合計')}</td><td class="num">{num(totalLow)}–<wbr/>{num(totalHigh)}</td>{!traditional&&<td class="num">{cny(totalLow)}–<wbr/>{cny(totalHigh)}</td>}</tr>
 </tbody></table></div>
 <p>{t('差距最大的是促排药费（按个人处方）和住宿档次。医疗费来自本站规划模型，行程费按 2026 年 10 月公开比价区间估算，都不是诊所报价；最终以书面报价为准。','差距最大的是促排藥費（依個人處方）與住宿等級。醫療費來自本站規劃模型，行程費依 2026 年 10 月公開比價區間估算，皆非診所報價；最終以書面報價為準。')}{!traditional&&<> {t(`人民币按 1 美元 ≈ ${usdCny} 元粗算。`,'')}</>}{traditional&&<> 以新台幣付款時，請依付款當日匯率換算。</>}</p>
 <a class="cta" href="/contact/?topic=egg-freezing">{t('发报告，估我的个人预算','傳報告，估我的個人預算')}</a>
@@ -145,7 +216,7 @@ th{background:#f4f6f7;color:#24343e}
 
 <section id="compare"><h2>{t('付款前必须确认的 6 件事','付款前必須確認的 6 件事')}</h2><ol><li>{t('实际接诊机构、收款方、报价日期和有效期。','實際接診機構、收款方、報價日期與有效期限。')}</li><li>{t('监测、取卵、麻醉、冷冻、药物各包含什么，哪些另收。','監測、取卵、麻醉、冷凍、藥物各包含什麼，哪些另計。')}</li><li>{t('这份价格是否适用外籍、跨境患者——有的公开套餐只限本国居民。','這份價格是否適用外籍、跨境患者——有些公開方案只限本國居民。')}</li><li>{t('保存地点、每年续费、终止或转出的规则。','保存地點、每年續費、終止或轉出的規則。')}</li><li>{t('取不到卵、周期取消或延期时的收费和退款规则。','未取得卵子、週期取消或延期時的收費與退款規則。')}</li><li>{t('由诊所医生确认抵达日期后再订机票。','由診所醫師確認抵達日期後再訂機票。')}</li></ol><p>{t('拿到报价后，用','拿到報價後，可用')} <a href="/guides/quotation/">{t('书面报价核对清单','書面報價核對清單')}</a> {t('逐条对照。','逐項對照。')}</p></section>
 
-<section id="medical"><span class="kicker">{t('医学证据','醫學證據')}</span><h2>{t('冻卵能保证未来怀孕吗？','凍卵能保證未來懷孕嗎？')}</h2><p>{t('不能。冻卵保存的是生育选择，不是未来活产的保证；结果取决于取卵时年龄、成熟卵子数量，以及解冻、受精和后续治疗等多种因素。','不能。凍卵保留的是生育選擇，不是未來活產的保證；結果取決於取卵時年齡、成熟卵子數量，以及解凍、受精與後續療程等多種因素。')} <a class="source-ref" href={hfea} target="_blank" rel="noopener noreferrer" aria-label={t('来源 1：HFEA 冻卵说明','來源 1：HFEA 凍卵說明')}>[1]</a></p><p>{t('美国生殖医学学会（ASRM）指出，较年轻时冷冻卵子的结果总体可能更好，但现有证据不足以对个人做可靠的绝对活产率预测，也不存在普遍适用的最佳冻卵年龄。','美國生殖醫學學會（ASRM）指出，較年輕時冷凍卵子的結果整體可能較佳，但目前證據不足以可靠預測個人的絕對活產率，也沒有所有人通用的最佳凍卵年齡。')} <a class="source-ref" href={asrm} target="_blank" rel="noopener noreferrer" aria-label={t('来源 2：ASRM 循证指南','來源 2：ASRM 實證指引')}>[2]</a> {t('还在犹豫的话，可以先和医生讨论做卵巢储备评估（如 AMH、窦卵泡计数），这也有助于提前估算药量和预算。','還在猶豫的話，可以先和醫師討論卵巢庫存評估（如 AMH、竇卵泡數），也有助於提前估算藥量與預算。')}</p><p>{t('如有卵巢功能或既往取卵问题、正在接受其他治疗，或对麻醉、药物有特殊顾虑，请先由医疗团队评估；不要根据本文自行选择促排药物或剂量。','如有卵巢功能或先前取卵問題、正在接受其他療程，或對麻醉、藥物有特殊顧慮，請先由醫療團隊評估；請勿依本文自行選用促排藥物或劑量。')} <a class="source-ref" href={hfea} target="_blank" rel="noopener noreferrer">[1]</a></p></section>
+<section id="medical"><h2>{t('冻卵能保证未来怀孕吗？','凍卵能保證未來懷孕嗎？')}</h2><p>{t('不能。冻卵保存的是生育选择，不是未来活产的保证；结果取决于取卵时年龄、成熟卵子数量，以及解冻、受精和后续治疗等多种因素。','不能。凍卵保留的是生育選擇，不是未來活產的保證；結果取決於取卵時年齡、成熟卵子數量，以及解凍、受精與後續療程等多種因素。')} <a class="source-ref" href={hfea} target="_blank" rel="noopener noreferrer" aria-label={t('来源 1：HFEA 冻卵说明','來源 1：HFEA 凍卵說明')}>[1]</a></p><p>{t('美国生殖医学学会（ASRM）指出，较年轻时冷冻卵子的结果总体可能更好，但现有证据不足以对个人做可靠的绝对活产率预测，也不存在普遍适用的最佳冻卵年龄。','美國生殖醫學學會（ASRM）指出，較年輕時冷凍卵子的結果整體可能較佳，但目前證據不足以可靠預測個人的絕對活產率，也沒有所有人通用的最佳凍卵年齡。')} <a class="source-ref" href={asrm} target="_blank" rel="noopener noreferrer" aria-label={t('来源 2：ASRM 循证指南','來源 2：ASRM 實證指引')}>[2]</a> {t('还在犹豫的话，可以先和医生讨论做卵巢储备评估（如 AMH、窦卵泡计数），这也有助于提前估算药量和预算。','還在猶豫的話，可以先和醫師討論卵巢庫存評估（如 AMH、竇卵泡數），也有助於提前估算藥量與預算。')}</p><p>{t('如有卵巢功能或既往取卵问题、正在接受其他治疗，或对麻醉、药物有特殊顾虑，请先由医疗团队评估；不要根据本文自行选择促排药物或剂量。','如有卵巢功能或先前取卵問題、正在接受其他療程，或對麻醉、藥物有特殊顧慮，請先由醫療團隊評估；請勿依本文自行選用促排藥物或劑量。')} <a class="source-ref" href={hfea} target="_blank" rel="noopener noreferrer">[1]</a></p></section>
 
 <section id="reference"><h2>{t('和其他地区比，贵还是便宜？','和其他地區比，貴還是便宜？')}</h2><p>{t('各地包含的项目、保存年限和适用人群都不同，以下只用来了解大致水平，不能直接比较高低：','各地包含的項目、保存年限與適用對象都不同，以下僅供了解大致水準，不能直接比較高低：')}</p><div class="tablewrap"><table class="text-table"><thead><tr><th>{t('地区 / 机构','地區 / 機構')}</th><th>{t('公开价格','公開價格')}</th><th>{t('注意事项','注意事項')}</th></tr></thead><tbody>
 <tr><td>{t('塞班（本站估算）','塞班（本站估算）')}</td><td class="num">{t('医疗费','醫療費')} {money(lower)}–{num(upper)}</td><td>{t('含首年保存，不含行程','含首年保存，不含行程')}</td></tr>
