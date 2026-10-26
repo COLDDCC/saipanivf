@@ -90,7 +90,7 @@ th{background:#f4f6f7;color:#24343e}
 .source-ref{background:none;padding:0 2px}
 </style>
 </head>
-<body>
+<body><span aria-current="page" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)">{traditional?'繁體中文':'简体中文'}</span>
 <header><nav class="bar" aria-label={t('页面导航','頁面導覽')}><a class="brand" href="/">Saipan IVF</a><div class="switch"><a href="/guides/">{t('全部指南','全部指南')}</a> · <a href={traditional?'/guides/egg-freezing-cost/':'/zh-hant/guides/egg-freezing-cost/'}>{traditional?'简体中文':'繁體中文'}</a></div></nav></header>
 <main>
 <nav class="article-toc" aria-label={t('文章目录','文章目錄')}><a href="#tiers">{t('三档预算','三檔預算')}</a><a href="#cost-breakdown">{t('医疗费','醫療費')}</a><a href="#travel">{t('行程费用','行程費用')}</a><a href="#days">{t('在岛天数','在島天數')}</a><a href="#storage-years">{t('多年保存','多年保存')}</a><a href="#compare">{t('付款前核对','付款前核對')}</a><a href="#reference">{t('其他地区','其他地區')}</a><a href="#questions">FAQ</a><a href="#sources">{t('来源','來源')}</a></nav>
@@ -167,5 +167,5 @@ th{background:#f4f6f7;color:#24343e}
 </tbody></table></div>
 <p>{t(`以上均为规划估算，不是诊所报价或承诺；核对日期 ${checked}。内容仅用于咨询准备，不能替代医疗建议。延伸阅读：`,`以上皆為規劃估算，不是診所報價或承諾；核對日期 ${checked}。內容僅供諮詢準備，不能取代醫療建議。延伸閱讀：`)}<a href="/fees/">{t('预算工具','預算工具')}</a> · <a href="/guides/quotation/">{t('书面报价核对清单','書面報價核對清單')}</a> · <a href="/guides/egg-freezing/">{t('冻卵初诊准备','凍卵初診準備')}</a></p>
 <a class="cta" href="/contact/?topic=egg-freezing">{t('咨询个人费用和就诊安排','諮詢個人費用與就診安排')}</a></section>
-</main><footer>© 2026 Saipan IVF · {t('内容仅供准备咨询，不代替医疗建议','內容僅供諮詢準備，不取代醫療建議')}</footer>
+<aside class="contact-direct" style="max-width:950px;margin:0 auto 24px;padding:0 22px"><a href="mailto:info@saipan-ivf.com">{t('直接邮件联系：info@saipan-ivf.com','直接電郵聯絡：info@saipan-ivf.com')}</a></aside></main><footer>© 2026 Saipan IVF · {t('内容仅供准备咨询，不代替医疗建议','內容僅供諮詢準備，不取代醫療建議')}</footer>
 </body></html>
