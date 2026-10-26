@@ -1,6 +1,7 @@
 ---
 import {pricing} from '../data/pricing';
 import {site} from '../data/site';
+import {websiteSchema,shareLocales} from '../data/website-schema';
 import '../styles/site.css';
 import '../styles/typography.css';
 const {traditional=false}=Astro.props;
@@ -55,6 +56,8 @@ const faqSchema={'@context':'https://schema.org','@type':'FAQPage',mainEntity:fa
 const hfea='https://www.hfea.gov.uk/treatments/fertility-preservation/egg-freezing/';
 const asrm='https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-outcomes-after-oocyte-cryopreservation-for-donor-oocyte-in-vitro-fertilization-and-planned-oocyte-cryopreservation-a-guideline-2021/';
 const timeline='https://fertilityinstitute.com/egg-freezing-timeline/';
+const shareImage=new URL('/images/share-card.png',site.origin).href;
+const graph={'@context':'https://schema.org','@graph':[websiteSchema,{'@type':'WebPage','@id':canonical+'#webpage',url:canonical,name:title,description:summary,inLanguage:traditional?'zh-TW':'zh-CN',isPartOf:{'@id':site.origin+'/#website'}},{'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Saipan IVF',item:new URL('/',site.origin).href},{'@type':'ListItem',position:2,name:'Guides',item:new URL('/guides/',site.origin).href},{'@type':'ListItem',position:3,name:title,item:canonical}]}]};
 ---
 <!doctype html>
 <html lang={traditional?'zh-Hant':'zh-CN'}>
@@ -65,7 +68,7 @@ const timeline='https://fertilityinstitute.com/egg-freezing-timeline/';
 <link rel="alternate" hreflang="zh-CN" href={new URL('/guides/egg-freezing-cost/',site.origin).href}/>
 <link rel="alternate" hreflang="zh-Hant" href={new URL('/zh-hant/guides/egg-freezing-cost/',site.origin).href}/>
 <link rel="alternate" hreflang="x-default" href={new URL('/guides/egg-freezing-cost/',site.origin).href}/>
-<meta property="og:title" content={title}/><meta property="og:description" content={summary}/><meta property="og:type" content="article"/><meta property="og:url" content={canonical}/>
+<meta property="og:locale" content={traditional?'zh_TW':'zh_CN'}/>{shareLocales.filter(code=>code!==(traditional?'zh_TW':'zh_CN')).map(code=><meta property="og:locale:alternate" content={code}/>)}<meta property="og:site_name" content="Saipan IVF"/><meta property="og:image" content={shareImage}/><meta name="twitter:card" content="summary_large_image"/><script type="application/ld+json" set:html={JSON.stringify(graph).replace(/</g,'\\u003c')}/><meta property="og:title" content={title}/><meta property="og:description" content={summary}/><meta property="og:type" content="article"/><meta property="og:url" content={canonical}/>
 <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}/>
 <style>
 *{box-sizing:border-box}body{margin:0;color:#203b4d;background:#fbfcfc;font-family:system-ui,-apple-system,"Noto Sans TC","Noto Sans SC",sans-serif;line-height:1.75}a{color:#1169a0}header{border-bottom:1px solid #e2ebee;background:#fff}.bar{max-width:1000px;margin:auto;padding:15px 24px;display:flex;justify-content:space-between;gap:18px;align-items:center}.brand{font-weight:750;text-decoration:none;color:#153f58}.switch{font-size:14px}main{max-width:960px;padding:38px 24px 80px;margin:auto}.eyebrow{color:#527286;font-size:13px;letter-spacing:.08em}.hero{padding-bottom:25px;border-bottom:1px solid #dce7ea}h1{font-size:clamp(30px,4vw,46px);line-height:1.22;letter-spacing:-.03em;margin:12px 0 16px}h2{font-size:clamp(22px,3vw,30px);line-height:1.3;margin:42px 0 16px}h3{font-size:18px}p{max-width:750px}.lead{font-size:17px;color:#476475}.notice{border-left:3px solid #498aab;padding:14px 18px;background:#edf5f8;margin:22px 0}table{width:100%;border-collapse:collapse;font-size:15px}th,td{text-align:left;padding:14px;border-bottom:1px solid #dce7ea}th{background:#eef4f5}.tablewrap{overflow:auto}td:last-child,th:last-child{text-align:right;white-space:nowrap}ul,ol{padding-left:25px}li{margin:8px 0}details{border-bottom:1px solid #dce7ea;padding:14px 0}summary{cursor:pointer;font-weight:650}details p{margin-bottom:0}.cta{display:inline-block;background:#146b98;color:#fff;text-decoration:none;padding:13px 20px;border-radius:8px;font-weight:650}footer{padding:30px 24px;text-align:center;border-top:1px solid #dce7ea;color:#587080;font-size:13px}@media(max-width:780px){th,td{padding:10px 7px;font-size:13px}main{padding:28px 18px 60px}}
