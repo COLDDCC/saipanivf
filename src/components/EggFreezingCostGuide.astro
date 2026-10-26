@@ -1,0 +1,58 @@
+---
+import {pricing} from '../data/pricing';
+import {site} from '../data/site';
+import '../styles/site.css';
+import '../styles/typography.css';
+const {traditional=false}=Astro.props;
+const p=(id)=>pricing.find(x=>x.id===id);
+const egg=p('egg'),drug=p('medication'),anesthesia=p('anesthesia'),storage=p('storage');
+const lower=egg.min+drug.min+anesthesia.min+storage.min;
+const upper=egg.max+drug.max+anesthesia.max+storage.max;
+const money=n=>'US$'+n.toLocaleString('en-US');
+const path=traditional?'/zh-hant/guides/egg-freezing-cost/':'/guides/egg-freezing-cost/';
+const title=traditional?'塞班凍卵費用 2026：療程、藥物與保存費怎麼算？':'塞班冻卵费用 2026：周期、药费、保存费如何计算？';
+const summary=traditional?'了解塞班凍卵費用的估算方式、藥物與麻醉另計、年度保存費，以及赴塞班前應核對的報價項目。':'了解塞班冻卵费用的估算方式、促排药物、麻醉及年度保存费，出发前核对书面报价。';
+const t=(cn,tw)=>traditional?tw:cn;
+const canonical=new URL(path,site.origin).href;
+const faq=[
+[t('预算就是诊所报价吗？','估算等於診所報價嗎？'),t('不是。下表使用本站规划假设，实际项目、费用和付款条件以诊所正式书面报价为准。','不是。下表使用本站規劃假設，實際項目、費用與付款條件以診所正式書面報價為準。')],
+[t('每个人都需要相同的促排药量吗？','每個人都需要相同的促排藥量嗎？'),t('不一定。医生根据个人评估和监测调整方案，药费应按实际处方核算。','不一定。醫師根據個人評估與監測調整方案，藥費應依實際處方核算。')],
+[t('保存费用只交一次吗？','保存費用只繳一次嗎？'),t('通常应特别核对年度续费、续存授权、停止保存和后续使用费用；具体看合同。','應特別核對年度續費、續存授權、停止保存及未來使用費用；具體依合約為準。')],
+[t('冻卵能保证未来生育吗？','凍卵能保證未來生育嗎？'),t('不能。结果取决于年龄、卵子数量与质量、未来解冻受精等多种因素。','不能。結果取決於年齡、卵子數量與品質，以及未來解凍、受精等多種因素。')]
+];
+const rows=[
+[t('冻卵周期：监测、取卵、冷冻','凍卵週期：監測、取卵、冷凍'),egg],
+[t('促排药物','促排藥物'),drug],
+[t('取卵麻醉','取卵麻醉'),anesthesia],
+[t('首年保存预算（需确认计费周期）','首年保存預算（須確認計費週期）'),storage]
+];
+const faqSchema={'@context':'https://schema.org','@type':'FAQPage',mainEntity:faq.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))};
+---
+<!doctype html>
+<html lang={traditional?'zh-Hant':'zh-CN'}>
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>{title} · Saipan IVF</title><meta name="description" content={summary}/>
+<link rel="canonical" href={canonical}/>
+<link rel="alternate" hreflang="zh-CN" href={new URL('/guides/egg-freezing-cost/',site.origin).href}/>
+<link rel="alternate" hreflang="zh-Hant" href={new URL('/zh-hant/guides/egg-freezing-cost/',site.origin).href}/>
+<link rel="alternate" hreflang="x-default" href={new URL('/guides/egg-freezing-cost/',site.origin).href}/>
+<meta property="og:title" content={title}/><meta property="og:description" content={summary}/><meta property="og:type" content="article"/><meta property="og:url" content={canonical}/>
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)}/>
+<style>
+*{box-sizing:border-box}body{margin:0;color:#203b4d;background:#fbfcfc;font-family:system-ui,-apple-system,"Noto Sans TC","Noto Sans SC",sans-serif;line-height:1.75}a{color:#1169a0}header{border-bottom:1px solid #e2ebee;background:#fff}.bar{max-width:1000px;margin:auto;padding:15px 24px;display:flex;justify-content:space-between;gap:18px;align-items:center}.brand{font-weight:750;text-decoration:none;color:#153f58}.switch{font-size:14px}main{max-width:960px;padding:38px 24px 80px;margin:auto}.eyebrow{color:#527286;font-size:13px;letter-spacing:.08em}.hero{padding-bottom:25px;border-bottom:1px solid #dce7ea}h1{font-size:clamp(30px,4vw,46px);line-height:1.22;letter-spacing:-.03em;margin:12px 0 16px}h2{font-size:clamp(22px,3vw,30px);line-height:1.3;margin:42px 0 16px}h3{font-size:18px}p{max-width:750px}.lead{font-size:17px;color:#476475}.notice{border-left:3px solid #498aab;padding:14px 18px;background:#edf5f8;margin:22px 0}.metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:25px 0}.metric{background:#eaf3f5;border-radius:12px;padding:21px}.metric strong{font-size:clamp(22px,3vw,32px);display:block;line-height:1.4}.metric small{display:block;color:#476475}table{width:100%;border-collapse:collapse;font-size:15px}th,td{text-align:left;padding:14px;border-bottom:1px solid #dce7ea}th{background:#eef4f5}.tablewrap{overflow:auto}td:last-child,th:last-child{text-align:right;white-space:nowrap}ul{padding-left:25px}li{margin:8px 0}details{border-bottom:1px solid #dce7ea;padding:14px 0}summary{cursor:pointer;font-weight:650}details p{margin-bottom:0}.cta{display:inline-block;background:#146b98;color:#fff;text-decoration:none;padding:13px 20px;border-radius:8px;font-weight:650}footer{padding:30px 24px;text-align:center;border-top:1px solid #dce7ea;color:#587080;font-size:13px}@media(max-width:600px){.metrics{grid-template-columns:1fr}th,td{padding:10px 7px;font-size:13px}main{padding:28px 18px 60px}}
+</style>
+</head>
+<body>
+<header><nav class="bar" aria-label={t('页面导航','頁面導覽')}><a class="brand" href="/">Saipan IVF</a><div class="switch"><a href="/guides/">{t('全部指南','全部指南')}</a> · <a href={traditional?'/guides/egg-freezing-cost/':'/zh-hant/guides/egg-freezing-cost/'}>{traditional?'简体中文':'繁體中文'}</a></div></nav></header>
+<main>
+<div class="hero"><div class="eyebrow">{t('费用指南 · 2026 · 美元','費用指南 · 2026 · 美元')}</div><h1>{title}</h1><p class="lead">{summary}</p>
+<div class="metrics"><div class="metric"><small>{t('单周期规划预算（含首年保存假设）','單週期規劃預算（含首年保存假設）')}</small><strong>{money(lower)}–{money(upper)}</strong><small>{t('不是机构报价，不含机票住宿等','非機構報價，不含機票住宿等')}</small></div><div class="metric"><small>{t('单独核对','請另外核對')}</small><strong>{t('药物 / 麻醉 / 保存','藥物 / 麻醉 / 保存')}</strong><small>{t('未来使用冷冻卵子费用另计','未來使用冷凍卵子的費用另計')}</small></div></div>
+<div class="notice"><strong>{t('先看结论：','先看結論：')}</strong>{t('本站当前使用规划预算模型，并非塞班接诊机构确认的收费表。正式预约前，应向实际接诊及收款主体取得包含项目、排除项目和退费条件的书面报价。','本站目前使用規劃預算模型，並非塞班接診機構確認的收費表。正式預約前，請向實際接診及收款單位取得包含項目、排除項目與退費條件的書面報價。')}</div></div>
+<section><h2>{t('冻卵费用分成哪几项？','凍卵費用分成哪些項目？')}</h2><div class="tablewrap"><table><thead><tr><th>{t('项目','項目')}</th><th>{t('本站规划假设 · USD','本站規劃假設 · USD')}</th></tr></thead><tbody>{rows.map(([label,row])=><tr><td>{label}</td><td>{row.min===row.max?money(row.min):money(row.min)+'–'+money(row.max)}</td></tr>)}</tbody></table></div><p><small>{t('模型来源：本站费用预算数据；含一次周期及首年保存的假设，不代表临床收费，也不保证所有项目适用于每个人。','模型來源：本站費用預算資料；假設一次週期與首年保存，不代表實際臨床收費，也不表示所有項目均適用。')}</small></p></section>
+<section><h2>{t('哪些费用容易漏算？','哪些費用容易漏算？')}</h2><ul><li>{t('额外检查、促排方案调整和药量变化','額外檢查、促排療程調整及藥量變化')}</li><li>{t('取卵前检查、麻醉及延期或取消','取卵前檢查、麻醉及延期或取消')}</li><li>{t('冷冻样本的年度续费、未来解冻及后续生育治疗','冷凍樣本的年度續費、未來解凍及後續生育療程')}</li><li>{t('航班、住宿、陪同、交通、返程及意外延长停留','航班、住宿、陪同、交通、返程及意外延長停留')}</li></ul></section>
+<section><h2>{t('付款前必须确认的 5 件事','付款前必須確認的 5 件事')}</h2><ol><li>{t('实际接诊机构、收款方及报价日期。','實際接診機構、收款方及報價日期。')}</li><li>{t('药物、麻醉、监测、取卵、冷冻分别包含什么。','藥物、麻醉、監測、取卵、冷凍分別包含什麼。')}</li><li>{t('存储机构、年度续费与合同终止规则。','保存機構、年度續費與合約終止規則。')}</li><li>{t('未取到卵子、取消或延期时的收费规则。','未取得卵子、取消或延期時的收費規則。')}</li><li>{t('到院时间是否由医生确认，不能仅凭通用日程订不可退机票。','到院時間是否已由醫師確認；勿僅憑通用時程購買不可退機票。')}</li></ol></section>
+<section><h2>{t('常见问题','常見問題')}</h2>{faq.map(([q,a])=><details><summary>{q}</summary><p>{a}</p></details>)}</section>
+<section><h2>{t('可靠来源与延伸阅读','可靠來源與延伸閱讀')}</h2><p><a href="https://www.hfea.gov.uk/treatments/fertility-preservation/egg-freezing/" rel="noopener">{t('英国 HFEA：冻卵与结果解释','英國 HFEA：凍卵與結果說明')}</a> · <a href="/fees/">{t('本站预算工具','本站預算工具')}</a> · <a href="/guides/quotation/">{t('书面报价核对清单','書面報價核對清單')}</a> · <a href="/guides/egg-freezing/">{t('冻卵初诊准备','凍卵初診準備')}</a></p><p>{t('费用假设核对日期：2026-10-26。真实临床费用请另向机构确认。','費用假設核對日期：2026-10-26。實際臨床費用請另向機構確認。')}</p><a class="cta" href="/contact/">{t('咨询个人费用和就诊安排','諮詢個人費用與就診安排')}</a></section>
+</main><footer>© 2026 Saipan IVF · {t('内容仅供准备咨询，不代替医疗建议','內容僅供諮詢準備，不取代醫療建議')}</footer>
+</body></html>
