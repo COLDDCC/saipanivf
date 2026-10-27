@@ -71,5 +71,9 @@ export default function traditional(){return {name:'complete-traditional-chinese
  const paths=pages.map(p=>'/'+relative(root,dirname(p)).split('\\').join('/')+'/').map(p=>p==='//'?'/':p);
  const locales=[['zh-CN',''],['zh-TW','/zh-hant'],['en','/en'],['ja','/ja'],['ko','/ko'],['es','/es'],['de','/de'],['fr','/fr']];
  const xml='<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'+paths.flatMap(path=>locales.map(([,prefix])=>'<url><loc>'+origin+prefix+path+'</loc>'+[...locales,['x-default','']].map(([lang,p])=>'<xhtml:link rel="alternate" hreflang="'+lang+'" href="'+origin+p+path+'"/>').join('')+'</url>')).join('')+'</urlset>';
- writeFileSync(join(root,'sitemap.xml'),xml);
+ // Some translated cost guides are generated separately from the source-page loop.
+ // Include only the known published routes here; avoid stale sitemap omissions.
+ const guideExtras=['en','ja','ko','es','de','fr'].flatMap(locale=>['ivf-cost','egg-freezing-cost'].map(slug=>`${origin}/${locale}/guides/${slug}/`));
+ const extraXml=guideExtras.map(url=>'<url><loc>'+url+'</loc></url>').join('');
+ writeFileSync(join(root,'sitemap.xml'),xml.replace('</urlset>',extraXml+'</urlset>'));
 }}}}
