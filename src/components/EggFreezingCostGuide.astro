@@ -56,7 +56,7 @@ const faqSchema={'@context':'https://schema.org','@type':'FAQPage',mainEntity:fa
 const hfea='https://www.hfea.gov.uk/treatments/fertility-preservation/egg-freezing/';
 const asrm='https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-outcomes-after-oocyte-cryopreservation-for-donor-oocyte-in-vitro-fertilization-and-planned-oocyte-cryopreservation-a-guideline-2021/';
 const timeline='https://fertilityinstitute.com/egg-freezing-timeline/';
-const editorialGraph={'@context':'https://schema.org','@graph':[websiteSchema,{'@type':'WebPage','@id':canonical+'#webpage',url:canonical,name:title,description:summary,inLanguage:traditional?'zh-Hant':'zh-CN',isPartOf:{'@id':site.origin+'/#website'}},{'@type':'BreadcrumbList',itemListElement:[{ '@type':'ListItem',position:1,name:t('首页','首頁'),item:new URL('/',site.origin).href},{'@type':'ListItem',position:2,name:t('就诊指南','就診指南'),item:new URL('/guides/',site.origin).href},{'@type':'ListItem',position:3,name:title,item:canonical}]}]};
+const editorialGraph={'@context':'https://schema.org','@graph':[websiteSchema,{'@type':'WebPage','@id':canonical+'#webpage',url:canonical,name:title,description:summary,inLanguage:traditional?'zh-Hant':'zh-CN',isPartOf:{'@id':site.origin+'/#website'}},{'@type':'BreadcrumbList',itemListElement:[{ '@type':'ListItem',position:1,name:t('首页','首頁'),item:new URL('/',site.origin).href},{'@type':'ListItem',position:2,name:t('就诊指南','就診指南'),item:new URL(traditional?'/zh-hant/guides/':'/guides/',site.origin).href},{'@type':'ListItem',position:3,name:title,item:canonical}]}]};
 ---
 <!doctype html>
 <html lang={traditional?'zh-Hant':'zh-CN'}>
