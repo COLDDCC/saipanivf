@@ -52,6 +52,10 @@ export default function traditional(){return {name:'complete-traditional-chinese
  }
  visit(tree);let html=serialize(tree);
  html=html
+  .replace(/<a href="https:\/\/www\.moe\.gov\.cn\/srcsite\/A20\/moe_850\/202006\/t20200609_464159\.html"[^>]*>教育部：規範高等學校接受國際學生有關工作的通知<\/a>/g,'<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0110001" target="_blank" rel="noopener">教育部：外國學生來台就學相關規定</a>')
+  .replace(/<a href="https:\/\/www\.nia\.gov\.cn\/n741440\/n741547\/c1013967\/content\.html"[^>]*>國家移民管理局：中國國籍法<\/a>/g,'<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030001">全國法規資料庫：中華民國國籍法</a>')
+
+  .replaceAll('<a href="https://www.nia.gov.cn/n741440/n741547/c1013967/content.html">國家移民管理局：中國國籍法</a>','<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030001">全國法規資料庫：中華民國國籍法</a>')
 
   .replaceAll('CBP官方旅行授權系統','CBP：G-CNMI ETA 官方申請系統')
   .replaceAll('<a href="https://www.nia.gov.cn/n741440/n741547/c1013967/content.html" target="_blank" rel="noopener">國家移民管理局：《中華人民共和國國籍法》</a>','<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030001" target="_blank" rel="noopener">全國法規資料庫：《國籍法》</a>')

@@ -25,6 +25,7 @@ const metadata: Record<string, Record<string, [string, string]>> = {
   'treatments/frozen-embryo-transfer':['Transferencia de embriones congelados en Saipán: FET','Consulta la valoración, preparación, descongelación y transferencia de embriones congelados en Saipán. Revisa los costes y el seguimiento.']
  },
  'zh-CN': {
+  'birth-planning':['在塞班出生的孩子是美国公民吗？国籍、护照与入境指南','塞班出生的孩子通常取得美国公民身份，但存在例外。了解外国父母、签证入境、出生登记、美国护照和返程证件如何分别核实。'],
   'guides/quotation':['IVF报价怎么看：计费单位、额外费用与退费核对表','比较试管婴儿报价，先核对药物、取卵培养、ICSI、冷冻保存和移植的计费单位，再确认付款节点、取消周期与额外支出。附可逐项使用的报价核对表。'],
   fees:['塞班试管婴儿费用：IVF、药物与移植预算','查看塞班IVF费用构成，区分取卵培养、促排药物、ICSI、冷冻保存与胚胎移植。使用预算工具组合项目，核对另计费用和书面报价。'],
   'treatments/ivf':['塞班试管婴儿 IVF：治疗流程、费用与初诊准备','了解塞班IVF从初诊评估、促排监测、取卵受精到胚胎培养与移植的主要环节，查看适用情况、风险、费用范围及就诊准备。'],
