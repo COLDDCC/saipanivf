@@ -1,0 +1,48 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import SourceNote from "../../components/SourceNote.astro";
+const title="人工授精 IUI 和试管婴儿 IVF 有什么区别？";
+const description="先看一张对比表，再根据输卵管、精液检查、年龄和治疗目标判断该问医生什么。比较流程、费用、风险及下一步。";
+const rows=[
+ ["受精发生在哪里","输卵管内，由精子与卵子自然相遇","体外实验室，随后移植胚胎"],
+ ["主要操作","排卵期将处理后的精子送入子宫","促排、取卵、实验室受精与胚胎移植"],
+ ["是否取卵","通常不需要","需要（若使用自己的卵子）"],
+ ["治疗负担","通常较低；是否用促排药物因方案而异","操作、监测与用药通常更多"],
+ ["一次周期费用","通常较低，但可能需要多次","通常较高，且用药、冷冻等可能另计"],
+ ["适用前提","需评估排卵、至少一侧输卵管通畅及精液情况","适用于部分不宜 IUI 或需要体外受精的人群"],
+ ["能否保证成功","不能","不能"]
+];
+const situations=[
+ ["输卵管堵塞或明显受损","优先询问 IVF 是否更适合","IUI 仍依赖输卵管完成受精，先确认阻塞范围与其他治疗选择"],
+ ["需要供精、输卵管通畅且无其他明显因素","可以询问 IUI","也要确认供精来源、筛查要求和接诊机构实际服务"],
+ ["严重男性因素或曾多次治疗失败","尽早讨论 IVF／ICSI 评估","具体取决于精液结果、既往记录，不是所有情况都需要 ICSI"],
+ ["原因不明的不孕","比较期待管理、促排结合 IUI 与 IVF","指南在适用人群、治疗次数和资源配置上有差异"],
+ ["年龄较大或时间窗口紧迫","先讨论时间成本与个体化预后","不应只比较单次周期价格或笼统平均成功率"]
+];
+const questions=["我目前的检查是否支持尝试 IUI？还缺哪项关键报告？","如果尝试 IUI，建议以什么指标或周期节点重新评估？","你提供的是每次妊娠率、临床妊娠率，还是每次活产率？对应哪个年龄组？","报价包括监测、药物、实验室、麻醉、移植、冷冻保存和复诊吗？","如果跨境治疗，哪些检查能在居住地完成，出现不适由谁负责？"];
+const faq=[
+ ["人工授精 IUI 就是试管婴儿吗？","不是。IUI 将处理后的精子送入子宫，仍需在体内受精；IVF 则取出卵子，在实验室完成受精后移植胚胎。"],
+ ["IUI 和 IVF 哪个成功率更高？","总体而言 IVF 的每周期成功机会通常高于 IUI，但两者不能直接用不同年龄、诊断或成功定义的平均百分比比较。请索取与你情况匹配、以活产为结局的资料。"],
+ ["先做几次 IUI 才能转 IVF？","没有适用于所有人的固定次数。年龄、输卵管、精液情况、不孕原因及医疗团队建议会影响决定；如果 IUI 不适合，就没有必要为了凑次数而延误评估。"],
+ ["IUI 一定更便宜吗？","单次操作通常更便宜，但比较总预算时还要考虑药物、监测、重复周期、交通与时间成本；不能只比较单次标价。"],
+ ["塞班是否提供 IUI？","本指南解释两种治疗的选择逻辑，不代表塞班合作机构已经确认提供 IUI。是否开展该项目、适用资格和书面报价，需在咨询时向实际接诊机构核实。"]
+];
+---
+<SiteLayout title={title} description={description} active="guides" plainHead={true}>
+<article class="section wrap iui-guide" aria-label="IUI与IVF比较指南">
+<div class="quick-answer"><span class="eyebrow">2026 治疗选择指南 · 资料核对 2026-10-27</span><h2>先看结论</h2><p><strong>IUI（宫腔内人工授精）</strong>把处理后的精子送入子宫，让精卵在体内相遇；<strong>IVF（体外受精）</strong>先取卵并在实验室受精，再移植胚胎。IUI 通常侵入性和单次费用较低，但不是所有不孕原因都适合；如果输卵管问题明显或有其他复杂因素，应尽早讨论 IVF。<a href="#compare">直接看区别 ↓</a></p><p class="caveat">选择取决于检查结果，不应仅凭价格或网上的平均成功率决定。本文是决策准备资料，不替代医生诊断。</p></div>
+<nav class="jump" aria-label="本文导航"><a href="#compare">7项区别</a><a href="#decision">怎么选</a><a href="#steps">流程</a><a href="#budget">费用</a><a href="#questions">咨询清单</a><a href="#faq">常见问题</a></nav>
+<section id="compare"><h2>IUI 和 IVF：7 项关键区别</h2><div class="scroll-table" role="region" aria-label="IUI与IVF对比表" tabindex="0"><table><thead><tr><th scope="col">比较项目</th><th scope="col">IUI 人工授精</th><th scope="col">IVF 试管婴儿</th></tr></thead><tbody>{rows.map(([name,iui,ivf])=><tr><th scope="row">{name}</th><td>{iui}</td><td>{ivf}</td></tr>)}</tbody></table></div><p class="annotation">资料参考：<a href="https://www.hfea.gov.uk/treatments/explore-all-treatments/intrauterine-insemination-iui/" target="_blank" rel="noopener noreferrer">HFEA：IUI</a>、<a href="https://www.nhs.uk/conditions/infertility/treatment/" target="_blank" rel="noopener noreferrer">NHS：不孕治疗</a>。这是治疗机制比较，不代表任何诊所的个体化成功率。</p></section>
+<section id="decision"><h2>什么情况下，应该先考虑哪一种？</h2><p>这不是在线诊断表，而是帮你更快提出下一步问题。</p><div class="scroll-table" role="region" aria-label="治疗选择情境对照" tabindex="0"><table><thead><tr><th scope="col">目前情况</th><th scope="col">优先讨论</th><th scope="col">为什么</th></tr></thead><tbody>{situations.map(([s,a,b])=><tr><th scope="row">{s}</th><td><strong>{a}</strong></td><td>{b}</td></tr>)}</tbody></table></div><p class="annotation">临床路径有地区差异。对原因不明不孕的 IUI 使用建议，<a href="https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-treatments-for-couples-with-unexplained-infertility-a-guideline-2020/" target="_blank" rel="noopener noreferrer">ASRM 指南</a>与不同国家医疗体系的建议不应混为一谈。</p></section>
+<section id="steps"><h2>两种治疗，流程差在哪里？</h2><div class="process-grid"><div><h3>IUI：重点在排卵时间</h3><ol><li>检查输卵管、排卵和精液情况</li><li>监测排卵；是否用药由医生决定</li><li>处理精子，在排卵期送入子宫</li><li>按医嘱验孕并复盘下一周期</li></ol></div><div><h3>IVF：多了取卵与胚胎实验室</h3><ol><li>检查与制定促排方案</li><li>促排监测、取卵与获取精子</li><li>实验室受精、胚胎培养</li><li>按医疗方案移植或冷冻、随访</li></ol></div></div><p>如果已经准备做 IVF，可继续阅读<a href="/guides/ivf-steps/">IVF 每阶段就诊清单</a>。</p></section>
+<section id="budget"><h2>费用怎么比较，才不会被低价误导？</h2><p>单次 IUI 通常比 IVF 便宜；但<strong>真正要比较的是达成治疗目标前可能产生的总支出</strong>，而非单次操作价格。本站没有已核实的塞班 IUI 报价，因此不提供未经确认的数字。</p><div class="scroll-table" role="region" aria-label="预算项目检查表" tabindex="0"><table><thead><tr><th scope="col">预算项目</th><th scope="col">IUI 重点询问</th><th scope="col">IVF 重点询问</th></tr></thead><tbody><tr><th scope="row">检查与监测</th><td>排卵、输卵管、精液评估</td><td>基础检查、超声、激素监测</td></tr><tr><th scope="row">药物与操作</th><td>是否促排、精子处理及授精费</td><td>促排药物、取卵、麻醉、实验室</td></tr><tr><th scope="row">后续费用</th><td>验孕、复诊、后续周期</td><td>移植、胚胎冷冻及续存、复诊</td></tr><tr><th scope="row">跨境成本</th><td>就诊频次、交通住宿</td><td>监测及取卵时间、往返、可能分次移植</td></tr></tbody></table></div><p>在比较 IVF 费用时，可以使用<a href="/fees/">本站费用预算工具</a>并核对<a href="/guides/quotation/">书面报价指南</a>。价格以接诊方正式书面文件为准。</p></section>
+<section id="success"><h2>成功率：最容易看错的三个地方</h2><div class="insights"><article><strong>01 · 分母</strong><p>每次开始治疗、每次取卵或每次移植，统计口径不同。</p></article><article><strong>02 · 结局</strong><p>验孕阳性、临床妊娠与活产不是一回事。</p></article><article><strong>03 · 人群</strong><p>年龄、不孕原因和是否使用供卵等因素会影响结果。</p></article></div><p>HFEA 提醒 IUI 单次成功机会通常低于 IVF，但不要将其历史总体比较直接当作你本人或塞班诊所的成功率。应要求医疗团队说明<strong>年龄分组、治疗类型、结局定义和样本年份</strong>。<a href="https://www.hfea.gov.uk/treatments/explore-all-treatments/intrauterine-insemination-iui/" target="_blank" rel="noopener noreferrer">查看 HFEA 说明</a>。</p></section>
+<section id="questions"><h2>首次咨询，直接带上这 5 个问题</h2><ol class="question-list">{questions.map(q=><li>{q}</li>)}</ol><p>准备好已有报告后，可先看<a href="/guides/first-visit/">首次就诊资料清单</a>；跨境患者还应核对<a href="/guides/travel-checklist/">行程和随访安排</a>。</p></section>
+<section id="faq"><h2>常见问题</h2>{faq.map(([q,a])=><details><summary>{q}</summary><p>{a}</p></details>)}</section>
+<div class="next"><h2>下一步：拿检查结果确认适用方案</h2><p>如果还不确定 IUI 或 IVF，先询问接诊方是否提供所需项目、是否接受现有检查，以及由哪位医疗人员负责评估。本站提供咨询协调信息，治疗决定由实际接诊机构作出。</p><a href="/contact/" class="button">了解初步咨询</a><a class="back" href="/guides/">返回全部指南</a></div>
+<SourceNote checked="2026-10-27" sources={[{name:"HFEA · Intrauterine insemination (IUI)",url:"https://www.hfea.gov.uk/treatments/explore-all-treatments/intrauterine-insemination-iui/"},{name:"NHS · Intrauterine insemination",url:"https://www.nhs.uk/tests-and-treatments/intrauterine-insemination-iui/"},{name:"NHS · Treatment for infertility",url:"https://www.nhs.uk/conditions/infertility/treatment/"},{name:"ASRM · Evidence-based treatments for unexplained infertility (2020)",url:"https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-treatments-for-couples-with-unexplained-infertility-a-guideline-2020/"}]}/>
+</article>
+</SiteLayout>
+<style>
+.iui-guide{max-width:1000px;padding-top:22px;padding-bottom:65px}.iui-guide section{scroll-margin-top:24px;margin-top:45px}.iui-guide h2{font-size:clamp(23px,3vw,32px);margin-bottom:14px}.iui-guide p{line-height:1.85}.quick-answer{padding:24px;border:1px solid #d9e7eb;border-radius:16px;background:#f5fafb}.quick-answer h2{margin:7px 0;font-size:21px}.quick-answer p{margin:8px 0}.eyebrow,.annotation,.caveat{font-size:13px;color:#496b7b}.jump{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}.jump a{display:inline-flex;align-items:center;min-height:44px;padding:7px 14px;border:1px solid #d7e4e8;border-radius:40px;text-decoration:none}.jump a:hover,.jump a:focus-visible{background:#e9f3f6;outline-offset:3px}.scroll-table{max-width:100%;overflow-x:auto;border:1px solid #dce7eb;border-radius:12px}.scroll-table:focus-visible{outline:2px solid #1767a6}.iui-guide table{width:100%;min-width:640px;border-collapse:collapse;font-size:15px}.iui-guide th,.iui-guide td{text-align:left;vertical-align:top;padding:15px 16px;border-bottom:1px solid #e4edef}.iui-guide thead th{background:#eaf3f6;color:#244c60}.iui-guide tbody th{width:24%;font-weight:650}.iui-guide tr:last-child th,.iui-guide tr:last-child td{border-bottom:0}.annotation{margin-top:12px}.process-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.process-grid>div{padding:21px;background:#f3f7f8;border-radius:12px}.process-grid h3{margin:0;font-size:19px}.process-grid ol{padding-left:23px}.process-grid li{margin:12px 0}.insights{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.insights article{padding:18px;border:1px solid #dbe6ea;border-radius:10px}.insights article p{margin-bottom:0}.question-list{counter-reset:questions;list-style:none;padding:0}.question-list li{counter-increment:questions;padding:15px 16px;margin:8px 0;background:#f5f8f9;border-radius:9px}.question-list li:before{content:counter(questions,decimal-leading-zero);font-weight:750;color:#1767a6;margin-right:14px}.iui-guide details{padding:17px 2px;border-bottom:1px solid #dce7eb}.iui-guide summary{cursor:pointer;font-weight:650}.iui-guide details p{margin-bottom:0}.next{padding:25px;background:#eff6f8;border-radius:14px;margin-top:45px}.next h2{margin-top:0}.next .back{margin-left:20px}.iui-guide a:focus-visible{outline:2px solid #1767a6;outline-offset:3px}@media(max-width:650px){.iui-guide{padding-top:14px}.quick-answer{padding:17px}.process-grid,.insights{grid-template-columns:1fr}.iui-guide th,.iui-guide td{padding:11px;font-size:14px}.next .back{display:block;margin:15px 0 0}}
+</style>
