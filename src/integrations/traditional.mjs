@@ -70,7 +70,7 @@ export default function traditional(){return {name:'complete-traditional-chinese
  const out=join(root,'zh-hant',relative(root,path));if(['guides/egg-freezing-cost/index.html','guides/ivf-cost/index.html'].includes(relativePath))continue;mkdirSync(dirname(out),{recursive:true});writeFileSync(out,html);}
  const paths=pages.map(p=>'/'+relative(root,dirname(p)).split('\\').join('/')+'/').map(p=>p==='//'?'/':p);
  const locales=[['zh-CN',''],['zh-TW','/zh-hant'],['en','/en'],['ja','/ja'],['ko','/ko'],['es','/es'],['de','/de'],['fr','/fr']];
- const specialGuides=new Set(['/guides/ivf-cost/','/guides/egg-freezing-cost/']);
+ const specialGuides=new Set(['/guides/ivf-cost/','/guides/egg-freezing-cost/','/guides/iui-vs-ivf/']);
  const xml='<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'+paths.flatMap(path=>{
   const available=specialGuides.has(path)?locales.filter(([,prefix])=>prefix===''||prefix==='/zh-hant'):locales;
   const alternate=[...available,['x-default','']];
