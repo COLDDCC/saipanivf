@@ -39,8 +39,9 @@ Reviewer: Assistant source-and-CI review only; no clinical or visual signoff
 1. IUI places processed sperm into uterus, requires evaluation for tubal suitability, lower treatment burden vs IVF: HFEA, `https://www.hfea.gov.uk/treatments/explore-all-treatments/intrauterine-insemination-iui/`; NHS, `https://www.nhs.uk/tests-and-treatments/intrauterine-insemination-iui/`. Applicability: general treatment education, not individual eligibility.
 2. IVF fertilises eggs outside body with retrieval and embryo transfer: NHS, `https://www.nhs.uk/conditions/infertility/treatment/`. Applicability: general procedure.
 3. Unexplained infertility treatment options and limits of natural-cycle IUI: ASRM, `https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-treatments-for-couples-with-unexplained-infertility-a-guideline-2020/`. Applicability: ASRM 2020 guideline, not Saipan provider policy.
-4. No numeric provider costs, outcomes, travel durations or service guarantees asserted. Need provider confirmation for actual IUI availability.
-5. No clinic-specific claims of eligibility, success, or safety inserted.
+4. IUI ovarian stimulation, multiple pregnancy and urgent symptoms: NHS IUI and HFEA IUI pages above (checked 2026-10-27). Risk wording is general; emergency triage follows local care protocols.
+5. No numeric provider costs, outcomes, travel durations or service guarantees asserted. Need provider confirmation for actual IUI availability.
+6. No clinic-specific claims of eligibility, success, or safety inserted.
 
 ## Visual and release gates
 - Screenshot / mobile verification: **Not verified**.
