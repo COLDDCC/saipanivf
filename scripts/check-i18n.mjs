@@ -24,14 +24,14 @@ for(const locale of ['en','ja','ko','es','de','fr']){
 }
 console.log('PASS i18n: 184 complete language routes, active language, matching hreflang, English text coverage, 12 FAQ answers per locale, localized budget calculations and copy feedback.');
 
-for(const relative of base){
+for(const relative of sharedPages){
  const images=prefix=>nodes(parse(fs.readFileSync(path.join('dist',prefix,relative),'utf8'))).filter(n=>n.tagName==='img').map(n=>attr(n,'data-src')||attr(n,'src'));
  const expected=images('');for(const prefix of ['zh-hant','en','ja','ko','es','de','fr'])assert.deepEqual(images(prefix),expected,prefix+'/'+relative+' image parity');
 }
 for(const prefix of ['en','ja','ko','es','de','fr']){const home=fs.readFileSync('dist/'+prefix+'/index.html','utf8');for(const cls of ['photo-cards','home-center','people-grid','home-budget','journey-panel','guide-grid','home-birth-link'])assert(home.includes(cls),prefix+' missing shared home layout '+cls);}
 console.log('PASS visual parity: image sources and order match Simplified Chinese on all 161 translated routes; shared home layouts.');
 
-for(const relative of base){
+for(const relative of sharedPages){
  const all=nodes(parse(fs.readFileSync(path.join('dist','zh-hant',relative),'utf8')));
  const switcher=all.find(n=>n.tagName==='details'&&attr(n,'class')?.split(' ').includes('language-switcher'));
  const summary=switcher?.childNodes.find(n=>n.tagName==='summary');
