@@ -23,5 +23,27 @@ jobs:
         run: npm ci
       - name: Build and check generated pages independently of editorial approval
         run: npm run build && npm run check:site && npm run check:seo && npm run check:i18n && npm run check:mobile && npm run check:loading
+      - name: Visual snapshots for article acceptance
+        if: github.event_name == 'pull_request'
+        run: |
+          npm install --no-save --package-lock=false playwright
+          npx playwright install --with-deps chromium
+          (npm run preview -- --port 4321 > /tmp/preview.log 2>&1 &)
+          for i in $(seq 1 30); do curl -fs http://localhost:4321/guides/iui-vs-ivf/ > /dev/null && break; sleep 1; done
+          npx playwright screenshot --browser chromium --viewport-size "390,844" --full-page http://localhost:4321/guides/iui-vs-ivf/ /tmp/iui-mobile.png
+          npx playwright screenshot --browser chromium --viewport-size "1440,900" --full-page http://localhost:4321/guides/iui-vs-ivf/ /tmp/iui-desktop.png
+          npx playwright screenshot --browser chromium --viewport-size "390,844" --full-page http://localhost:4321/guides/egg-freezing-cost/ /tmp/golden-mobile.png
+          echo VISUAL_MOBILE_BEGIN
+          base64 -w0 /tmp/iui-mobile.png
+          echo
+          echo VISUAL_MOBILE_END
+          echo VISUAL_DESKTOP_BEGIN
+          base64 -w0 /tmp/iui-desktop.png
+          echo
+          echo VISUAL_DESKTOP_END
+          echo VISUAL_GOLDEN_BEGIN
+          base64 -w0 /tmp/golden-mobile.png
+          echo
+          echo VISUAL_GOLDEN_END
       - name: Build and run full checks
         run: npm run verify
