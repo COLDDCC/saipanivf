@@ -1,5 +1,17 @@
 # Guide acceptance review: iui-vs-ivf
 
+Golden reference: /guides/egg-freezing-cost/
+Primary question: IUI 人工授精和 IVF 试管婴儿有什么区别、该如何与医生讨论选择？
+First-screen answer: IUI 在体内受精，IVF 在实验室受精后移植；应依据检查结果而不是单次标价选择。
+Sources: HFEA IUI; NHS infertility treatment; ASRM unexplained infertility guideline (consulted 2026-10-27)
+Comparison: Compared to current source of egg-freezing-cost guide; actual rendered preview not reviewed
+Score: 81/100
+Blockers: Mobile screenshot, medical content, visual comparison and localization signoff pending
+Mobile review: Not verified
+Localization: Not verified
+Reviewer: Assistant source-and-CI review only; no clinical or visual signoff
+
+
 - Golden reference: `/guides/egg-freezing-cost/` (current source inspected 2026-10-27)
 - New route: `/guides/iui-vs-ivf/`
 - Primary question: 人工授精 IUI 和试管婴儿 IVF 有什么区别，哪种方案值得先与医生讨论？
