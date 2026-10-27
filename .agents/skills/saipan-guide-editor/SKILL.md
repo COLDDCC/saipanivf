@@ -1,48 +1,93 @@
 ---
 name: saipan-guide-editor
-description: Audit and improve Saipan IVF patient guides with evidence-first SEO, medically cautious content, clear answer-first UX, and accessible bilingual editorial design.
+description: Create and improve Saipan IVF patient guides using the egg-freezing-cost golden reference, evidence-first medical editing, answer-first UX, SEO and bilingual accessibility quality gates.
 ---
-# Saipan IVF Guide Editor
 
-## Role
-Upgrade existing Saipan IVF guides to exceed comparable patient decision guides in evidence quality, answer usefulness, mobile reading experience, and accessibility. Do not measure quality by word count, number of cards, or unsupported conversion claims.
+# Saipan IVF Guide Editor — Golden Reference Standard
 
-## Required context
-1. Read README.md, src/data/pricing.ts, src/pages/guides.astro, existing related guides and src/layouts/SiteLayout.astro before editing.
-2. Inspect the actual reference page if retrievable. If ProIVF /guides/miami-ivf-guide is inaccessible, say so; do not assert specific competitor headings, statistics, images, rankings, or layouts.
-3. Look up current authoritative facts from HFEA, NHS, ASRM, CDC, CBP and official institution documents as appropriate. Record URL and checked date for material claims.
-4. Inspect existing routes and translation generation: src/integrations/traditional.mjs, dynamic locale routes and the site's canonical/hreflang rules. Don't create duplicate Traditional Chinese outputs.
+## Non-negotiable baseline
+The **internal golden reference** is:
+- Live route: `/guides/egg-freezing-cost/`
+- Source: `src/components/EggFreezingCostGuide.astro` and `src/pages/guides/egg-freezing-cost.astro`
+- Traditional Chinese route: `/zh-hant/guides/egg-freezing-cost/`
 
-## Reusable workflow
-1. **SERP and intent brief**: user question, relevant adjacent questions, competing answer formats, actual evidence gaps, existing-site overlap and chosen canonical URL. Prefer one useful page over multiple overlapping pages.
-2. **Source ledger**: map every fee, visa/entry, clinical outcome, success rate, eligibility, time claim, and provider-specific promise to a dated primary source. Mark assumptions as assumptions. Block unsourced facts.
-3. **Answer-first structure**:
-   - One clear H1, concise 2–4 sentence answer immediately visible.
-   - Five-second summary of what is known, what varies, and what the reader should verify.
-   - Navigation anchors to fees, process, eligibility, schedule, risks, common questions, and sources where relevant.
-   - Useful tables with inclusions/exclusions; annotate unit, currency, date, provider status and range methodology.
-   - Concrete itinerary/checklist and decision framework; no invented timelines.
-   - FAQ only where there are substantive user questions, not keyword filler.
-   - At least one contextually relevant related guide and a non-coercive consultation route.
-4. **Design**: first audit existing design, then use restrained editorial typography, generous but not empty whitespace, responsive comparisons/tables, correct headings, keyboard-friendly expandable disclosures and accessible contrast. Do not fork standalone HTML design systems for each article; share components and preserve site navigation/footer.
-5. **Localization**: Simplified and Traditional Chinese should have region-appropriate titles and wording, not character-conversion-only when market intent differs. Audit the build's existing Traditional Chinese generator before adding a separate path. Canonicals and hreflang must resolve to pages that exist.
-6. **Medical and business accuracy**: avoid guaranteed pregnancy, blanket eligibility, fixed prices, unlabeled stock photos implying clinicians/patients, invented ratings, claims about nationality-based entry rules without authoritative current evidence. Do not label site planning figures as SIVF official provider fees.
-7. **SEO hygiene**: one primary intent per canonical, descriptive snippets, source visibility, related-guide linking, valid schema only for visible corresponding content; don't promise search rich results.
-8. **Verification**: run npm ci and npm run verify in a suitable environment. Check built pages, mobile layout, both language versions, sitemap, internal links, accessible interactions and CI. If unavailable, report precisely as unverified. Never call a code push a live deployment.
+For **every new guide and every major rewrite**, first inspect the **CURRENT** golden reference source, its actual rendered layout when available, and its latest route. Treat its useful qualities as a **quality floor**, not a template to duplicate. New pages should be demonstrably more helpful for their specific query; if improvement is not justified, they must at least match its relevant standards. Do not claim a page is better without evidence, comparison and human/visual review. Do not make every guide about prices or force irrelevant sections.
 
-## Review rubric (100 points)
-- Answer usefulness, question coverage and clarity: 25
+The golden article itself can be improved, so never rely on screenshots or stale descriptions instead of reading the current files. If live pages cannot be loaded, review the source and state that visual comparison remains unverified.
+
+## Required context before drafting
+1. Read `README.md`, `src/data/pricing.ts`, `src/pages/guides.astro`, the current golden reference, related guides, `src/layouts/SiteLayout.astro` and this skill.
+2. Inspect the actual SERP/reference URLs if retrievable, and record what was actually reviewed. Never invent competitor headings, claims, performance or layouts.
+3. Check current authoritative medical, entry, policy and monetary sources (HFEA, ASRM, NHS, CDC, CBP, official institutions as applicable). Record URL, date, applicability and whether primary or secondary.
+4. Inspect translation generation (`src/integrations/traditional.mjs`), locale routes, canonical, hreflang and shared styles/components.
+
+## Editorial workflow — complete in order
+### 1. Search intent & page justification
+- Define the user's exact question, the answer they need in five seconds, audience/country, language, primary keyword, secondary intents and canonical route.
+- Check competing pages and site overlap; merge/cross-link overlapping content rather than creating thin competing URLs.
+- State one **specific additional user benefit** versus the golden reference (e.g. calculator, comparison by jurisdiction, eligibility decision table, download-ready checklist), if meaningful to the topic.
+
+### 2. Fact and source ledger — hard gate
+Map every price/range, success-rate statistic, timeline, medication/procedure claim, policy/visa rule, eligibility statement and provider-specific promise to a primary/authoritative source, with URL and checked date. For each number capture units, location, period, inclusions/exclusions and evidence limitations. Clearly distinguish site planning examples from verified provider prices. No invented testimonials, client numbers, guarantees or credentials.
+Do not publish unresolved high-impact claims. Any conflicting source must be resolved or disclosed.
+
+### 3. Answer-first editorial architecture
+- Exactly one meaningful H1, concise immediate answer within the first screen, and a 2–4 sentence summary of what is known, what varies and what the reader must confirm.
+- Avoid giant decorative heroes, opening filler, SEO boilerplate and repetitive promotional text.
+- A topic-relevant cover visual, credited and commercially usable; accurate alt text, optimized dimensions, responsive crop, no misrepresentation of real clinicians or patient treatment. Do not use an irrelevant stock photo only to satisfy a quota.
+- Clear anchors or sectional navigation for long pages; scoped FAQs with actual questions and meaningful answers.
+- Put compare-able values into tables; steps into timelines; choices into decision aids; action items into checklists. Short paragraphs only when prose improves comprehension.
+- Label prices with currency, units, scope, inclusion/exclusion and date; display assumptions and material uncertainty next to figures.
+- Add source visibility, editorial/update metadata, relevant internal guide links and a non-coercive contact path.
+- Make interactions real and accessible: visible labels, keyboard handling, headings hierarchy, mobile table overflow and focus states.
+
+### 4. Golden-reference comparison — REQUIRED BEFORE ACCEPTANCE
+Complete the comparison for the new page **and** the current `egg-freezing-cost` page. Use `Better / Equal / Worse / Not applicable / Not verified` and cite observable evidence for each:
+1. Five-second answer: meaningful takeaway appears without hunting or scrolling excessively.
+2. Information density: no junk copy, answer-first heading, specific/useful content in every block.
+3. Visual clarity: purposeful cover image, restrained editorial aesthetic, coherent type and white space, easy mobile scanning.
+4. Structured usefulness: topic-appropriate tables, comparisons, timelines, checklists or other decision tools.
+5. Specificity: quantified, clearly scoped, accurately sourced data when appropriate; uncertainty visible.
+6. Trust: source links, checked dates, editorial/update identity and health/policy/price caution where relevant.
+7. User journey: next decision, helpful related guide and non-pressuring consultation path.
+8. Accessibility and responsive behavior: mobile, long tables, keyboard navigation, image attribution.
+9. Technical SEO: correct title/description, URL, canonical, hreflang, indexability, schema that matches visible content.
+10. Localization: real region-appropriate language, not mechanical conversion only.
+
+**Release rule:** No relevant dimension may be Worse than the golden reference without written, topic-specific justification. Not verified is not the same as passed. A page with an unjustified Worse outcome is a draft, not approved. Superior content requires an explicit explanation of what the reader can do or learn better, not more words, more cards or an inflated self-score. Some dimensions may be Not applicable with reasons.
+
+### 5. Score and blocker gate
+Use the existing 100-point rubric:
+- Answer usefulness, intent coverage and clarity: 25
 - Evidence quality and medical/fee/policy accuracy: 25
-- Visual reading experience + mobile/a11y: 20
-- Unique contribution (decision tables, examples, useful comparison): 15
-- Technical SEO and correct localization: 15
-Release target: at least 85/100, and **zero blocking source, indexability, or medical accuracy issues**. Scores are internal editorial checks, not external SEO metrics.
+- Visual reading experience and mobile/a11y: 20
+- Unique decision-making utility: 15
+- Technical SEO/localization: 15
 
-## Reference skills (optional)
+Release target >= 85/100 **and** no blocking source, medical safety, indexability, or comparison issues. This score is an internal QA heuristic, not a Google ranking factor or objective promise of superiority. A passing numeric score never overrides a golden-reference comparison failure.
+
+### 6. Localization and build
+- Use shared site components/styles where feasible; preserve existing navigation/footer, not a new standalone design system per article.
+- Simplified/Traditional region terminology and expectations must be checked separately. Verify locale generation before adding routes.
+- One primary intent per canonical. No dead links or incorrect alternate languages; structured data only for matching visible content.
+- Run `npm ci` and `npm run verify` in a suitable environment, inspect generated routes, internal links, mobile, language pages, images and CI. Verify deploy separately; GitHub push is not confirmation of live rollout.
+- Prefer a PR for review; do not claim QA complete if visual inspection or verification was not actually run.
+
+## Required acceptance report for EACH guide
+Provide a compact, auditable record:
+- New URL / comparison reference URL / source commit and review date
+- Exact primary user question + answer shown in first screen
+- Golden-reference matrix covering all 10 dimensions, with evidence; highlight Worse and Not verified
+- Source ledger with dated URLs and scope of all high-impact assertions
+- Internal score out of 100 and any unresolved hard blockers
+- Test/build results, mobile screenshot/preview evidence if available, both locale checks
+- Changed files and PR/deployment links; label each of `code committed`, `CI passed`, `deployment observed` separately
+
+**If review does not clear the gates, revise the page rather than declaring it complete.** Do not claim every future AI-written page is automatically better merely because the skill exists.
+
+## Optional reference skills
 - inhouseseo/superseo-skills: content-brief, improve-content, eeat-audit, semantic-gap-analysis
 - Leonxlnx/taste-skill: redesign-existing-projects, minimalist-ui
 - gaguero/seo-agent-skills: seo-quality-gates
-External Skill descriptions are reference frameworks; don't claim installation until they are actually installed and read.
 
-## Reporting
-For each guide: existing gaps, specific competitor observations with sources, changed paths, evidence ledger, screenshots/preview if actually available, verification output, and deployment status. Prefer one truly complete guide over bulk thin content.
+These are reference frameworks, not proof of installation or execution. Read them before claiming to have used them.
