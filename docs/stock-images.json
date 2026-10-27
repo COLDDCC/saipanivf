@@ -1086,5 +1086,27 @@
     "placements": [
       "dist/fees/index.html"
     ]
+  },
+  {
+    "name": "egg-freezing-cost-cover",
+    "id": 19905182,
+    "title": "Woman Writing in Notebook on Desk",
+    "photographer": "Ahmed",
+    "src": "/images/stock/egg-freezing-cost-cover-960.webp",
+    "source": "https://www.pexels.com/photo/woman-writing-in-notebook-on-desk-19905182/",
+    "license": "Pexels License",
+    "licenseUrl": "https://www.pexels.com/license/",
+    "retrieved": "2026-10-27",
+    "width": 960,
+    "height": 640,
+    "bytes": 70130,
+    "variants": [
+      "/images/stock/egg-freezing-cost-cover-480.webp"
+    ],
+    "placements": [
+      "dist/guides/egg-freezing-cost/index.html",
+      "dist/zh-hant/guides/egg-freezing-cost/index.html"
+    ],
+    "usage": "Illustrative planning scene; no claim that the depicted person is a patient or endorses the service."
   }
 ]
