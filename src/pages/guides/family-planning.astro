@@ -1,5 +1,35 @@
 ---
 import GuideNextSteps from "../../components/GuideNextSteps.astro";
+import SourceNote from "../../components/SourceNote.astro";
 import SiteLayout from "../../layouts/SiteLayout.astro";
 ---
-<SiteLayout title="捐赠与第三方辅助生殖：初次咨询问题清单" description="把医疗适用性、资源、费用和法律文件分别确认。" active="guides"><article class="section wrap article-body"><h2>先确认是否接诊</h2><p>说明希望了解的项目与家庭情况，向院方确认接诊条件、医疗地点、等待时间和负责团队。网页介绍不等于每一种方案都能立即安排。</p><h2>捐赠相关资料</h2><p>询问筛查范围、病史资料、样本可用性、同意文件、信息披露与保存政策。不同来源与项目的范围可能不同，应以具体文件为准。</p><h2>第三方参与前确认文件</h2><p>由具备相应资质的专业人士评估适用法律、合同、亲子关系和跨境文件。不要将医疗咨询等同于法律意见，也不要把治疗安排与孩子身份或证件结果绑定。</p><GuideNextSteps guide="family-planning"/></article></SiteLayout>
+<SiteLayout title="捐赠与第三方辅助生殖：咨询前核对什么？" description="按是否接诊、供者筛查、费用、书面同意与法律文件五步准备咨询问题，了解哪些事项须分别由医疗机构和法律专业人士确认。" active="guides">
+<article class="section wrap article-body family-guide">
+<nav aria-label="文章目录" class="family-toc"><a href="#start">先问是否接诊</a><a href="#donor">供者与筛查</a><a href="#costs">费用核对</a><a href="#legal">同意与法律</a><a href="#prepare">咨询资料</a></nav>
+<section class="family-answer" aria-labelledby="family-answer"><span class="family-kicker">30 秒答案</span><h2 id="family-answer">先确认 5 件事，再讨论具体方案</h2><p>涉及捐赠卵子、精子或胚胎，以及其他第三方参与的生殖安排时，先向实际接诊机构确认：<strong>是否接诊、由谁提供资源、需要哪些筛查、费用如何分项、同意与法律文件由谁审查。</strong>不同方案适用不同的医学流程和法律要求，不能仅凭网站介绍判断是否可执行。</p><p class="family-note">本页是初次咨询准备清单，不表示塞班接诊机构已经提供某类供者资源、妊娠代持服务或特定法律安排。</p></section>
+<section id="start"><h2>第一步：先问是否接诊</h2><div class="family-scroll"><table><thead><tr><th scope="col">需要核实</th><th scope="col">向机构提出的问题</th><th scope="col">希望取得的答复</th></tr></thead><tbody>
+<tr><th scope="row">项目范围</th><td>接诊机构目前接受哪些捐赠或第三方参与方案？</td><td>书面项目范围及排除事项</td></tr>
+<tr><th scope="row">医疗地点</th><td>评估、采集、实验室操作与移植分别在哪里完成？</td><td>对应机构、地址及责任分工</td></tr>
+<tr><th scope="row">可行性</th><td>我的具体情况需要先提供哪些报告才能判断？</td><td>初诊资料清单及医生评估步骤</td></tr>
+<tr><th scope="row">等待时间</th><td>是否有资源等待名单？何时才可确认治疗安排？</td><td>时间估计与不确定性说明</td></tr>
+</tbody></table></div></section>
+<section id="donor"><h2>第二步：供者资料与筛查</h2><p>如果涉及精子、卵子或胚胎捐赠，请先确认资源来源和筛查责任。美国生殖医学学会（ASRM）2024 年捐赠指导文件讨论了感染性疾病检查、遗传风险评估、病史、知情同意及心理社会咨询；这些是核对方向，<strong>不是对任何一家诊所已完成筛查的证明</strong>。</p><ul><li>供者是由诊所、机构或独立资源方提供？是否允许已认识的供者？</li><li>感染性疾病、遗传风险与个人及家族病史如何评估？能看到哪些结果摘要？</li><li>如有样本跨境运输，谁负责许可、物流、接收与追踪？</li><li>是否提供心理社会咨询？供者及出生子女的信息披露规则是什么？</li><li>如样本不能使用或供者退出，退款、替代与保存如何处理？</li></ul><p>具体适用规则须按治疗地点、资源来源和个人情况逐项确认。<a href="https://www.asrm.org/practice-guidance/practice-committee-documents/guidance-regarding-gamete-and-embryo-donation/" target="_blank" rel="noopener noreferrer">ASRM · 2024 年捐赠指导文件</a></p></section>
+<section id="costs"><h2>第三步：取得可比较的费用表</h2><div class="family-scroll"><table><thead><tr><th scope="col">项目</th><th scope="col">是否单独报价</th><th scope="col">特别要问</th></tr></thead><tbody>
+<tr><th scope="row">评估与筛查</th><td>请机构列明</td><td>供者及接受方检查分别由谁承担</td></tr>
+<tr><th scope="row">资源与协调</th><td>请机构列明</td><td>候选资源、匹配及取消规则</td></tr>
+<tr><th scope="row">治疗与实验室</th><td>请机构列明</td><td>药物、取卵、受精、培养、检测和移植是否包含</td></tr>
+<tr><th scope="row">法律及保存</th><td>请机构列明</td><td>独立法律咨询、合同、保存与运输费用</td></tr>
+</tbody></table></div><p>以上为<strong>询价分类</strong>，并非接诊机构公开报价或套餐内容。请同时确认币种、有效期、收款主体、已含与未含项目，并使用<a href="/guides/quotation/">书面报价核对清单</a>。</p></section>
+<section id="legal"><h2>第四步：在签约前核对同意与法律问题</h2><p>治疗同意、捐赠同意、保存授权及法律亲子关系并不是同一份文件。不同国家或地区的法律不能互相套用；英国 HFEA 的法律说明仅作为理解问题的参考，<strong>不代表塞班或用户居住地的具体法律结论</strong>。</p><div class="family-steps"><section><h3>治疗同意</h3><p>由接诊机构解释治疗目的、风险、可替代方案和撤回同意的节点。</p></section><section><h3>样本与数据</h3><p>明确保存期限、未来使用、转移、信息披露、无法联系时的处理方式。</p></section><section><h3>法律与跨境文件</h3><p>请在相关司法辖区具备资格的律师评估合同、亲子关系、出生登记与跨境材料；不要将治疗成功等同于身份或证件结果。</p></section></div><p>参考：<a href="https://www.hfea.gov.uk/choose-a-fertility-clinic/consent-to-treatment-and-storage/" target="_blank" rel="noopener noreferrer">HFEA · 治疗与保存同意</a>。</p></section>
+<section id="prepare"><h2>第五步：首次咨询带什么</h2><ol><li>希望了解的具体项目，以及预计治疗和长期居住的国家或地区。</li><li>参与者的基本情况、既有相关检查报告及日期；不必为初诊自行重复检查。</li><li>预算范围、可出行时间、需要远程完成的环节。</li><li>对供者信息、未来子女知情、保存及法律手续的主要疑问。</li></ol><p class="family-note">资料核查日期：2026 年 10 月 27 日。各机构当前接诊条件、收费与所在地法律仍须直接核实。</p></section>
+<SourceNote sources={[
+{name:"ASRM · Gamete and embryo donation guidance (2024)",url:"https://www.asrm.org/practice-guidance/practice-committee-documents/guidance-regarding-gamete-and-embryo-donation/"},
+{name:"HFEA · Using donated eggs, sperm or embryos in treatment",url:"https://www.hfea.gov.uk/treatments/explore-all-treatments/using-donated-eggs-sperm-or-embryos-in-treatment"},
+{name:"HFEA · Consent to treatment and storage",url:"https://www.hfea.gov.uk/choose-a-fertility-clinic/consent-to-treatment-and-storage/"}
+]}/>
+<GuideNextSteps guide="family-planning"/>
+</article>
+</SiteLayout>
+<style>
+.family-guide{max-width:950px}.family-toc{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:25px}.family-toc a{padding:7px 13px;border:1px solid #d4e2e9;border-radius:50px;text-decoration:none;font-size:14px}.family-answer{background:#f8fafb;border:1px solid #d8e5ea;border-radius:14px;padding:25px;margin-bottom:30px}.family-kicker{font-size:13px;letter-spacing:.08em;color:#286585;font-weight:700}.family-answer h2{margin:7px 0 12px}.family-note{border-left:3px solid #397d9b;padding:10px 14px;background:#f6f8fa;font-size:14px}.family-scroll{max-width:100%;overflow-x:auto}.family-scroll table{width:100%;min-width:600px;border-collapse:collapse}.family-scroll th,.family-scroll td{padding:13px 12px;border-bottom:1px solid #dce5ea;text-align:left;vertical-align:top}.family-scroll th{background:#f3f7f8}.family-scroll tbody th{background:transparent;white-space:nowrap}.family-guide section[id]{scroll-margin-top:25px}.family-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.family-steps section{padding:15px;border:1px solid #e2e9ed;border-radius:8px}.family-steps h3{margin:0 0 8px;font-size:18px}.family-steps p{margin:0;font-size:15px}@media(max-width:700px){.family-steps{grid-template-columns:1fr}.family-answer{padding:18px}.family-toc{gap:7px}}
+</style>
