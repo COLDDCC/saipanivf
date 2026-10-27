@@ -8,7 +8,7 @@ const dir='src/pages/guides';
 const pages=fs.readdirSync(dir).filter(x=>x.endsWith('.astro')).map(x=>path.basename(x,'.astro'));
 const required=['Golden reference:','Primary question:','First-screen answer:','Sources:','Comparison:','Score:','Blockers:','Mobile review:','Localization:','Reviewer:'];
 for(const slug of pages) {
- if(existing.has(slug) && slug !== 'egg-freezing') continue;
+ if(existing.has(slug)) continue;
  const p=`docs/guide-reviews/${slug}.md`;
  assert.ok(fs.existsSync(p),`New guide ${slug} needs ${p} comparing against egg-freezing-cost`);
  const review=fs.readFileSync(p,'utf8');
