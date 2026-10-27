@@ -65,6 +65,7 @@ const timeline='https://fertilityinstitute.com/egg-freezing-timeline/';
 <link rel="alternate" hreflang="zh-CN" href={new URL('/guides/egg-freezing-cost/',site.origin).href}/>
 <link rel="alternate" hreflang="zh-Hant" href={new URL('/zh-hant/guides/egg-freezing-cost/',site.origin).href}/>
 <link rel="alternate" hreflang="x-default" href={new URL('/guides/egg-freezing-cost/',site.origin).href}/>
+<meta property="og:image" content={new URL('/images/stock/egg-freezing-cost-cover-960.webp',site.origin).href}/>
 <meta property="og:title" content={title}/><meta property="og:description" content={summary}/><meta property="og:type" content="article"/><meta property="og:url" content={canonical}/>
 <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}/>
 <style>
@@ -88,14 +89,21 @@ p,li{line-height:1.9}
 th{background:#f4f6f7;color:#24343e}
 .total-row td{background:#f4f6f7;color:#1f2d36}
 .source-ref{background:none;padding:0 2px}
+/* Compact editorial cover: preserve the budget answer immediately below. */
+.hero-heading{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px;align-items:center}
+.hero-copy h1{font-size:clamp(30px,3.5vw,42px)}
+.hero-cover{margin:0;min-width:0}.hero-cover img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:12px}
+.hero-cover figcaption{margin-top:6px;font-size:11px;line-height:1.5;color:#55697a}.hero-cover a{color:inherit;text-underline-offset:3px}
+@media(max-width:640px){.hero-heading{grid-template-columns:1fr;gap:14px}.hero-cover img{height:112px;aspect-ratio:auto;object-position:50% 45%}.hero-copy h1{font-size:30px}.hero-cover figcaption{font-size:10px}.answer{margin-top:18px}}
 </style>
 </head>
 <body>
 <header><nav class="bar" aria-label={t('页面导航','頁面導覽')}><a class="brand" href="/">Saipan IVF</a><div class="switch"><a href="/guides/">{t('全部指南','全部指南')}</a> · <a href={traditional?'/guides/egg-freezing-cost/':'/zh-hant/guides/egg-freezing-cost/'}>{traditional?'简体中文':'繁體中文'}</a></div></nav></header>
 <main>
 <nav class="article-toc" aria-label={t('文章目录','文章目錄')}><a href="#tiers">{t('三档预算','三檔預算')}</a><a href="#cost-breakdown">{t('医疗费','醫療費')}</a><a href="#travel">{t('行程费用','行程費用')}</a><a href="#days">{t('在岛天数','在島天數')}</a><a href="#storage-years">{t('多年保存','多年保存')}</a><a href="#compare">{t('付款前核对','付款前核對')}</a><a href="#reference">{t('其他地区','其他地區')}</a><a href="#questions">FAQ</a><a href="#sources">{t('来源','來源')}</a></nav>
-<div class="hero"><div class="eyebrow">{t('费用指南 · 2026 · 美元','費用指南 · 2026 · 美元')}</div><h1>{title}</h1>
+<div class="hero"><div class="hero-heading"><div class="hero-copy"><div class="eyebrow">{t('费用指南 · 2026 · 美元','費用指南 · 2026 · 美元')}</div><h1>{title}</h1>
 <div class="byline"><span>{t('撰写：Saipan IVF 网站内容团队','撰寫：Saipan IVF 網站內容團隊')}</span><span>{t('页面更新：2026 年 10 月 26 日','頁面更新：2026 年 10 月 26 日')}</span><a href="/editorial-policy/">{t('编辑与资料来源政策','編輯與資料來源政策')}</a></div>
+</div><figure class="hero-cover"><img src="/images/stock/egg-freezing-cost-cover-960.webp" srcset="/images/stock/egg-freezing-cost-cover-480.webp 480w, /images/stock/egg-freezing-cost-cover-960.webp 960w" sizes="(max-width: 640px) calc(100vw - 36px), 340px" width="960" height="640" alt={t('在笔记本上整理行程与预算的桌面特写','在筆記本上整理行程與預算的桌面特寫')} loading="eager" fetchpriority="high" decoding="async"/><figcaption><a href="https://www.pexels.com/photo/woman-writing-in-notebook-on-desk-19905182/" target="_blank" rel="noopener noreferrer">{t('封面：Ahmed / Pexels · 情境示意','封面：Ahmed / Pexels · 情境示意')}</a></figcaption></figure></div>
 <section class="answer" aria-labelledby="answer-title"><h2 id="answer-title">{t('30 秒答案','30 秒答案')}</h2>
 <strong class="total">{t('全程预算约','全程預算約')} {money(totalLow)}–{num(totalHigh)}{!traditional&&<small>{t('约','约')} {cny(totalLow)}–{cny(totalHigh)}</small>}</strong>
 <div class="tablewrap"><table><thead><tr><th>{t('项目','項目')}</th><th>USD</th>{!traditional&&<th>{t('约合人民币','约合人民币')}</th>}</tr></thead><tbody>
