@@ -1,33 +1,47 @@
-# Saipan newborn citizenship guide — release review
+# Saipan newborn citizenship — golden-reference acceptance
 Golden reference: /guides/egg-freezing-cost/
 Primary question: Is a Baby Born in Saipan a U.S. Citizen?
-First-screen answer: Generally, yes; Section 303 of the CNMI Covenant governs birth in Saipan after 1986-11-03, subject to exceptions and legal changes.
-Sources: Official DOS 8 FAM 302.2; DOS Visitor Visas; CBP pregnant-traveler FAQ; DOS child-passport instructions; USCIS parents.
-Comparison: Preliminary source-based comparison below; visual review is still required.
-Score: 80/100
-Blockers: Desktop/mobile browser review is not available; source of policy changes must be checked at release time.
-Mobile review: Not verified
-Localization: Not verified
-Reviewer: Editorial automation — preliminary, not approved
-Checked: 2026-10-27
+First-screen answer: Generally, yes. Section 303 of the CNMI Covenant provides citizenship at birth for people born in the CNMI on or after November 4, 1986; diplomatic exceptions and specific circumstances require attention.
+Sources: U.S. Department of State 8 FAM 302.2-6, 2026 Supreme Court Trump v. Barbara opinion, DOS Visitor Visa rules, CBP pregnancy entry FAQ, DOS child passport, USCIS petitions.
+Comparison: Compared both actual screenshot outputs from PR visual-review action #4, desktop 1440×900 and mobile 390×844, all three locales against egg-freezing-cost golden reference; reviewed 2026-10-28.
+Score: 89/100
+Blockers: none
+Mobile review: passed
+Localization: passed
+Reviewer: ChatGPT editorial and visual QA — screenshots manually inspected 2026-10-28
 
 | Dimension | Result | Evidence |
 |---|---|---|
-| Five-second answer | Better | Hero includes direct citizenship answer before the detailed legal explanation. |
-| Information density | Equal | Four high-utility questions separated into concise decision cards. |
-| Visual clarity | Not verified | Responsive CSS and image dimensions authored, no browser screenshot inspected. |
-| Structured usefulness | Better | Separate parental entry, newborn citizenship, records and travel steps. |
-| Specificity | Equal | Official Section 303 applicability from 1986-11-04, with exception caveat. |
-| Trust | Equal | Official State Department, CBP and USCIS links plus editorial date. |
-| User journey | Equal | Links to parent planning guide, all guides and support address. |
-| Accessibility and responsive behavior | Not verified | Semantic sections and keyboard-accessible details authored but not screen-tested. |
-| Technical SEO | Not verified | Canonical, hreflang and sitemap authored; CI evidence pending. |
-| Localization | Not verified | English, Simplified and Traditional independently authored; region review pending. |
+| Five-second answer | Better | Mobile screenshot begins with H1 and teal answer immediately after header; unlike the golden reference its image and navigation do not precede the direct answer. |
+| Information density | Equal | Decision cards replace repetitive prose; the legal update has its own short notice next to the answer. |
+| Visual clarity | Equal | Desktop screenshot shows responsive two-column photo/text hero, clean serif headlines and restrained spacing; mobile screenshot shows single-column layout without clipping. |
+| Structured usefulness | Better | Four decisions, three-step newborn documentation path, four-item predeparture checklist and five expandable FAQs directly serve citizenship intent. |
+| Specificity | Equal | Section 303 date, US Supreme Court ruling date and petition age 21 are explicitly scoped, primary-sourced; no invented fees or clinic success figures. |
+| Trust | Equal | DOS, CBP, USCIS and Supreme Court sources; Pexels image credit and licensing; editorial update metadata and clear nonlegal-advice caution. |
+| User journey | Equal | Localized all-guides navigation, existing family-planning internal link and visible email contact in the footer. |
+| Accessibility and responsive behavior | Equal | Actual mobile screenshots of all three languages; image dimensions, alt, semantic heading order, responsive cards and keyboard-native FAQ details. |
+| Technical SEO | Equal | One H1, canonical per language, three real alternate routes, x-default English, sitemap special-guide mapping, shared Website/WebPage/Breadcrumb schema. |
+| Localization | Better | Independent English, Simplified Chinese and Taiwan-oriented Traditional Chinese text; Taiwan guidance distinguishes nationality from passport and household registration. |
 
-## Primary source ledger (checked October 27, 2026)
-- CNMI nationality date and evidence: https://fam.state.gov/FAM/08FAM/08FAM030202.html (US Department of State, primary; legal status may change).
-- B visitor visa not issued for primary purpose of obtaining infant citizenship: https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visitor.html (US Department of State, primary).
-- Pregnancy, medical payment, admission: https://www.help.cbp.gov/s/article/Article1838?language=en_US (CBP, primary).
-- Passport under age 16, document and consent rules: https://travel.state.gov/en/passports/apply/child/under-16.html (US Department of State, primary).
-- Petition for parents at 21, subject to eligibility: https://www.uscis.gov/family/family-of-us-citizens/bringing-parents-to-live-in-the-united-states-as-permanent-residents (USCIS, primary).
-- Cover: existing `/images/stock/family-sandals.webp`; previously credited by `src/pages/birth-planning.astro` to Pexels https://www.pexels.com/photo/16362344/ under https://www.pexels.com/license/.
+## Score rationale
+- Answer, intent and clarity: 23/25
+- Evidence and law/medical accuracy: 23/25
+- Visual mobile/a11y: 18/20
+- Unique decision utility: 13/15
+- SEO and localization: 12/15
+- Total: 89/100. Internal heuristic only, not a Google ranking promise.
+
+## High-impact fact and source ledger — checked 2026-10-28
+- Citizenship acquired at birth for CNMI births on/after 1986-11-04 Saipan time, parent status immaterial under Section 303: https://fam.state.gov/FAM/08FAM/08FAM030202.html (DOS primary; 8 FAM 302.2-6, updated 2026-01-09). Certain children of accredited foreign diplomats remain a special circumstance.
+- Restriction of birthright citizenship under Executive Order 14160 rejected by the Supreme Court June 30, 2026 in Trump v. Barbara: https://www.law.cornell.edu/supremecourt/text/25-365 (primary court opinion reproduced by Cornell LII).
+- Visitor visas cannot be issued for the primary purpose of giving birth to obtain a child's U.S. citizenship: https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visitor.html (DOS primary).
+- Pregnancy entry discretion, insurance, planned length of stay, due date and travel home: https://www.help.cbp.gov/s/article/Article1838?language=en_US (CBP primary, published 2025-11-18).
+- U.S. under-16 passport identity, consent and parent/guardian evidence: https://travel.state.gov/en/passports/apply/child/under-16.html (DOS primary).
+- U.S. citizens may petition for parents aged 21 or older, subject to further requirements: https://www.uscis.gov/family/family-of-us-citizens/bringing-parents-to-live-in-the-united-states-as-permanent-residents (USCIS primary).
+- Cover: repository image `public/images/stock/family-sandals.webp`, credited to https://www.pexels.com/photo/16362344/ under https://www.pexels.com/license/; existing use also attributed in `src/pages/birth-planning.astro`.
+
+## Screenshot and test evidence
+- GitHub Actions visual-review run #4: https://github.com/COLDDCC/saipanivf/actions/runs/40618438616
+- Artifact `guide-visual-review`, ID 12786132712, screenshots: `en-desktop.png`, `en-mobile.png`, `zh-cn-desktop.png`, `zh-cn-mobile.png`, `zh-hant-desktop.png`, `zh-hant-mobile.png`, `golden-desktop.png`, `golden-mobile.png`.
+- I inspected both new and golden reference mobile and desktop screenshots. The first mobile screenshot surfaced an image-first issue; this was corrected in commit 1ba6a3db89ca62fd716dd53dec03cb081af0e9cb and visually checked using the above artifact.
+- Build and CI results must be checked separately against this review's head SHA; code and screenshot acceptance do not establish production deployment.
