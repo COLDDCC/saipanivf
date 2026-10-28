@@ -25,3 +25,38 @@ jobs:
         run: npm run build && npm run check:site && npm run check:seo && npm run check:i18n && npm run check:mobile && npm run check:loading
       - name: Build and run full checks
         run: npm run verify
+
+  amh-visual:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci && npm run build
+      - run: npx --yes playwright@1.56.1 install --with-deps chromium
+      - name: Capture AMH and golden-guide desktop/mobile comparisons
+        run: |
+          set -eu
+          mkdir -p amh-review-images
+          python3 -m http.server 4321 --directory dist > /tmp/amh-preview.log 2>&1 &
+          sleep 3
+          for locale in zh-cn zh-hant; do
+            if [ "$locale" = "zh-cn" ]; then prefix=""; else prefix="zh-hant/"; fi
+            for size in desktop mobile; do
+              if [ "$size" = "desktop" ]; then viewport="1440,900"; else viewport="390,844"; fi
+              for guide in amh-ovarian-reserve egg-freezing-cost; do
+                npx --yes playwright@1.56.1 screenshot --browser chromium --viewport-size="$viewport" --full-page "http://127.0.0.1:4321/${prefix}guides/${guide}/" "amh-review-images/${locale}-${guide}-${size}.png"
+              done
+            done
+          done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: amh-golden-visual-evidence
+          path: amh-review-images/
