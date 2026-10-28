@@ -1,7 +1,7 @@
 ---
 import {pricing} from '../data/pricing';
 import {site} from '../data/site';
-import {websiteSchema,shareLocales} from '../data/website-schema';
+import { websiteSchema, shareLocales } from '../data/website-schema';
 import '../styles/site.css';
 import '../styles/typography.css';
 const {traditional=false}=Astro.props;
@@ -56,8 +56,7 @@ const faqSchema={'@context':'https://schema.org','@type':'FAQPage',mainEntity:fa
 const hfea='https://www.hfea.gov.uk/treatments/fertility-preservation/egg-freezing/';
 const asrm='https://www.asrm.org/practice-guidance/practice-committee-documents/evidence-based-outcomes-after-oocyte-cryopreservation-for-donor-oocyte-in-vitro-fertilization-and-planned-oocyte-cryopreservation-a-guideline-2021/';
 const timeline='https://fertilityinstitute.com/egg-freezing-timeline/';
-const shareImage=new URL('/images/share-card.png',site.origin).href;
-const graph={'@context':'https://schema.org','@graph':[websiteSchema,{'@type':'WebPage','@id':canonical+'#webpage',url:canonical,name:title,description:summary,inLanguage:traditional?'zh-TW':'zh-CN',isPartOf:{'@id':site.origin+'/#website'}},{'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Saipan IVF',item:new URL('/',site.origin).href},{'@type':'ListItem',position:2,name:'Guides',item:new URL(traditional?'/zh-hant/guides/':'/guides/',site.origin).href},{'@type':'ListItem',position:3,name:title,item:canonical}]}]};
+const editorialGraph={'@context':'https://schema.org','@graph':[websiteSchema,{'@type':'WebPage','@id':canonical+'#webpage',url:canonical,name:title,description:summary,inLanguage:traditional?'zh-Hant':'zh-CN',isPartOf:{'@id':site.origin+'/#website'}},{'@type':'BreadcrumbList',itemListElement:[{ '@type':'ListItem',position:1,name:t('首页','首頁'),item:new URL('/',site.origin).href},{'@type':'ListItem',position:2,name:t('就诊指南','就診指南'),item:new URL(traditional?'/zh-hant/guides/':'/guides/',site.origin).href},{'@type':'ListItem',position:3,name:title,item:canonical}]}]};
 ---
 <!doctype html>
 <html lang={traditional?'zh-Hant':'zh-CN'}>
@@ -68,7 +67,8 @@ const graph={'@context':'https://schema.org','@graph':[websiteSchema,{'@type':'W
 <link rel="alternate" hreflang="zh-CN" href={new URL('/guides/egg-freezing-cost/',site.origin).href}/>
 <link rel="alternate" hreflang="zh-Hant" href={new URL('/zh-hant/guides/egg-freezing-cost/',site.origin).href}/>
 <link rel="alternate" hreflang="x-default" href={new URL('/guides/egg-freezing-cost/',site.origin).href}/>
-<meta property="og:locale" content={traditional?'zh_TW':'zh_CN'}/>{shareLocales.filter(code=>code!==(traditional?'zh_TW':'zh_CN')).map(code=><meta property="og:locale:alternate" content={code}/>)}<meta property="og:site_name" content="Saipan IVF"/><meta property="og:image" content={shareImage}/><meta name="twitter:card" content="summary_large_image"/><script type="application/ld+json" set:html={JSON.stringify(graph).replace(/</g,'\\u003c')}/><meta property="og:title" content={title}/><meta property="og:description" content={summary}/><meta property="og:type" content="article"/><meta property="og:url" content={canonical}/>
+<meta property="og:image" content={new URL('/images/stock/egg-freezing-cost-cover-960.webp',site.origin).href}/>
+<meta property="og:locale" content={traditional?'zh_TW':'zh_CN'}/>{shareLocales.filter(code=>code!==(traditional?'zh_TW':'zh_CN')).map(code=><meta property="og:locale:alternate" content={code}/>)}<meta property="og:site_name" content="Saipan IVF"/><meta name="twitter:card" content="summary_large_image"/><script type="application/ld+json" set:html={JSON.stringify(editorialGraph).replace(/</g,'\\u003c')}/><meta property="og:title" content={title}/><meta property="og:description" content={summary}/><meta property="og:type" content="article"/><meta property="og:url" content={canonical}/>
 <script type="application/ld+json" set:html={JSON.stringify(faqSchema)}/>
 <style>
 *{box-sizing:border-box}body{margin:0;color:#203b4d;background:#fbfcfc;font-family:system-ui,-apple-system,"Noto Sans TC","Noto Sans SC",sans-serif;line-height:1.75}a{color:#1169a0}header{border-bottom:1px solid #e2ebee;background:#fff}.bar{max-width:1000px;margin:auto;padding:15px 24px;display:flex;justify-content:space-between;gap:18px;align-items:center}.brand{font-weight:750;text-decoration:none;color:#153f58}.switch{font-size:14px}main{max-width:960px;padding:38px 24px 80px;margin:auto}.eyebrow{color:#527286;font-size:13px;letter-spacing:.08em}.hero{padding-bottom:25px;border-bottom:1px solid #dce7ea}h1{font-size:clamp(30px,4vw,46px);line-height:1.22;letter-spacing:-.03em;margin:12px 0 16px}h2{font-size:clamp(22px,3vw,30px);line-height:1.3;margin:42px 0 16px}h3{font-size:18px}p{max-width:750px}.lead{font-size:17px;color:#476475}.notice{border-left:3px solid #498aab;padding:14px 18px;background:#edf5f8;margin:22px 0}table{width:100%;border-collapse:collapse;font-size:15px}th,td{text-align:left;padding:14px;border-bottom:1px solid #dce7ea}th{background:#eef4f5}.tablewrap{overflow:auto}td:last-child,th:last-child{text-align:right;white-space:nowrap}ul,ol{padding-left:25px}li{margin:8px 0}details{border-bottom:1px solid #dce7ea;padding:14px 0}summary{cursor:pointer;font-weight:650}details p{margin-bottom:0}.cta{display:inline-block;background:#146b98;color:#fff;text-decoration:none;padding:13px 20px;border-radius:8px;font-weight:650}footer{padding:30px 24px;text-align:center;border-top:1px solid #dce7ea;color:#587080;font-size:13px}@media(max-width:780px){th,td{padding:10px 7px;font-size:13px}main{padding:28px 18px 60px}}
@@ -91,14 +91,21 @@ p,li{line-height:1.9}
 th{background:#f4f6f7;color:#24343e}
 .total-row td{background:#f4f6f7;color:#1f2d36}
 .source-ref{background:none;padding:0 2px}
+/* Compact editorial cover: preserve the budget answer immediately below. */
+.hero-heading{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:28px;align-items:center}
+.hero-copy h1{font-size:clamp(30px,3.5vw,42px)}
+.hero-cover{margin:0;min-width:0}.hero-cover img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:12px}
+.hero-cover figcaption{margin-top:6px;font-size:11px;line-height:1.5;color:#55697a}.hero-cover a{color:inherit;text-underline-offset:3px}
+@media(max-width:640px){.hero-heading{grid-template-columns:1fr;gap:14px}.hero-cover img{height:112px;aspect-ratio:auto;object-position:50% 45%}.hero-copy h1{font-size:30px}.hero-cover figcaption{font-size:10px}.answer{margin-top:18px}}
 </style>
 </head>
-<body><span aria-current="page" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)">{traditional?'繁體中文':'简体中文'}</span>
-<header><nav class="bar" aria-label={t('页面导航','頁面導覽')}><a class="brand" href="/">Saipan IVF</a><div class="switch"><a href="/guides/">{t('全部指南','全部指南')}</a> · <a href={traditional?'/guides/egg-freezing-cost/':'/zh-hant/guides/egg-freezing-cost/'}>{traditional?'简体中文':'繁體中文'}</a></div></nav></header>
+<body>
+<header><nav class="bar" aria-label={t('页面导航','頁面導覽')}><a class="brand" href="/">Saipan IVF</a><div class="switch"><a href="/guides/">{t('全部指南','全部指南')}</a> · <a href={traditional?'/guides/egg-freezing-cost/':'/zh-hant/guides/egg-freezing-cost/'}>{traditional?'简体中文':'繁體中文'}</a> · <span aria-current="page">{traditional?'繁體中文':'简体中文'}</span></div></nav></header>
 <main>
 <nav class="article-toc" aria-label={t('文章目录','文章目錄')}><a href="#tiers">{t('三档预算','三檔預算')}</a><a href="#cost-breakdown">{t('医疗费','醫療費')}</a><a href="#travel">{t('行程费用','行程費用')}</a><a href="#days">{t('在岛天数','在島天數')}</a><a href="#storage-years">{t('多年保存','多年保存')}</a><a href="#compare">{t('付款前核对','付款前核對')}</a><a href="#reference">{t('其他地区','其他地區')}</a><a href="#questions">FAQ</a><a href="#sources">{t('来源','來源')}</a></nav>
-<div class="hero"><div class="eyebrow">{t('费用指南 · 2026 · 美元','費用指南 · 2026 · 美元')}</div><h1>{title}</h1>
+<div class="hero"><div class="hero-heading"><div class="hero-copy"><div class="eyebrow">{t('费用指南 · 2026 · 美元','費用指南 · 2026 · 美元')}</div><h1>{title}</h1>
 <div class="byline"><span>{t('撰写：Saipan IVF 网站内容团队','撰寫：Saipan IVF 網站內容團隊')}</span><span>{t('页面更新：2026 年 10 月 26 日','頁面更新：2026 年 10 月 26 日')}</span><a href="/editorial-policy/">{t('编辑与资料来源政策','編輯與資料來源政策')}</a></div>
+</div><figure class="hero-cover"><img src="/images/stock/egg-freezing-cost-cover-960.webp" srcset="/images/stock/egg-freezing-cost-cover-480.webp 480w, /images/stock/egg-freezing-cost-cover-960.webp 960w" sizes="(max-width: 640px) calc(100vw - 36px), 340px" width="960" height="640" alt={t('在笔记本上整理行程与预算的桌面特写','在筆記本上整理行程與預算的桌面特寫')} loading="eager" fetchpriority="high" decoding="async"/><figcaption><a href="https://www.pexels.com/photo/woman-writing-in-notebook-on-desk-19905182/" target="_blank" rel="noopener noreferrer">{t('封面：Ahmed / Pexels · 情境示意','封面：Ahmed / Pexels · 情境示意')}</a></figcaption></figure></div>
 <section class="answer" aria-labelledby="answer-title"><h2 id="answer-title">{t('30 秒答案','30 秒答案')}</h2>
 <strong class="total">{t('全程预算约','全程預算約')} {money(totalLow)}–{num(totalHigh)}{!traditional&&<small>{t('约','约')} {cny(totalLow)}–{cny(totalHigh)}</small>}</strong>
 <div class="tablewrap"><table><thead><tr><th>{t('项目','項目')}</th><th>USD</th>{!traditional&&<th>{t('约合人民币','约合人民币')}</th>}</tr></thead><tbody>
@@ -170,5 +177,5 @@ th{background:#f4f6f7;color:#24343e}
 </tbody></table></div>
 <p>{t(`以上均为规划估算，不是诊所报价或承诺；核对日期 ${checked}。内容仅用于咨询准备，不能替代医疗建议。延伸阅读：`,`以上皆為規劃估算，不是診所報價或承諾；核對日期 ${checked}。內容僅供諮詢準備，不能取代醫療建議。延伸閱讀：`)}<a href="/fees/">{t('预算工具','預算工具')}</a> · <a href="/guides/quotation/">{t('书面报价核对清单','書面報價核對清單')}</a> · <a href="/guides/egg-freezing/">{t('冻卵初诊准备','凍卵初診準備')}</a></p>
 <a class="cta" href="/contact/?topic=egg-freezing">{t('咨询个人费用和就诊安排','諮詢個人費用與就診安排')}</a></section>
-<aside class="contact-direct" style="max-width:950px;margin:0 auto 24px;padding:0 22px"><a href="mailto:info@saipan-ivf.com">{t('直接邮件联系：info@saipan-ivf.com','直接電郵聯絡：info@saipan-ivf.com')}</a></aside></main><footer>© 2026 Saipan IVF · {t('内容仅供准备咨询，不代替医疗建议','內容僅供諮詢準備，不取代醫療建議')}</footer>
+</main><footer>© 2026 Saipan IVF · {t('内容仅供准备咨询，不代替医疗建议','內容僅供諮詢準備，不取代醫療建議')} · <a href="mailto:info@saipan-ivf.com">info@saipan-ivf.com</a></footer>
 </body></html>
