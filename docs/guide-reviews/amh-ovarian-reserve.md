@@ -15,7 +15,7 @@ Reviewed date: 2026-10-28
 | Dimension | Rating | Observable evidence / remaining work |
 |---|---|---|
 | Five-second answer | Not verified | Frontmatter and immediate summary card supply the essential answer, but mobile fold position is not visually verified |
-| Information density | Equal | Compact four-column comparison, four practical scenarios, five report checks and four consultation prompts |
+| Information density | Equal | Compact four-column comparison, four interpretation scenarios, four evidence-based referral scenarios, five report checks and four consultation prompts |
 | Visual clarity | Not verified | Uses shared laboratory image and compact hero styles, but no screenshot comparison of rendered layout |
 | Structured usefulness | Better | Distinguishes AMH, AFC, FSH and age; report checklist offers concrete next steps beyond the costs golden reference |
 | Specificity | Equal | No unsupported numeric AMH thresholds or individual pregnancy/live-birth percentages |
@@ -28,7 +28,7 @@ Reviewed date: 2026-10-28
 ## High-impact claim ledger (checked 2026-10-28)
 
 - ASRM, Testing and interpreting measures of ovarian reserve (2020): https://www.asrm.org/practice-guidance/practice-committee-documents/testing-and-interpreting-measures-of-ovarian-reserve-a-committee-opinion-2020/ — ovarian reserve tests are useful for predicting oocyte yield and response, poor predictors of reproductive potential independently of age. US committee opinion, not a Saipan provider success rate.
-- ASRM, Fertility evaluation of infertile women (2021): https://www.asrm.org/practice-guidance/practice-committee-documents/fertility-evaluation-of-infertile-women-a-committee-opinion-2021/ — assessment and clinical context. Not a diagnostic rule for a specific patient.
+- ASRM, Fertility evaluation of infertile women (2021): https://www.asrm.org/practice-guidance/practice-committee-documents/fertility-evaluation-of-infertile-women-a-committee-opinion-2021/ — assessment and clinical context; 12 months under age 35, 6 months at 35+, earlier where risk factors exist, and reserve screening not advised for people without infertility indications. These are clinical guidance thresholds, not individual diagnoses.
 - NICE, NG257 Investigation of fertility problems and management strategies (2026): https://www.nice.org.uk/guidance/ng257/chapter/Investigation-of-fertility-problems-and-management-strategies — explains AMH and AFC usage for ovarian response, discourages use of FSH for predicting assisted reproduction response/outcomes, and stresses limitations for spontaneous pregnancy prediction. UK guidance; local care decisions vary.
 - No invented AMH numerical cutoffs, provider acceptance, predicted pregnancies, treatment prices or outcomes.
 
@@ -40,7 +40,7 @@ Reviewed date: 2026-10-28
 
 ## Acceptance still required
 
-1. Capture and examine current golden page and AMH page at 390px and 1440px using rendered Chromium screenshots.
+1. Run the AMH visual screenshot workflow at `.github/workflows/amh-visual.yml`, then capture and examine current golden page and AMH page at 390px and 1440px using rendered Chromium screenshots.
 2. Check Traditional Chinese terminology and the cross-locale source/links visually.
 3. Review image attribution and ensure no inaccurate depiction of a specific clinic.
 4. Score all ten comparison dimensions with observed visual evidence; sign off only if no blocking problems and >=85/100.
