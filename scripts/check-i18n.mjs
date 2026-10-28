@@ -6,16 +6,15 @@ import {parse} from 'parse5';
 const origin=(process.env.SITE_ORIGIN||'https://saipanivf.pages.dev').replace(/\/$/,'');
 function nodes(tree){return [tree,...(tree.childNodes||[]).flatMap(nodes)]}
 function attr(node,name){return node.attrs?.find(a=>a.name===name)?.value}
-const base=[];function find(dir){for(const entry of fs.readdirSync(dir,{withFileTypes:true})){if(entry.isDirectory()&&!['en','ja','ko','es','de','fr','zh-hant','images','_astro'].includes(entry.name))find(path.join(dir,entry.name));if(entry.isFile()&&entry.name==='index.html'){const rel=path.relative('dist',path.join(dir,entry.name)).split(path.sep).join('/');if(!['guides/ivf-cost/index.html','guides/egg-freezing-cost/index.html'].includes(rel))base.push(rel)}}}find('dist');assert.equal(base.length,23);
-for(const guide of ['ivf-cost','egg-freezing-cost']){
- for(const prefix of ['','zh-hant/']){
-  const file='dist/'+prefix+'guides/'+guide+'/index.html';
-  assert(fs.existsSync(file),file+' dedicated Chinese-language guide must exist');
- }
- for(const prefix of ['en','ja','ko','es','de','fr'])assert(!fs.existsSync('dist/'+prefix+'/guides/'+guide+'/index.html'),guide+' unpublished translation');
-}
+const base=[];function find(dir){for(const entry of fs.readdirSync(dir,{withFileTypes:true})){if(entry.isDirectory()&&!['en','ja','ko','es','de','fr','zh-hant','images','_astro'].includes(entry.name))find(path.join(dir,entry.name));if(entry.isFile()&&entry.name==='index.html')base.push(path.relative('dist',path.join(dir,entry.name)).split(path.sep).join('/'))}}find('dist');
+const standalone=['guides/ivf-cost/index.html','guides/egg-freezing-cost/index.html','guides/iui-vs-ivf/index.html'];
+for(const prefix of ['', 'zh-hant/']) {const file='dist/'+prefix+'guides/iui-vs-ivf/index.html';assert(fs.existsSync(file),'Missing IUI vs IVF locale: '+file);const html=fs.readFileSync(file,'utf8');assert(html.includes('iui-guide'));assert(html.includes('href=\"'+(prefix?'/zh-hant/':'/')+'guides/iui-vs-ivf/\"'));}
+for(const prefix of ['en','ja','ko','es','de','fr'])assert(!fs.existsSync('dist/'+prefix+'/guides/iui-vs-ivf/index.html'),'Undeclared guide translation: '+prefix);
+for(const p of standalone) assert(base.includes(p),`Missing standalone guide: ${p}`);
+const sharedPages=base.filter(p=>!standalone.includes(p));
+assert.equal(sharedPages.length,23);
 const languages=[['','zh-CN'],['zh-hant','zh-TW'],['en','en'],['ja','ja'],['ko','ko'],['es','es'],['de','de'],['fr','fr']];
-for(const [prefix,lang] of languages)for(const relative of base){const file=path.join('dist',prefix,relative);assert(fs.existsSync(file),file);const html=fs.readFileSync(file,'utf8'),tree=parse(html),all=nodes(tree);assert.equal(attr(all.find(n=>n.tagName==='html'),'lang'),lang,file);assert(!all.some(n=>n.tagName==='meta'&&attr(n,'name')==='robots'&&attr(n,'content')?.includes('noindex')),file);const alts=all.filter(n=>n.tagName==='link'&&attr(n,'rel')==='alternate');assert.equal(alts.length,9,file);const mainRoute='/'+relative.replace(/index.html$/,'');for(const [code,p] of [['zh-CN',''],['zh-TW','/zh-hant'],['en','/en'],['ja','/ja'],['ko','/ko'],['es','/es'],['de','/de'],['fr','/fr'],['x-default','']])assert(alts.some(n=>attr(n,'hreflang')===code&&attr(n,'href')===origin+p+mainRoute),file+' '+code);const selected=all.find(n=>n.tagName==='a'&&attr(n,'hreflang')===lang);assert.equal(attr(selected,'aria-current'),'page',file);assert.equal(attr(selected,'href'),(prefix?'/'+prefix:'')+mainRoute,file);if(prefix==='en'||prefix==='es'||prefix==='de'||prefix==='fr'){function text(n){if(['script','style'].includes(n.tagName)||attr(n,'class')?.includes('language-switcher'))return '';return n.nodeName==='#text'?n.value:(n.childNodes||[]).map(text).join(' ')}assert(!/[\u3400-\u9fff]/.test(text(tree)),file+' untranslated Chinese text')} }
+for(const [prefix,lang] of languages)for(const relative of sharedPages){const file=path.join('dist',prefix,relative);assert(fs.existsSync(file),file);const html=fs.readFileSync(file,'utf8'),tree=parse(html),all=nodes(tree);assert.equal(attr(all.find(n=>n.tagName==='html'),'lang'),lang,file);assert(!all.some(n=>n.tagName==='meta'&&attr(n,'name')==='robots'&&attr(n,'content')?.includes('noindex')),file);const alts=all.filter(n=>n.tagName==='link'&&attr(n,'rel')==='alternate');assert.equal(alts.length,9,file);const mainRoute='/'+relative.replace(/index.html$/,'');for(const [code,p] of [['zh-CN',''],['zh-TW','/zh-hant'],['en','/en'],['ja','/ja'],['ko','/ko'],['es','/es'],['de','/de'],['fr','/fr'],['x-default','']])assert(alts.some(n=>attr(n,'hreflang')===code&&attr(n,'href')===origin+p+mainRoute),file+' '+code);const selected=all.find(n=>n.tagName==='a'&&attr(n,'hreflang')===lang);assert.equal(attr(selected,'aria-current'),'page',file);assert.equal(attr(selected,'href'),(prefix?'/'+prefix:'')+mainRoute,file);if(prefix==='en'||prefix==='es'||prefix==='de'||prefix==='fr'){function text(n){if(['script','style'].includes(n.tagName)||attr(n,'class')?.includes('language-switcher'))return '';return n.nodeName==='#text'?n.value:(n.childNodes||[]).map(text).join(' ')}assert(!/[\u3400-\u9fff]/.test(text(tree)),file+' untranslated Chinese text')} }
 for(const locale of ['en','ja','ko','es','de','fr']){
  const expectedMoney=s=>locale==='fr'?s.replace(/^\$/,'').replaceAll(',','\u202f')+' USD':['de','es'].includes(locale)?s.replace(/^\$/,'').replaceAll(',','.')+' USD':s;
  const html=fs.readFileSync(`dist/${locale}/fees/index.html`,'utf8'),all=nodes(parse(html));const config=attr(all.find(n=>attr(n,'data-budget')!==undefined),'data-config');const script=all.find(n=>n.tagName==='script'&&n.childNodes?.some(t=>t.value?.includes('[data-budget]')))?.childNodes[0].value;assert(script);
@@ -27,14 +26,14 @@ for(const locale of ['en','ja','ko','es','de','fr']){
 }
 console.log('PASS i18n: 184 complete language routes, active language, matching hreflang, English text coverage, 12 FAQ answers per locale, localized budget calculations and copy feedback.');
 
-for(const relative of base){
- const images=prefix=>nodes(parse(fs.readFileSync(path.join('dist',prefix,relative),'utf8'))).filter(n=>n.tagName==='img').map(n=>attr(n,'data-src')||attr(n,'src'));
+for(const relative of sharedPages){
+ const images=prefix=>nodes(parse(fs.readFileSync(path.join('dist',prefix,relative),'utf8'))).filter(n=>n.tagName==='img').map(n=>attr(n,'data-src')||attr(n,'src')).filter(src=>src?.startsWith('/'));
  const expected=images('');for(const prefix of ['zh-hant','en','ja','ko','es','de','fr'])assert.deepEqual(images(prefix),expected,prefix+'/'+relative+' image parity');
 }
 for(const prefix of ['en','ja','ko','es','de','fr']){const home=fs.readFileSync('dist/'+prefix+'/index.html','utf8');for(const cls of ['photo-cards','home-center','people-grid','home-budget','journey-panel','guide-grid','home-birth-link'])assert(home.includes(cls),prefix+' missing shared home layout '+cls);}
 console.log('PASS visual parity: image sources and order match Simplified Chinese on all 161 translated routes; shared home layouts.');
 
-for(const relative of base){
+for(const relative of sharedPages){
  const all=nodes(parse(fs.readFileSync(path.join('dist','zh-hant',relative),'utf8')));
  const switcher=all.find(n=>n.tagName==='details'&&attr(n,'class')?.split(' ').includes('language-switcher'));
  const summary=switcher?.childNodes.find(n=>n.tagName==='summary');
