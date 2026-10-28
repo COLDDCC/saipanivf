@@ -14,11 +14,14 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Build and check generated pages independently of editorial approval
+        run: npm run build && npm run check:site && npm run check:seo && npm run check:i18n && npm run check:mobile && npm run check:loading
       - name: Build and run full checks
         run: npm run verify
