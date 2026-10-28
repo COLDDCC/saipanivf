@@ -17,7 +17,7 @@ Reviewer: ChatGPT editorial and visual QA — screenshots manually inspected 202
 | Visual clarity | Equal | Desktop screenshot shows responsive two-column photo/text hero, clean serif headlines and restrained spacing; mobile screenshot shows single-column layout without clipping. |
 | Structured usefulness | Better | Four decisions, three-step newborn documentation path, four-item predeparture checklist and five expandable FAQs directly serve citizenship intent. |
 | Specificity | Equal | Section 303 date, US Supreme Court ruling date and petition age 21 are explicitly scoped, primary-sourced; no invented fees or clinic success figures. |
-| Trust | Equal | DOS, CBP, USCIS and Supreme Court sources; Pexels image credit and licensing; editorial update metadata and clear nonlegal-advice caution. |
+| Trust | Equal | DOS, CBP, USCIS and Supreme Court sources; Pexels photographer, source photo and commercial-use licensing; editorial update metadata and clear nonlegal-advice caution. |
 | User journey | Equal | Localized all-guides navigation, existing family-planning internal link and visible email contact in the footer. |
 | Accessibility and responsive behavior | Equal | Actual mobile screenshots of all three languages; image dimensions, alt, semantic heading order, responsive cards and keyboard-native FAQ details. |
 | Technical SEO | Equal | One H1, canonical per language, three real alternate routes, x-default English, sitemap special-guide mapping, shared Website/WebPage/Breadcrumb schema. |
@@ -38,7 +38,7 @@ Reviewer: ChatGPT editorial and visual QA — screenshots manually inspected 202
 - Pregnancy entry discretion, insurance, planned length of stay, due date and travel home: https://www.help.cbp.gov/s/article/Article1838?language=en_US (CBP primary, published 2025-11-18).
 - U.S. under-16 passport identity, consent and parent/guardian evidence: https://travel.state.gov/en/passports/apply/child/under-16.html (DOS primary).
 - U.S. citizens may petition for parents aged 21 or older, subject to further requirements: https://www.uscis.gov/family/family-of-us-citizens/bringing-parents-to-live-in-the-united-states-as-permanent-residents (USCIS primary).
-- Cover: repository image `public/images/stock/family-sandals.webp`, credited to https://www.pexels.com/photo/16362344/ under https://www.pexels.com/license/; existing use also attributed in `src/pages/birth-planning.astro`.
+- Cover: new unique real-photo cover `public/images/stock/saipan-citizenship-cover.webp` by Prabin Basnet, https://www.pexels.com/photo/hand-holding-baby-s-feet-in-close-up-photography-14937147/ under https://www.pexels.com/license/; downloaded from Pexels, optimized to 929 × 960 WebP, and added in commit 3aea7b583e3d6f0b6561d6f2a3d98bdb5b2f902c.
 
 ## Screenshot and test evidence
 - GitHub Actions visual-review run #4: https://github.com/COLDDCC/saipanivf/actions/runs/40618438616
