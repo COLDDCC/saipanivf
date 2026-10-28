@@ -6,7 +6,7 @@ const description="AMH 主要帮助评估卵巢储备及 IVF 促排反应，不�
 const comparisons=[
  ["AMH（抗缪勒管激素）","抽血，通常不必按月经日期预约","帮助估计促排卵巢反应、可能的取卵数量","不能独立预测自然怀孕、卵子质量或个人活产率"],
  ["AFC（窦卵泡计数）","超声查看两侧卵巢中的窦卵泡","与 AMH 一样，用于评估促排反应","不是当月可受孕卵子数，也不能保证取卵数"],
- ["FSH／雌二醇","可能安排月经周期早期抽血，需结合具体方案","在部分评估情境提供补充信息","单次结果不可脱离年龄、病史和其他检查解释"],
+ ["FSH／雌二醇","可能安排月经周期早期抽血，需结合具体方案","某些临床情境下帮助解释激素情况","NICE 2026 不建议用 FSH 预测辅助生殖的卵巢反应或治疗结局；单次数值也不能独立诊断"],
  ["年龄与生育计划","病史和咨询，而非单项实验室检查","讨论生育时间窗口与适合的治疗安排","任何单项激素值都不能替代年龄与完整诊断"]
 ];
 const checklist=["报告日期、检测机构、AMH 数值及单位（ng/mL 或 pmol/L）","检测机构的参考区间；不要把不同实验室的界值直接混用","年龄、月经与既往生育／治疗史","当前是否服用激素类避孕药，以及相关药物和疾病史","是否已有 AFC 超声结果；两项结果若不一致应请医生解释"];
@@ -25,11 +25,11 @@ const faq=[
  ["拿着外地的 AMH 报告能先咨询塞班诊所吗？","可以先询问接诊机构是否接受已有报告、需要哪种单位和有效期，以及是否需要再做超声或其他检查；本站不保证具体机构会接受报告。"]
 ];
 ---
-<SiteLayout title={title} description={description} active="treatments" zhOnlyAlternates={true}>
+<SiteLayout title={title} description={description} active="guides" zhOnlyAlternates={true}>
 <article class="section wrap amh-guide" aria-label="AMH与卵巢储备检查指南">
 <div class="answer"><div class="meta">生育力检查解读 · 医学依据核对：2026-10-28</div><h2>先看结论</h2><p><strong>AMH 低 ≠ 无法自然怀孕；AMH 高 ≠ 更容易怀孕。</strong> AMH（抗缪勒管激素）与 AFC（窦卵泡计数）主要帮助医生判断卵巢对促排药物可能的反应。它们不能单独回答“我的卵子质量好不好”或“以后一定能否怀孕”。解读报告时，年龄、病史与生育计划同样重要。</p><small>适用对象：准备 IVF、冻卵或希望了解检查报告的人；本文不能用于自行诊断或决定用药。</small></div>
 <nav class="toc" aria-label="文章导航"><a href="#compare">检查对比</a><a href="#interpret">结果怎么问</a><a href="#report">报告核对清单</a><a href="#questions">向医生提问</a><a href="#faq">常见问题</a><a href="#sources">医学来源</a></nav>
-<section id="compare"><h2>AMH、AFC、FSH：到底测的是什么？</h2><p>如果只想解决一个问题：<strong>AMH 和 AFC 更适合帮助评估促排反应，而不是给自然生育力打分。</strong></p><p class="swipe">在手机上可横向滑动表格。</p><div class="table-scroll" role="region" aria-label="卵巢储备常见检查对照表" tabindex="0"><table><thead><tr><th scope="col">项目</th><th scope="col">如何检查</th><th scope="col">有助于判断</th><th scope="col">不能据此推断</th></tr></thead><tbody>{comparisons.map(([name,method,can,cannot])=><tr><th scope="row">{name}</th><td>{method}</td><td>{can}</td><td>{cannot}</td></tr>)}</tbody></table></div><p class="source-inline">依据：<a href="https://www.asrm.org/practice-guidance/practice-committee-documents/testing-and-interpreting-measures-of-ovarian-reserve-a-committee-opinion-2020/">ASRM 卵巢储备检查意见</a>、<a href="https://www.nice.org.uk/guidance/ng257/chapter/Investigation-of-fertility-problems-and-management-strategies">NICE 2026 指南</a>。</p></section>
+<section id="compare"><h2>AMH、AFC、FSH：到底测的是什么？</h2><p>如果只想解决一个问题：<strong>AMH 和 AFC 更适合帮助评估促排反应，而不是给自然生育力打分。</strong></p><p class="swipe">在手机上可横向滑动表格。</p><div class="table-scroll" role="region" aria-label="卵巢储备常见检查对照表" tabindex="0"><table><thead><tr><th scope="col">项目</th><th scope="col">如何检查</th><th scope="col">有助于判断</th><th scope="col">不能据此推断</th></tr></thead><tbody>{comparisons.map(([name,method,can,cannot])=><tr><th scope="row">{name}</th><td>{method}</td><td>{can}</td><td>{cannot}</td></tr>)}</tbody></table></div><p class="source-inline">NICE NG257 第 1.18.2–1.18.5 条（2026-03-31）强调年龄的基础作用、AMH 不预测自然受孕、AMH／AFC 可辅助预测促排反应，并明确不建议 FSH 用于预测辅助生殖反应或结局。依据：<a href="https://www.asrm.org/practice-guidance/practice-committee-documents/testing-and-interpreting-measures-of-ovarian-reserve-a-committee-opinion-2020/">ASRM 卵巢储备检查意见</a>、<a href="https://www.nice.org.uk/guidance/ng257/chapter/Investigation-of-fertility-problems-and-management-strategies">NICE 2026 指南</a>。</p></section>
 <section id="interpret"><h2>报告出现这些情况，下一步应该问什么？</h2><div class="case-grid">{cases.map(([name,action])=><article><h3>{name}</h3><p>{action}</p></article>)}</div><p class="notice">请勿根据网上流传的单一“正常值”自行诊断。不同单位、检测方法、年龄及服药情况会影响解释；本文不提供未经具体实验室和医生确认的个人阈值。</p></section>
 <section id="report"><h2>初诊前，核对这 5 项报告信息</h2><ol class="checklist">{checklist.map(item=><li>{item}</li>)}</ol><p>如果在居住地先检查，可对照<a href="/guides/first-visit/">首次就诊资料清单</a>准备文件。是否需要重复抽血、加做 AFC 或其他检查，由实际接诊医生决定。</p></section>
 <section id="questions"><h2>带着报告，向医生问这 4 个问题</h2><div class="questions"><p><b>01</b> 以我的年龄和既往病史，这份 AMH 对治疗选择意味着什么？</p><p><b>02</b> 如果准备 IVF／冻卵，AFC 和 AMH 对预期促排反应是否一致？</p><p><b>03</b> 有哪些因素会干扰这个检测结果？是否有必要复查？</p><p><b>04</b> 如果治疗，如何根据我的具体情况讨论用药、风险和复诊时间？</p></div><p>准备冻卵可继续阅读<a href="/guides/egg-freezing-cost/">冻卵费用和保存预算</a>；正在比较治疗方式可看<a href="/guides/iui-vs-ivf/">IUI 与 IVF 区别</a>。</p></section>
