@@ -52,6 +52,10 @@ export default function traditional(){return {name:'complete-traditional-chinese
  }
  visit(tree);let html=serialize(tree);
  html=html
+  .replace(/<a href="https:\/\/www\.moe\.gov\.cn\/srcsite\/A20\/moe_850\/202006\/t20200609_464159\.html"[^>]*>教育部：規範高等學校接受國際學生有關工作的通知<\/a>/g,'<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=H0110001" target="_blank" rel="noopener">教育部：外國學生來台就學相關規定</a>')
+  .replace(/<a href="https:\/\/www\.nia\.gov\.cn\/n741440\/n741547\/c1013967\/content\.html"[^>]*>國家移民管理局：中國國籍法<\/a>/g,'<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030001">全國法規資料庫：中華民國國籍法</a>')
+
+  .replaceAll('<a href="https://www.nia.gov.cn/n741440/n741547/c1013967/content.html">國家移民管理局：中國國籍法</a>','<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030001">全國法規資料庫：中華民國國籍法</a>')
 
   .replaceAll('CBP官方旅行授權系統','CBP：G-CNMI ETA 官方申請系統')
   .replaceAll('<a href="https://www.nia.gov.cn/n741440/n741547/c1013967/content.html" target="_blank" rel="noopener">國家移民管理局：《中華人民共和國國籍法》</a>','<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?pcode=D0030001" target="_blank" rel="noopener">全國法規資料庫：《國籍法》</a>')
@@ -70,11 +74,11 @@ export default function traditional(){return {name:'complete-traditional-chinese
  const out=join(root,'zh-hant',relative(root,path));if(['guides/egg-freezing-cost/index.html','guides/ivf-cost/index.html'].includes(relativePath))continue;mkdirSync(dirname(out),{recursive:true});writeFileSync(out,html);}
  const paths=pages.map(p=>'/'+relative(root,dirname(p)).split('\\').join('/')+'/').map(p=>p==='//'?'/':p);
  const locales=[['zh-CN',''],['zh-TW','/zh-hant'],['en','/en'],['ja','/ja'],['ko','/ko'],['es','/es'],['de','/de'],['fr','/fr']];
- const limited=new Set(['/guides/ivf-cost/','/guides/egg-freezing-cost/']);
- const xml='<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"'+'>'
-  +paths.flatMap(path=>{
-   const available=limited.has(path)?locales.slice(0,2):locales;
-   return available.map(([,prefix])=>'<url><loc>'+origin+prefix+path+'</loc>'+[...available,['x-default','']].map(([lang,p])=>'<xhtml:link rel="alternate" hreflang="'+lang+'" href="'+origin+p+path+'"/>').join('')+'</url>');
-  }).join('')+'</urlset>';
+ const specialGuides=new Set(['/guides/ivf-cost/','/guides/egg-freezing-cost/','/guides/iui-vs-ivf/']);
+ const xml='<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'+paths.flatMap(path=>{
+  const available=specialGuides.has(path)?locales.filter(([,prefix])=>prefix===''||prefix==='/zh-hant'):locales;
+  const alternate=[...available,['x-default','']];
+  return available.map(([,prefix])=>'<url><loc>'+origin+prefix+path+'</loc>'+alternate.map(([lang,p])=>'<xhtml:link rel="alternate" hreflang="'+lang+'" href="'+origin+p+path+'"/>').join('')+'</url>');
+ }).join('')+'</urlset>';
  writeFileSync(join(root,'sitemap.xml'),xml);
 }}}}
