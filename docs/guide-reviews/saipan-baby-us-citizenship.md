@@ -41,7 +41,9 @@ Reviewer: ChatGPT editorial and visual QA — screenshots manually inspected 202
 - Cover: new unique real-photo cover `public/images/stock/saipan-citizenship-cover.webp` by Prabin Basnet, https://www.pexels.com/photo/hand-holding-baby-s-feet-in-close-up-photography-14937147/ under https://www.pexels.com/license/; downloaded from Pexels, optimized to 929 × 960 WebP, and added in commit 3aea7b583e3d6f0b6561d6f2a3d98bdb5b2f902c.
 
 ## Screenshot and test evidence
-- GitHub Actions visual-review run #4: https://github.com/COLDDCC/saipanivf/actions/runs/40618438616
-- Artifact `guide-visual-review`, ID 12786132712, screenshots: `en-desktop.png`, `en-mobile.png`, `zh-cn-desktop.png`, `zh-cn-mobile.png`, `zh-hant-desktop.png`, `zh-hant-mobile.png`, `golden-desktop.png`, `golden-mobile.png`.
+- GitHub Actions visual-review run #4: https://github.com/COLDDCC/saipanivf/actions/runs/40619093894
+- Artifact `guide-visual-review`, ID 12786153674, screenshots: `en-desktop.png`, `en-mobile.png`, `zh-cn-desktop.png`, `zh-cn-mobile.png`, `zh-hant-desktop.png`, `zh-hant-mobile.png`, `golden-desktop.png`, `golden-mobile.png`.
 - I inspected both new and golden reference mobile and desktop screenshots. The first mobile screenshot surfaced an image-first issue; this was corrected in commit 1ba6a3db89ca62fd716dd53dec03cb081af0e9cb and visually checked using the above artifact.
 - Build and CI results must be checked separately against this review's head SHA; code and screenshot acceptance do not establish production deployment.
+
+- Updated browser screenshots inspected after the unique Pexels newborn cover was added: clear face-free real photograph, mobile answer still visible above photo and no horizontal clipping in English/Chinese. Link and sitemap audits are enforced by `npm run verify`.
