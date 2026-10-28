@@ -12,6 +12,16 @@ for(const prefix of ['', 'zh-hant/']) {const file='dist/'+prefix+'guides/iui-vs-
 for(const prefix of ['en','ja','ko','es','de','fr'])assert(!fs.existsSync('dist/'+prefix+'/guides/iui-vs-ivf/index.html'),'Undeclared guide translation: '+prefix);
 for(const prefix of ['', 'zh-hant/']) {const file='dist/'+prefix+'guides/amh-ovarian-reserve/index.html';assert(fs.existsSync(file),'Missing AMH locale: '+file);const html=fs.readFileSync(file,'utf8');assert(html.includes('amh-guide'));assert(html.includes('href="'+(prefix?'/zh-hant/':'/')+'guides/amh-ovarian-reserve/"'));}
 for(const prefix of ['en','ja','ko','es','de','fr'])assert(!fs.existsSync('dist/'+prefix+'/guides/amh-ovarian-reserve/index.html'),'Undeclared AMH translation: '+prefix);
+for(const [prefix,lang] of [['','zh-CN'],['zh-hant/','zh-TW']]) {
+ const file='dist/'+prefix+'guides/embryo-transfer-aftercare/index.html';
+ assert(fs.existsSync(file),'Missing aftercare guide locale: '+file);
+ const html=fs.readFileSync(file,'utf8'),all=nodes(parse(html));
+ assert.equal(attr(all.find(n=>n.tagName==='html'),'lang'),lang,file);
+ assert.equal(all.filter(n=>n.tagName==='h1').length,1,file);
+ assert.equal(all.filter(n=>n.tagName==='link'&&attr(n,'rel')==='alternate').length,3,file);
+ assert(html.includes('transfer-guide')&&html.includes('id="checklist"'),file+' missing guide/checklist');
+}
+for(const prefix of ['en','ja','ko','es','de','fr'])assert(!fs.existsSync('dist/'+prefix+'/guides/embryo-transfer-aftercare/index.html'),'Undeclared aftercare translation: '+prefix);
 for(const p of standalone) assert(base.includes(p),`Missing standalone guide: ${p}`);
 for(const [prefix,lang] of [['','zh-CN'],['en/','en'],['zh-hant/','zh-Hant']]){const name='dist/'+prefix+'guides/saipan-baby-us-citizenship/index.html';assert(fs.existsSync(name),'Missing citizenship guide locale: '+name);const tree=parse(fs.readFileSync(name,'utf8'));assert.equal(attr(nodes(tree).find(n=>n.tagName==='html'),'lang'),lang,name);const links=nodes(tree).filter(n=>n.tagName==='link'&&attr(n,'rel')==='alternate');assert.equal(links.length,4,name);}
 const sharedPages=base.filter(p=>!standalone.includes(p));

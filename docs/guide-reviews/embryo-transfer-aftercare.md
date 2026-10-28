@@ -59,3 +59,9 @@ Actual Chromium render screenshots in [evidence folder](embryo-transfer-aftercar
 - npm run verify: final run recorded in PR description.
 - Code committed / CI passed / deployment observed: tracked separately in PR; local checks are not CI or production deployment.
 - Changed implementation: article, guide hub link, shared header image mapping, Traditional terminology and sitemap locale set, loading/i18n route inventories. Review and six screenshots accompany the change.
+
+## Follow-up acceptance — 2026-10-28
+- GitHub verify check passed on b480048d2500eddf20c085c40bb6132a1947fb55. The screenshot workflow also passed, but its configured target is the citizenship guide; it is not counted as new-guide visual proof. New-guide proof is the actual local Chromium captures and browser assertions.
+- Corrected visual-results.json from console text to valid JSON and rechecked both locales at 320, 390, 768 and 1440 pixels: no document overflow, one H1, all images loaded, FAQ opens, two language choices.
+- Added explicit new-guide locale existence and alternate-count checks, including rejection of undeclared translations.
+- Cloudflare preview build was still in progress when inspected; production deployment not observed. PR remains unmerged.
