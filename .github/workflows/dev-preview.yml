@@ -1,0 +1,37 @@
+name: Dev preview on GitHub Pages
+on:
+  push:
+    branches: [dev]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  preview:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci && npm run build
+      - name: Rewrite absolute assets and internal links for GitHub Pages project prefix
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          for p in Path('dist').rglob('*.html'):
+              s=p.read_text()
+              s=re.sub(r'((?:href|src|srcset|content)=")(/)(?!/)',r'\1/saipanivf/',s)
+              s=s.replace('</head>','<meta name="robots" content="noindex,nofollow"/></head>')
+              p.write_text(s)
+          PY
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - uses: actions/deploy-pages@v4
+        id: deployment
+      - run: echo "Preview URL ${{ steps.deployment.outputs.page_url }}"
