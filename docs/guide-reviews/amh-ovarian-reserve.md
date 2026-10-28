@@ -19,7 +19,7 @@ Reviewed date: 2026-10-28
 | Visual clarity | Equal | Actual paired screenshots show legible type, neutral answer fill, consistent spacing and compact illustrative laboratory cover; mobile cover is 112px high, desktop maximum 230px. Shared site navigation remains consistent. |
 | Structured usefulness | Better | Adds a test-purpose/limitations comparison, result-specific actions, referral timing and report checklist, enabling a consultation decision rather than only explaining a term. The reference instead provides budget planning tables. |
 | Specificity | Equal | No universal AMH cutoffs or promised conception rates; units and laboratory variability are explicit. ASRM age/time referral thresholds are contextualized beside their source. |
-| Trust | Equal | Named website content team, updated/checked dates, primary medical links, visible Pexels source/license and illustrative-use label; no depiction or claim of a specific clinic. Medical limitations are explicit. |
+| Trust | Equal | Named website content team, updated/checked dates, primary medical links, Pexels source/license retained in the internal image manifest; no depiction or claim of a specific clinic. Medical limitations are explicit. |
 | User journey | Equal | Links to first visit, egg-freezing costs, IUI/IVF, guide hub, editorial policy and optional consultation; all internal routes checked. |
 | Accessibility and responsive behavior | Equal | Both locales have one H1, no document overflow at either width, visible focus styles, native FAQ toggled by Enter. Mobile table is contained (346px viewport / 720px content); focused ArrowRight moved scrollLeft to 40px. Paired screenshots include all sections and footer. |
 | Technical SEO | Equal | Full built-route checks validate canonical, real Chinese alternates, sitemap and links. Shared WebPage/Breadcrumb schema remains; no unsupported translations are advertised. |
@@ -32,7 +32,7 @@ Answer/intent 23/25; evidence 23/25; visual/mobile/accessibility 17/20; decision
 - Paired full-page screenshots: [Simplified mobile](amh-evidence/cn-390.jpg), [Traditional mobile](amh-evidence/tw-390.jpg), [Simplified desktop](amh-evidence/cn-1440.jpg), [Traditional desktop](amh-evidence/tw-1440.jpg).
 - [Browser results](amh-evidence/browser-results.json): actual Chromium viewport, overflow, H1, FAQ and table-keyboard measurements.
 - Resolved main/PR conflicts by preserving BOTH the AMH and citizenship guide routes, hub cards, alternates and loading checks.
-- Corrected Astro global selectors that previously failed to scope layout descendants. Added editorial identity and cover licensing, replaced repeated cover with existing licensed unused laboratory photo, and reviewed its actual content/alt.
+- Corrected Astro global selectors that previously failed to scope layout descendants. Added editorial identity and recorded cover licensing, replaced repeated cover with existing licensed unused laboratory photo, and reviewed its actual content/alt.
 - Added page-specific Taiwan terminology without changing other pages' medical copy.
 - npm ci and build succeeded. All technical check scripts passed after the above fixes. Full verify with GITHUB_BASE_REF=main is the final same-PR editorial acceptance check; CI/deployment results are separately recorded on the PR.
 
@@ -43,3 +43,7 @@ Answer/intent 23/25; evidence 23/25; visual/mobile/accessibility 17/20; decision
 - NICE, NG257 Investigation of fertility problems and management strategies (2026): https://www.nice.org.uk/guidance/ng257/chapter/Investigation-of-fertility-problems-and-management-strategies — explains AMH and AFC usage for ovarian response, discourages use of FSH for predicting assisted reproduction response/outcomes, and stresses limitations for spontaneous pregnancy prediction. UK guidance; local care decisions vary.
 - No invented AMH numerical cutoffs, provider acceptance, predicted pregnancies, treatment prices or outcomes.
 
+## Customer copy correction — 2026-10-28
+- Removed the complete visible stock-photo attribution/license/disclaimer paragraph at the owner's request. This operational note interrupted the patient-facing article and does not help interpret AMH results. Pexels does not require attribution; provenance and license remain in docs/stock-images.json (photo 8851726).
+- Removed the now-unused cover-credit styles. Both Chinese versions derive from this source, so the correction applies to both. Image alt text stays descriptive and does not identify the photo as a specific clinic.
+- Existing medical source notes remain relevant. This is a small presentation correction, not a medical rewrite; prior full visual comparison remains applicable with the answer moved earlier.
