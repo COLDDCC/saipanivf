@@ -27,12 +27,12 @@ jobs:
           sleep 2
           for locale in en zh-hant; do
             npx --yes playwright@1.56.1 screenshot --browser chromium --viewport-size="1440,900" --full-page "http://127.0.0.1:4321/$locale/guides/saipan-baby-us-citizenship/" "guide-review-images/${locale}-desktop.png"
-            npx --yes playwright@1.56.1 screenshot --browser chromium --device="iPhone 13" --full-page "http://127.0.0.1:4321/$locale/guides/saipan-baby-us-citizenship/" "guide-review-images/${locale}-mobile.png"
+            npx --yes playwright@1.56.1 screenshot --browser chromium --viewport-size="390,844" --full-page "http://127.0.0.1:4321/$locale/guides/saipan-baby-us-citizenship/" "guide-review-images/${locale}-mobile.png"
           done
           npx --yes playwright@1.56.1 screenshot --browser chromium --viewport-size="1440,900" --full-page "http://127.0.0.1:4321/guides/saipan-baby-us-citizenship/" "guide-review-images/zh-cn-desktop.png"
-          npx --yes playwright@1.56.1 screenshot --browser chromium --device="iPhone 13" --full-page "http://127.0.0.1:4321/guides/saipan-baby-us-citizenship/" "guide-review-images/zh-cn-mobile.png"
+          npx --yes playwright@1.56.1 screenshot --browser chromium --viewport-size="390,844" --full-page "http://127.0.0.1:4321/guides/saipan-baby-us-citizenship/" "guide-review-images/zh-cn-mobile.png"
           npx --yes playwright@1.56.1 screenshot --browser chromium --viewport-size="1440,900" --full-page "http://127.0.0.1:4321/guides/egg-freezing-cost/" "guide-review-images/golden-desktop.png"
-          npx --yes playwright@1.56.1 screenshot --browser chromium --device="iPhone 13" --full-page "http://127.0.0.1:4321/guides/egg-freezing-cost/" "guide-review-images/golden-mobile.png"
+          npx --yes playwright@1.56.1 screenshot --browser chromium --viewport-size="390,844" --full-page "http://127.0.0.1:4321/guides/egg-freezing-cost/" "guide-review-images/golden-mobile.png"
       - uses: actions/upload-artifact@v4
         with:
           name: guide-visual-review
