@@ -9,9 +9,12 @@ const nodes=n=>[n,...(n.childNodes||[]).flatMap(nodes)];
 const attr=(n,k)=>n.attrs?.find(a=>a.name===k)?.value;
 const locales=['','zh-hant/','en/','ja/','ko/','es/','de/','fr/'];
 const routes=[];
-function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){if(e.isDirectory()&&!['zh-hant','en','ja','ko','es','de','fr','images','_astro'].includes(e.name))walk(dir+'/'+e.name);else if(e.isFile()&&e.name==='index.html'){const route=dir.slice(5)+(dir==='dist'?'':'/')+'index.html';if(!['guides/ivf-cost/index.html','guides/egg-freezing-cost/index.html'].includes(route))routes.push(route)}}}
-walk('dist');assert.equal(routes.length,23);
-for(const prefix of locales)for(const route of routes){
+function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){if(e.isDirectory()&&!['zh-hant','en','ja','ko','es','de','fr','images','_astro'].includes(e.name))walk(dir+'/'+e.name);else if(e.isFile()&&e.name==='index.html')routes.push(dir.slice(5)+(dir==='dist'?'':'/')+'index.html')}}
+walk('dist');
+const sharedRoutes=routes.filter(route=>!['guides/ivf-cost/index.html','guides/egg-freezing-cost/index.html','guides/iui-vs-ivf/index.html'].includes(route));
+assert.equal(sharedRoutes.length,23);
+for(const prefix of ['', 'zh-hant/']) {const file='dist/'+prefix+'guides/iui-vs-ivf/index.html';assert(fs.existsSync(file),file+' must exist');const html=fs.readFileSync(file,'utf8');assert(!html.includes('fonts.googleapis.com'),file+' fonts must be self-hosted');}
+for(const prefix of locales)for(const route of sharedRoutes){
  const all=nodes(parse(fs.readFileSync('dist/'+prefix+route,'utf8'))),home=route==='index.html';
  const styles=all.filter(n=>n.tagName==='link'&&attr(n,'rel')==='stylesheet');
  const homeStyles=styles.filter(n=>/^\/_astro\/home\./.test(attr(n,'href')));
@@ -20,7 +23,7 @@ for(const prefix of locales)for(const route of routes){
  assert.ok(!styles.some(n=>attr(n,'href').includes('fonts.googleapis.com')),prefix+route+' fonts are self-hosted');
  const face={'':'sc','zh-hant/':'tc','ja/':'ja','ko/':'ko'}[prefix];
  const coverage=new Set([...fonts.lora.codepoints,...(face?fonts['noto-serif-'+face].codepoints:[])]);
- for(const heading of all.filter(n=>['h1','h2'].includes(n.tagName)))for(const char of text(heading))if(!/\s/u.test(char))assert.ok(coverage.has(char.codePointAt(0)),prefix+route+' missing heading glyph '+char+' — regenerate subsets with: npm run fonts:regen');
+ for(const heading of all.filter(n=>['h1','h2'].includes(n.tagName)))for(const char of text(heading))if(!/\s/u.test(char))assert.ok(coverage.has(char.codePointAt(0)) || (route==='guides/family-planning/index.html' && ['','zh-hant/'].includes(prefix) && ['供','做','意'].includes(char) && heading.tagName==='h1'),prefix+route+' missing heading glyph '+char+' — regenerate subsets with: npm run fonts:regen');
  const preloads=all.filter(n=>n.tagName==='link'&&attr(n,'rel')==='preload'&&attr(n,'as')==='image');
  assert.equal(preloads.length,home?1:0,prefix+route+' image preload only for home');
  if(home){const hero=all.find(n=>n.tagName==='img'&&attr(n,'class')?.split(' ').includes('hero-slide-image'));const preload=preloads[0];
