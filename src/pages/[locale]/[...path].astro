@@ -51,7 +51,7 @@ const profileIds=['gary-ramsey','irena-lalic','rose-wang'];
 {key==='treatments'&&<OutcomeEvidence locale={locale}/>}
 {key==='guides/quotation'&&<QuotationChecklist locale={locale}/>}
 {key==='privacy'&&<EngagementNotice locale={locale}/>}
-<section class="localized-related"><h2>{d.related}</h2><div class="hub-grid">{links.map(route=><a class="hub-card" href={href(route)}><h3>{pageInfo(locale,route).title}</h3><p>{pageInfo(locale,route).description}</p></a>)}</div><a class="button" href={href('contact')+(consultationTopic?'?topic='+consultationTopic:'')}>{d.contact}</a></section><p class="caption">{d.checked}</p>
+<section class="localized-related"><h2>{d.related}</h2>{locale==='en'&&['guides','birth-planning'].includes(key)&&<p><a class="inline-link" href="/en/guides/saipan-baby-us-citizenship/">Is a Baby Born in Saipan a U.S. Citizen? — legal rules, parents’ entry and newborn documents</a></p>}<div class="hub-grid">{links.map(route=><a class="hub-card" href={href(route)}><h3>{pageInfo(locale,route).title}</h3><p>{pageInfo(locale,route).description}</p></a>)}</div><a class="button" href={href('contact')+(consultationTopic?'?topic='+consultationTopic:'')}>{d.contact}</a></section><p class="caption">{d.checked}</p>
 </div>}
 <script>
 function reveal(){const id=location.hash.slice(1);const el=document.getElementById(id);if(el instanceof HTMLDetailsElement){el.open=true;requestAnimationFrame(()=>el.scrollIntoView({block:'start'}))}}reveal();addEventListener('hashchange',reveal);document.querySelectorAll<HTMLAnchorElement>('.faq-index a').forEach(a=>a.addEventListener('click',()=>{const el=document.getElementById(a.hash.slice(1));if(el instanceof HTMLDetailsElement)el.open=true}));
