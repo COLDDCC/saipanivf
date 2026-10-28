@@ -36,11 +36,11 @@ Reviewed date: 2026-10-28
 
 - Run https://github.com/COLDDCC/saipanivf/actions/runs/40619268656: dependency install, Astro build, independent site links, SEO, i18n, loading, and standalone generated-page checks pass.
 - Full verify intentionally fails at `check:guide-review` because this document cannot truthfully claim mobile visual and localization review have passed.
-- GitHub PR #20 has been switched to draft to prevent premature merge.
+- GitHub PR #20 remains blocked from merge until signed review is supported by actual rendered evidence.
 
 ## Acceptance still required
 
-1. Run the AMH visual screenshot workflow at `.github/workflows/amh-visual.yml`, then capture and examine current golden page and AMH page at 390px and 1440px using rendered Chromium screenshots.
+1. Obtain screenshot artifacts from the visual job added to `.github/workflows/verify.yml`, then capture and examine current golden page and AMH page at 390px and 1440px using rendered Chromium screenshots.
 2. Check Traditional Chinese terminology and the cross-locale source/links visually.
 3. Review image attribution and ensure no inaccurate depiction of a specific clinic.
 4. Score all ten comparison dimensions with observed visual evidence; sign off only if no blocking problems and >=85/100.
