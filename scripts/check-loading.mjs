@@ -11,9 +11,10 @@ const locales=['','zh-hant/','en/','ja/','ko/','es/','de/','fr/'];
 const routes=[];
 function walk(dir){for(const e of fs.readdirSync(dir,{withFileTypes:true})){if(e.isDirectory()&&!['zh-hant','en','ja','ko','es','de','fr','images','_astro'].includes(e.name))walk(dir+'/'+e.name);else if(e.isFile()&&e.name==='index.html')routes.push(dir.slice(5)+(dir==='dist'?'':'/')+'index.html')}}
 walk('dist');
-const sharedRoutes=routes.filter(route=>!['guides/ivf-cost/index.html','guides/egg-freezing-cost/index.html','guides/iui-vs-ivf/index.html','guides/saipan-baby-us-citizenship/index.html'].includes(route));
+const sharedRoutes=routes.filter(route=>!['guides/ivf-cost/index.html','guides/egg-freezing-cost/index.html','guides/iui-vs-ivf/index.html','guides/amh-ovarian-reserve/index.html','guides/saipan-baby-us-citizenship/index.html'].includes(route));
 assert.equal(sharedRoutes.length,23);
 for(const prefix of ['', 'zh-hant/']) {const file='dist/'+prefix+'guides/iui-vs-ivf/index.html';assert(fs.existsSync(file),file+' must exist');const html=fs.readFileSync(file,'utf8');assert(!html.includes('fonts.googleapis.com'),file+' fonts must be self-hosted');}
+for(const prefix of ['', 'zh-hant/']) {const file='dist/'+prefix+'guides/amh-ovarian-reserve/index.html';assert(fs.existsSync(file),file+' must exist');const html=fs.readFileSync(file,'utf8');assert(!html.includes('fonts.googleapis.com'),file+' fonts must be self-hosted');}
 for(const prefix of locales)for(const route of sharedRoutes){
  const all=nodes(parse(fs.readFileSync('dist/'+prefix+route,'utf8'))),home=route==='index.html';
  const styles=all.filter(n=>n.tagName==='link'&&attr(n,'rel')==='stylesheet');

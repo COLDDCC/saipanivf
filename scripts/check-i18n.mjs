@@ -7,9 +7,11 @@ const origin=(process.env.SITE_ORIGIN||'https://saipanivf.pages.dev').replace(/\
 function nodes(tree){return [tree,...(tree.childNodes||[]).flatMap(nodes)]}
 function attr(node,name){return node.attrs?.find(a=>a.name===name)?.value}
 const base=[];function find(dir){for(const entry of fs.readdirSync(dir,{withFileTypes:true})){if(entry.isDirectory()&&!['en','ja','ko','es','de','fr','zh-hant','images','_astro'].includes(entry.name))find(path.join(dir,entry.name));if(entry.isFile()&&entry.name==='index.html')base.push(path.relative('dist',path.join(dir,entry.name)).split(path.sep).join('/'))}}find('dist');
-const standalone=['guides/ivf-cost/index.html','guides/egg-freezing-cost/index.html','guides/iui-vs-ivf/index.html','guides/saipan-baby-us-citizenship/index.html'];
+const standalone=['guides/ivf-cost/index.html','guides/egg-freezing-cost/index.html','guides/iui-vs-ivf/index.html','guides/amh-ovarian-reserve/index.html','guides/saipan-baby-us-citizenship/index.html'];
 for(const prefix of ['', 'zh-hant/']) {const file='dist/'+prefix+'guides/iui-vs-ivf/index.html';assert(fs.existsSync(file),'Missing IUI vs IVF locale: '+file);const html=fs.readFileSync(file,'utf8');assert(html.includes('iui-guide'));assert(html.includes('href=\"'+(prefix?'/zh-hant/':'/')+'guides/iui-vs-ivf/\"'));}
 for(const prefix of ['en','ja','ko','es','de','fr'])assert(!fs.existsSync('dist/'+prefix+'/guides/iui-vs-ivf/index.html'),'Undeclared guide translation: '+prefix);
+for(const prefix of ['', 'zh-hant/']) {const file='dist/'+prefix+'guides/amh-ovarian-reserve/index.html';assert(fs.existsSync(file),'Missing AMH locale: '+file);const html=fs.readFileSync(file,'utf8');assert(html.includes('amh-guide'));assert(html.includes('href="'+(prefix?'/zh-hant/':'/')+'guides/amh-ovarian-reserve/"'));}
+for(const prefix of ['en','ja','ko','es','de','fr'])assert(!fs.existsSync('dist/'+prefix+'/guides/amh-ovarian-reserve/index.html'),'Undeclared AMH translation: '+prefix);
 for(const p of standalone) assert(base.includes(p),`Missing standalone guide: ${p}`);
 for(const [prefix,lang] of [['','zh-CN'],['en/','en'],['zh-hant/','zh-Hant']]){const name='dist/'+prefix+'guides/saipan-baby-us-citizenship/index.html';assert(fs.existsSync(name),'Missing citizenship guide locale: '+name);const tree=parse(fs.readFileSync(name,'utf8'));assert.equal(attr(nodes(tree).find(n=>n.tagName==='html'),'lang'),lang,name);const links=nodes(tree).filter(n=>n.tagName==='link'&&attr(n,'rel')==='alternate');assert.equal(links.length,4,name);}
 const sharedPages=base.filter(p=>!standalone.includes(p));
