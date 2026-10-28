@@ -32,3 +32,7 @@ Reviewed date: 2026-10-27
 
 ## Release status
 PR CI on commit 03a792e: Astro build, check:site, check:seo, check:i18n, check:mobile and check:loading passed, including generated zh-hant/family-planning route. Editorial gate failed as intended because signoff is incomplete. The current answer-first reordering still needs fresh CI. User accepted preview and requested publication. Remaining caveat: CI device checks are structural, not screenshots of a real phone.
+
+
+## 2026-10-28 customer-copy follow-up
+Removed the stock-photo caption on owner request; image provenance retained in customer-copy-cleanup-20261028.md and stock-images.json. No medical/legal claims changed. This removes a production note while preserving existing layout and useful source links; verify and focused mobile/desktop rendering are rerun for this correction.

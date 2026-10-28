@@ -1,0 +1,147 @@
+{
+  "date": "2026-10-28",
+  "pages_scanned": 195,
+  "remaining_production_notes": [],
+  "browser": [
+    {
+      "route": "guides/egg-freezing-cost/",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "notes": false
+    },
+    {
+      "route": "guides/ivf-cost/",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "notes": false
+    },
+    {
+      "route": "guides/family-planning/",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "notes": false
+    },
+    {
+      "route": "guides/saipan-baby-us-citizenship/",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "notes": false
+    },
+    {
+      "route": "birth-planning/",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "notes": false
+    },
+    {
+      "route": "zh-hant/guides/egg-freezing-cost/",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "notes": false
+    },
+    {
+      "route": "zh-hant/guides/ivf-cost/",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "notes": false
+    },
+    {
+      "route": "zh-hant/guides/family-planning/",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "notes": false
+    },
+    {
+      "route": "zh-hant/guides/saipan-baby-us-citizenship/",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "notes": false
+    },
+    {
+      "route": "zh-hant/birth-planning/",
+      "width": 390,
+      "overflow": false,
+      "h1": 1,
+      "notes": false
+    },
+    {
+      "route": "guides/egg-freezing-cost/",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "notes": false
+    },
+    {
+      "route": "guides/ivf-cost/",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "notes": false
+    },
+    {
+      "route": "guides/family-planning/",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "notes": false
+    },
+    {
+      "route": "guides/saipan-baby-us-citizenship/",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "notes": false
+    },
+    {
+      "route": "birth-planning/",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "notes": false
+    },
+    {
+      "route": "zh-hant/guides/egg-freezing-cost/",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "notes": false
+    },
+    {
+      "route": "zh-hant/guides/ivf-cost/",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "notes": false
+    },
+    {
+      "route": "zh-hant/guides/family-planning/",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "notes": false
+    },
+    {
+      "route": "zh-hant/guides/saipan-baby-us-citizenship/",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "notes": false
+    },
+    {
+      "route": "zh-hant/birth-planning/",
+      "width": 1440,
+      "overflow": false,
+      "h1": 1,
+      "notes": false
+    }
+  ]
+}
