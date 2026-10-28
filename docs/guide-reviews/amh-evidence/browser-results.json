@@ -1,0 +1,74 @@
+[
+  {
+    "name": "cn-amh-ovarian-reserve-390",
+    "overflow": false,
+    "h1": 1,
+    "answerY": 512.0625,
+    "faq": true,
+    "scroll": {
+      "left": 40,
+      "client": 346,
+      "width": 720
+    }
+  },
+  {
+    "name": "cn-egg-freezing-cost-390",
+    "overflow": false,
+    "h1": 1,
+    "answerY": 655.5
+  },
+  {
+    "name": "tw-amh-ovarian-reserve-390",
+    "overflow": false,
+    "h1": 1,
+    "answerY": 512.0625,
+    "faq": true,
+    "scroll": {
+      "left": 40,
+      "client": 346,
+      "width": 720
+    }
+  },
+  {
+    "name": "tw-egg-freezing-cost-390",
+    "overflow": false,
+    "h1": 1,
+    "answerY": 655.5
+  },
+  {
+    "name": "cn-amh-ovarian-reserve-1440",
+    "overflow": false,
+    "h1": 1,
+    "answerY": 421.015625,
+    "faq": true,
+    "scroll": {
+      "left": 0,
+      "client": 893,
+      "width": 893
+    }
+  },
+  {
+    "name": "cn-egg-freezing-cost-1440",
+    "overflow": false,
+    "h1": 1,
+    "answerY": 493.6875
+  },
+  {
+    "name": "tw-amh-ovarian-reserve-1440",
+    "overflow": false,
+    "h1": 1,
+    "answerY": 421.015625,
+    "faq": true,
+    "scroll": {
+      "left": 0,
+      "client": 893,
+      "width": 893
+    }
+  },
+  {
+    "name": "tw-egg-freezing-cost-1440",
+    "overflow": false,
+    "h1": 1,
+    "answerY": 493.6875
+  }
+]

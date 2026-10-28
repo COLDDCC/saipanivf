@@ -70,14 +70,18 @@ export default function traditional(){return {name:'complete-traditional-chinese
  if(['faq/index.html','guides/travel-checklist/index.html'].includes(relativePath)){
   for(const term of ['CNMI EVS-TAP','CNMI EVS.TAP'])if(html.includes(term))throw new Error('Taiwan content leak: '+relativePath+' contains '+term);
  }
+ if(relativePath==='guides/amh-ovarian-reserve/index.html'){
+  const terms=[['抗繆勒管激素','抗穆勒氏管荷爾蒙'],['竇卵泡計數','基礎濾泡計數'],['卵巢儲備','卵巢庫存'],['卵泡','濾泡'],['超聲','超音波'],['激素','荷爾蒙'],['醫生','醫師'],['促排','促排卵'],['個人活產率','個人活產機率'],['接診','看診'],['資訊和','資訊與'],['質量','品質'],['信息','資訊'],['計劃','計畫'],['篩查','篩檢'],['閾值','臨界值'],['網上','網路上'],['倒計時','倒數計時'],['竇濾泡','基礎濾泡']];
+  for(const [from,to] of terms)html=html.replaceAll(from,to);
+ }
  if(!html.includes('lang="zh-TW"'))throw new Error('Traditional Chinese locale missing: '+relativePath);
- const out=join(root,'zh-hant',relative(root,path));if(['guides/egg-freezing-cost/index.html','guides/ivf-cost/index.html'].includes(relativePath))continue;mkdirSync(dirname(out),{recursive:true});writeFileSync(out,html);}
+ const out=join(root,'zh-hant',relative(root,path));if(['guides/egg-freezing-cost/index.html','guides/ivf-cost/index.html','guides/saipan-baby-us-citizenship/index.html'].includes(relativePath))continue;mkdirSync(dirname(out),{recursive:true});writeFileSync(out,html);}
  const paths=pages.map(p=>'/'+relative(root,dirname(p)).split('\\').join('/')+'/').map(p=>p==='//'?'/':p);
  const locales=[['zh-CN',''],['zh-TW','/zh-hant'],['en','/en'],['ja','/ja'],['ko','/ko'],['es','/es'],['de','/de'],['fr','/fr']];
- const specialGuides=new Set(['/guides/ivf-cost/','/guides/egg-freezing-cost/','/guides/iui-vs-ivf/','/guides/amh-ovarian-reserve/']);
+ const specialGuides=new Set(['/guides/ivf-cost/','/guides/egg-freezing-cost/','/guides/iui-vs-ivf/','/guides/amh-ovarian-reserve/','/guides/saipan-baby-us-citizenship/']);
  const xml='<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'+paths.flatMap(path=>{
-  const available=specialGuides.has(path)?locales.filter(([,prefix])=>prefix===''||prefix==='/zh-hant'):locales;
-  const alternate=[...available,['x-default','']];
+  const available=path==='/guides/saipan-baby-us-citizenship/'?locales.filter(([,prefix])=>['','/zh-hant','/en'].includes(prefix)):specialGuides.has(path)?locales.filter(([,prefix])=>prefix===''||prefix==='/zh-hant'):locales;
+  const alternate=[...available,['x-default',path==='/guides/saipan-baby-us-citizenship/'?'/en':'']];
   return available.map(([,prefix])=>'<url><loc>'+origin+prefix+path+'</loc>'+alternate.map(([lang,p])=>'<xhtml:link rel="alternate" hreflang="'+lang+'" href="'+origin+p+path+'"/>').join('')+'</url>');
  }).join('')+'</urlset>';
  writeFileSync(join(root,'sitemap.xml'),xml);
