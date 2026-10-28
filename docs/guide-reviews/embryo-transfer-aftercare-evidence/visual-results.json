@@ -1,0 +1,66 @@
+cn 390 {
+  h1: 1,
+  overflow: false,
+  images: true,
+  canonical: 'https://saipanivf.pages.dev/guides/embryo-transfer-aftercare/',
+  alternates: [
+    'https://saipanivf.pages.dev/guides/embryo-transfer-aftercare/',
+    'https://saipanivf.pages.dev/zh-hant/guides/embryo-transfer-aftercare/',
+    'https://saipanivf.pages.dev/guides/embryo-transfer-aftercare/'
+  ]
+}
+cn 1440 {
+  h1: 1,
+  overflow: false,
+  images: true,
+  canonical: 'https://saipanivf.pages.dev/guides/embryo-transfer-aftercare/',
+  alternates: [
+    'https://saipanivf.pages.dev/guides/embryo-transfer-aftercare/',
+    'https://saipanivf.pages.dev/zh-hant/guides/embryo-transfer-aftercare/',
+    'https://saipanivf.pages.dev/guides/embryo-transfer-aftercare/'
+  ]
+}
+tw 390 {
+  h1: 1,
+  overflow: false,
+  images: true,
+  canonical: 'https://saipanivf.pages.dev/zh-hant/guides/embryo-transfer-aftercare/',
+  alternates: [
+    'https://saipanivf.pages.dev/guides/embryo-transfer-aftercare/',
+    'https://saipanivf.pages.dev/zh-hant/guides/embryo-transfer-aftercare/',
+    'https://saipanivf.pages.dev/guides/embryo-transfer-aftercare/'
+  ]
+}
+tw 1440 {
+  h1: 1,
+  overflow: false,
+  images: true,
+  canonical: 'https://saipanivf.pages.dev/zh-hant/guides/embryo-transfer-aftercare/',
+  alternates: [
+    'https://saipanivf.pages.dev/guides/embryo-transfer-aftercare/',
+    'https://saipanivf.pages.dev/zh-hant/guides/embryo-transfer-aftercare/',
+    'https://saipanivf.pages.dev/guides/embryo-transfer-aftercare/'
+  ]
+}
+golden 390 {
+  h1: 1,
+  overflow: false,
+  images: true,
+  canonical: 'https://saipanivf.pages.dev/guides/egg-freezing-cost/',
+  alternates: [
+    'https://saipanivf.pages.dev/guides/egg-freezing-cost/',
+    'https://saipanivf.pages.dev/zh-hant/guides/egg-freezing-cost/',
+    'https://saipanivf.pages.dev/guides/egg-freezing-cost/'
+  ]
+}
+golden 1440 {
+  h1: 1,
+  overflow: false,
+  images: true,
+  canonical: 'https://saipanivf.pages.dev/guides/egg-freezing-cost/',
+  alternates: [
+    'https://saipanivf.pages.dev/guides/egg-freezing-cost/',
+    'https://saipanivf.pages.dev/zh-hant/guides/egg-freezing-cost/',
+    'https://saipanivf.pages.dev/guides/egg-freezing-cost/'
+  ]
+}
