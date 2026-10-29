@@ -1,0 +1,76 @@
+[
+  {
+    "name": "outline-microscope",
+    "src": "src/assets/icons/outline-microscope.svg",
+    "kind": "health-icon",
+    "aiGenerated": false,
+    "source": "https://github.com/resolvetosavelives/healthicons@8e8eca6b95821101bac1fde69531d8baffa68fbe public/icons/svg/outline/devices/microscope.svg",
+    "license": "CC0 1.0",
+    "created": "2026-10-29"
+  },
+  {
+    "name": "outline-test-tubes",
+    "src": "src/assets/icons/outline-test-tubes.svg",
+    "kind": "health-icon",
+    "aiGenerated": false,
+    "source": "https://github.com/resolvetosavelives/healthicons@8e8eca6b95821101bac1fde69531d8baffa68fbe public/icons/svg/outline/devices/test-tubes.svg",
+    "license": "CC0 1.0",
+    "created": "2026-10-29"
+  },
+  {
+    "name": "outline-dna",
+    "src": "src/assets/icons/outline-dna.svg",
+    "kind": "health-icon",
+    "aiGenerated": false,
+    "source": "https://github.com/resolvetosavelives/healthicons@8e8eca6b95821101bac1fde69531d8baffa68fbe public/icons/svg/outline/body/dna.svg",
+    "license": "CC0 1.0",
+    "created": "2026-10-29"
+  },
+  {
+    "name": "outline-lab-search",
+    "src": "src/assets/icons/outline-lab-search.svg",
+    "kind": "health-icon",
+    "aiGenerated": false,
+    "source": "https://github.com/resolvetosavelives/healthicons@8e8eca6b95821101bac1fde69531d8baffa68fbe public/icons/svg/outline/symbols/lab-search.svg",
+    "license": "CC0 1.0",
+    "created": "2026-10-29"
+  },
+  {
+    "name": "outline-small-plane",
+    "src": "src/assets/icons/outline-small-plane.svg",
+    "kind": "health-icon",
+    "aiGenerated": false,
+    "source": "https://github.com/resolvetosavelives/healthicons@8e8eca6b95821101bac1fde69531d8baffa68fbe public/icons/svg/outline/vehicles/small-plane.svg",
+    "license": "CC0 1.0",
+    "created": "2026-10-29"
+  },
+  {
+    "name": "pgt-a-consult",
+    "src": "/images/illustrations/pgt-a-consult.svg",
+    "kind": "open-peeps",
+    "width": 2528,
+    "height": 3028,
+    "bytes": 85078,
+    "alt": "手绘插画：一人倾听，另一人讲解（示意图，并非真实医生或患者）",
+    "figures": [
+      [
+        "pose/standing/easing-1.svg",
+        "head/Medium Bangs.svg",
+        "face/Calm.svg"
+      ],
+      [
+        "pose/standing/pointing_finger-1.svg",
+        "head/Short 2.svg",
+        "face/Explaining.svg",
+        "accessories/Glasses.svg"
+      ]
+    ],
+    "usedOn": [
+      "/guides/pgt-a/"
+    ],
+    "source": "https://www.openpeeps.com/ (Pablo Stanley), parts via https://github.com/jenshor/open-peeps@816c04b7d09ac23a76c9260c7a8c818057696b9a",
+    "license": "CC0 1.0 (artwork); repackaging repository MIT",
+    "aiGenerated": false,
+    "created": "2026-10-29"
+  }
+]
