@@ -77,5 +77,5 @@ Pilot for the new repo skills `saipan-guide-tables`, `saipan-guide-illustrations
 - Situations: Open Peeps drawing `pgt-a-consult` (two standing figures, calm/explaining faces, site ink colour), CC0 artwork, parts and commit recorded in docs/illustrations.json, alt text states it is a drawing and not a real clinician or patient.
 - No new numbers; every bar value comes from pricing.ts or the existing ledger row (airfare from the egg-freezing-cost guide).
 - CI Chromium capture on 4f72d3c: one H1, no page overflow at 320/390/768/1440 for CN and TW, FAQ opens, scroll regions focusable. imagesLoaded reported false at 320 px only because the lazy-loaded illustration was below the fold when measured; it loads at the other widths.
-- Photos: the Pexels workflow ran and stopped with the expected message because the PEXELS_API_KEY secret is not yet configured; no photo was added.
+- Photos: none added. Pexels has paused new API keys, so the team chose to wait for photos supplied by the hospital; the photo skill now covers importing those.
 
