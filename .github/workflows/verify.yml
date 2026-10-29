@@ -64,11 +64,14 @@ jobs:
   pgt-a-visual:
     if: github.event_name == 'pull_request' && github.head_ref == 'guide/pgt-a'
     runs-on: ubuntu-24.04
-    timeout-minutes: 15
+    timeout-minutes: 20
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -106,6 +109,19 @@ jobs:
           mkdir -p pgt-a-review/html/zh-hant
           cp dist/guides/pgt-a/index.html pgt-a-review/html/cn.html
           cp dist/zh-hant/guides/pgt-a/index.html pgt-a-review/html/tw.html
+          rm -f measure.mjs
+          npm run check > pgt-a-review/check.log 2>&1 || echo "npm run check exited non-zero" >> pgt-a-review/check.log
+      - name: Publish evidence to review branch (fetchable without artifact storage)
+        if: always()
+        run: |
+          set -eu
+          head_sha='${{ github.event.pull_request.head.sha }}'
+          echo "$head_sha" > pgt-a-review/SOURCE_SHA
+          tmp=$(mktemp -d); cp -r pgt-a-review "$tmp/"; cp -r dist "$tmp/dist"
+          cd "$tmp"; git init -q; git checkout -q -b review/pgt-a-evidence
+          git -c user.name=ci -c user.email=ci@users.noreply.github.com add -A
+          git -c user.name=ci -c user.email=ci@users.noreply.github.com commit -q -m "PGT-A visual evidence for $head_sha"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" review/pgt-a-evidence
       - uses: actions/upload-artifact@v4
         if: always()
         with:
