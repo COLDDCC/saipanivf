@@ -65,6 +65,6 @@ Issues found and fixed during review: (1) new heading characters fell back to a 
 
 ## Tests and release
 - Local sandbox: npm registry blocked, so npm ci / build / verify could not run locally. All results below are from GitHub Actions on the PR branch.
-- CI on 7e0670b: npm ci and npm run build passed; check:site, check:seo, check:i18n, check:mobile, check:loading passed (independent step); full `npm run check` passed check:budget then stopped at check:guide-review because this review file did not yet exist. Final verify result is recorded on the PR for the commit that adds this file.
-- Code committed: yes (branch guide/pgt-a, draft PR #22). CI passed: see PR. Deployment observed: no — Cloudflare preview not inspected; production unchanged until merge.
+- CI on 7e0670b: npm ci and npm run build passed; check:site, check:seo, check:i18n, check:mobile, check:loading passed (independent step); full `npm run check` passed check:budget then stopped at check:guide-review because this review file did not yet exist. With this review added, GitHub "Site verification" (npm ci + npm run verify, all checks including check:guide-review 88/100) passed on 3272e8ba80c3c7c31ebff69fc81a120165acfab2.
+- Code committed: yes (branch guide/pgt-a, draft PR #22). CI passed: yes (3272e8b, re-run on final commit). Deployment observed: no — Cloudflare preview not inspected; production unchanged until merge.
 - Changed implementation: new page, guide hub card, header image mapping, Traditional terminology + sitemap locale set, i18n/loading route inventories with new locale assertions, regenerated heading font subsets, image placement record, this review and evidence.
