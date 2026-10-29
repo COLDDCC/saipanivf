@@ -77,6 +77,11 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci && npm run build
+      - name: Regenerate heading font subsets for new headings
+        run: |
+          python3 -m pip install --quiet fonttools brotli
+          npm run fonts:regen 2>&1 | tee /tmp/fonts-regen.log
+          mkdir -p pgt-a-review/fonts && cp public/fonts/*.woff2 public/fonts/manifest.json pgt-a-review/fonts/ && cp /tmp/fonts-regen.log pgt-a-review/fonts/
       - run: npx --yes playwright@1.56.1 install --with-deps chromium
       - name: Capture PGT-A and golden-guide comparisons with browser measurements
         run: |
@@ -92,10 +97,11 @@ jobs:
             const page=await browser.newPage({viewport:{width,height:900}});
             await page.goto('http://127.0.0.1:4321'+path,{waitUntil:'networkidle'});
             const m=await page.evaluate(()=>({h1:document.querySelectorAll('h1').length,overflow:document.documentElement.scrollWidth>window.innerWidth,imagesLoaded:[...document.images].every(i=>i.complete&&i.naturalWidth>0),lang:document.documentElement.lang,answerTop:Math.round(document.querySelector('.answer')?.getBoundingClientRect().top??-1),title:document.title}));
-            const d=await page.$('details');if(d){await d.click();m.faqOpens=await d.evaluate(e=>e.open)}
-            out.push({name,path,width,...m});
-            if(width===390||width===1440)await page.screenshot({path:`pgt-a-review/${name}-${width}.png`,fullPage:true});
             if(width===390||width===1440)await page.screenshot({path:`pgt-a-review/${name}-${width}-first-screen.png`});
+            if(width===390||width===1440)await page.screenshot({path:`pgt-a-review/${name}-${width}.png`,fullPage:true});
+            const d=await page.$('#faq details, #questions details');if(d){await d.locator('summary').click();m.faqOpens=await d.evaluate(e=>e.open)}
+            await page.keyboard.press('Tab');m.firstTabVisible=await page.evaluate(()=>{const e=document.activeElement;return !!e&&e!==document.body&&getComputedStyle(e).outlineStyle!=='none'||e?.className?.includes?.('skip')});
+            out.push({name,path,width,...m});
             await page.close();
            }
           }
