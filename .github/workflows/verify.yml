@@ -99,8 +99,9 @@ jobs:
             const m=await page.evaluate(()=>({h1:document.querySelectorAll('h1').length,overflow:document.documentElement.scrollWidth>window.innerWidth,imagesLoaded:[...document.images].every(i=>i.complete&&i.naturalWidth>0),lang:document.documentElement.lang,answerTop:Math.round(document.querySelector('.answer')?.getBoundingClientRect().top??-1),title:document.title}));
             if(width===390||width===1440)await page.screenshot({path:`pgt-a-review/${name}-${width}-first-screen.png`});
             if(width===390||width===1440)await page.screenshot({path:`pgt-a-review/${name}-${width}.png`,fullPage:true});
-            const d=await page.$('#faq details, #questions details');if(d){await d.locator('summary').click();m.faqOpens=await d.evaluate(e=>e.open)}
-            await page.keyboard.press('Tab');m.firstTabVisible=await page.evaluate(()=>{const e=document.activeElement;return !!e&&e!==document.body&&getComputedStyle(e).outlineStyle!=='none'||e?.className?.includes?.('skip')});
+            const faqItem=page.locator('#faq details, #questions details').first();
+            if(await faqItem.count()){await faqItem.locator('summary').click();m.faqOpens=await faqItem.evaluate(e=>e.open)}
+            const tables=await page.$$eval('.table-scroll,.tablewrap',els=>els.map(e=>({scrolls:e.scrollWidth>e.clientWidth,focusable:e.tabIndex>=0})));m.tables=tables.length;m.scrollTablesFocusable=tables.filter(t=>t.scrolls).every(t=>t.focusable);
             out.push({name,path,width,...m});
             await page.close();
            }
