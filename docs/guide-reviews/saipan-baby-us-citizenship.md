@@ -17,7 +17,7 @@ Reviewer: ChatGPT editorial and visual QA — screenshots manually inspected 202
 | Visual clarity | Equal | Desktop screenshot shows responsive two-column photo/text hero, clean serif headlines and restrained spacing; mobile screenshot shows single-column layout without clipping. |
 | Structured usefulness | Better | Four decisions, three-step newborn documentation path, four-item predeparture checklist and five expandable FAQs directly serve citizenship intent. |
 | Specificity | Equal | Section 303 date, US Supreme Court ruling date and petition age 21 are explicitly scoped, primary-sourced; no invented fees or clinic success figures. |
-| Trust | Equal | DOS, CBP, USCIS and Supreme Court sources; Pexels photographer, source photo and commercial-use licensing; editorial update metadata and clear nonlegal-advice caution. |
+| Trust | Equal | DOS, CBP, USCIS and Supreme Court sources; Pexels photographer/source/license retained in internal provenance records; editorial update metadata and clear nonlegal-advice caution. |
 | User journey | Equal | Localized all-guides navigation, existing family-planning internal link and visible email contact in the footer. |
 | Accessibility and responsive behavior | Equal | Actual mobile screenshots of all three languages; image dimensions, alt, semantic heading order, responsive cards and keyboard-native FAQ details. |
 | Technical SEO | Equal | One H1, canonical per language, three real alternate routes, x-default English, sitemap special-guide mapping, shared Website/WebPage/Breadcrumb schema. |
@@ -47,3 +47,7 @@ Reviewer: ChatGPT editorial and visual QA — screenshots manually inspected 202
 - Build and CI results must be checked separately against this review's head SHA; code and screenshot acceptance do not establish production deployment.
 
 - Updated browser screenshots inspected after the unique Pexels newborn cover was added: clear face-free real photograph, mobile answer still visible above photo and no horizontal clipping in English/Chinese. Link and sitemap audits are enforced by `npm run verify`.
+
+
+## 2026-10-28 customer-copy follow-up
+Removed the stock-photo caption on owner request; image provenance retained in customer-copy-cleanup-20261028.md and stock-images.json. No medical/legal claims changed. This removes a production note while preserving existing layout and useful source links; verify and focused mobile/desktop rendering are rerun for this correction.
