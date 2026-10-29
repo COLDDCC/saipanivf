@@ -1004,7 +1004,9 @@
     "height": 1000,
     "bytes": 12304,
     "placements": [
-      "dist/en/index.html"
+      "dist/en/index.html",
+      "dist/guides/pgt-a/index.html",
+      "dist/zh-hant/guides/pgt-a/index.html"
     ]
   },
   {
