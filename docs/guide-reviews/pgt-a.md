@@ -5,7 +5,7 @@ Primary question: 做试管婴儿要不要加做 PGT-A（三代试管胚胎染�
 First-screen answer: 多数人不必把 PGT-A 当作必选项。PGT-A 可以降低流产风险，但没有证据表明它能提高大多数人最终生下宝宝的机会；附 PGT-A 规划预算 US$3,000–6,000、先冷冻后移植、遗传病应讨论 PGT-M / PGT-SR 三项要点。
 Sources: ASRM 2024 PGT-A committee opinion; HFEA PGT-A add-on rating (review date 2025-10-19); HFEA PGT-M/PGT-SR (review date 2026-06-27); ESHRE 2023 add-ons recommendations; ACOG Committee Opinion 799 (2020). All retrieved 2026-10-29; URLs and limits in the ledger below.
 Comparison: Current guide compared with the CURRENT egg-freezing-cost source and its CI-rendered pages (Chromium, 320/390/768/1440 px) built from the same commit 7e0670bb5619da5e33418d21d5be1d9e15a43b1b.
-Score: 88/100
+Score: 90/100
 Blockers: none
 Mobile review: passed
 Localization: passed
@@ -30,7 +30,7 @@ SERP/reference pages actually reviewed (2026-10-29): VARTA "Is embryo testing wo
 |---|---|---|
 | Five-second answer | Equal | Reference leads with a numeric total budget; this guide leads with a verdict plus three scoped facts. Measured answer-box top: 452 px (CN/TW, 390 wide) vs 635 px for the reference; 380 vs 472 px at 1440. Positioned earlier, but a verdict is not more actionable than the reference's total, so not claimed Better. |
 | Information density | Equal | Every section answers a distinct sub-question (which test, what evidence, which situation, cost, report, checklist). No promotional filler; the CTA block is one paragraph. Reference is similarly dense on budget sub-questions. |
-| Visual clarity | Equal | Restrained panels, shared site header/footer, CJK heading subsets regenerated so no fallback glyphs (verified in final screenshots). Cover is a licensed generic lab-glassware stock photo, shown as a 112 px strip on mobile; it is illustrative only and labelled 示意图片 in alt text. Reference cover is a similarly generic notebook photo. |
+| Visual clarity | Better | Visual upgrade 2026-10-29 (skills saipan-guide-tables / -illustrations): HFEA ratings shown as rating cards with shape + verdict word (not color alone), a same-scale budget bar chart above the exact table, an icon step flow (Health Icons, CC0) and one Open Peeps consultation drawing (CC0, labelled 示意图). The reference has tables and a cover photo only, so readers here can see the evidence pattern and the cost proportions at a glance. Restrained panels, shared site header/footer, CJK heading subsets regenerated so no fallback glyphs (verified in final screenshots). Cover is a licensed generic lab-glassware stock photo, shown as a 112 px strip on mobile; it is illustrative only and labelled 示意图片 in alt text. Reference cover is a similarly generic notebook photo. |
 | Structured usefulness | Equal | Four tables (types, evidence by outcome, situations, cost), a five-step flow, four result cards and an eight-question checklist. Reference has budget tiers, breakdown, travel, storage-years and comparison tables. Both match their topic; no forced calculator. |
 | Specificity | Equal | Quantified where evidence allows: HFEA colour ratings per outcome, STAR ITT 41.8% vs 43.5%, 2021 Chinese RCT 77.2% vs 81.8%, inconclusive biopsy 0.86–3.8%, budget lines from pricing.ts with notes. Limits stated (trial populations restricted; numbers relayed via ASRM). No invented turnaround days or success rates. |
 | Trust | Better | Every medical claim maps to a guideline/regulator (ASRM, HFEA, ESHRE, ACOG) with inline attribution and dates, including the HFEA review date and the fact that ACOG 799 shows no later reaffirmation. The reference relies partly on a clinic blog for its day-count table. Budget is labelled site planning data, not a clinic quote, as in the reference. |
@@ -39,7 +39,7 @@ SERP/reference pages actually reviewed (2026-10-29): VARTA "Is embryo testing wo
 | Technical SEO | Equal | Canonical, three alternates (zh-CN, zh-TW, x-default) and sitemap entries via the special-guide locale set; shared WebPage/Breadcrumb schema matches visible title. check:site, check:seo, check:i18n (new explicit locale assertions) and check:loading passed in CI on 7e0670b. No FAQPage schema added, matching the newer SiteLayout guides. |
 | Localization | Equal | TW render inspected: 醫師、篩檢、切片（活檢）、冷凍胚胎、卵巢庫存、超音波、第三代試管; regex prevents 冷冷凍. check-i18n rejects 醫生/篩查/活檢/冷冷凍 in the TW page. No unprovided English/Japanese etc. alternates advertised. |
 
-Internal rubric: answer/intent 23/25; evidence 23/25; visual/mobile 17/20; decision utility 13/15; SEO/localization 12/15. Heuristic only, not a clinical endorsement or ranking forecast.
+Internal rubric: answer/intent 23/25; evidence 23/25; visual/mobile 19/20; decision utility 13/15; SEO/localization 12/15. Heuristic only, not a clinical endorsement or ranking forecast.
 
 ## Evidence ledger
 All checked 2026-10-29. No individual success-rate predictions, doses, provider promises or universal turnaround times introduced.
@@ -68,3 +68,14 @@ Issues found and fixed during review: (1) new heading characters fell back to a 
 - CI on 7e0670b: npm ci and npm run build passed; check:site, check:seo, check:i18n, check:mobile, check:loading passed (independent step); full `npm run check` passed check:budget then stopped at check:guide-review because this review file did not yet exist. With this review added, GitHub "Site verification" (npm ci + npm run verify, all checks including check:guide-review 88/100) passed on 3272e8ba80c3c7c31ebff69fc81a120165acfab2.
 - Code committed: yes (branch guide/pgt-a, draft PR #22). CI passed: yes (3272e8b, re-run on final commit). Deployment observed: no — Cloudflare preview not inspected; production unchanged until merge.
 - Changed implementation: new page, guide hub card, header image mapping, Traditional terminology + sitemap locale set, i18n/loading route inventories with new locale assertions, regenerated heading font subsets, image placement record, this review and evidence.
+
+## Visual upgrade — 2026-10-29
+Pilot for the new repo skills `saipan-guide-tables`, `saipan-guide-illustrations` and `saipan-guide-photos`.
+- Evidence table → `RatingGrid` (same four rows, same sources; ASRM recurrent-loss row shown as grey "缺乏明确获益证据" with its own label, not converted into an HFEA grade).
+- Cost section: `RangeBars` on one fixed scale (scaleMax US$6,000) above the unchanged exact table; values printed as text. Fixed after first capture: value column now fixed-width so bar lengths are comparable across rows.
+- Flow → `StepFlow` with Health Icons (microscope, test tubes, DNA, lab search, plane), CC0, commit 8e8eca6b in docs/illustrations.json.
+- Situations: Open Peeps drawing `pgt-a-consult` (two standing figures, calm/explaining faces, site ink colour), CC0 artwork, parts and commit recorded in docs/illustrations.json, alt text states it is a drawing and not a real clinician or patient.
+- No new numbers; every bar value comes from pricing.ts or the existing ledger row (airfare from the egg-freezing-cost guide).
+- CI Chromium capture on 4f72d3c: one H1, no page overflow at 320/390/768/1440 for CN and TW, FAQ opens, scroll regions focusable. imagesLoaded reported false at 320 px only because the lazy-loaded illustration was below the fold when measured; it loads at the other widths.
+- Photos: the Pexels workflow ran and stopped with the expected message because the PEXELS_API_KEY secret is not yet configured; no photo was added.
+
