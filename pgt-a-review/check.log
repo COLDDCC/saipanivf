@@ -1,0 +1,314 @@
+
+> saipan-ivf@1.0.0 check
+> npm run check:budget && npm run check:guide-review && npm run check:hero && npm run check:site && npm run check:images && npm run check:seo && npm run check:faq && npm run check:i18n && npm run check:consultation && npm run check:journey && npm run check:engagement && npm run check:mobile && npm run check:pricing && npm run check:loading && npm run check:p0
+
+
+> saipan-ivf@1.0.0 check:budget
+> node scripts/check-budget.mjs
+
+Passed: IVF, PGT, egg freezing, FET, storage and homepage anchors.
+
+> saipan-ivf@1.0.0 check:guide-review
+> node scripts/check-guide-review.mjs
+
+PASS editorial review: pgt-a (90/100)
+PASS editorial gate: 1 changed guide(s) checked from 3 changed file(s)
+
+> saipan-ivf@1.0.0 check:hero
+> node scripts/check-hero.mjs
+
+PASS carousel: first image in HTML, one-slide prefetch, loaded-image-only transitions, stale request protection, failed-image fallback, autoplay, pause/resume and wraparound.
+
+> saipan-ivf@1.0.0 check:site
+> python scripts/check-site.py
+
+PASS dist/index.html links 83 one H1, unique IDs, anchors, routes, contact
+PASS dist/about/index.html links 41 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/index.html links 82 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/index.html links 82 one H1, unique IDs, anchors, routes, contact
+PASS dist/service-scope/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/index.html links 82 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/index.html links 82 one H1, unique IDs, anchors, routes, contact
+PASS dist/fees/index.html links 54 one H1, unique IDs, anchors, routes, contact
+PASS dist/process/index.html links 50 one H1, unique IDs, anchors, routes, contact
+PASS dist/birth-planning/index.html links 65 one H1, unique IDs, anchors, routes, contact
+PASS dist/treatments/index.html links 57 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/index.html links 82 one H1, unique IDs, anchors, routes, contact
+PASS dist/editorial-policy/index.html links 42 one H1, unique IDs, anchors, routes, contact
+PASS dist/privacy/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/guides/index.html links 74 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/index.html links 83 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/index.html links 82 one H1, unique IDs, anchors, routes, contact
+PASS dist/faq/index.html links 69 one H1, unique IDs, anchors, routes, contact
+PASS dist/team/index.html links 46 one H1, unique IDs, anchors, routes, contact
+PASS dist/contact/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/about/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/service-scope/index.html links 41 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/fees/index.html links 54 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/process/index.html links 48 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/birth-planning/index.html links 46 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/treatments/index.html links 62 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/editorial-policy/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/privacy/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/guides/index.html links 45 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/faq/index.html links 69 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/team/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/contact/index.html links 42 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/about/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/service-scope/index.html links 41 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/fees/index.html links 53 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/process/index.html links 48 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/birth-planning/index.html links 46 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/treatments/index.html links 62 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/editorial-policy/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/privacy/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/guides/index.html links 45 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/faq/index.html links 67 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/team/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/contact/index.html links 42 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/about/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/service-scope/index.html links 41 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/fees/index.html links 52 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/process/index.html links 48 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/birth-planning/index.html links 45 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/treatments/index.html links 62 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/editorial-policy/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/privacy/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/guides/index.html links 45 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/faq/index.html links 67 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/team/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/contact/index.html links 42 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/about/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/service-scope/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/fees/index.html links 54 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/process/index.html links 48 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/birth-planning/index.html links 42 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/treatments/index.html links 62 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/editorial-policy/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/privacy/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/guides/index.html links 45 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/faq/index.html links 67 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/team/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/contact/index.html links 44 one H1, unique IDs, anchors, routes, contact
+PASS dist/treatments/ivf/index.html links 67 one H1, unique IDs, anchors, routes, contact
+PASS dist/treatments/frozen-embryo-transfer/index.html links 67 one H1, unique IDs, anchors, routes, contact
+PASS dist/treatments/egg-freezing/index.html links 68 one H1, unique IDs, anchors, routes, contact
+PASS dist/treatments/icsi/index.html links 67 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/about/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/service-scope/index.html links 41 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/fees/index.html links 52 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/process/index.html links 48 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/birth-planning/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/treatments/index.html links 62 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/editorial-policy/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/privacy/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/guides/index.html links 46 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/faq/index.html links 68 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/team/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/contact/index.html links 42 one H1, unique IDs, anchors, routes, contact
+PASS dist/guides/amh-ovarian-reserve/index.html links 53 one H1, unique IDs, anchors, routes, contact
+PASS dist/guides/family-planning/index.html links 57 one H1, unique IDs, anchors, routes, contact
+PASS dist/guides/saipan-baby-us-citizenship/index.html links 23 one H1, unique IDs, anchors, routes, contact
+PASS dist/guides/ivf-steps/index.html links 51 one H1, unique IDs, anchors, routes, contact
+PASS dist/guides/egg-freezing-cost/index.html links 36 one H1, unique IDs, anchors, routes, contact
+PASS dist/guides/embryo-transfer-aftercare/index.html links 57 one H1, unique IDs, anchors, routes, contact
+PASS dist/guides/iui-vs-ivf/index.html links 59 one H1, unique IDs, anchors, routes, contact
+PASS dist/guides/pgt-a/index.html links 66 one H1, unique IDs, anchors, routes, contact
+PASS dist/guides/ivf-cost/index.html links 9 one H1, unique IDs, anchors, routes, contact
+PASS dist/guides/egg-freezing/index.html links 54 one H1, unique IDs, anchors, routes, contact
+PASS dist/guides/quotation/index.html links 52 one H1, unique IDs, anchors, routes, contact
+PASS dist/guides/travel-checklist/index.html links 47 one H1, unique IDs, anchors, routes, contact
+PASS dist/guides/first-visit/index.html links 45 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/about/index.html links 41 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/service-scope/index.html links 44 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/fees/index.html links 55 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/process/index.html links 50 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/birth-planning/index.html links 65 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/treatments/index.html links 57 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/editorial-policy/index.html links 42 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/privacy/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/guides/index.html links 74 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/faq/index.html links 69 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/team/index.html links 46 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/contact/index.html links 44 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/about/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/service-scope/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/fees/index.html links 54 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/process/index.html links 48 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/birth-planning/index.html links 42 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/treatments/index.html links 62 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/editorial-policy/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/privacy/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/guides/index.html links 45 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/faq/index.html links 67 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/team/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/contact/index.html links 44 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/treatments/ivf/index.html links 64 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/treatments/frozen-embryo-transfer/index.html links 64 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/treatments/egg-freezing/index.html links 65 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/treatments/icsi/index.html links 64 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/guides/family-planning/index.html links 45 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/guides/ivf-steps/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/guides/egg-freezing/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/guides/quotation/index.html links 50 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/guides/travel-checklist/index.html links 49 one H1, unique IDs, anchors, routes, contact
+PASS dist/fr/guides/first-visit/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/treatments/ivf/index.html links 64 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/treatments/frozen-embryo-transfer/index.html links 64 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/treatments/egg-freezing/index.html links 65 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/treatments/icsi/index.html links 64 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/guides/family-planning/index.html links 45 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/guides/ivf-steps/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/guides/egg-freezing/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/guides/quotation/index.html links 50 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/guides/travel-checklist/index.html links 47 one H1, unique IDs, anchors, routes, contact
+PASS dist/de/guides/first-visit/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/treatments/ivf/index.html links 64 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/treatments/frozen-embryo-transfer/index.html links 64 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/treatments/egg-freezing/index.html links 65 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/treatments/icsi/index.html links 64 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/guides/family-planning/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/guides/ivf-steps/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/guides/egg-freezing/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/guides/quotation/index.html links 50 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/guides/travel-checklist/index.html links 47 one H1, unique IDs, anchors, routes, contact
+PASS dist/es/guides/first-visit/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/treatments/ivf/index.html links 64 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/treatments/frozen-embryo-transfer/index.html links 64 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/treatments/egg-freezing/index.html links 65 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/treatments/icsi/index.html links 64 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/guides/family-planning/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/guides/ivf-steps/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/guides/egg-freezing/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/guides/quotation/index.html links 50 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/guides/travel-checklist/index.html links 47 one H1, unique IDs, anchors, routes, contact
+PASS dist/ko/guides/first-visit/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/treatments/ivf/index.html links 64 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/treatments/frozen-embryo-transfer/index.html links 64 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/treatments/egg-freezing/index.html links 65 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/treatments/icsi/index.html links 64 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/guides/family-planning/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/guides/saipan-baby-us-citizenship/index.html links 23 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/guides/ivf-steps/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/guides/egg-freezing/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/guides/quotation/index.html links 50 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/guides/travel-checklist/index.html links 45 one H1, unique IDs, anchors, routes, contact
+PASS dist/en/guides/first-visit/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/treatments/ivf/index.html links 67 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/treatments/frozen-embryo-transfer/index.html links 67 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/treatments/egg-freezing/index.html links 68 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/treatments/icsi/index.html links 67 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/guides/amh-ovarian-reserve/index.html links 53 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/guides/family-planning/index.html links 57 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/guides/saipan-baby-us-citizenship/index.html links 23 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/guides/ivf-steps/index.html links 51 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/guides/egg-freezing-cost/index.html links 36 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/guides/embryo-transfer-aftercare/index.html links 57 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/guides/iui-vs-ivf/index.html links 59 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/guides/pgt-a/index.html links 66 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/guides/ivf-cost/index.html links 9 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/guides/egg-freezing/index.html links 54 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/guides/quotation/index.html links 52 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/guides/travel-checklist/index.html links 51 one H1, unique IDs, anchors, routes, contact
+PASS dist/zh-hant/guides/first-visit/index.html links 45 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/treatments/ivf/index.html links 64 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/treatments/frozen-embryo-transfer/index.html links 64 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/treatments/egg-freezing/index.html links 65 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/treatments/icsi/index.html links 64 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/guides/family-planning/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/guides/ivf-steps/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/guides/egg-freezing/index.html links 43 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/guides/quotation/index.html links 50 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/guides/travel-checklist/index.html links 47 one H1, unique IDs, anchors, routes, contact
+PASS dist/ja/guides/first-visit/index.html links 43 one H1, unique IDs, anchors, routes, contact
+
+> saipan-ivf@1.0.0 check:images
+> python scripts/check-images.py
+
+PASS 421 image placements across all HTML pages; no repeated URLs or duplicate image file contents within each language; local files exist
+
+> saipan-ivf@1.0.0 check:seo
+> python scripts/check-seo.py
+
+PASS SEO: 199 indexable pages, sitemap coverage, canonical, JSON-LD, sharing, responsive sources; complete multilingual pages; hero priority.
+PASS custom 404: generated, noindex and excluded from sitemap
+
+> saipan-ivf@1.0.0 check:faq
+> node scripts/check-faq.mjs
+
+PASS FAQ: incoming links, hash navigation, same-link reopening, unknown fragments, compact directory; contact no-JS and overlay checks.
+PASS travel FAQ: distinct programmes, stay limits, medical purpose and official references.
+PASS Taiwan content: nationality/admission rules, official law URLs and visa wording.
+PASS Spanish adaptation: nationality versus residence, US-status distinction, matching primary sources and consultation language.
+PASS German adaptation: passport versus residence, insurance, overseas-birth exception, parentage sources and consultation language.
+PASS French adaptation: France/Canada entry distinction, regional insurance, civil-status references and consultation language.
+PASS Japanese/Korean and Taiwan travel-source alignment and consultation language requests.
+
+> saipan-ivf@1.0.0 check:i18n
+> node scripts/check-i18n.mjs
+
+PASS i18n: 184 complete language routes, active language, matching hreflang, English text coverage, 12 FAQ answers per locale, localized budget calculations and copy feedback.
+PASS visual parity: image sources and order match Simplified Chinese on all 161 translated routes; shared home layouts.
+PASS Traditional Chinese visible language label on all 23 routes.
+PASS dictionary quality: complete keys, no empty values or untranslated long English strings in five non-English dictionaries.
+PASS Taiwan: distinct entry, documents, payments and language disclosures on four high-intent pages.
+PASS JP/KR: region-specific entry, payment, documents and language guidance on four high-intent routes each.
+PASS regional guard: no PRC-only EVS-TAP in six translated travel/FAQ routes; English global explanation retained.
+
+> saipan-ivf@1.0.0 check:consultation
+> node scripts/check-consultation.mjs
+
+PASS consultation: zh-CN one required contact, optional topic, project prefill, mail recipient, copy, stale-draft invalidation, contact validation
+PASS consultation: zh-TW one required contact, optional topic, project prefill, mail recipient, copy, stale-draft invalidation, contact validation
+PASS consultation: en one required contact, optional topic, project prefill, mail recipient, copy, stale-draft invalidation, contact validation
+PASS consultation: ja one required contact, optional topic, project prefill, mail recipient, copy, stale-draft invalidation, contact validation
+PASS consultation: ko one required contact, optional topic, project prefill, mail recipient, copy, stale-draft invalidation, contact validation
+PASS consultation: es one required contact, optional topic, project prefill, mail recipient, copy, stale-draft invalidation, contact validation
+PASS consultation: de one required contact, optional topic, project prefill, mail recipient, copy, stale-draft invalidation, contact validation
+PASS consultation: fr one required contact, optional topic, project prefill, mail recipient, copy, stale-draft invalidation, contact validation
+
+> saipan-ivf@1.0.0 check:journey
+> node scripts/check-journey.mjs
+
+PASS journey: zh-CN stage links, checkbox progress, reset, print action and no storage/network
+PASS journey: zh-hant/ stage links, checkbox progress, reset, print action and no storage/network
+PASS journey: en/ stage links, checkbox progress, reset, print action and no storage/network
+PASS journey: ja/ stage links, checkbox progress, reset, print action and no storage/network
+PASS journey: ko/ stage links, checkbox progress, reset, print action and no storage/network
+PASS journey: es/ stage links, checkbox progress, reset, print action and no storage/network
+PASS journey: de/ stage links, checkbox progress, reset, print action and no storage/network
+PASS journey: fr/ stage links, checkbox progress, reset, print action and no storage/network
+
+> saipan-ivf@1.0.0 check:engagement
+> node scripts/check-engagement.mjs
+
+PASS engagement: strict payload, origin, bounded body, atomic aggregate, disabled mode, privacy opt-outs, event semantics and no contact data
+
+> saipan-ivf@1.0.0 check:mobile
+> node scripts/check-mobile-content.mjs
+
+PASS responsive content: zh-CN/ all 11 mobile costs match desktop; form first, guidance retained and zoom allowed
+PASS responsive content: zh-hant/ all 11 mobile costs match desktop; form first, guidance retained and zoom allowed
+PASS responsive content: en/ all 11 mobile costs match desktop; form first, guidance retained and zoom allowed
+PASS responsive content: ja/ all 11 mobile costs match desktop; form first, guidance retained and zoom allowed
+PASS responsive content: ko/ all 11 mobile costs match desktop; form first, guidance retained and zoom allowed
+PASS responsive content: es/ all 11 mobile costs match desktop; form first, guidance retained and zoom allowed
+PASS responsive content: de/ all 11 mobile costs match desktop; form first, guidance retained and zoom allowed
+PASS responsive content: fr/ all 11 mobile costs match desktop; form first, guidance retained and zoom allowed
+PASS inbound consultation: 32 treatment CTAs and 16 guide pages use stable project codes across eight languages.
+PASS language handoff: stable and legacy projects, changed/cleared selection, unknown values ignored, no personal query propagation.
+
+> saipan-ivf@1.0.0 check:pricing
+> node scripts/check-pricing.mjs
+
+PASS pricing: 11 items × 8 locales (80 rendered amounts/ranges) all match src/data/pricing.ts
+
+> saipan-ivf@1.0.0 check:loading
+> node scripts/check-loading.mjs
+
+PASS loading: 184 pages; homepage-only CSS/preload, matching responsive image hints, self-hosted font integrity and heading glyph coverage across eight languages, local styles exist and images reserve dimensions/decode asynchronously.
+
+> saipan-ivf@1.0.0 check:p0
+> node scripts/check-p0-source.mjs
+
+PASS P0 source guards: Taiwan data, build leakage check, Cloudflare response headers

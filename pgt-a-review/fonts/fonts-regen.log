@@ -1,0 +1,258 @@
+
+> saipan-ivf@1.0.0 fonts:regen
+> npm run build && npm run fonts:fetch && python scripts/subset-fonts.py && node scripts/check-loading.mjs
+
+
+> saipan-ivf@1.0.0 build
+> astro build
+
+[2m03:41:19[22m [34m[content][39m Syncing content
+[2m03:41:19[22m [34m[content][39m Synced content
+[2m03:41:19[22m [34m[types][39m Generated [2m40ms[22m
+[2m03:41:19[22m [34m[build][39m output: [34m"static"[39m
+[2m03:41:19[22m [34m[build][39m mode: [34m"static"[39m
+[2m03:41:19[22m [34m[build][39m directory: [34m/home/runner/work/saipanivf/saipanivf/dist/[39m
+[2m03:41:19[22m [34m[build][39m Collecting build info...
+[2m03:41:19[22m [34m[build][39m [32m✓ Completed in 124ms.[39m
+[2m03:41:19[22m [34m[build][39m Building static entrypoints...
+[2m03:41:21[22m [34m[vite][39m [32m✓ built in 2.03s[39m
+[2m03:41:21[22m [34m[build][39m [32m✓ Completed in 2.07s.[39m
+
+[42m[30m building client (vite) [39m[49m
+[2m03:41:21[22m [34m[vite][39m transforming...
+[2m03:41:21[22m [34m[vite][39m [32m✓[39m 12 modules transformed.
+[2m03:41:21[22m [34m[vite][39m rendering chunks...
+[2m03:41:21[22m [34m[vite][39m [32m✓ built in 53ms[39m
+
+[42m[30m generating static routes [39m[49m
+[2m03:41:21[22m [32m▶[39m src/pages/404.astro
+[2m03:41:21[22m   [34m└─[39m [2m/404.html[22m [2m(+9ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/[locale]/[...path].astro
+[2m03:41:21[22m   [34m├─[39m [2m/en/index.html[22m [2m(+10ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/about/index.html[22m [2m(+3ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/team/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/treatments/index.html[22m [2m(+4ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/process/index.html[22m [2m(+5ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/fees/index.html[22m [2m(+5ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/guides/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/guides/first-visit/index.html[22m [2m(+6ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/guides/ivf-steps/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/guides/quotation/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/guides/egg-freezing/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/guides/travel-checklist/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/guides/family-planning/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/birth-planning/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/service-scope/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/editorial-policy/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/privacy/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/contact/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/faq/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/treatments/ivf/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/treatments/icsi/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/treatments/egg-freezing/index.html[22m [2m(+3ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/en/treatments/frozen-embryo-transfer/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/about/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/team/index.html[22m [2m(+9ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/treatments/index.html[22m [2m(+9ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/process/index.html[22m [2m(+5ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/fees/index.html[22m [2m(+6ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/guides/index.html[22m [2m(+7ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/guides/first-visit/index.html[22m [2m(+14ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/guides/ivf-steps/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/guides/quotation/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/guides/egg-freezing/index.html[22m [2m(+8ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/guides/travel-checklist/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/guides/family-planning/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/birth-planning/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/service-scope/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/editorial-policy/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/privacy/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/contact/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/faq/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/treatments/ivf/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/treatments/icsi/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/treatments/egg-freezing/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ja/treatments/frozen-embryo-transfer/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/index.html[22m [2m(+3ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/about/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/team/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/treatments/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/process/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/fees/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/guides/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/guides/first-visit/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/guides/ivf-steps/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/guides/quotation/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/guides/egg-freezing/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/guides/travel-checklist/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/guides/family-planning/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/birth-planning/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/service-scope/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/editorial-policy/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/privacy/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/contact/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/faq/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/treatments/ivf/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/treatments/icsi/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/treatments/egg-freezing/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/ko/treatments/frozen-embryo-transfer/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/index.html[22m [2m(+3ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/about/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/team/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/treatments/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/process/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/fees/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/guides/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/guides/first-visit/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/guides/ivf-steps/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/guides/quotation/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/guides/egg-freezing/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/guides/travel-checklist/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/guides/family-planning/index.html[22m [2m(+3ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/birth-planning/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/service-scope/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/editorial-policy/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/privacy/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/contact/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/faq/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/treatments/ivf/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/treatments/icsi/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/treatments/egg-freezing/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/es/treatments/frozen-embryo-transfer/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/about/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/team/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/treatments/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/process/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/fees/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/guides/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/guides/first-visit/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/guides/ivf-steps/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/guides/quotation/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/guides/egg-freezing/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/guides/travel-checklist/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/guides/family-planning/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/birth-planning/index.html[22m [2m(+3ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/service-scope/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/editorial-policy/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/privacy/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/contact/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/faq/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/treatments/ivf/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/treatments/icsi/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/treatments/egg-freezing/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/de/treatments/frozen-embryo-transfer/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/about/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/team/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/treatments/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/process/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/fees/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/guides/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/guides/first-visit/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/guides/ivf-steps/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/guides/quotation/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/guides/egg-freezing/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/guides/travel-checklist/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/guides/family-planning/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/birth-planning/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/service-scope/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/editorial-policy/index.html[22m [2m(+3ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/privacy/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/contact/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/faq/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/treatments/ivf/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/treatments/icsi/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m├─[39m [2m/fr/treatments/egg-freezing/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m   [34m└─[39m [2m/fr/treatments/frozen-embryo-transfer/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/about.astro
+[2m03:41:21[22m   [34m└─[39m [2m/about/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/birth-planning.astro
+[2m03:41:21[22m   [34m└─[39m [2m/birth-planning/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/contact.astro
+[2m03:41:21[22m   [34m└─[39m [2m/contact/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/editorial-policy.astro
+[2m03:41:21[22m   [34m└─[39m [2m/editorial-policy/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/en/guides/saipan-baby-us-citizenship.astro
+[2m03:41:21[22m   [34m└─[39m [2m/en/guides/saipan-baby-us-citizenship/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/faq.astro
+[2m03:41:21[22m   [34m└─[39m [2m/faq/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/fees.astro
+[2m03:41:21[22m   [34m└─[39m [2m/fees/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/guides/amh-ovarian-reserve.astro
+[2m03:41:21[22m   [34m└─[39m [2m/guides/amh-ovarian-reserve/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/guides/egg-freezing-cost.astro
+[2m03:41:21[22m   [34m└─[39m [2m/guides/egg-freezing-cost/index.html[22m [2m(+3ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/guides/egg-freezing.astro
+[2m03:41:21[22m   [34m└─[39m [2m/guides/egg-freezing/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/guides/embryo-transfer-aftercare.astro
+[2m03:41:21[22m   [34m└─[39m [2m/guides/embryo-transfer-aftercare/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/guides/family-planning.astro
+[2m03:41:21[22m   [34m└─[39m [2m/guides/family-planning/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/guides/first-visit.astro
+[2m03:41:21[22m   [34m└─[39m [2m/guides/first-visit/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/guides/iui-vs-ivf.astro
+[2m03:41:21[22m   [34m└─[39m [2m/guides/iui-vs-ivf/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/guides/ivf-cost.astro
+[2m03:41:21[22m   [34m└─[39m [2m/guides/ivf-cost/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/guides/ivf-steps.astro
+[2m03:41:21[22m   [34m└─[39m [2m/guides/ivf-steps/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/guides/pgt-a.astro
+[2m03:41:21[22m   [34m└─[39m [2m/guides/pgt-a/index.html[22m [2m(+3ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/guides/quotation.astro
+[2m03:41:21[22m   [34m└─[39m [2m/guides/quotation/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/guides/saipan-baby-us-citizenship.astro
+[2m03:41:21[22m   [34m└─[39m [2m/guides/saipan-baby-us-citizenship/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/guides/travel-checklist.astro
+[2m03:41:21[22m   [34m└─[39m [2m/guides/travel-checklist/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/guides.astro
+[2m03:41:21[22m   [34m└─[39m [2m/guides/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/index.astro
+[2m03:41:21[22m   [34m└─[39m [2m/index.html[22m [2m(+4ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/privacy.astro
+[2m03:41:21[22m   [34m└─[39m [2m/privacy/index.html[22m [2m(+1ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/process.astro
+[2m03:41:21[22m   [34m└─[39m [2m/process/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m [35mλ[39m src/pages/robots.txt.ts
+[2m03:41:21[22m   [34m└─[39m [2m/robots.txt[22m [2m(+1ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/service-scope.astro
+[2m03:41:21[22m   [34m└─[39m [2m/service-scope/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m [35mλ[39m src/pages/sitemap.xml.ts
+[2m03:41:21[22m   [34m└─[39m [2m/sitemap.xml[22m [2m(+2ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/team.astro
+[2m03:41:21[22m   [34m└─[39m [2m/team/index.html[22m [2m(+2ms)[22m 
+[2m03:41:21[22m [32m▶[39m src/pages/treatments/[treatment].astro
+[2m03:41:21[22m   [34m├─[39m [2m/treatments/ivf/index.html[22m [2m(+2ms)[22m 
+[2m03:41:22[22m   [34m├─[39m [2m/treatments/icsi/index.html[22m [2m(+1ms)[22m 
+[2m03:41:22[22m   [34m├─[39m [2m/treatments/egg-freezing/index.html[22m [2m(+1ms)[22m 
+[2m03:41:22[22m   [34m└─[39m [2m/treatments/frozen-embryo-transfer/index.html[22m [2m(+1ms)[22m 
+[2m03:41:22[22m [32m▶[39m src/pages/treatments.astro
+[2m03:41:22[22m   [34m└─[39m [2m/treatments/index.html[22m [2m(+2ms)[22m 
+[2m03:41:22[22m [32m▶[39m src/pages/zh-hant/guides/egg-freezing-cost.astro
+[2m03:41:22[22m   [34m└─[39m [2m/zh-hant/guides/egg-freezing-cost/index.html[22m [2m(+1ms)[22m 
+[2m03:41:22[22m [32m▶[39m src/pages/zh-hant/guides/ivf-cost.astro
+[2m03:41:22[22m   [34m└─[39m [2m/zh-hant/guides/ivf-cost/index.html[22m [2m(+1ms)[22m 
+[2m03:41:22[22m [32m▶[39m src/pages/zh-hant/guides/saipan-baby-us-citizenship.astro
+[2m03:41:22[22m   [34m└─[39m [2m/zh-hant/guides/saipan-baby-us-citizenship/index.html[22m [2m(+1ms)[22m 
+[2m03:41:22[22m [32m✓ Completed in 407ms.
+[39m
+[2m03:41:22[22m [34m[build][39m 173 page(s) built in [1m2.99s[22m
+[2m03:41:22[22m [34m[build][39m [1mComplete![22m
+
+> saipan-ivf@1.0.0 fonts:fetch
+> python scripts/fetch-font-sources.py
+
+fetch https://raw.githubusercontent.com/google/fonts/main/ofl/lora/Lora%5Bwght%5D.ttf
+fetch https://raw.githubusercontent.com/google/fonts/main/ofl/lora/OFL.txt
+fetch https://raw.githubusercontent.com/google/fonts/main/ofl/dmsans/DMSans%5Bopsz%2Cwght%5D.ttf
+fetch https://raw.githubusercontent.com/google/fonts/main/ofl/dmsans/OFL.txt
+fetch https://github.com/notofonts/noto-cjk/releases/download/Serif2.002/03_NotoSerifCJK-TTF-VF.zip
+sources ready in /tmp/saipan-font-sources
+noto-serif-sc 122080 bytes, 682 glyphs
+noto-serif-tc 138128 bytes, 699 glyphs
+noto-serif-ja 135120 bytes, 601 glyphs
+noto-serif-ko 80644 bytes, 478 glyphs
+lora 24904 bytes, 365 glyphs
+dm-sans 28524 bytes, 328 glyphs
+PASS loading: 184 pages; homepage-only CSS/preload, matching responsive image hints, self-hosted font integrity and heading glyph coverage across eight languages, local styles exist and images reserve dimensions/decode asynchronously.
