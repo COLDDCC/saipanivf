@@ -60,3 +60,54 @@ jobs:
         with:
           name: amh-golden-visual-evidence
           path: amh-review-images/
+
+  pgt-a-visual:
+    if: github.event_name == 'pull_request' && github.head_ref == 'guide/pgt-a'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci && npm run build
+      - run: npx --yes playwright@1.56.1 install --with-deps chromium
+      - name: Capture PGT-A and golden-guide comparisons with browser measurements
+        run: |
+          set -eu
+          mkdir -p pgt-a-review
+          python3 -m http.server 4321 --directory dist > /tmp/pgt-preview.log 2>&1 &
+          sleep 3
+          cat > /tmp/measure.mjs <<'JS'
+          import {chromium} from 'playwright';
+          const out=[];const browser=await chromium.launch();
+          for(const [name,path] of [['cn','/guides/pgt-a/'],['tw','/zh-hant/guides/pgt-a/'],['golden','/guides/egg-freezing-cost/']]){
+           for(const width of [320,390,768,1440]){
+            const page=await browser.newPage({viewport:{width,height:900}});
+            await page.goto('http://127.0.0.1:4321'+path,{waitUntil:'networkidle'});
+            const m=await page.evaluate(()=>({h1:document.querySelectorAll('h1').length,overflow:document.documentElement.scrollWidth>window.innerWidth,imagesLoaded:[...document.images].every(i=>i.complete&&i.naturalWidth>0),lang:document.documentElement.lang,answerTop:Math.round(document.querySelector('.answer')?.getBoundingClientRect().top??-1),title:document.title}));
+            const d=await page.$('details');if(d){await d.click();m.faqOpens=await d.evaluate(e=>e.open)}
+            out.push({name,path,width,...m});
+            if(width===390||width===1440)await page.screenshot({path:`pgt-a-review/${name}-${width}.png`,fullPage:true});
+            if(width===390||width===1440)await page.screenshot({path:`pgt-a-review/${name}-${width}-first-screen.png`});
+            await page.close();
+           }
+          }
+          await browser.close();
+          (await import('node:fs')).writeFileSync('pgt-a-review/visual-results.json',JSON.stringify(out,null,1));
+          console.log(JSON.stringify(out,null,1));
+          JS
+          cp /tmp/measure.mjs ./measure.mjs
+          npm i --no-save playwright@1.56.1
+          node measure.mjs
+          mkdir -p pgt-a-review/html/zh-hant
+          cp dist/guides/pgt-a/index.html pgt-a-review/html/cn.html
+          cp dist/zh-hant/guides/pgt-a/index.html pgt-a-review/html/tw.html
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pgt-a-visual-evidence
+          path: pgt-a-review/

@@ -70,6 +70,10 @@ export default function traditional(){return {name:'complete-traditional-chinese
  if(['faq/index.html','guides/travel-checklist/index.html'].includes(relativePath)){
   for(const term of ['CNMI EVS-TAP','CNMI EVS.TAP'])if(html.includes(term))throw new Error('Taiwan content leak: '+relativePath+' contains '+term);
  }
+ if(relativePath==='guides/pgt-a/index.html'){
+  for(const [from,to] of [['醫生','醫師'],['接診','看診'],['信息','資訊'],['質量','品質'],['計劃','計畫'],['篩查','篩檢'],['唐篩','唐氏症篩檢'],['三代試管','第三代試管'],['活檢','切片'],['卵巢儲備','卵巢庫存'],['B 超','超音波'],['返程','回程'],['樣本運輸','檢體運送']])html=html.replaceAll(from,to);
+  html=html.replace(/(?<!冷)凍胚/g,'冷凍胚胎');
+ }
  if(relativePath==='guides/embryo-transfer-aftercare/index.html'){
   for(const [from,to] of [['醫生','醫師'],['接診','看診'],['信息','資訊'],['質量','品質'],['計劃','計畫'],['鮮胚','新鮮胚胎'],['凍胚','冷凍胚胎'],['隨訪','追蹤'],['返程','回程'],['搬重物','搬運重物']])html=html.replaceAll(from,to);
  }
@@ -81,7 +85,7 @@ export default function traditional(){return {name:'complete-traditional-chinese
  const out=join(root,'zh-hant',relative(root,path));if(['guides/egg-freezing-cost/index.html','guides/ivf-cost/index.html','guides/saipan-baby-us-citizenship/index.html'].includes(relativePath))continue;mkdirSync(dirname(out),{recursive:true});writeFileSync(out,html);}
  const paths=pages.map(p=>'/'+relative(root,dirname(p)).split('\\').join('/')+'/').map(p=>p==='//'?'/':p);
  const locales=[['zh-CN',''],['zh-TW','/zh-hant'],['en','/en'],['ja','/ja'],['ko','/ko'],['es','/es'],['de','/de'],['fr','/fr']];
- const specialGuides=new Set(['/guides/embryo-transfer-aftercare/','/guides/ivf-cost/','/guides/egg-freezing-cost/','/guides/iui-vs-ivf/','/guides/amh-ovarian-reserve/','/guides/saipan-baby-us-citizenship/']);
+ const specialGuides=new Set(['/guides/pgt-a/','/guides/embryo-transfer-aftercare/','/guides/ivf-cost/','/guides/egg-freezing-cost/','/guides/iui-vs-ivf/','/guides/amh-ovarian-reserve/','/guides/saipan-baby-us-citizenship/']);
  const xml='<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'+paths.flatMap(path=>{
   const available=path==='/guides/saipan-baby-us-citizenship/'?locales.filter(([,prefix])=>['','/zh-hant','/en'].includes(prefix)):specialGuides.has(path)?locales.filter(([,prefix])=>prefix===''||prefix==='/zh-hant'):locales;
   const alternate=[...available,['x-default',path==='/guides/saipan-baby-us-citizenship/'?'/en':'']];
