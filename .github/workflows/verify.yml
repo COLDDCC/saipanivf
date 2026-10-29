@@ -1,7 +1,7 @@
 name: Site verification
 on:
   push:
-    branches: [main, 'skills/guide-visuals']
+    branches: [main]
   pull_request:
   workflow_dispatch:
 permissions:
@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.sha }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
@@ -60,77 +60,3 @@ jobs:
         with:
           name: amh-golden-visual-evidence
           path: amh-review-images/
-
-  pgt-a-visual:
-    if: github.event_name == 'push' && github.ref_name == 'skills/guide-visuals'
-    runs-on: ubuntu-24.04
-    timeout-minutes: 20
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.sha }}
-          fetch-depth: 0
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: npm
-      - run: npm ci && npm run build
-      - name: Regenerate heading font subsets for new headings
-        run: |
-          python3 -m pip install --quiet fonttools brotli
-          npm run fonts:regen 2>&1 | tee /tmp/fonts-regen.log
-          mkdir -p pgt-a-review/fonts && cp public/fonts/*.woff2 public/fonts/manifest.json pgt-a-review/fonts/ && cp /tmp/fonts-regen.log pgt-a-review/fonts/
-      - run: npx --yes playwright@1.56.1 install --with-deps chromium
-      - name: Capture PGT-A and golden-guide comparisons with browser measurements
-        run: |
-          set -eu
-          mkdir -p pgt-a-review
-          python3 -m http.server 4321 --directory dist > /tmp/pgt-preview.log 2>&1 &
-          sleep 3
-          cat > /tmp/measure.mjs <<'JS'
-          import {chromium} from 'playwright';
-          const out=[];const browser=await chromium.launch();
-          for(const [name,path] of [['cn','/guides/pgt-a/'],['tw','/zh-hant/guides/pgt-a/'],['golden','/guides/egg-freezing-cost/']]){
-           for(const width of [320,390,768,1440]){
-            const page=await browser.newPage({viewport:{width,height:900}});
-            await page.goto('http://127.0.0.1:4321'+path,{waitUntil:'networkidle'});
-            const m=await page.evaluate(()=>({h1:document.querySelectorAll('h1').length,overflow:document.documentElement.scrollWidth>window.innerWidth,imagesLoaded:[...document.images].every(i=>i.complete&&i.naturalWidth>0),lang:document.documentElement.lang,answerTop:Math.round(document.querySelector('.answer')?.getBoundingClientRect().top??-1),title:document.title}));
-            if(width===390||width===1440)await page.screenshot({path:`pgt-a-review/${name}-${width}-first-screen.png`});
-            if(width===390||width===1440)await page.screenshot({path:`pgt-a-review/${name}-${width}.png`,fullPage:true});
-            const faqItem=page.locator('#faq details, #questions details').first();
-            if(await faqItem.count()){await faqItem.locator('summary').click();m.faqOpens=await faqItem.evaluate(e=>e.open)}
-            const tables=await page.$$eval('.table-scroll,.tablewrap',els=>els.map(e=>({scrolls:e.scrollWidth>e.clientWidth,focusable:e.tabIndex>=0})));m.tables=tables.length;m.scrollTablesFocusable=tables.filter(t=>t.scrolls).every(t=>t.focusable);
-            out.push({name,path,width,...m});
-            await page.close();
-           }
-          }
-          await browser.close();
-          (await import('node:fs')).writeFileSync('pgt-a-review/visual-results.json',JSON.stringify(out,null,1));
-          console.log(JSON.stringify(out,null,1));
-          JS
-          cp /tmp/measure.mjs ./measure.mjs
-          npm i --no-save playwright@1.56.1
-          node measure.mjs
-          mkdir -p pgt-a-review/html/zh-hant
-          cp dist/guides/pgt-a/index.html pgt-a-review/html/cn.html
-          cp dist/zh-hant/guides/pgt-a/index.html pgt-a-review/html/tw.html
-          rm -f measure.mjs
-          npm run check > pgt-a-review/check.log 2>&1 || echo "npm run check exited non-zero" >> pgt-a-review/check.log
-      - name: Publish evidence to review branch (fetchable without artifact storage)
-        if: always()
-        run: |
-          set -eu
-          head_sha='${{ github.sha }}'
-          echo "$head_sha" > pgt-a-review/SOURCE_SHA
-          tmp=$(mktemp -d); cp -r pgt-a-review "$tmp/"; cp -r dist "$tmp/dist"
-          cd "$tmp"; git init -q; git checkout -q -b review/pgt-a-evidence
-          git -c user.name=ci -c user.email=ci@users.noreply.github.com add -A
-          git -c user.name=ci -c user.email=ci@users.noreply.github.com commit -q -m "PGT-A visual evidence for $head_sha"
-          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" review/pgt-a-evidence
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: pgt-a-visual-evidence
-          path: pgt-a-review/
