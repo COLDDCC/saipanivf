@@ -1,0 +1,71 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import SourceNote from "../../components/SourceNote.astro";
+
+const title = "做试管婴儿一定要做 PGT-A 吗？";
+const description = "不用人人都做。PGT-A 用于筛查胚胎染色体数目，现有研究尚未证实，给所有 IVF 患者常规加做这项检测能提高活产机会。";
+const asrm = "https://www.asrm.org/practice-guidance/practice-committee-documents/the-use-of-preimplantation-genetic-testing-for-aneuploidy-a-committee-opinion-2024/";
+const hfea = "https://www.hfea.gov.uk/treatments/treatment-add-ons/pre-implantation-genetic-testing-for-aneuploidy-pgt-a";
+const sources = [
+  {name: "美国生殖医学会（ASRM）· PGT-A 委员会意见（2024）", url: asrm},
+  {name: "英国人类受精与胚胎学管理局（HFEA）· PGT-A 患者指南", url: hfea}
+];
+---
+<SiteLayout title={title} description={description} active="guides" plainHead={true} zhOnlyAlternates={true}>
+  <article class="section wrap guide">
+    <p class="byline">Saipan IVF 网站内容团队 · 资料核对于 2026-10-31 · <a href="/editorial-policy/">编辑与来源</a></p>
+    <section class="case">
+      <h2>如果只有一枚囊胚，检测会改变什么？</h2>
+      <p>假设你收到通知：“这次有一枚囊胚，可以考虑做 PGT-A。”只有一枚时，没有多枚胚胎需要排序；检测仍可能影响这枚胚胎是否被考虑移植。若结果不明确，还可能需要再约一次遗传咨询。</p>
+      <p><strong>签字前可以问：</strong>“如果检测结果正常、提示嵌合，或者没有结果，你们分别会建议怎么做？如果我不做检测，原来的移植计划是什么？”</p>
+      <small>这是咨询情境示例。检测可提供选择胚胎的信息，不能改善胚胎本身。<a href={hfea}>HFEA 患者说明</a></small>
+    </section>
+    <nav aria-label="文章目录"><a href="#outcomes">看懂成功率</a><a href="#results">读检测结果</a><a href="#consult">核对费用与安排</a></nav>
+    <section id="outcomes">
+      <h2>听到“成功率更高”，先问分母是什么</h2>
+      <p>检测后，有些人可能没有被推荐移植的胚胎。只看已经移植的人，会漏掉这一部分经历。对准备开始治疗的人，更贴近自身的问题是：从这次取卵开始，最终获得活产的机会有什么变化？</p>
+      <table><caption>和医生比较两种方案时，确认统计口径</caption>
+        <thead><tr><th scope="col">听到的数字</th><th scope="col">还要问什么</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">每次移植的活产率</th><td>没有胚胎可移植的人算进去了吗？</td></tr>
+          <tr><th scope="row">一次取卵的累计活产率</th><td>是否计入这次取卵所得胚胎的后续移植？随访了多久？</td></tr>
+          <tr><th scope="row">流产率</th><td>分母是已怀孕的人，还是开始治疗的人？研究人群与我的年龄和病史接近吗？</td></tr>
+        </tbody>
+      </table>
+      <p>ASRM 指出，现有研究尚未证实给所有 IVF 患者常规加做 PGT-A 的价值。讨论个人选择时，可以请医生把活产机会、流产风险和等待时间分开说明。<a href={asrm}>ASRM 委员会意见</a></p>
+    </section>
+    <section id="results">
+      <h2>报告上的词，各自能告诉你什么？</h2>
+      <p>实验室通常从囊胚外层取少量细胞检测。结果描述所取样本；实验室标准和诊所对不同结果的处理方式也值得提前了解。<a href={hfea}>HFEA 对取样及局限的说明</a></p>
+      <details open><summary>整倍体（euploid）</summary><p>样本显示染色体数目符合预期。这个结果不能保证着床、活产，也不能排除所有遗传疾病。可问下一步移植和孕期检查如何安排。</p></details>
+      <details><summary>非整倍体（aneuploid）</summary><p>样本提示存在染色体数目异常。请遗传咨询团队解释报告发现了什么、检测有哪些局限，以及这项结果对移植和保存选择的影响。</p></details>
+      <details><summary>嵌合（mosaic）</summary><p>检测信号提示样本可能含有不同染色体组成的细胞。部分此类胚胎移植后有活产记录；具体风险和能否考虑移植，需要结合报告、遗传咨询和接诊机构政策讨论。</p></details>
+      <details><summary>无结果（no result）</summary><p>实验室未能给出明确分类。可请团队说明原因、可以选择的下一步，以及再次取样的风险和费用，再决定是否继续。</p></details>
+    </section>
+    <section id="consult" class="case">
+      <h2>在塞班就诊，签字前核对这三项</h2>
+      <ul><li><strong>我的检测目的：</strong>如果担心的是家族中已知的某种遗传病，带上已有报告，询问是否应讨论针对该病的 PGT-M。PGT-A 主要筛查染色体数目。</li>
+      <li><strong>书面报价：</strong>请对方分别列出活检、送检、按胚胎计费的项目、冷冻保存和结果解读费用，并说明无结果时如何收费。</li>
+      <li><strong>返程后谁解读：</strong>记下负责的实验室、预计出报告时间、线上咨询方式，以及决定移植或继续保存前需要签署的文件。</li></ul>
+      <a href="/guides/embryo-lab-report/">先读懂胚胎培养报告</a> · <a href="/guides/quotation/">核对 IVF 书面报价</a>
+    </section>
+    <SourceNote checked="2026-10-31" sources={sources}/>
+  </article>
+</SiteLayout>
+<style>
+  .guide {max-width: 820px; padding-block: 24px 64px}
+  section {margin-block: 30px}
+  .case {background: #f1f6f7; padding: clamp(16px,4vw,28px); border-radius: 12px}
+  h2 {font-size: clamp(22px,3vw,30px); line-height: 1.35}
+  p,li,td,th {line-height: 1.75}
+  .byline,small,caption {color: #476478; font-size: 14px}
+  nav {display: flex; flex-wrap: wrap; gap: 8px 18px}
+  nav a,summary {padding-block: 12px}
+  table {border-collapse: collapse; width: 100%}
+  th,td {text-align: left; vertical-align: top; padding: 10px 8px; border-bottom: 1px solid #ccdbe0}
+  th:first-child {width: 37%}
+  caption {text-align: left; margin-bottom: 8px}
+  summary {cursor: pointer; font-weight: 650}
+  details {border-bottom: 1px solid #dbe5ea}
+  li {margin-bottom: 10px}
+</style>
