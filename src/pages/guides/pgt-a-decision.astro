@@ -1,26 +1,37 @@
 ---
 import SiteLayout from "../../layouts/SiteLayout.astro";
+import ResponsiveImage from "../../components/ResponsiveImage.astro";
 import SourceNote from "../../components/SourceNote.astro";
 
 const title = "做试管婴儿一定要做 PGT-A 吗？";
 const description = "不用人人都做。PGT-A 用于筛查胚胎染色体数目，现有研究尚未证实，给所有 IVF 患者常规加做这项检测能提高活产机会。";
 const asrm = "https://www.asrm.org/practice-guidance/practice-committee-documents/the-use-of-preimplantation-genetic-testing-for-aneuploidy-a-committee-opinion-2024/";
 const hfea = "https://www.hfea.gov.uk/treatments/treatment-add-ons/pre-implantation-genetic-testing-for-aneuploidy-pgt-a";
+const trial = "https://pubmed.ncbi.nlm.nih.gov/34818479/";
 const sources = [
   {name: "美国生殖医学会（ASRM）· PGT-A 委员会意见（2024）", url: asrm},
-  {name: "英国人类受精与胚胎学管理局（HFEA）· PGT-A 患者指南", url: hfea}
+  {name: "英国人类受精与胚胎学管理局（HFEA）· PGT-A 患者指南", url: hfea},
+  {name: "Yan 等 · 2021 年随机对照试验，NEJM", url: trial}
 ];
 ---
 <SiteLayout title={title} description={description} active="guides" plainHead={true} zhOnlyAlternates={true}>
   <article class="section wrap guide">
     <p class="byline">Saipan IVF 网站内容团队 · 资料核对于 2026-10-31 · <a href="/editorial-policy/">编辑与来源</a></p>
-    <section class="case">
-      <h2>如果只有一枚囊胚，检测会改变什么？</h2>
-      <p>假设你收到通知：“这次有一枚囊胚，可以考虑做 PGT-A。”只有一枚时，没有多枚胚胎需要排序；检测仍可能影响这枚胚胎是否被考虑移植。若结果不明确，还可能需要再约一次遗传咨询。</p>
-      <p><strong>签字前可以问：</strong>“如果检测结果正常、提示嵌合，或者没有结果，你们分别会建议怎么做？如果我不做检测，原来的移植计划是什么？”</p>
-      <small>这是咨询情境示例。检测可提供选择胚胎的信息，不能改善胚胎本身。<a href={hfea}>HFEA 患者说明</a></small>
+    <section class="case intro">
+      <div><h2>30 秒答案</h2>
+      <p><strong>先问医生：拿到结果后，我们会改变哪个决定？</strong>有多枚囊胚时，检测可能改变移植顺序；只有一枚时，重点是结果会不会改变这枚胚胎的移植计划。</p>
+      <a href="#situations">找到自己的情况 ↓</a></div>
+      <figure><ResponsiveImage src="/images/stock/legacy-notebook-yellow.webp" alt="咨询前整理问题用的笔记本" sizes="(max-width: 650px) 100vw, 240px"/><figcaption>就诊笔记 · 情境示意</figcaption></figure>
     </section>
-    <nav aria-label="文章目录"><a href="#outcomes">看懂成功率</a><a href="#results">读检测结果</a><a href="#consult">核对费用与安排</a></nav>
+    <nav aria-label="文章目录"><a href="#situations">我的情况</a><a href="#outcomes">怎么看成功率</a><a href="#results">报告怎么读</a><a href="#consult">签字前核对单</a></nav>
+    <section id="situations">
+      <h2>哪一种情况更接近你？</h2>
+      <details open><summary>只有一枚囊胚，担心错过移植机会</summary><p>只有一枚时，没有多枚胚胎需要排序。请团队分别说清：直接准备移植怎么安排？做检测后，若提示嵌合或没有结果，诊所允许讨论哪些选择，谁负责解释？</p></details>
+      <details><summary>有多枚囊胚，想知道先移植哪一枚</summary><p>请医生并排写出按形态评估和加做 PGT-A 的两种移植顺序，并说明检测可能怎样改变可供选择的胚胎数。若希望减少移植次数，把这个目标与一次取卵最终能否活产分开讨论。</p></details>
+      <details><summary>年龄较大，或曾经历流产</summary><p>带上取卵时年龄、既往妊娠和治疗记录。问：“您引用的研究里，有多少人与我的年龄、病史和可用囊胚数接近？它观察的是流产、活产，还是等待时间？”</p></details>
+      <details><summary>家里有人患已知遗传病</summary><p>带上家族成员的基因检测报告，请遗传咨询团队判断是否需要讨论针对已知单基因病的 PGT-M。常规 PGT-A 关注染色体数目，无法直接回答家族中的特定变异是否遗传。</p></details>
+      <small>临床依据：<a href={asrm}>ASRM 对适用人群及证据局限的讨论</a>。</small>
+    </section>
     <section id="outcomes">
       <h2>听到“成功率更高”，先问分母是什么</h2>
       <p>检测后，有些人可能没有被推荐移植的胚胎。只看已经移植的人，会漏掉这一部分经历。对准备开始治疗的人，更贴近自身的问题是：从这次取卵开始，最终获得活产的机会有什么变化？</p>
@@ -32,6 +43,11 @@ const sources = [
           <tr><th scope="row">流产率</th><td>分母是已怀孕的人，还是开始治疗的人？研究人群与我的年龄和病史接近吗？</td></tr>
         </tbody>
       </table>
+      <h3>一项研究里，两个“成功率”为什么指向不同？</h3>
+      <p>中国一项随机试验纳入 20–37 岁、已有至少 3 枚优质囊胚的女性，两组各 606 人。研究从随机分组起观察一年，最多进行三次移植。</p>
+      <table><caption>同一批入组者，两种不同的结局</caption><thead><tr><th scope="col">一年内观察到的结局</th><th scope="col">PGT-A 组</th><th scope="col">常规 IVF 组</th></tr></thead>
+      <tbody><tr><th scope="row">累计活产</th><td>468/606（77.2%）</td><td>496/606（81.8%）</td></tr><tr><th scope="row">累计临床妊娠丢失频率</th><td>8.7%</td><td>12.6%</td></tr></tbody></table>
+      <p>在这组受试者中，检测组观察到的妊娠丢失频率较低，累计活产率却没有提高。两行回答的是不同的问题。入组时已经有至少三枚优质囊胚，因此不能用这组数字推算只有一枚囊胚者的个人机会。<a href={trial}>查看试验设计与原始结果</a></p>
       <p>ASRM 指出，现有研究尚未证实给所有 IVF 患者常规加做 PGT-A 的价值。讨论个人选择时，可以请医生把活产机会、流产风险和等待时间分开说明。<a href={asrm}>ASRM 委员会意见</a></p>
     </section>
     <section id="results">
@@ -43,16 +59,33 @@ const sources = [
       <details><summary>无结果（no result）</summary><p>实验室未能给出明确分类。可请团队说明原因、可以选择的下一步，以及再次取样的风险和费用，再决定是否继续。</p></details>
     </section>
     <section id="consult" class="case">
-      <h2>在塞班就诊，签字前核对这三项</h2>
-      <ul><li><strong>我的检测目的：</strong>如果担心的是家族中已知的某种遗传病，带上已有报告，询问是否应讨论针对该病的 PGT-M。PGT-A 主要筛查染色体数目。</li>
-      <li><strong>书面报价：</strong>请对方分别列出活检、送检、按胚胎计费的项目、冷冻保存和结果解读费用，并说明无结果时如何收费。</li>
-      <li><strong>返程后谁解读：</strong>记下负责的实验室、预计出报告时间、线上咨询方式，以及决定移植或继续保存前需要签署的文件。</li></ul>
+      <h2>签字前，请诊所把两种方案写在同一张单上</h2>
+      <p>拿到“检测费”时，先确认计费单位。一次活检操作、每枚胚胎的实验室分析和后续冷冻保存，可能是不同项目；具体金额和收费方式以接诊机构书面报价为准。</p>
+      <table><caption>跨境就诊核对单 · 可打印带去咨询</caption><thead><tr><th scope="col">核对项目</th><th scope="col">请团队写下什么</th></tr></thead><tbody>
+      <tr><th scope="row">两种移植计划</th><td>不加做时下一步是什么？加做后哪些结果会改变移植顺序或安排？</td></tr>
+      <tr><th scope="row">计价单位</th><td>活检、送检、每枚检测、冷冻保存、结果解读分别多少钱？哪些已含在 IVF 报价里？</td></tr>
+      <tr><th scope="row">无结果或嵌合</th><td>谁提供遗传咨询？如果考虑重新取样，风险和新增费用由谁说明？</td></tr>
+      <tr><th scope="row">塞班行程</th><td>预计哪天出报告？返程后如何接收和解读？若要再次前往塞班，何时才能确认日期？</td></tr>
+      </tbody></table>
+      <label for="pgt-notes"><strong>我的就诊笔记</strong></label>
+      <textarea id="pgt-notes" rows="5" aria-describedby="notes-hint">检测可能改变的决定：
+两种方案的报价及有效期：
+出报告时间和联系人：
+还没问清的事：</textarea>
+      <small id="notes-hint">可在框内填写，再复制到备忘录。此页不提交或保存填写内容。</small>
       <a href="/guides/embryo-lab-report/">先读懂胚胎培养报告</a> · <a href="/guides/quotation/">核对 IVF 书面报价</a>
     </section>
     <SourceNote checked="2026-10-31" sources={sources}/>
   </article>
 </SiteLayout>
 <style>
+  .intro {display:grid; grid-template-columns:minmax(0,1fr) minmax(0,210px); gap:24px; align-items:center}
+  figure {margin:0} figure :global(img) {display:block;width:100%;height:128px;object-fit:cover;border-radius:8px}
+  figcaption {font-size:12px;color:#476478;margin-top:4px}
+  label,textarea,#notes-hint {display:block;margin-block:12px}
+  textarea {width:100%;box-sizing:border-box;min-height:9em;resize:vertical;padding:12px;font:inherit;color:inherit;border:1px solid #879fae;border-radius:6px}
+  @media(max-width:650px){.intro {grid-template-columns:1fr;gap:8px} figure :global(img){height:100px}}
+  @media print {nav,figure {display:none} details::details-content {display:block} textarea {border-color:#333}}
   .guide {max-width: 820px; padding-block: 24px 64px}
   section {margin-block: 30px}
   .case {background: #f1f6f7; padding: clamp(16px,4vw,28px); border-radius: 12px}
