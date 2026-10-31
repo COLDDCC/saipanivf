@@ -27,3 +27,7 @@ Reviewer: Codex editorial and browser checks, 2026-10-31.
 ## Follow-up comparison, 2026-10-31
 
 The initial parity assessment overstated the visual and practical similarity. The cost guide exposes its figures in tables, and the aftercare guide has a navigation row and a departure checklist. The original report guide buried its only example in prose. The revision starts with a captioned three-row example, puts each number beside its meaning, adds section navigation and provides a copyable call record. It also removes a blanket statement about when transfers can be confirmed and cites the freezing source beside the specific claim. The mobile first screen and the FAQ were inspected in Chromium. The eight locale/width checks cover layout and disclosure behavior, not clinical review.
+
+## Reader-task acceptance
+
+The first example now states what can and cannot be inferred from the final storage count. Readers can decode an explicitly illustrative Day 1 / 2PN entry and distinguish the observation day from the blastocyst stage, with a direct Cambridge IVF laboratory reference. The call template is editable without JavaScript; copying uses the current text and selects it for manual copying when clipboard access is unavailable. No submission or persistence is implemented.
