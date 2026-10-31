@@ -31,3 +31,6 @@ Reviewer: Codex editorial and rendered-page review, not independent clinical rev
 - Evidence: the trial table preserves the per-group denominators, age and blastocyst eligibility, follow-up and both outcomes. Readers with a single blastocyst are explicitly outside that trial population.
 - Action: the consent worksheet covers units of billing, overlapping IVF charges, inconclusive results, the anticipated report date and return-trip planning. Notes work without JavaScript.
 - Verified simplified and traditional renders at 320, 390, 768 and 1440 px, including the result disclosures and editable notes. Inspected the 390 px first screen and checked the traditional numerical values against the original.
+
+## Plain-language copy review
+Replaced statistical and administrative wording with questions a patient could ask aloud. Kept the report vocabulary, original study numbers, follow-up window and enrollment limits. The page still links to the same clinical sources.

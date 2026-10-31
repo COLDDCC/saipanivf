@@ -4,7 +4,7 @@ import ResponsiveImage from "../../components/ResponsiveImage.astro";
 import SourceNote from "../../components/SourceNote.astro";
 
 const title = "做试管婴儿一定要做 PGT-A 吗？";
-const description = "不用人人都做。PGT-A 用于筛查胚胎染色体数目，现有研究尚未证实，给所有 IVF 患者常规加做这项检测能提高活产机会。";
+const description = "不一定。PGT-A 检查的是胚胎样本里的染色体有没有多或少。对做试管婴儿的人来说，目前没有证据表明人人都加做这项检查，就能让更多人生下孩子。";
 const asrm = "https://www.asrm.org/practice-guidance/practice-committee-documents/the-use-of-preimplantation-genetic-testing-for-aneuploidy-a-committee-opinion-2024/";
 const hfea = "https://www.hfea.gov.uk/treatments/treatment-add-ons/pre-implantation-genetic-testing-for-aneuploidy-pgt-a";
 const trial = "https://pubmed.ncbi.nlm.nih.gov/34818479/";
@@ -16,59 +16,59 @@ const sources = [
 ---
 <SiteLayout title={title} description={description} active="guides" plainHead={true} zhOnlyAlternates={true}>
   <article class="section wrap guide">
-    <p class="byline">Saipan IVF 网站内容团队 · 资料核对于 2026-10-31 · <a href="/editorial-policy/">编辑与来源</a></p>
+    <p class="byline">Saipan IVF 网站内容团队 · 更新于 2026-10-31 · <a href="/editorial-policy/">编辑与来源</a></p>
     <section class="case intro">
-      <div><h2>30 秒答案</h2>
-      <p><strong>先问医生：拿到结果后，我们会改变哪个决定？</strong>有多枚囊胚时，检测可能改变移植顺序；只有一枚时，重点是结果会不会改变这枚胚胎的移植计划。</p>
-      <a href="#situations">找到自己的情况 ↓</a></div>
+      <div><h2>只有一枚囊胚，还有必要查吗？</h2>
+      <p><strong>“如果我不做这个检查，您会建议移植这枚胚胎吗？”</strong>如果医生说会，再问一句：“那查出什么结果，您才会改主意？”这样就能听明白，医生为什么建议你做这项检查。</p>
+      <a href="#situations">看看其他情况 ↓</a></div>
       <figure><ResponsiveImage src="/images/stock/legacy-notebook-yellow.webp" alt="咨询前整理问题用的笔记本" sizes="(max-width: 650px) 100vw, 240px"/><figcaption>就诊笔记 · 情境示意</figcaption></figure>
     </section>
     <nav aria-label="文章目录"><a href="#situations">我的情况</a><a href="#outcomes">怎么看成功率</a><a href="#results">报告怎么读</a><a href="#consult">签字前核对单</a></nav>
     <section id="situations">
       <h2>哪一种情况更接近你？</h2>
-      <details open><summary>只有一枚囊胚，担心错过移植机会</summary><p>只有一枚时，没有多枚胚胎需要排序。请团队分别说清：直接准备移植怎么安排？做检测后，若提示嵌合或没有结果，诊所允许讨论哪些选择，谁负责解释？</p></details>
-      <details><summary>有多枚囊胚，想知道先移植哪一枚</summary><p>请医生并排写出按形态评估和加做 PGT-A 的两种移植顺序，并说明检测可能怎样改变可供选择的胚胎数。若希望减少移植次数，把这个目标与一次取卵最终能否活产分开讨论。</p></details>
-      <details><summary>年龄较大，或曾经历流产</summary><p>带上取卵时年龄、既往妊娠和治疗记录。问：“您引用的研究里，有多少人与我的年龄、病史和可用囊胚数接近？它观察的是流产、活产，还是等待时间？”</p></details>
-      <details><summary>家里有人患已知遗传病</summary><p>带上家族成员的基因检测报告，请遗传咨询团队判断是否需要讨论针对已知单基因病的 PGT-M。常规 PGT-A 关注染色体数目，无法直接回答家族中的特定变异是否遗传。</p></details>
+      <details open><summary>只有一枚囊胚，担心错过移植机会</summary><p>只有一枚，就不用选哪枚先移植了。更值得问的是：“如果报告写着‘嵌合’，这枚胚胎还有机会移植吗？如果没查出结果，我能找谁商量下一步？”</p></details>
+      <details><summary>有多枚囊胚，想知道先移植哪一枚</summary><p>可以问：“如果只看胚胎的发育情况，您会先选哪一枚？做了 PGT-A，有哪些结果会让您换一枚？”如果你最在意的是少做几次移植，也把这一点告诉医生。</p></details>
+      <details><summary>年龄较大，或曾经历流产</summary><p>告诉医生你取卵时几岁、以前的怀孕经历，以及这次有几枚囊胚。可以直接问：“像我这样的人，做了检测，主要是可能少经历一次流产，还是最后生下孩子的机会也会更大？”</p></details>
+      <details><summary>家里有人患已知遗传病</summary><p>如果手上有家人的基因检测报告，带去给遗传咨询医生看。PGT-A 查的是染色体数目。想知道胚胎有没有遗传家里某个已知的致病变异，要另外问是否适合做 PGT-M。</p></details>
       <small>临床依据：<a href={asrm}>ASRM 对适用人群及证据局限的讨论</a>。</small>
     </section>
     <section id="outcomes">
-      <h2>听到“成功率更高”，先问分母是什么</h2>
-      <p>检测后，有些人可能没有被推荐移植的胚胎。只看已经移植的人，会漏掉这一部分经历。对准备开始治疗的人，更贴近自身的问题是：从这次取卵开始，最终获得活产的机会有什么变化？</p>
-      <table><caption>和医生比较两种方案时，确认统计口径</caption>
+      <h2>诊所说“成功率更高”，算的是哪些人？</h2>
+      <p>假设一个人取了卵，但检测后没有胚胎可以移植。诊所算“每次移植的成功率”时，就不会算上她。如果你关心的是“取一次卵，最后有多大机会生下孩子”，就要把像她这样没走到移植这一步的人也算进去。</p>
+      <table><caption>看到这三个数字，可以这样问</caption>
         <thead><tr><th scope="col">听到的数字</th><th scope="col">还要问什么</th></tr></thead>
         <tbody>
           <tr><th scope="row">每次移植的活产率</th><td>没有胚胎可移植的人算进去了吗？</td></tr>
-          <tr><th scope="row">一次取卵的累计活产率</th><td>是否计入这次取卵所得胚胎的后续移植？随访了多久？</td></tr>
-          <tr><th scope="row">流产率</th><td>分母是已怀孕的人，还是开始治疗的人？研究人群与我的年龄和病史接近吗？</td></tr>
+          <tr><th scope="row">一次取卵的累计活产率</th><td>同一次取卵，后来又移植了冷冻胚胎，这些结果也算吗？一共观察了多久？</td></tr>
+          <tr><th scope="row">流产率</th><td>这个比例是从已经怀孕的人里算的，还是从一开始做治疗的人里算的？</td></tr>
         </tbody>
       </table>
-      <h3>一项研究里，两个“成功率”为什么指向不同？</h3>
-      <p>中国一项随机试验纳入 20–37 岁、已有至少 3 枚优质囊胚的女性，两组各 606 人。研究从随机分组起观察一年，最多进行三次移植。</p>
-      <table><caption>同一批入组者，两种不同的结局</caption><thead><tr><th scope="col">一年内观察到的结局</th><th scope="col">PGT-A 组</th><th scope="col">常规 IVF 组</th></tr></thead>
-      <tbody><tr><th scope="row">累计活产</th><td>468/606（77.2%）</td><td>496/606（81.8%）</td></tr><tr><th scope="row">累计临床妊娠丢失频率</th><td>8.7%</td><td>12.6%</td></tr></tbody></table>
-      <p>在这组受试者中，检测组观察到的妊娠丢失频率较低，累计活产率却没有提高。两行回答的是不同的问题。入组时已经有至少三枚优质囊胚，因此不能用这组数字推算只有一枚囊胚者的个人机会。<a href={trial}>查看试验设计与原始结果</a></p>
-      <p>ASRM 指出，现有研究尚未证实给所有 IVF 患者常规加做 PGT-A 的价值。讨论个人选择时，可以请医生把活产机会、流产风险和等待时间分开说明。<a href={asrm}>ASRM 委员会意见</a></p>
+      <h3>流产少一些，最后生下孩子的人就会更多吗？</h3>
+      <p>一项中国研究把参加者随机分成两组，每组 606 人。她们都是 20–37 岁，而且已经有至少 3 枚优质囊胚。研究人员跟踪了一年，每人最多做三次移植。</p>
+      <table><caption>这一年里，两组分别发生了什么？</caption><thead><tr><th scope="col">研究记录的结果</th><th scope="col">PGT-A 组</th><th scope="col">常规 IVF 组</th></tr></thead>
+      <tbody><tr><th scope="row">累计活产</th><td>468/606（77.2%）</td><td>496/606（81.8%）</td></tr><tr><th scope="row">已确认怀孕后又失去妊娠的比例</th><td>8.7%</td><td>12.6%</td></tr></tbody></table>
+      <p>在这项研究里，做检测的那组较少出现确认怀孕后又失去妊娠的情况，但一年内生下孩子的人数没有增加。如果你只有一枚囊胚，这项研究无法直接告诉你自己的机会有多大。<a href={trial}>查看试验设计与原始结果</a></p>
+      <p>美国生殖医学会也指出，目前还没有证据支持每位做试管婴儿的人都常规加做 PGT-A。<a href={asrm}>ASRM 委员会意见</a></p>
     </section>
     <section id="results">
       <h2>报告上的词，各自能告诉你什么？</h2>
-      <p>实验室通常从囊胚外层取少量细胞检测。结果描述所取样本；实验室标准和诊所对不同结果的处理方式也值得提前了解。<a href={hfea}>HFEA 对取样及局限的说明</a></p>
+      <p>实验室通常从囊胚外层取几个细胞来检查。读报告时要记住：报告说的是取到的这些细胞，不能逐个说明整枚胚胎里所有细胞的情况。<a href={hfea}>HFEA 对取样及局限的说明</a></p>
       <details open><summary>整倍体（euploid）</summary><p>样本显示染色体数目符合预期。这个结果不能保证着床、活产，也不能排除所有遗传疾病。可问下一步移植和孕期检查如何安排。</p></details>
-      <details><summary>非整倍体（aneuploid）</summary><p>样本提示存在染色体数目异常。请遗传咨询团队解释报告发现了什么、检测有哪些局限，以及这项结果对移植和保存选择的影响。</p></details>
-      <details><summary>嵌合（mosaic）</summary><p>检测信号提示样本可能含有不同染色体组成的细胞。部分此类胚胎移植后有活产记录；具体风险和能否考虑移植，需要结合报告、遗传咨询和接诊机构政策讨论。</p></details>
-      <details><summary>无结果（no result）</summary><p>实验室未能给出明确分类。可请团队说明原因、可以选择的下一步，以及再次取样的风险和费用，再决定是否继续。</p></details>
+      <details><summary>非整倍体（aneuploid）</summary><p>取到的细胞里，染色体数目看起来有异常。可以请医生指着报告解释：“哪条染色体多了或少了？这枚胚胎接下来怎么处理？”</p></details>
+      <details><summary>嵌合（mosaic）</summary><p>这个词表示，取到的细胞可能并不都一样。有些标为“嵌合”的胚胎移植后也有孩子出生。拿到自己的报告后，请遗传咨询医生解释这份结果有哪些风险，再向诊所确认是否可以考虑移植。</p></details>
+      <details><summary>无结果（no result）</summary><p>这次检查没能给出明确答案。先问实验室原因。如果建议再取一次样，可以接着问：“重新取样对胚胎有什么风险？还要再付哪些费用？”</p></details>
     </section>
     <section id="consult" class="case">
       <h2>签字前，请诊所把两种方案写在同一张单上</h2>
-      <p>拿到“检测费”时，先确认计费单位。一次活检操作、每枚胚胎的实验室分析和后续冷冻保存，可能是不同项目；具体金额和收费方式以接诊机构书面报价为准。</p>
-      <table><caption>跨境就诊核对单 · 可打印带去咨询</caption><thead><tr><th scope="col">核对项目</th><th scope="col">请团队写下什么</th></tr></thead><tbody>
+      <p>比如报价单上只写了“检测费”，先问：“这是查一枚的价格，还是这次总共的价格？取样和冷冻保存也包在里面吗？”请诊所把答复写进报价单，方便回去慢慢比较。</p>
+      <table><caption>跨境就诊核对单 · 可打印带去咨询</caption><thead><tr><th scope="col">我想问的事</th><th scope="col">可以直接这样问</th></tr></thead><tbody>
       <tr><th scope="row">两种移植计划</th><td>不加做时下一步是什么？加做后哪些结果会改变移植顺序或安排？</td></tr>
       <tr><th scope="row">计价单位</th><td>活检、送检、每枚检测、冷冻保存、结果解读分别多少钱？哪些已含在 IVF 报价里？</td></tr>
-      <tr><th scope="row">无结果或嵌合</th><td>谁提供遗传咨询？如果考虑重新取样，风险和新增费用由谁说明？</td></tr>
-      <tr><th scope="row">塞班行程</th><td>预计哪天出报告？返程后如何接收和解读？若要再次前往塞班，何时才能确认日期？</td></tr>
+      <tr><th scope="row">无结果或嵌合</th><td>报告看不懂，我可以约谁解释？如果建议再取一次样，有什么风险，要多付多少钱？</td></tr>
+      <tr><th scope="row">塞班行程</th><td>大约哪天出报告？到时我已经回家了，谁会联系我？下一趟去塞班的日期什么时候能定？</td></tr>
       </tbody></table>
       <label for="pgt-notes"><strong>我的就诊笔记</strong></label>
-      <textarea id="pgt-notes" rows="5" aria-describedby="notes-hint">检测可能改变的决定：
+      <textarea id="pgt-notes" rows="5" aria-describedby="notes-hint">做和不做，移植安排有什么不同：
 两种方案的报价及有效期：
 出报告时间和联系人：
 还没问清的事：</textarea>
