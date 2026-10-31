@@ -19,28 +19,34 @@ const stages = [
 <SiteLayout title={title} description={description} active="guides" zhOnlyAlternates={true} plainHead={true}>
   <article class="section wrap report">
     <p class="byline">Saipan IVF 网站内容团队 · 2026-10-31 · <a href="/editorial-policy/">编辑与资料来源</a></p>
-    <section>
-      <h2>为什么每次接到电话，数字都变了？</h2>
-      <p>取卵当天，实验室先告诉你取到了几枚卵子。下一次电话可能说的是其中几枚受精了。到培养结束，团队才能告诉你哪些胚胎已经移植或冷冻。<strong>每次接电话，记下日期、数字和它对应的阶段。</strong></p>
-      <p>有些卵子未能受精，有些胚胎在培养中停止发育。有的胚胎会在囊胚阶段之前移植或冷冻。因此，看到冷冻栏的数字较小，单凭这一栏无法判断整个周期的结果。<a href={sources[1].url}>HFEA 胚胎培养说明</a></p>
-    </section>
-    <section>
-      <h2>对照报告上的四个数字</h2>
-      <dl>{stages.map(([label, meaning, question]) => <div><dt>{label}</dt><dd>{meaning}<br/><strong>可以问：</strong>{question}</dd></div>)}</dl>
-    </section>
-    <section class="example">
-      <h2>读一份示例报告</h2>
-      <p><strong>虚构示例，仅用于说明读法。</strong>取卵记录写着“取卵 8 枚”，次日电话说“正常受精 4 枚”，最后收到的保存记录写着“冷冻囊胚 2 枚”。</p>
+    <section class="example" id="example">
+      <h2>三次通知，分别数的是什么？</h2>
+      <p>假设你先后三次收到下面的数字。每行对应一份不同阶段的记录。</p>
+      <table>
+        <caption>虚构报告示例 · 数字仅用于演示读法</caption>
+        <thead><tr><th scope="col">记录</th><th scope="col">数量</th><th scope="col">这行能确认什么</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">取卵记录</th><td>8 枚</td><td>当天取到的卵子。成熟和参与受精的数量还要另查。</td></tr>
+          <tr><th scope="row">次日通知</th><td>4 枚</td><td>观察到正常受精的卵子。此时还没有最终培养结果。</td></tr>
+          <tr><th scope="row">保存清单</th><td>2 枚</td><td>实际冷冻保存的囊胚。已移植或仍在观察的胚胎要查其他记录。</td></tr>
+        </tbody>
+      </table>
       <p>如果想问受精情况，还缺一个数：参加受精的卵子有几枚？直接用 4 除以 8，会把所有取到的卵子都算进分母。若想知道其余胚胎的去向，就要看培养和移植记录；一张保存单只能确认实际冷冻的部分。</p>
       <p>这组示例数字不能用于估算怀孕机会。针对自己的报告，可以请胚胎实验室按照记录日期，从取卵到保存逐项说明。</p>
     </section>
-    <section>
+    <nav aria-label="报告阅读导航"><a href="#stages">查报告术语</a><a href="#questions">看空白栏和等级</a><a href="#call">记录下次通话</a></nav>
+    <section id="stages">
+      <h2>对照报告上的四个数字</h2>
+      <dl>{stages.map(([label, meaning, question]) => <div><dt>{label}</dt><dd>{meaning}<br/><strong>可以问：</strong>{question}</dd></div>)}</dl>
+      <p>有些胚胎在囊胚阶段之前就会移植或冷冻，也有些在培养中停止发育。拿到一次电话通知时，先问清是否还有胚胎在观察。<a href={sources[1].url}>HFEA 胚胎培养说明</a> · <a href={sources[2].url}>HFEA 胚胎冷冻说明</a></p>
+    </section>
+    <section id="questions">
       <h2>报告中有一栏是空白，怎么问？</h2>
       <details><summary>“冷冻”栏空着，是零枚吗？</summary><p>先确认你拿到的是培养中的阶段通知，还是已完成的保存记录。可以直接问：“这栏是尚未更新，还是本次确实没有冷冻？我什么时候能收到最终记录？”</p></details>
       <details><summary>报告只写了等级，能知道能否怀孕吗？</summary><p>等级描述的是实验室观察到的发育特征。请团队解释这家实验室的标记、观察日期，以及它对本次移植选择的意义。单一等级无法给出个人的怀孕概率。<a href={sources[1].url}>HFEA 胚胎选择说明</a></p></details>
       <details><summary>准备从塞班返程，该带走哪份资料？</summary><p>向接诊团队索取本周期的书面培养摘要；如已冷冻，再核对保存清单、负责机构和后续联系方式。如果返程时培养尚未结束，约好接收最终报告的方式和时间，并写清是塞班时间还是居住地时间。</p></details>
     </section>
-    <aside><h2>下次通话，可以照着这句问</h2><p>“我手上这份是哪个日期的记录？请帮我分别标出已经移植、已经冷冻和仍在观察的数量。下一份报告什么时候发，由谁和我一起核对？”</p><a href="/guides/ivf-steps/">对照 IVF 治疗阶段</a> · <a href="/guides/travel-checklist/">查看跨境就诊清单</a></aside>
+    <aside id="call"><h2>下次通话，可以照着这句问</h2><p>“我手上这份是哪个日期的记录？请帮我分别标出已经移植、已经冷冻和仍在观察的数量。下一份报告什么时候发，由谁和我一起核对？”</p><p><strong>可复制到备忘录</strong><br/>记录日期和时区：____<br/>本次数量及阶段：____<br/>仍待确认：____<br/>下次联系时间和联系人：____</p><a href="/guides/ivf-steps/">对照 IVF 治疗阶段</a> · <a href="/guides/travel-checklist/">查看跨境就诊清单</a></aside>
     <SourceNote checked="2026-10-31" sources={sources}/>
   </article>
 </SiteLayout>
@@ -54,6 +60,14 @@ const stages = [
   dt,summary {font-weight: 650}
   dd {margin: 0}
   .example,aside {padding: clamp(16px,4vw,28px); border-radius: 12px; background: #f1f6f7}
+  table {width: 100%; border-collapse: collapse; line-height: 1.55}
+  caption {text-align: left; padding-block: 8px; color: #375868}
+  th,td {padding: 10px 5px; text-align: left; border-bottom: 1px solid #cad9dd; vertical-align: top}
+  th:first-child {width: 5em}
+  thead th:nth-child(2) {width: 3.3em; white-space: nowrap}
+  td:nth-child(2) {white-space: nowrap; font-weight: 650}
+  .report nav {display: flex; flex-wrap: wrap; gap: 8px 16px}
+  .report nav a {padding-block: 12px}
   summary {cursor: pointer; padding: 15px 0}
   details {border-bottom: 1px solid #dbe5ea}
   @media(max-width: 540px) {dl div {display: block} dt {margin-bottom: 4px}}
