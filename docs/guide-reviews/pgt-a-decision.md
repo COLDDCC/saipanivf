@@ -2,7 +2,7 @@
 
 Golden reference: /guides/egg-freezing-cost/
 Primary question: Should every IVF patient add PGT-A?
-First-screen answer: Routine testing for all patients has not been shown to improve live birth prospects.
+First-screen answer: 不一定，要看你的情况。PGT-A 能让流产少一些，但对大多数人，研究没有发现它能让最后生下孩子的人变多。
 Sources: ASRM committee opinion (2024), HFEA PGT-A patient information, Yan et al. (NEJM 2021, PMID 34818479), checked 2026-10-31; ACOG Committee Opinion 799 (2020) and site planning budget (src/data/pricing.ts), checked 2026-11-02. All linked in context.
 Comparison: The budget reference breaks a headline price into comparable items. This guide breaks a headline success rate into denominator, endpoint and follow-up, then provides questions for the consent discussion.
 Score: 88/100
@@ -41,4 +41,13 @@ The duplicate draft `/guides/pgt-a/` (PR #22, never on main) was retired in favo
 - **Prenatal testing after PGT-A (`#results`)**: ACOG Committee Opinion 799 (March 2020) recommends offering aneuploidy screening or diagnostic testing to all patients who conceive after PGT-A. https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2020/03/preimplantation-genetic-testing — the page shows no later reaffirmation date; cited with its year.
 - New H2 wording chosen so every glyph is already in the SC/TC heading font subsets (no font regeneration needed).
 - Effect on the comparison: Structured usefulness and Specificity now include a quantified, sourced budget for the decision, matching the reference's strength; Trust adds a fourth primary source. Ratings left at Equal (no self-upgrade).
+
+## Plain-language rewrite — 2026-11-02
+Owner feedback on dev: the page "doesn't sound like a person". Rewritten against the owner's copy brief (understand → user → module tasks → write → self-audit).
+- Module tasks: (1) answer the title in the first card; (2) situations explain what the test changes for each reader instead of scripting quotes; (3) what "higher success rate" counts, then the 2021 trial; (4) report terms + prenatal testing; (5) Saipan cost and extra trip; (6) the one place with questions to ask, notes and a gentle contact link.
+- Removed: nine scripted “可以问：……” quotes spread across sections (questions now live only in the checklist), labels such as 临床依据 / 研究记录的结果 / 情境示意, the three-row "denominator" table that duplicated the checklist, fragment sentences (“可问下一步……”).
+- Opening now answers the H1 (“不一定”) before the single-blastocyst case, which was previously the first thing shown.
+- Facts unchanged: same trial numbers (606 per arm, 468 vs 496, 77.2% vs 81.8%, 8.7% vs 12.6%), same sources, same budget figures from pricing.ts. Added only the arithmetic total enrolled (1,212).
+- Self-audit: no repeated module purpose; no marketing adjectives; no unverifiable service claims (contact link describes only the existing form); questions consolidated; every claim still linked.
+- Heading font subsets regenerated in CI because several H2s on this page (including pre-existing ones) used glyphs outside the subset and rendered in a fallback serif; standalone guides are not covered by the check:loading glyph assertion.
 
