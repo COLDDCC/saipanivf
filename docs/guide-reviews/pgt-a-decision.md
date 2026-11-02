@@ -2,7 +2,7 @@
 
 Golden reference: /guides/egg-freezing-cost/
 Primary question: Should every IVF patient add PGT-A?
-First-screen answer: 不一定，要看你的情况。PGT-A 能让流产少一些，但对大多数人，研究没有发现它能让最后生下孩子的人变多。
+First-screen answer: 不一定（H1 下方）；第一张卡片：PGT-A 能让流产少一些，但对大多数人，研究没有发现它能让最后生下孩子的人变多。
 Sources: ASRM committee opinion (2024), HFEA PGT-A patient information, Yan et al. (NEJM 2021, PMID 34818479), checked 2026-10-31; ACOG Committee Opinion 799 (2020) and site planning budget (src/data/pricing.ts), checked 2026-11-02. All linked in context.
 Comparison: The budget reference breaks a headline price into comparable items. This guide breaks a headline success rate into denominator, endpoint and follow-up, then provides questions for the consent discussion.
 Score: 88/100
@@ -50,4 +50,6 @@ Owner feedback on dev: the page "doesn't sound like a person". Rewritten against
 - Facts unchanged: same trial numbers (606 per arm, 468 vs 496, 77.2% vs 81.8%, 8.7% vs 12.6%), same sources, same budget figures from pricing.ts. Added only the arithmetic total enrolled (1,212).
 - Self-audit: no repeated module purpose; no marketing adjectives; no unverifiable service claims (contact link describes only the existing form); questions consolidated; every claim still linked.
 - Heading font subsets regenerated in CI because several H2s on this page (including pre-existing ones) used glyphs outside the subset and rendered in a fallback serif; standalone guides are not covered by the check:loading glyph assertion.
+- Second pass after viewing CI captures: the page-head description and the first card both opened with the same answer, so the description now says “不一定” and previews the sections, and the card heading became “它能做到什么，做不到什么”. Inline source links underlined (they read as plain text before). The decorative notebook photo is hidden at ≤650px so the explanation is not followed by a filler image on phones.
+- Font regeneration grows the TC subset 126,108 → ~140,300 bytes (+11%, just over the script's 10% warning) because this and earlier standalone guides added headings never subset before; glyph count rises accordingly, source font version unchanged.
 
