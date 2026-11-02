@@ -3,13 +3,13 @@
 Golden reference: /guides/egg-freezing-cost/
 Primary question: Should every IVF patient add PGT-A?
 First-screen answer: Routine testing for all patients has not been shown to improve live birth prospects.
-Sources: ASRM committee opinion (2024), HFEA PGT-A patient information, and Yan et al. (NEJM 2021, PMID 34818479), checked 2026-10-31 and linked in context.
+Sources: ASRM committee opinion (2024), HFEA PGT-A patient information, Yan et al. (NEJM 2021, PMID 34818479), checked 2026-10-31; ACOG Committee Opinion 799 (2020) and site planning budget (src/data/pricing.ts), checked 2026-11-02. All linked in context.
 Comparison: The budget reference breaks a headline price into comparable items. This guide breaks a headline success rate into denominator, endpoint and follow-up, then provides questions for the consent discussion.
 Score: 88/100
 Blockers: none
 Mobile review: passed
 Localization: passed
-Reviewer: Codex editorial and rendered-page review, not independent clinical review.
+Reviewer: Codex editorial and rendered-page review, not independent clinical review. 2026-11-02 additions reviewed by Claude (AI agent) from source and CI Chromium captures; not a clinical review.
 
 | Dimension | Result | Evidence |
 |---|---|---|
@@ -34,3 +34,11 @@ Reviewer: Codex editorial and rendered-page review, not independent clinical rev
 
 ## Plain-language copy review
 Replaced statistical and administrative wording with questions a patient could ask aloud. Kept the report vocabulary, original study numbers, follow-up window and enrollment limits. The page still links to the same clinical sources.
+
+## Additions — 2026-11-02 (merged in from the retired /guides/pgt-a/ draft)
+The duplicate draft `/guides/pgt-a/` (PR #22, never on main) was retired in favour of this page. Two items from it that this page lacked were added in this page's plain-language voice:
+- **Cost and second trip (`#cost`)**: PGT-A means freeze-all and a later frozen transfer, often another trip to Saipan. Shown with the shared `RangeBars` component (skill `saipan-guide-tables`) on one fixed scale, values printed as text. Figures come from `src/data/pricing.ts` (PGT-A US$3,000–6,000; embryo freezing 1,000; first-year storage 800; FET 4,500 excluding medication; linked total US$9,300–12,300) and the airfare range from `/guides/egg-freezing-cost/` (checked 2026-10-26). Labelled as site planning estimates, not a clinic quote; caveat that freezing/FET are not wholly incremental.
+- **Prenatal testing after PGT-A (`#results`)**: ACOG Committee Opinion 799 (March 2020) recommends offering aneuploidy screening or diagnostic testing to all patients who conceive after PGT-A. https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2020/03/preimplantation-genetic-testing — the page shows no later reaffirmation date; cited with its year.
+- New H2 wording chosen so every glyph is already in the SC/TC heading font subsets (no font regeneration needed).
+- Effect on the comparison: Structured usefulness and Specificity now include a quantified, sourced budget for the decision, matching the reference's strength; Trust adds a fourth primary source. Ratings left at Equal (no self-upgrade).
+
