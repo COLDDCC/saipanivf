@@ -31,17 +31,17 @@ Icons are decorative (`aria-hidden`); the adjacent text must carry the meaning. 
 
 ## Open Peeps scenes
 ```bash
-python3 scripts/visuals/peep.py --name pgt-a-consult --ground \
+python3 scripts/visuals/peep.py --name <slug>-consult --ground \
   --figure "pose/standing/easing-1.svg|head/Medium Bangs.svg|face/Calm.svg" \
   --figure "pose/standing/pointing_finger-1.svg|head/Short 2.svg|face/Explaining.svg|accessories/Glasses.svg" \
-  --alt "手绘插画：一人倾听，另一人讲解（示意图）" --used-on /guides/pgt-a/
+  --alt "手绘插画：一人倾听，另一人讲解（示意图）" --used-on /guides/<slug>/
 ```
 - Parts live in `/tmp/saipan-visual-libs/open-peeps/packages/open_peeps/assets/atoms/{pose/sitting,pose/standing,head,face,accessories}`.
 - The script recolors to site ink `#173b60` on white, refuses unsuitable faces (Monster, Cyclops, Rage, Fear…) and playful poses, and records parts, source commit and licence in `docs/illustrations.json`.
 - Place with:
 ```astro
 import Illustration from '../../components/guide/Illustration.astro';
-<Illustration name="pgt-a-consult" maxWidth={380} caption="…" />
+<Illustration name="<slug>-consult" maxWidth={380} caption="…" />
 ```
 - Scene rules: 1–3 figures; neutral, calm expressions; vary hair/skin-tone-neutral line art across guides; never depict procedures, embryos, pregnancy outcomes or clinical gowns implying our staff. Each scene file is used on one page per locale (the image-uniqueness check enforces this).
 
