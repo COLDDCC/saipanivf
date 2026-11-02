@@ -125,7 +125,7 @@ jobs:
           head_sha='${{ github.sha }}'
           echo "$head_sha" > pgt-a-review/SOURCE_SHA
           tmp=$(mktemp -d); cp -r pgt-a-review "$tmp/"; cp -r dist "$tmp/dist"
-          cd "$tmp"; git init -q; git checkout -q -b HEAD:review/pgt-a-decision-evidence
+          cd "$tmp"; git init -q; git checkout -q -b review-evidence
           git -c user.name=ci -c user.email=ci@users.noreply.github.com add -A
           git -c user.name=ci -c user.email=ci@users.noreply.github.com commit -q -m "PGT-A visual evidence for $head_sha"
           git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:review/pgt-a-decision-evidence
