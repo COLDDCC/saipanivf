@@ -19,7 +19,7 @@ const searchTitle=search?.[0]??title,searchDescription=search?.[1]??description;
 const headImage=heads[pageKey]||heads[active]||heads.guides;
 const canonical=new URL(Astro.url.pathname,site.origin);
 const shareImage=new URL('/images/share-card.png',site.origin).href;
-const section=pageKey.startsWith('guides/')?{name:'就诊指南',path:'/guides/'}:pageKey.startsWith('treatments/')?{name:'治疗项目',path:'/treatments/'}:null;
+const section=pageKey.startsWith('guides/')?{name:'就诊指南',path:'/guides/'}:pageKey.startsWith('treatments/')?{name:'治疗项目',path:'/treatments/'}:pageKey.startsWith('team/')?{name:'医疗团队',path:'/team/'}:null;
 const crumbs=[{name:'首页',path:'/'},...(section?[section]:[]),...(!home?[{name:title,path:Astro.url.pathname}]:[])];
 const structuredData={
  '@context':'https://schema.org','@graph':[

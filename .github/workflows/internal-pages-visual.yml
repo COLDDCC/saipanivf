@@ -8,6 +8,8 @@ on:
       - 'src/pages/egg-donation.astro'
       - 'src/pages/third-party-reproduction.astro'
       - 'src/pages/facility.astro'
+      - 'src/pages/team/**'
+      - 'src/data/team.ts'
       - 'src/components/ClinicArrival.astro'
       - 'src/components/EggFreezingCostGuide.astro'
       - '.github/workflows/internal-pages-visual.yml'
@@ -45,6 +47,11 @@ jobs:
           shot "/zh-hant/guides/egg-freezing-cost/" "390,844" "zh-hant-egg-freezing-cost-mobile"
           shot "/treatments/" "1440,900" "zh-cn-treatments-desktop"
           shot "/team/" "390,844" "zh-cn-team-mobile"
+          for m in gary-ramsey irena-lalic rose-wang; do
+            shot "/team/$m/" "390,844" "zh-cn-team-$m-mobile"
+            shot "/team/$m/" "1440,900" "zh-cn-team-$m-desktop"
+            shot "/zh-hant/team/$m/" "390,844" "zh-hant-team-$m-mobile"
+          done
       - name: Publish screenshots to a review branch
         if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
         run: |
