@@ -6,16 +6,21 @@ import { servicePages } from '../data/provider-services';
 const { slug, active = 'treatments' } = Astro.props;
 const p = servicePages[slug];
 const scroll = (id: string) => `${id}-table`;
+const blockIds = [p.steps?.id, p.table?.id, p.cards?.id, p.checklist.id].filter(Boolean) as string[];
+const navIds = p.nav.map(([href]) => href.slice(1)).filter(id => blockIds.includes(id));
+const order = [...navIds, ...blockIds.filter(id => !navIds.includes(id))];
 ---
 <SiteLayout title={p.title} description={p.description} active={active} plainHead={true} zhOnlyAlternates={true}>
 <article class="section wrap service-page" aria-label={p.title}>
 <div class="service-answer"><span class="service-eyebrow">资料核对 {p.checked}</span><h2>先看结论</h2>{p.answer.map(text=><p set:html={text}/>)}<p class="service-caveat">{p.caveat}</p></div>
 <nav class="service-jump" aria-label="本页导航">{p.nav.map(([href,label])=><a href={href}>{label}</a>)}</nav>
 {slug==='facility'&&<ClinicArrival/>}
-{p.steps&&<section id={p.steps.id}><h2>{p.steps.title}</h2>{p.steps.intro&&<p>{p.steps.intro}</p>}<ol class="service-steps">{p.steps.items.map(([title,text])=><li><h3>{title}</h3><p>{text}</p></li>)}</ol></section>}
-{p.table&&<section id={p.table.id}><h2>{p.table.title}</h2>{p.table.intro&&<p>{p.table.intro}</p>}<p class="service-table-hint">表格可左右滑动查看完整内容。</p><div class="service-table" id={scroll(p.table.id)} role="region" aria-label={p.table.caption} tabindex="0"><table><caption class="sr-only">{p.table.caption}</caption><thead><tr>{p.table.headers.map(h=><th scope="col">{h}</th>)}</tr></thead><tbody>{p.table.rows.map(row=><tr><th scope="row">{row[0]}</th>{row.slice(1).map(cell=><td>{cell}</td>)}</tr>)}</tbody></table></div></section>}
-{p.cards&&<section id={p.cards.id}><h2>{p.cards.title}</h2>{p.cards.intro&&<p>{p.cards.intro}</p>}<div class="service-cards">{p.cards.items.map(([title,text])=><article><h3>{title}</h3><p>{text}</p></article>)}</div></section>}
-<section id={p.checklist.id}><h2>{p.checklist.title}</h2>{p.checklist.intro&&<p>{p.checklist.intro}</p>}<ul class="service-checklist">{p.checklist.items.map(item=><li>{item}</li>)}</ul></section>
+{order.map(id=><>
+{p.steps?.id===id&&<section id={p.steps.id}><h2>{p.steps.title}</h2>{p.steps.intro&&<p>{p.steps.intro}</p>}<ol class="service-steps">{p.steps.items.map(([title,text])=><li><h3>{title}</h3><p>{text}</p></li>)}</ol></section>}
+{p.table?.id===id&&<section id={p.table.id}><h2>{p.table.title}</h2>{p.table.intro&&<p>{p.table.intro}</p>}<p class="service-table-hint">表格可左右滑动查看完整内容。</p><div class="service-table" id={scroll(p.table.id)} role="region" aria-label={p.table.caption} tabindex="0"><table><caption class="sr-only">{p.table.caption}</caption><thead><tr>{p.table.headers.map(h=><th scope="col">{h}</th>)}</tr></thead><tbody>{p.table.rows.map(row=><tr><th scope="row">{row[0]}</th>{row.slice(1).map(cell=><td>{cell}</td>)}</tr>)}</tbody></table></div></section>}
+{p.cards?.id===id&&<section id={p.cards.id}><h2>{p.cards.title}</h2>{p.cards.intro&&<p>{p.cards.intro}</p>}<div class="service-cards">{p.cards.items.map(([title,text])=><article><h3>{title}</h3><p>{text}</p></article>)}</div></section>}
+{p.checklist.id===id&&<section id={p.checklist.id}><h2>{p.checklist.title}</h2>{p.checklist.intro&&<p>{p.checklist.intro}</p>}<ul class="service-checklist">{p.checklist.items.map(item=><li>{item}</li>)}</ul></section>}
+</>)}
 <section id="faq"><h2>常见问题</h2>{p.faq.map(([q,a])=><details><summary>{q}</summary><p>{a}</p></details>)}</section>
 <section class="service-related" aria-labelledby={slug+'-related'}><h2 id={slug+'-related'}>继续了解</h2><div class="hub-grid">{p.related.map(([href,title,text])=><a class="hub-card" href={href}><h3>{title}</h3><p>{text}</p></a>)}</div></section>
 <div class="service-next"><h2>{p.contact.title}</h2><p>{p.contact.text}</p><a class="button" href={p.contact.href}>{p.contact.label}</a></div>
@@ -52,7 +57,10 @@ const scroll = (id: string) => `${id}-table`;
 .service-checklist li{margin-bottom:8px}
 .service-page details{border-bottom:1px solid #dde7ea;padding:12px 0}
 .service-page summary{cursor:pointer;font-weight:600;min-height:44px;display:flex;align-items:center}
-.service-related .hub-card{min-width:0}
+.service-related .hub-grid{gap:18px 40px;margin-top:18px}
+.service-related .hub-card{min-width:0;min-height:0;padding:18px 20px;border:1px solid #dde7ea}
+.service-related .hub-card h3{margin:0 0 6px}
+.service-related .hub-card p{margin:0}
 .service-related .hub-card h3{font-size:21px}
 .service-related .hub-card p{font-size:15px}
 .service-next{margin-top:48px;padding:28px;background:var(--light)}

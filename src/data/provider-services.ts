@@ -234,7 +234,7 @@ export const servicePages: Record<string, ServicePage> = {
       '院方公开设施介绍列有显微操作系统、胚胎操作工作台、MIRI® IVF 培养箱与卵子玻璃化冷冻。具体实施地点、设备与可开展项目，请在就诊前向院方确认。'
     ],
     caveat: '设施信息来自院方公开介绍，不等于第三方认证。实际报到地点与开放时间以预约确认为准。',
-    nav: [['#lab', '实验室设施'], ['#onsite', '哪些在诊所完成'], ['#checklist', '到院前确认'], ['#faq', '常见问题']],
+    nav: [['#clinic-arrival', '到院地址'], ['#lab', '实验室设施'], ['#onsite', '哪些在诊所完成'], ['#checklist', '到院前确认'], ['#faq', '常见问题']],
     cards: {
       id: 'lab', title: '实验室与胚胎培养',
       items: [
