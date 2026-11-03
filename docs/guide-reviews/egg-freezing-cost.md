@@ -29,3 +29,7 @@ Reviewer: Codex focused editorial and rendered-page review; not a clinical profe
 
 ## Verification
 See customer-copy-results.json for the 195-page visible-text audit and actual browser measurements of the changed guides. Screenshots were inspected in the working session. Full npm run verify must pass before publishing this correction. CI and live deployment are reported separately.
+
+## 2026-11-03 addendum — outbound clinic links replaced with in-page references
+Scope: links to other clinics' websites (HKU IVF, MedPark Hospital, a US private clinic timeline page) were removed at the owner's request so traffic stays on this site. Inline markers [4], [5], [7] now jump to `#ref-4`, `#ref-5`, `#ref-7` in the reference list; each entry keeps the institution name, document title and description, so provenance is still stated in text. Regulator/professional-body links (HFEA, ASRM, Singapore MOH) are unchanged. No prices, ranges, dates or copy outside the reference labels changed.
+Evidence: CI Chromium full-page screenshots at 390px for `/guides/egg-freezing-cost/` and `/zh-hant/guides/egg-freezing-cost/` (workflow "Internal pages visual review", PR #26) inspected by Claude (AI agent): comparison table markers and reference list render without overflow; CI check:site confirms the new anchors resolve. Trade-off recorded: readers can no longer click through to verify those three third-party price pages; the dimension ratings above are otherwise unaffected.
