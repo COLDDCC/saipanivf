@@ -25,9 +25,9 @@ const plain = (text: string) => text.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
 <section id="highlights" class="member-why"><h2>{p.whyTitle}</h2><p class="member-why-lead">{p.whyLead}</p><ol class:list={["member-highlights",{"member-highlights-4":p.highlights.length===4}]}>{p.highlights.map(([title,text])=><li><h3>{title}</h3><p>{text}</p></li>)}</ol></section>
 <nav class="member-jump" aria-label="本页导航"><a href="#about">个人介绍</a><a href="#scope">负责范围</a><a href="#education">教育与资质</a>{p.timeline&&<a href="#timeline">职业经历</a>}<a href="#questions">咨询问题</a><a href="#summary">资料速览</a></nav>
 
-<section id="about"><h2>个人介绍</h2>{p.bio.map(text=><p>{parts(text).map(x=>x.href?<a class="inline-link" href={x.href}>{x.t}</a>:x.t)}</p>)}</section>
-<section id="scope"><h2>可以咨询的方向</h2><div class="member-cards">{p.scope.map(([title,text])=><article><h3>{title}</h3><p>{parts(text).map(x=>x.href?<a class="inline-link" href={x.href}>{x.t}</a>:x.t)}</p></article>)}</div>
-<h3 class="member-sub">适合先找这个方向咨询的情况</h3><ul class="member-list">{p.fit.map(item=><li>{parts(item).map(x=>x.href?<a class="inline-link" href={x.href}>{x.t}</a>:x.t)}</li>)}</ul></section>
+<section id="about"><h2>个人介绍</h2>{p.bio.map(text=><p>{parts(text).map(x=>x.href?<a class="member-link" href={x.href}>{x.t}</a>:x.t)}</p>)}</section>
+<section id="scope"><h2>可以咨询的方向</h2><div class="member-cards">{p.scope.map(([title,text])=><article><h3>{title}</h3><p>{parts(text).map(x=>x.href?<a class="member-link" href={x.href}>{x.t}</a>:x.t)}</p></article>)}</div>
+<h3 class="member-sub">适合先找这个方向咨询的情况</h3><ul class="member-list">{p.fit.map(item=><li>{parts(item).map(x=>x.href?<a class="member-link" href={x.href}>{x.t}</a>:x.t)}</li>)}</ul></section>
 <section id="education"><h2>教育背景与资质</h2><dl class="member-facts">{p.education.map(([label,value])=><div><dt>{label}</dt><dd>{value}</dd></div>)}</dl></section>
 {p.timeline&&<section id="timeline"><h2>职业经历</h2><ol class="member-timeline">{p.timeline.map(([year,text])=><li><span>{year}</span><p>{text}</p></li>)}</ol></section>}
 <section id="questions"><h2>初诊时可以问</h2><ul class="member-list">{p.questions.map(item=><li>{item}</li>)}</ul></section>
@@ -76,6 +76,8 @@ const plain = (text: string) => text.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
 .member-timeline li::before{content:"";position:absolute;left:-7px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--blue,#1d5c8f)}
 .member-timeline span{font-weight:600;font-size:15px}
 .member-timeline p{margin:2px 0 0}
+.member-link{color:inherit;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px;text-decoration-color:#7fa3b8}
+.member-link:hover{color:var(--blue,#1d5c8f)}
 .member-note{font-size:14px;color:var(--muted);margin-top:14px}
 .member-clinic{padding:28px;background:var(--light)}
 .member-chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:0}
