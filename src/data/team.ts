@@ -9,21 +9,25 @@ export const team = [
 
 // Detail-page content for /team/<id>/. Layout follows a common doctor-profile pattern
 // (hero, highlights, background, scope, questions, institution card, other members).
-// Facts are limited to the provider's public team page (checked 2026-10-20). Years of
-// practice, licences, languages and board certifications are NOT published there and are
-// listed as items to confirm rather than invented.
+// Facts come from the provider's public team page (checked 2026-10-20) plus, where cited in
+// `sources`, public directory/registry records and press (checked 2026-11-03). Anything not
+// found (board certification, languages, Irena Lalic / Rose Wang beyond the team page) is
+// listed as an item to confirm rather than invented.
 export const teamProfiles: Record<string,{
  title:string;description:string;initials:string;tags:string[];
  highlights:[string,string][];bio:string[];education:[string,string][];
  scope:[string,string][];fit:string[];questions:string[];
+ timeline?:[string,string][];sources?:{name:string;url:string}[];
 }> = {
  'gary-ramsey':{
   title:'Gary G. Ramsey, M.D. · 医疗主任',
-  description:'塞班接诊机构医疗主任 Gary G. Ramsey 医生的公开背景、负责范围，以及初诊时可以向医生确认的问题。',
-  initials:'GR',tags:['医疗主任','生殖医学','IVF / ICSI','冻卵与冻胚移植'],
-  highlights:[['医疗主任','院方团队页列为接诊机构医疗主任（Medical Director）。'],['UCLA 医学教育','院方介绍列明其医学学位来自加州大学洛杉矶分校（UCLA）。'],['美国规范下执业','接诊机构位于美国北马里亚纳群岛，执业信息可在预约时请院方提供。']],
-  bio:['Gary G. Ramsey 医生是院方公开介绍的医疗主任。医疗主任通常负责诊疗方案的医学把关，包括评估检查结果、讨论治疗选择与风险，以及审核治疗安排。','实际由哪位医生负责你的初诊、促排监测、取卵与移植，以预约确认为准；如需了解医生的执业年限、执照与专科认证，可在预约时请院方书面提供。'],
-  education:[['医学学位','加州大学洛杉矶分校（UCLA），据院方团队介绍'],['执照与专科认证','院方公开页面未列明，预约时可请院方提供'],['可用语言','院方公开页面未列明，可确认是否需要翻译协助']],
+  description:'塞班接诊机构医疗主任 Gary G. Ramsey 医生：UCLA 医学博士、妇产科住院医师培训、美国加州与北马里亚纳群岛执照，以及初诊时可以向医生确认的问题。',
+  initials:'GR',tags:['医疗主任','妇产科','生殖医学','IVF / ICSI'],
+  highlights:[['医疗主任','院方团队页列为接诊机构医疗主任（Medical Director）；2024 年当地媒体报道亦以此职务介绍。'],['UCLA 医学博士 · 妇产科培训','1990 年毕业于 UCLA 大卫·格芬医学院，1991–1994 年在伊利诺伊大学芝加哥医学院完成妇产科住院医师培训。'],['美国两地执照','持有加利福尼亚州（1991 年起）与北马里亚纳群岛（1999 年起）医师执照，长期在塞班执业。']],
+  bio:['Gary G. Ramsey 医生是院方公开介绍的医疗主任，专业为妇产科。他 1990 年获加州大学洛杉矶分校（UCLA）大卫·格芬医学院医学博士学位，随后在 UCLA 医学中心完成一年过渡期实习，并于 1991–1994 年在伊利诺伊大学芝加哥医学院完成妇产科住院医师培训。','公开执照资料显示，他自 1999 年起持有北马里亚纳群岛医师执照。据马里亚纳商业杂志（Marianas Business Journal）2024 年报道引述其职业资料，他自 2013 年 8 月起担任塞班 Pacific Fertility Institute 医疗主任。医疗主任通常负责诊疗方案的医学把关，包括评估检查结果、讨论治疗选择与风险。','实际由哪位医生负责你的初诊、促排监测、取卵与移植，以预约确认为准。'],
+  education:[['医学博士（M.D.）','加州大学洛杉矶分校 大卫·格芬医学院，1990 年'],['实习','UCLA 医学中心，过渡期实习，1990–1991 年'],['住院医师培训','伊利诺伊大学芝加哥医学院，妇产科，1991–1994 年'],['医师执照','加利福尼亚州（1991 年起）、北马里亚纳群岛（1999 年起）'],['专科委员会认证','公开资料未列明，预约时可请院方提供'],['可用语言','公开资料未列明，可确认是否需要翻译协助']],
+  timeline:[['1990','获 UCLA 大卫·格芬医学院医学博士学位'],['1990–1991','UCLA 医学中心过渡期实习'],['1991–1994','伊利诺伊大学芝加哥医学院妇产科住院医师培训'],['1999','取得北马里亚纳群岛医师执照'],['2013','担任塞班 Pacific Fertility Institute 医疗主任（据媒体引述其职业资料）'],['现在','Saipan IVF Center 医疗主任']],
+  sources:[{name:'Doximity · Gary G. Ramsey MD（教育、培训与执照记录）',url:'https://www.doximity.com/pub/gary-ramsey-md'},{name:'美国 NPI 登记 · NPI 1336274471（妇产科，加州执照 G72257）',url:'https://npiregistry.cms.hhs.gov/provider-view/1336274471'},{name:'Marianas Business Journal · Saipan company offers IVF for China market（2024-03-06）',url:'https://mbjguam.com/node/762'}],
   scope:[['初诊评估','结合病史与已有检查，讨论适合的治疗方向。'],['治疗方案','IVF、ICSI、冻卵、冻胚移植等方案的适用条件与选择。'],['风险与结果','讨论个人风险、成功率的统计口径与复诊安排。']],
   fit:['准备第一次做 IVF，希望先确认方案是否适合','已有检查报告，想请医生判断还缺哪些检查','考虑冻卵或冻胚，想了解年龄与结果的关系','既往治疗未成功，希望重新评估方案'],
   questions:['初诊由哪位医生接诊？后续监测和取卵是否由同一位医生负责？','根据我的检查，建议哪种方案？还有哪些其他选择？','你们提供的成功率数据是按什么年龄组、什么结局统计的？','治疗期间出现不适，夜间或周末联系谁？']
