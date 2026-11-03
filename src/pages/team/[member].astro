@@ -7,6 +7,8 @@ export function getStaticPaths(){return team.map(person=>({params:{member:person
 const { person } = Astro.props;
 const p = teamProfiles[person.id];
 const others = team.filter(other => other.id !== person.id);
+const parts = (text: string) => text.split(/(\[[^\]]+\]\([^)]+\))/).filter(Boolean).map(seg => { const m = seg.match(/^\[([^\]]+)\]\(([^)]+)\)$/); return m ? { t: m[1], href: m[2] } : { t: seg }; });
+const plain = (text: string) => text.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
 ---
 <SiteLayout title={person.name} description={p.description} active="team" plainHead={true} zhOnlyAlternates={true}>
 <article class="section wrap member-page" aria-label={p.title}>
@@ -23,21 +25,20 @@ const others = team.filter(other => other.id !== person.id);
 <section id="highlights" class="member-why"><h2>{p.whyTitle}</h2><p class="member-why-lead">{p.whyLead}</p><ol class:list={["member-highlights",{"member-highlights-4":p.highlights.length===4}]}>{p.highlights.map(([title,text])=><li><h3>{title}</h3><p>{text}</p></li>)}</ol></section>
 <nav class="member-jump" aria-label="本页导航"><a href="#about">个人介绍</a><a href="#scope">负责范围</a><a href="#education">教育与资质</a>{p.timeline&&<a href="#timeline">职业经历</a>}<a href="#questions">咨询问题</a><a href="#summary">资料速览</a></nav>
 
-<section id="about"><h2>个人介绍</h2>{p.bio.map(text=><p>{text}</p>)}</section>
-<section id="scope"><h2>可以咨询的方向</h2><div class="member-cards">{p.scope.map(([title,text])=><article><h3>{title}</h3><p>{text}</p></article>)}</div>
-<h3 class="member-sub">适合先找这个方向咨询的情况</h3><ul class="member-list">{p.fit.map(item=><li>{item}</li>)}</ul></section>
-<section id="education"><h2>教育背景与资质</h2><dl class="member-facts">{p.education.map(([label,value])=><div><dt>{label}</dt><dd>{value}</dd></div>)}</dl><p class="member-note">{p.sources?'以上内容按院方公开团队介绍及页尾所列公开登记与报道整理（核对日期 2026-11-03），不是独立的执照核验。':'以上内容按院方公开团队介绍整理（核对日期 2026-10-20），不是独立的执照核验。'}实际接诊人员、执业信息与排班以预约确认为准。</p></section>
+<section id="about"><h2>个人介绍</h2>{p.bio.map(text=><p>{parts(text).map(x=>x.href?<a class="inline-link" href={x.href}>{x.t}</a>:x.t)}</p>)}</section>
+<section id="scope"><h2>可以咨询的方向</h2><div class="member-cards">{p.scope.map(([title,text])=><article><h3>{title}</h3><p>{parts(text).map(x=>x.href?<a class="inline-link" href={x.href}>{x.t}</a>:x.t)}</p></article>)}</div>
+<h3 class="member-sub">适合先找这个方向咨询的情况</h3><ul class="member-list">{p.fit.map(item=><li>{parts(item).map(x=>x.href?<a class="inline-link" href={x.href}>{x.t}</a>:x.t)}</li>)}</ul></section>
+<section id="education"><h2>教育背景与资质</h2><dl class="member-facts">{p.education.map(([label,value])=><div><dt>{label}</dt><dd>{value}</dd></div>)}</dl></section>
 {p.timeline&&<section id="timeline"><h2>职业经历</h2><ol class="member-timeline">{p.timeline.map(([year,text])=><li><span>{year}</span><p>{text}</p></li>)}</ol></section>}
 <section id="questions"><h2>初诊时可以问</h2><ul class="member-list">{p.questions.map(item=><li>{item}</li>)}</ul></section>
 <section id="summary" aria-labelledby="member-summary-title"><h2 id="member-summary-title">资料速览</h2><dl class="member-chips">
-<div><dt>适合咨询的人群</dt><dd><ul>{p.fit.map(item=><li>{item}</li>)}</ul></dd></div>
+<div><dt>适合咨询的人群</dt><dd><ul>{p.fit.map(item=><li>{plain(item).replace(/（参考 .*）$/,'')}</li>)}</ul></dd></div>
 <div><dt>专业方向</dt><dd><ul>{p.tags.map(item=><li>{item}</li>)}</ul></dd></div>
-<div><dt>教育背景</dt><dd><ul>{p.education.filter(([,v])=>!v.includes('未列明')&&!v.includes('执照')).map(([label,value])=><li>{label}：{value.replace('，据院方团队介绍','')}</li>)}</ul></dd></div>
-<div><dt>可用语言</dt><dd><ul><li>待院方确认</li></ul></dd></div>
+{p.education.some(([label])=>!label.includes('执照')&&label!=='职务')&&<div><dt>教育背景</dt><dd><ul>{p.education.filter(([label])=>!label.includes('执照')&&label!=='职务').map(([label,value])=><li>{label}：{value}</li>)}</ul></dd></div>}
 </dl></section>
 <section class="member-clinic" aria-labelledby="member-clinic-title"><h2 id="member-clinic-title">所在机构</h2><p><strong>Saipan IVF Center</strong> · 3rd Floor, Bank of Guam, Garapan, Saipan, MP 96950</p><p>接诊机构位于美国北马里亚纳群岛塞班岛的 Garapan 区。院方公开设施介绍列有显微操作系统、MIRI® IVF 培养箱与卵子玻璃化冷冻；初诊可先询问是否支持视频咨询、需要提前提交的资料和预约时间。</p><div class="member-actions"><a class="button" href="/contact/">免费提交初步咨询</a><a class="inline-link" href="/facility/">查看诊所环境与实验室</a></div></section>
 <section class="member-others" aria-labelledby="member-others-title"><h2 id="member-others-title">团队其他成员</h2><div class="hub-grid">{others.map(other=><a class="hub-card" href={'/team/'+other.id+'/'}><h3>{other.name}</h3><p>{other.role} · {other.summary}</p></a>)}</div><a class="inline-link" href="/team/">查看全部医疗团队</a></section>
-<div class="member-cta"><h2>预约与{person.name}相关的初诊咨询</h2><p>先留下一种联系方式，说明治疗需求和已有检查；实际接诊医生与时间以预约确认为准。</p><div class="member-actions"><a class="button" href="/contact/">提交初步咨询</a><a class="inline-link" href="/team/">浏览更多团队成员</a></div></div>
+<div class="member-cta"><h2>预约与{person.name}相关的初诊咨询</h2><p>先留下一种联系方式，说明治疗需求和已有检查，我们会尽快回复。</p><div class="member-actions"><a class="button" href="/contact/">提交初步咨询</a><a class="inline-link" href="/team/">浏览更多团队成员</a></div></div>
 {p.sources&&<SourceNote checked="2026-11-03" sources={p.sources}/>}
 </article>
 </SiteLayout>
