@@ -10,6 +10,7 @@ on:
       - 'src/pages/facility.astro'
       - 'src/pages/team/**'
       - 'src/data/team.ts'
+      - 'public/images/official/**'
       - 'src/components/ClinicArrival.astro'
       - 'src/components/EggFreezingCostGuide.astro'
       - '.github/workflows/internal-pages-visual.yml'

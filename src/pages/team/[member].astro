@@ -1,6 +1,7 @@
 ---
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import SourceNote from '../../components/SourceNote.astro';
+import ResponsiveImage from '../../components/ResponsiveImage.astro';
 import { team, teamProfiles } from '../../data/team';
 export function getStaticPaths(){return team.map(person=>({params:{member:person.id},props:{person}}))}
 const { person } = Astro.props;
@@ -10,7 +11,7 @@ const others = team.filter(other => other.id !== person.id);
 <SiteLayout title={person.name} description={p.description} active="team" plainHead={true} zhOnlyAlternates={true}>
 <article class="section wrap member-page" aria-label={p.title}>
 <header class="member-hero">
- <div class="member-mark" aria-hidden="true">{p.initials}</div>
+ <ResponsiveImage class="member-photo" src={`/images/official/${person.image}-profile.webp`} alt={`${person.name}，${person.role}`} sizes="(max-width: 650px) 150px, 210px" fetchpriority="high"/>
  <div class="member-intro">
   <p class="member-role">{person.role} · Saipan IVF Center · 塞班 Garapan</p>
   <h2>{p.title}</h2>
@@ -19,8 +20,9 @@ const others = team.filter(other => other.id !== person.id);
   <div class="member-actions"><a class="button" href={'/contact/'}>预约咨询</a><a class="inline-link" href="#questions">初诊可以问什么</a></div>
  </div>
 </header>
-<nav class="member-jump" aria-label="本页导航"><a href="#highlights">背景要点</a><a href="#about">个人介绍</a><a href="#scope">负责范围</a><a href="#education">教育与资质</a>{p.timeline&&<a href="#timeline">职业经历</a>}<a href="#questions">咨询问题</a><a href="#summary">资料速览</a></nav>
-<section id="highlights"><h2>背景要点</h2><ol class="member-highlights">{p.highlights.map(([title,text])=><li><h3>{title}</h3><p>{text}</p></li>)}</ol></section>
+<section id="highlights" class="member-why"><h2>{p.whyTitle}</h2><p class="member-why-lead">{p.whyLead}</p><ol class="member-highlights">{p.highlights.map(([title,text])=><li><h3>{title}</h3><p>{text}</p></li>)}</ol></section>
+<nav class="member-jump" aria-label="本页导航"><a href="#about">个人介绍</a><a href="#scope">负责范围</a><a href="#education">教育与资质</a>{p.timeline&&<a href="#timeline">职业经历</a>}<a href="#questions">咨询问题</a><a href="#summary">资料速览</a></nav>
+
 <section id="about"><h2>个人介绍</h2>{p.bio.map(text=><p>{text}</p>)}</section>
 <section id="scope"><h2>可以咨询的方向</h2><div class="member-cards">{p.scope.map(([title,text])=><article><h3>{title}</h3><p>{text}</p></article>)}</div>
 <h3 class="member-sub">适合先找这个方向咨询的情况</h3><ul class="member-list">{p.fit.map(item=><li>{item}</li>)}</ul></section>
@@ -44,8 +46,8 @@ const others = team.filter(other => other.id !== person.id);
 .member-page section{scroll-margin-top:24px;margin-top:48px}
 .member-page h2{font-size:clamp(23px,3vw,32px);line-height:1.45;margin:0 0 14px}
 .member-page p,.member-page li,.member-page dd{line-height:1.85}
-.member-hero{display:grid;grid-template-columns:160px minmax(0,1fr);gap:36px;align-items:start;padding:28px;background:#f5fafb;border:1px solid #d9e7eb;border-radius:16px}
-.member-mark{width:160px;height:160px;border-radius:50%;background:var(--blue,#1d5c8f);color:#fff;display:flex;align-items:center;justify-content:center;font-size:48px;letter-spacing:2px}
+.member-hero{display:grid;grid-template-columns:210px minmax(0,1fr);gap:36px;align-items:start;padding:28px;background:#f5fafb;border:1px solid #d9e7eb;border-radius:16px}
+.member-hero :global(.member-photo){width:210px;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:12px;background:#eef3f5}
 .member-role{font-size:14px;color:var(--muted);margin:0 0 6px}
 .member-intro h2{margin-bottom:10px}
 .member-tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:16px 0}
@@ -53,7 +55,9 @@ const others = team.filter(other => other.id !== person.id);
 .member-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-top:8px}
 .member-jump{display:flex;flex-wrap:wrap;gap:10px 22px;margin:22px 0 0}
 .member-jump a{display:inline-flex;align-items:center;min-height:44px;font-size:15px;text-decoration:underline;text-underline-offset:5px}
-.member-highlights{counter-reset:h;list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.member-why{margin-top:32px}
+.member-why-lead{font-size:17px;max-width:46em}
+.member-highlights{counter-reset:h;list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
 .member-highlights li{counter-increment:h;padding:20px;background:var(--light);min-width:0}
 .member-highlights li::before{content:counter(h,decimal-leading-zero);display:block;font-size:14px;color:var(--muted);margin-bottom:6px}
 .member-highlights h3,.member-cards h3{font-size:19px;margin:0 0 6px}
@@ -83,5 +87,5 @@ const others = team.filter(other => other.id !== person.id);
 .member-others .hub-grid{gap:18px 40px;margin:16px 0 18px}
 .member-others .hub-card{padding:18px 20px;border:1px solid #dde7ea;min-width:0}
 .member-others .hub-card h3{margin:0 0 6px;font-size:21px}.member-others .hub-card p{margin:0;font-size:15px}
-@media(max-width:650px){.member-hero{grid-template-columns:1fr;gap:20px;padding:22px}.member-mark{width:96px;height:96px;font-size:30px}.member-highlights,.member-cards{grid-template-columns:1fr}.member-facts div{grid-template-columns:1fr;gap:4px}.member-clinic{padding:22px}.member-chips{grid-template-columns:1fr}.member-cta{padding:22px}.member-others .hub-grid{grid-template-columns:1fr}}
+@media(max-width:650px){.member-hero{grid-template-columns:1fr;gap:20px;padding:22px}.member-hero :global(.member-photo){width:150px}.member-highlights,.member-cards{grid-template-columns:1fr}.member-facts div{grid-template-columns:1fr;gap:4px}.member-clinic{padding:22px}.member-chips{grid-template-columns:1fr}.member-cta{padding:22px}.member-others .hub-grid{grid-template-columns:1fr}}
 </style>
