@@ -13,7 +13,7 @@ on:
       - '.github/workflows/internal-pages-visual.yml'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   screenshot:
     runs-on: ubuntu-24.04
@@ -45,6 +45,14 @@ jobs:
           shot "/zh-hant/guides/egg-freezing-cost/" "390,844" "zh-hant-egg-freezing-cost-mobile"
           shot "/treatments/" "1440,900" "zh-cn-treatments-desktop"
           shot "/team/" "390,844" "zh-cn-team-mobile"
+      - name: Publish screenshots to a review branch
+        if: github.event_name == 'workflow_dispatch' || github.event.pull_request.head.repo.full_name == github.repository
+        run: |
+          set -eu
+          cd internal-review-images
+          git init -q && git checkout -q -b internal-pages-review-shots
+          git -c user.name=ci -c user.email=ci@users.noreply.github.com add . && git -c user.name=ci -c user.email=ci@users.noreply.github.com commit -q -m "screenshots ${GITHUB_SHA}"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" internal-pages-review-shots
       - uses: actions/upload-artifact@v4
         if: always()
         with:
